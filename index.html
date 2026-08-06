@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 2026动漫热度报告 · 全景热榜</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans SC', sans-serif; background: #0d0d1a; color: #e0e0f0; line-height: 1.7; }
+  .hero { background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 40%, #e94560 100%); padding: 60px 20px 40px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(233,69,96,0.15) 0%, transparent 60%); animation: pulse 6s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; background: linear-gradient(90deg, #ff6b9d, #ffc371, #ff6b9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; position: relative; z-index: 1; }
+  .hero .sub { font-size: 1.1rem; color: #b0b0d0; margin-top: 10px; position: relative; z-index: 1; }
+  .hero .meta { display: inline-flex; gap: 20px; margin-top: 20px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; }
+  .hero .meta span { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; color: #d0d0f0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  .section { margin: 40px 0; }
+  .section-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+  .section-title .emoji { font-size: 1.6rem; }
+  .section-desc { color: #9090b0; font-size: 0.95rem; margin-bottom: 20px; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; }
+  .badge-hot { background: #e94560; color: #fff; }
+  .badge-new { background: #4ecdc4; color: #0d0d1a; }
+  .badge-ai { background: #9b59b6; color: #fff; }
+  .badge-cn { background: #f39c12; color: #0d0d1a; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+  thead th { background: #1a1a3e; color: #b0b0d0; font-size: 0.8rem; text-transform: uppercase; padding: 10px 8px; text-align: left; border-bottom: 2px solid #2d1b69; }
+  tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s; }
+  tbody tr:hover { background: rgba(233,69,96,0.08); }
+  tbody td { padding: 10px 8px; font-size: 0.9rem; }
+  .rank { font-weight: 900; font-size: 1.1rem; width: 40px; text-align: center; }
+  .rank-1 { color: #ffd700; }
+  .rank-2 { color: #c0c0c0; }
+  .rank-3 { color: #cd7f32; }
+  .score { color: #4ecdc4; font-weight: 700; }
+  .change-up { color: #4ecdc4; font-size: 0.8rem; }
+  .change-down { color: #e94560; font-size: 0.8rem; }
+  .change-new { color: #9b59b6; font-size: 0.8rem; font-weight: 700; }
+  .tab-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab-btn { background: #1a1a3e; border: 1px solid #2d1b69; color: #9090b0; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: all 0.3s; }
+  .tab-btn.active, .tab-btn:hover { background: linear-gradient(135deg, #e94560, #9b59b6); color: #fff; border-color: transparent; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+  .insight-card { background: #1a1a3e; border: 1px solid #2d1b69; border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+  .insight-card h3 { color: #ff6b9d; font-size: 1.1rem; margin-bottom: 8px; }
+  .insight-card p { color: #b0b0d0; font-size: 0.9rem; }
+  .highlight { color: #ffc371; font-weight: 700; }
+  .fire { color: #e94560; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+  .stat-bar { height: 6px; border-radius: 3px; background: #2d1b69; margin-top: 4px; overflow: hidden; }
+  .stat-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #e94560, #ff6b9d); }
+  .footer { text-align: center; padding: 40px 20px; color: #606080; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); }
+  .scroll-top { position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #e94560, #9b59b6); color: #fff; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 999; }
+  .trend-tag { display: inline-block; padding: 2px 8px; border-radius: 8px; font-size: 0.7rem; margin-left: 4px; }
+  .trend-up { background: rgba(78,205,196,0.2); color: #4ecdc4; }
+  .trend-down { background: rgba(233,69,96,0.2); color: #e94560; }
+  .trend-stable { background: rgba(255,255,255,0.1); color: #9090b0; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🔥 2026动漫热度全景报告</h1>
+  <div class="sub">全球热点 · 最新更新 · AI漫剧 · 中国动漫</div>
+  <div class="meta">
+    <span>📅 检索时间: 2026-08-06 08:35 CST</span>
+    <span>📊 时间范围: 2026年Q3 / 本周</span>
+    <span>🌐 数据源: MAL · Anime Corner · Reddit · 红果 · 抖音 · B站 · 腾讯视频</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ============ 全球热点 TOP20 ============ -->
+<div class="section">
+  <div class="section-title"><span class="emoji">🌍</span> 全球热点 TOP20 <span class="badge badge-hot">HOT</span></div>
+  <div class="section-desc">综合 MyAnimeList / Anime Corner / Reddit 等平台数据，2026夏季番最新人气排行（Anime Corner Week 4 + MAL期待榜）</div>
+
+  <table>
+    <thead><tr><th>#</th><th>作品</th><th>类型</th><th>AC热度</th><th>MAL评分</th><th>趋势</th></tr></thead>
+    <tbody>
+      <tr><td class="rank rank-1">1</td><td><strong>死神 千年血战篇-祸谭-</strong> (Bleach: TYBW Part 4)</td><td><span class="badge badge-hot">续作</span></td><td class="score">7.20%</td><td>—</td><td><span class="change-new">🆕 首周空降冠军</span></td></tr>
+      <tr><td class="rank rank-2">2</td><td><strong>无职转生III</strong> (Mushoku Tensei III)</td><td><span class="badge badge-hot">续作</span></td><td class="score">6.86%</td><td>8.5+预期</td><td><span class="change-up">↑ 从第4升至第2</span></td></tr>
+      <tr><td class="rank rank-3">3</td><td><strong>虽然我是废柴恶役大小姐</strong> (Though I Am an Inept Villainess)</td><td><span class="badge badge-new">新番</span></td><td class="score">5.37%</td><td>7.8+</td><td><span class="trend-tag trend-stable">连续3周Top3</span></td></tr>
+      <tr><td class="rank">4</td><td><strong>幼女战记II</strong> (Saga of Tanya the Evil II)</td><td><span class="badge badge-hot">续作</span></td><td class="score">4.98%</td><td>8.2+</td><td><span class="change-down">↓ 上周冠军跌至第4</span></td></tr>
+      <tr><td class="rank">5</td><td><strong>蒙古的女巫</strong> (Jaadugar: A Witch in Mongolia)</td><td><span class="badge badge-new">新番</span></td><td class="score">4.84%</td><td>—</td><td><span class="change-up">↑ 黑马持续升温</span></td></tr>
+      <tr><td class="rank">6</td><td><strong>超超超超超喜欢你100个女朋友 第三季</strong></td><td><span class="badge badge-hot">续作</span></td><td class="score">3.20%</td><td>7.5+</td><td><span class="trend-tag trend-stable">—</span></td></tr>
+      <tr><td class="rank">7</td><td><strong>正相反的你和我 第二季</strong></td><td><span class="badge badge-hot">续作</span></td><td class="score">2.95%</td><td>7.9+</td><td><span class="trend-tag trend-stable">—</span></td></tr>
+      <tr><td class="rank">8</td><td><strong>在超市后门吸烟的二人</strong></td><td><span class="badge badge-new">新番</span></td><td class="score">2.82%</td><td>7.6+</td><td><span class="trend-tag trend-up">热议</span></td></tr>
+      <tr><td class="rank">9</td><td><strong>晴空下看不见的恋</strong> (Love Unseen Beneath the Clear Night Sky)</td><td><span class="badge badge-new">新番</span></td><td class="score">2.09%</td><td>7.4+</td><td><span class="trend-tag trend-stable">—</span></td></tr>
+      <tr><td class="rank">10</td><td><strong>想爱到你生命尽头</strong></td><td><span class="badge badge-new">新番</span></td><td class="score">2.02%</td><td>7.3+</td><td><span class="trend-tag trend-stable">—</span></td></tr>
+      <tr><td class="rank">11</td><td>影之领域的恶魔们 (Daemons of the Shadow Realm)</td><td>新番</td><td class="score">1.93%</td><td>7.2+</td><td><span class="trend-tag trend-stable">—</span></td></tr>
+      <tr><td class="rank">12</td><td>怪兽少女焦糖化</td><td>新番</td><td class="score">1.87%</td><td>7.0+</td><td><span class="trend-tag trend-up">↑</span></td></tr>
+      <tr><td class="rank">13</td><td>转生史莱姆第四季</td><td>续作</td><td class="score">1.82%</td><td>7.8+</td><td><span class="change-up">↑</span></td></tr>
+      <tr><td class="rank">14</td><td>碧蓝之海第三季 🔥</td><td>续作</td><td class="score">1.73%</td><td>8.0+</td><td><span class="trend-tag trend-up">名作回归</span></td></tr>
+      <tr><td class="rank">15</td><td>克雷瓦特斯第二季</td><td>续作</td><td class="score">1.67%</td><td>7.1+</td><td><span class="trend-tag trend-stable">—</span></td></tr>
+      <tr><td class="rank">16</td><td>大小姐的秘密看护人</td><td>新番</td><td class="score">1.58%</td><td>6.9+</td><td><span class="trend-tag trend-stable">—</span></td></tr>
+      <tr><td class="rank">17</td><td>明日的火花 (Sparks of Tomorrow) ⭐京阿尼新作</td><td>原创</td><td class="score">1.55%</td><td>7.5+</td><td><span class="trend-tag trend-up">京阿尼信仰</span></td></tr>
+      <tr><td class="rank">18</td><td>大小姐不打格斗游戏</td><td>新番</td><td class="score">1.46%</td><td>7.0+</td><td><span class="trend-tag trend-up">↑</span></td></tr>
+      <tr><td class="rank">19</td><td>攻壳机动队 (新系列)</td><td>新作</td><td class="score">1.44%</td><td>8.0+预期</td><td><span class="change-new">🆕 重磅回归</span></td></tr>
+      <tr><td class="rank">20</td><td>再见了，拉拉</td><td>新番</td><td class="score">1.42%</td><td>7.2+</td><td><span class="trend-tag trend-stable">—</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="insight-card">
+    <h3>🧠 波动分析 · 全球热点</h3>
+    <p>🔥 <span class="fire">死神千年血战篇</span>最终季首播即封王，7.20%得票率刷新本季单周纪录——爷青回的含金量无需多言。<span class="highlight">无职转生III</span>紧追不舍，从第4升至第2，续作口碑稳如老狗。<br>
+    📉 幼女战记II从冠军宝座跌至第4，属于"首周期待值溢出后的自然回落"，但4.98%的票数仍属顶级。<br>
+    🐎 <span class="highlight">蒙古的女巫</span>连续两周保持Top5，这个蒙古背景的奇幻题材堪称本季最大黑马，异域世界观杀疯了！<br>
+    ⚔️ <span class="highlight">攻壳机动队新系列</span>终于在AC榜单亮相，此次回归能否重塑经典，赛博朋克迷们拭目以待。<br>
+    💡 本季4周内已出现3位不同的冠军——<span class="fire">竞争之激烈为近年之最</span>，没有一家独大，群番逐鹿！</p>
+  </div>
+</div>
+
+<!-- ============ 最新更新 TOP20 ============ -->
+<div class="section">
+  <div class="section-title"><span class="emoji">⚡</span> 最新更新 TOP20 <span class="badge badge-new">NEW</span></div>
+  <div class="section-desc">2026年7月夏季新番 · 综合首周开播表现与各平台评分（Anime Corner / MAL / B站 / Bangumi）</div>
+
+  <table>
+    <thead><tr><th>#</th><th>作品</th><th>平台/类型</th><th>首周热度</th><th>特征</th></tr></thead>
+    <tbody>
+      <tr><td class="rank rank-1">1</td><td><strong>幼女战记II</strong></td><td>Crunchyroll / 战争奇幻</td><td class="score">6.79%</td><td>期待榜冠军兑现</td></tr>
+      <tr><td class="rank rank-2">2</td><td><strong>无职转生III</strong></td><td>Crunchyroll / 异世界</td><td class="score">6.37%</td><td>制作天花板续命</td></tr>
+      <tr><td class="rank rank-3">3</td><td><strong>穹庐下的魔女</strong></td><td>新番 / 蒙古奇幻</td><td class="score">6.26%</td><td>异域世界观黑马</td></tr>
+      <tr><td class="rank">4</td><td><strong>碧蓝之海III</strong></td><td>续作 / 搞笑潜水</td><td class="score">5.52%</td><td>喝酒DNA又动了</td></tr>
+      <tr><td class="rank">5</td><td><strong>100女友 第三季</strong></td><td>续作 / 后宫喜剧</td><td class="score">4.99%</td><td>画风突变但更猛了</td></tr>
+      <tr><td class="rank">6</td><td><strong>正相反的你和我 第二季</strong></td><td>续作 / 恋爱</td><td class="score">4.75%</td><td>甜到蛀牙的青春</td></tr>
+      <tr><td class="rank">7</td><td><strong>在超市后门吸烟的二人</strong></td><td>新番 / 日常治愈</td><td class="score">4.30%</td><td>社畜的精神解药</td></tr>
+      <tr><td class="rank">8</td><td><strong>二十世纪电气目录</strong></td><td>新番 / 历史科幻</td><td class="score">3.76%</td><td>和风蒸汽朋克</td></tr>
+      <tr><td class="rank">9</td><td><strong>与你相恋到生命尽头</strong></td><td>新番 / 战争恋爱</td><td class="score">3.39%</td><td>战火下的少女心</td></tr>
+      <tr><td class="rank">10</td><td><strong>世界翩翩起舞</strong></td><td>新番 / 舞蹈青春</td><td class="score">3.35%</td><td>肢体表达的天花板</td></tr>
+      <tr><td class="rank">11</td><td>死神 千年血战篇-祸谭-</td><td>续作 / 热血战斗</td><td class="score">7.20%*</td><td>*Week4空降冠军</td></tr>
+      <tr><td class="rank">12</td><td>虽然我是废柴恶役大小姐</td><td>新番 / 乙女逆转</td><td class="score">5.37%*</td><td>逆天改命系女主</td></tr>
+      <tr><td class="rank">13</td><td>Re:ZERO 第四季</td><td>续作 / 异世界</td><td class="score">—</td><td>已放出夺还篇预告</td></tr>
+      <tr><td class="rank">14</td><td>SBR JOJO的奇妙冒险</td><td>新作 / 赛马冒险</td><td class="score">—</td><td>MAL期待榜Top2</td></tr>
+      <tr><td class="rank">15</td><td>药屋少女独白第三季</td><td>续作 / 推理古装</td><td class="score">—</td><td>MAL热播榜Top2</td></tr>
+      <tr><td class="rank">16</td><td>暗影实力派电影版·残响篇</td><td>剧场版 / 龙傲天</td><td class="score">—</td><td>MAL热播榜Top3</td></tr>
+      <tr><td class="rank">17</td><td>迷宫饭第二季</td><td>续作 / 美食冒险</td><td class="score">—</td><td>吃货们的盛宴</td></tr>
+      <tr><td class="rank">18</td><td>孤独摇滚第二季</td><td>续作 / 音乐日常</td><td class="score">—</td><td>波奇酱再战江湖</td></tr>
+      <tr><td class="rank">19</td><td>Dandadan 第三季</td><td>续作 / 超自然喜剧</td><td class="score">—</td><td>超自然恋爱天花板</td></tr>
+      <tr><td class="rank">20</td><td>BanG Dream! YUME∞MITA</td><td>新番 / 音乐偶像</td><td class="score">1.09%</td><td>MAL专题推荐</td></tr>
+    </tbody>
+  </table>
+
+  <div class="insight-card">
+    <h3>🧠 波动分析 · 最新更新</h3>
+    <p>📌 <span class="fire">首周格局</span>：前3名得票率差距不到1个百分点，堪称"微差争霸"，说明本季新番质量整体在线。<br>
+    📈 <span class="highlight">续作统治力</span>：Top10中续作占5席，"老IP续命"依然是2026年的主旋律——死神、无职转生、碧蓝之海、100女友个个都是"续作也要打"。<br>
+    🎯 <span class="highlight">蒙古的女巫</span>首周第3名、持续Top5，证明"冷门世界观+高质量制作"同样能出圈，<span class="fire">异域题材正成为新增长极</span>。<br>
+    💬 Reddit热议：JoJo SBR动画化消息持续霸榜r/anime，MAL期待榜与AC投票出现明显分化——<span class="highlight">硬核粉与大众粉的选择差异越来越大</span>。</p>
+  </div>
+</div>
+
+<!-- ============ AI漫剧 TOP20 ============ -->
+<div class="section">
+  <div class="section-title"><span class="emoji">🤖</span> AI漫剧 TOP20 <span class="badge badge-ai">AI</span></div>
+  <div class="section-desc">红果短剧 / 抖音 AI漫剧热度排行 · 2026上半年·DataEye & 云合数据</div>
+
+  <table>
+    <thead><tr><th>#</th><th>作品</th><th>平台</th><th>热度/播放</th><th>趋势</th></tr></thead>
+    <tbody>
+      <tr><td class="rank rank-1">1</td><td><strong>万妖图录传 第八季</strong></td><td>红果 / 抖音</td><td class="score">8919万热度</td><td><span class="change-up">🔥 红果总榜冠军</span></td></tr>
+      <tr><td class="rank rank-2">2</td><td><strong>发配边关，罪妻开荒养出战神</strong> (全8季)</td><td>抖音 / 红果</td><td class="score">41亿+播放</td><td><span class="change-new">🆕 现象级爆款</span></td></tr>
+      <tr><td class="rank rank-3">3</td><td><strong>咱家剑宗团宠小师妹</strong></td><td>红果</td><td class="score">热播榜Top3</td><td><span class="trend-tag trend-stable">稳定输出</span></td></tr>
+      <tr><td class="rank">4</td><td><strong>都重生了谁还装富二代 第二季</strong></td><td>红果</td><td class="score">热播榜Top5</td><td><span class="change-up">↑</span></td></tr>
+      <tr><td class="rank">5</td><td><strong>山海藏墟，无眼窥天</strong></td><td>红果 / 抖音</td><td class="score">破亿播放</td><td><span class="trend-tag trend-up">草根奇迹</span></td></tr>
+      <tr><td class="rank">6</td><td><strong>花茶人偶:苗疆少主他又争又抢</strong></td><td>红果</td><td class="score">口碑爆款</td><td><span class="trend-tag trend-up">小太阳×病娇</span></td></tr>
+      <tr><td class="rank">7</td><td><strong>穿越成恶毒女配后被师尊盯上了</strong></td><td>红果</td><td class="score">仙偶Top</td><td><span class="trend-tag trend-up">仙侠复兴</span></td></tr>
+      <tr><td class="rank">8</td><td><strong>穿成炮灰后:不是反派吗怎么要抱抱</strong></td><td>红果</td><td class="score">高热度</td><td><span class="trend-tag trend-stable">甜宠持续</span></td></tr>
+      <tr><td class="rank">9</td><td><strong>砚边青梅</strong></td><td>红果</td><td class="score">口碑清流</td><td><span class="change-new">🆕 文化底蕴</span></td></tr>
+      <tr><td class="rank">10</td><td><strong>本仙落难被诡域大佬碰瓷了</strong></td><td>红果</td><td class="score">好评如潮</td><td><span class="trend-tag trend-up">仙偶初心</span></td></tr>
+      <tr><td class="rank">11</td><td><strong>李世民魂穿阿斗</strong></td><td>抖音</td><td class="score">破亿播放</td><td><span class="trend-tag trend-up">历史脑洞</span></td></tr>
+      <tr><td class="rank">12</td><td><strong>聚宝仙盆之杂灵根才是真boss</strong></td><td>红果</td><td class="score">百强</td><td><span class="trend-tag trend-stable">修仙爽文</span></td></tr>
+      <tr><td class="rank">13</td><td><strong>情起屋檐下</strong></td><td>红果</td><td class="score">百强</td><td><span class="trend-tag trend-stable">都市甜宠</span></td></tr>
+      <tr><td class="rank">14</td><td><strong>与你深情侵入余生</strong></td><td>红果</td><td class="score">热播</td><td><span class="trend-tag trend-stable">情感向</span></td></tr>
+      <tr><td class="rank">15</td><td><strong>被裁掉的女孩</strong></td><td>红果</td><td class="score">2亿+播放</td><td><span class="change-new">🆕 写实突破</span></td></tr>
+      <tr><td class="rank">16</td><td><strong>师徒锁心</strong></td><td>抖音</td><td class="score">百万+播放</td><td><span class="trend-tag trend-stable">情感起点</span></td></tr>
+      <tr><td class="rank">17</td><td><strong>孤杖不孤</strong></td><td>红果</td><td class="score">上线新作</td><td><span class="change-new">🆕 官媒出品</span></td></tr>
+      <tr><td class="rank">18</td><td><strong>斗罗大陆4终极斗罗</strong> (AI漫剧版)</td><td>火龙漫剧</td><td class="score">平台独播</td><td><span class="trend-tag trend-up">经典IP AI化</span></td></tr>
+      <tr><td class="rank">19</td><td><strong>无敌剑域</strong> (全流程AIGC年番)</td><td>爱奇艺</td><td class="score">待播</td><td><span class="change-new">🆕 行业首部</span></td></tr>
+      <tr><td class="rank">20</td><td><strong>12星练赛</strong></td><td>红果</td><td class="score">月涨粉48.8万</td><td><span class="change-new">🆕 综艺+AI</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid-2">
+    <div class="insight-card">
+      <h3>🔥 爆款拆解 · 发配边关</h3>
+      <p>🎯 <span class="highlight">种田爽文×末世穿越</span>：女主从末世穿越古代边关，用木系异能开荒——金手指种田+相对幸福爽感<br>
+      🏠 <span class="highlight">乡土元素破圈</span>：融入四川巴中酸辣粉、土灶饼等地方特色，本地观众共鸣拉满<br>
+      👫 <span class="highlight">草根夫妻手搓500集</span>：95后夫妻两张书桌就开干，非科班却凭热爱+审美爆杀大厂<br>
+      📊 8季抖音41亿播放，红果上半年AI剧亚军——<span class="fire">一个人就是一支队伍的时代来了</span></p>
+    </div>
+    <div class="insight-card">
+      <h3>🧠 行业趋势 · AI漫剧</h3>
+      <p>📊 2026上半年AI短剧上线超<span class="fire">22.19万部</span>，但破亿仅1055部，爆款率<span class="highlight">0.47%</span><br>
+      🏭 <span class="fire">1000部AI漫剧仅1部爆款</span>，爆款率不足0.1%，比真人短剧还惨<br>
+      💰 AI短剧市场规模突破<span class="highlight">220亿元</span>（1-5月），全年有望冲击400亿<br>
+      🎭 <span class="highlight">7月第二周AI短剧首次在红果流量超车真人</span>——历史性拐点！<br>
+      ⚠️ 但AI脸同质化严重，"恐怖谷效应"引发反感——<span class="fire">精品化是唯一出路</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 中国动漫 TOP20 ============ -->
+<div class="section">
+  <div class="section-title"><span class="emoji">🐉</span> 中国动漫 TOP20 <span class="badge badge-cn">国漫</span></div>
+  <div class="section-desc">腾讯视频 / B站 / 优酷 / 爱奇艺 · 2026上半年云合霸屏榜 + 暑期档新番</div>
+
+  <table>
+    <thead><tr><th>#</th><th>作品</th><th>平台</th><th>市占率/热度</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td class="rank rank-1">1</td><td><strong>仙逆</strong> (年番)</td><td>腾讯视频</td><td class="score">峰值15.4%</td><td>🔥 连续6月霸屏冠军</td></tr>
+      <tr><td class="rank rank-2">2</td><td><strong>斩神之凡尘神域2</strong></td><td>腾讯视频</td><td class="score">首周19.4%</td><td>🔥 新番空降冠军</td></tr>
+      <tr><td class="rank rank-3">3</td><td><strong>诡秘之主特别篇</strong></td><td>腾讯视频</td><td class="score">IMDb 9.6</td><td>🌟 出海天花板</td></tr>
+      <tr><td class="rank">4</td><td><strong>剑来2</strong></td><td>腾讯视频</td><td class="score">霸屏Top3</td><td>28+品牌联动</td></tr>
+      <tr><td class="rank">5</td><td><strong>完美世界</strong> (年番+剧场版)</td><td>腾讯视频</td><td class="score">常驻霸屏</td><td>九劫焚天剧场版</td></tr>
+      <tr><td class="rank">6</td><td><strong>一人之下6</strong></td><td>腾讯视频 / Crunchyroll</td><td class="score">Crunchyroll联播</td><td>2027院线电影</td></tr>
+      <tr><td class="rank">7</td><td><strong>斗破苍穹剧场版:双帝之战</strong></td><td>腾讯视频</td><td class="score">系列终局</td><td>7月上线</td></tr>
+      <tr><td class="rank">8</td><td><strong>凡人修仙传之慕兰之战</strong></td><td>B站</td><td class="score">年番续更</td><td>6.13开播</td></tr>
+      <tr><td class="rank">9</td><td><strong>吞噬星空</strong> (年番+剧场版)</td><td>腾讯视频</td><td class="score">常驻Top10</td><td>双剧场版</td></tr>
+      <tr><td class="rank">10</td><td><strong>镖人2</strong></td><td>腾讯视频</td><td class="score">高口碑</td><td>6.11上线·暴力美学</td></tr>
+      <tr><td class="rank">11</td><td><strong>遮天</strong> (年番+剧场版)</td><td>腾讯视频</td><td class="score">Top10</td><td>剧场版落地</td></tr>
+      <tr><td class="rank">12</td><td><strong>诛仙第四季(终局)</strong></td><td>腾讯视频</td><td class="score">高期待</td><td>"红鸾笑"大婚</td></tr>
+      <tr><td class="rank">13</td><td><strong>东大高武学院</strong></td><td>优酷</td><td class="score">230万预约</td><td>中式霍格沃茨🔥</td></tr>
+      <tr><td class="rank">14</td><td><strong>云深不知梦特别篇</strong></td><td>优酷</td><td class="score">450万+预约</td><td>大女主黑马</td></tr>
+      <tr><td class="rank">15</td><td><strong>雾山五行3</strong></td><td>—</td><td class="score">待定</td><td>国漫美学天花板</td></tr>
+      <tr><td class="rank">16</td><td><strong>电影《八仙！》</strong></td><td>院线</td><td class="score">票房破4亿</td><td>凡人修仙·暑期黑马</td></tr>
+      <tr><td class="rank">17</td><td><strong>一剑独尊</strong></td><td>爱奇艺</td><td class="score">年番打头阵</td><td>"一剑宇宙"开启</td></tr>
+      <tr><td class="rank">18</td><td><strong>牧神记</strong></td><td>B站</td><td class="score">年番规划</td><td>独当一面仍需时日</td></tr>
+      <tr><td class="rank">19</td><td><strong>我不是戏神</strong></td><td>爱奇艺</td><td class="score">待播</td><td>废土题材差异化</td></tr>
+      <tr><td class="rank">20</td><td><strong>李熊猫 (苍兰诀×咒术回战主创)</strong></td><td>爱奇艺</td><td class="score">7.29开播</td><td>武侠×科幻跨界</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid-2">
+    <div class="insight-card">
+      <h3>🔥 爆款拆解 · 诡秘之主</h3>
+      <p>🌍 <span class="highlight">出海天花板</span>：7语配音同步上线，覆盖近200个国家<br>
+      ⭐ IMDb<span class="fire">9.3分</span>→特别篇冲至<span class="fire">9.6分</span>！MAL开分8.79<br>
+      🎬 Crunchyroll平台首部评分破10万国漫，断层领先海外番剧<br>
+      🤝 与<span class="highlight">无印良品</span>联名周边——国漫商业化"出圈"新范式<br>
+      💡 证明了<span class="fire">"中国IP+国漫工业化"=跨文化通行证</span></p>
+    </div>
+    <div class="insight-card">
+      <h3>🧠 行业趋势 · 中国动漫</h3>
+      <p>📺 腾讯视频H1霸屏Top10独占<span class="fire">8席</span>，累计有效播放超<span class="highlight">78.2亿</span><br>
+      🔄 8部年番周更无断档——<span class="fire">年番矩阵=护城河</span><br>
+      🎬 22+部IP剧场版/院线计划推进，IP从"线上订阅"延伸至"院线票房+线下消费"<br>
+      🎮 <span class="highlight">剑来2×龙虎山</span>全国首个国漫5A景区联名；<span class="highlight">斩神×库迪咖啡</span>小红书刷屏<br>
+      🎯 题材多元化：<span class="highlight">诡秘之主</span>(蒸汽朋克×克苏鲁)、<span class="highlight">火旺</span>(中式民俗)、<span class="highlight">太白金星有点烦</span>(职场隐喻)——<span class="fire">玄幻审美疲劳前提前换代</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 行业趋势总览 ============ -->
+<div class="section">
+  <div class="section-title"><span class="emoji">📈</span> 行业趋势总览 · 2026 Q3</div>
+
+  <div class="grid-2">
+    <div class="insight-card">
+      <h3>1️⃣ 续作稳盘，新作突围</h3>
+      <p>2026年动漫市场的主旋律：<span class="fire">老IP维稳+新IP探路</span>。死神、无职转生、斩神等续作持续霸榜，但蒙古的女巫、发配边关等"冷门世界观"同样杀出重围——<span class="highlight">好故事永远不缺观众</span>。</p>
+    </div>
+    <div class="insight-card">
+      <h3>2️⃣ AI漫剧：拐点已至</h3>
+      <p>7月AI短剧<span class="fire">首次流量超车真人</span>，但0.47%的爆款率意味着绝大多数是炮灰。AI漫剧正从"野蛮放量"转向<span class="highlight">"精品为王"</span>——被裁掉的女孩用不完美的脸讲好故事，才是正解。</p>
+    </div>
+    <div class="insight-card">
+      <h3>3️⃣ 国漫：从"量"到"链"</h3>
+      <p>腾讯视频8部年番+22部剧场版/院线，IP正从"线上订阅"进化为<span class="fire">"院线票房+文旅+3C+餐饮"</span>全产业链资产。诡秘之主海外IMDb 9.6分证明——<span class="highlight">中国IP+工业化制作=跨文化通行证</span>。</p>
+    </div>
+    <div class="insight-card">
+      <h3>4️⃣ 草根崛起 vs 大厂内卷</h3>
+      <p>AI漫剧的爆款竟然多出自<span class="fire">草根夫妻、失业创业者</span>——大厂追求确定性和规模化，反而错过了真正的创意火花。<span class="highlight">个体的独特情感偏向、审美风格，成了AI时代不可替代的核心竞争力</span>。</p>
+    </div>
+    <div class="insight-card">
+      <h3>5️⃣ 玄幻疲劳，多元破壁</h3>
+      <p>国漫的玄幻修仙"基本盘"依然稳固，但平台已提前布局：<span class="highlight">蒸汽朋克(诡秘)、废土(光阴之外)、武侠(镖人2)、大女主(云深不知梦)、职场(太白金星)</span>——谁能率先跑通新赛道，谁就赢得下一张入场券。</p>
+    </div>
+    <div class="insight-card">
+      <h3>6️⃣ AI重构生产线</h3>
+      <p>爱奇艺推出<span class="fire">"星河AI番剧计划"</span>，《无敌剑域》成为行业首部全流程AIGC年番；优酷发起<span class="highlight">"AI漫剧精卫计划"</span>拉拢百万AI创作者。制作周期缩短80%、成本降低50%——但<span class="fire">版权与原创性的争议也在加剧</span>。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 彩蛋·梗图时刻 ============ -->
+<div class="section">
+  <div class="section-title"><span class="emoji">😂</span> 本周梗闻速递</div>
+  <div class="insight-card" style="border-left: 4px solid #e94560;">
+    <p>🔸 <strong>死神粉</strong>：等了10年终于看到最终季，爷青回的含金量不需要解释<br>
+    🔸 <strong>碧蓝之海3</strong>：潜水社的酒量又进步了，这一季喝酒镜头比潜水多（x<br>
+    🔸 <strong>发配边关</strong>：95后夫妻两张桌子干翻大厂——"你们写字楼里做不出的爆款，我在卧室里搓出来了"<br>
+    🔸 <strong>诡秘之主</strong>：IMDb 9.6——老外：中国动漫？我以为在看HBO<br>
+    🔸 <strong>AI脸</strong>：圆眼睛高鼻梁尖下巴——每部剧主角长得像失散多年的兄弟姐妹<br>
+    🔸 <strong>仙逆</strong>：连续6个月霸屏——腾讯视频：你们是来追番的还是来签到的？<br>
+    🔸 <strong>蒙古女巫</strong>：Anime Corner的欧美宅男居然在看蒙古题材——世界真是平了</p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>📡 数据来源: MyAnimeList · Anime Corner · Reddit · 红果短剧 · 抖音 · B站 · 腾讯视频 · DataEye · 云合数据 · 雷报</p>
+  <p>🤖 由小U同学自动生成 · 检索时间 2026-08-06 08:35 CST · 每日定时更新</p>
+  <p>⚠️ 排名数据基于各平台公开信息综合整理，仅供参考，不构成任何消费建议</p>
+</div>
+
+<div class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</div>
+
+</body>
+</html>
