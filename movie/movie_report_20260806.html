@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎬 2026年7月电影热度月报 | 7.6-8.6</title>
+<style>
+:root{--bg:#0d0d1a;--card:#161625;--accent:#ff4757;--accent2:#ffa502;--accent3:#2ed573;--accent4:#1e90ff;--text:#e8e8f0;--text2:#9999bb;--border:#2a2a3e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px}
+a{color:var(--accent4);text-decoration:none}.container{max-width:900px;margin:0 auto;padding:16px}
+.hero{text-align:center;padding:40px 20px 30px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);border-radius:16px;margin-bottom:24px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,71,87,0.08) 0%,transparent 50%);animation:pulse 6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.hero h1{font-size:clamp(1.6rem,5vw,2.4rem);background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.hero .sub{color:var(--text2);font-size:clamp(0.85rem,2.5vw,1rem)}
+.hero .date-badge{display:inline-block;background:rgba(255,71,87,0.15);border:1px solid rgba(255,71,87,0.3);border-radius:20px;padding:4px 16px;font-size:0.85rem;color:var(--accent);margin-top:12px}
+.toc{background:var(--card);border-radius:12px;padding:20px;margin-bottom:24px;border:1px solid var(--border)}
+.toc h2{font-size:1.1rem;margin-bottom:12px;color:var(--accent2)}
+.toc ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.toc li a{display:block;padding:8px 14px;background:rgba(255,255,255,0.03);border-radius:8px;font-size:0.9rem;transition:all .2s}
+.toc li a:hover{background:rgba(255,71,87,0.1);transform:translateX(4px)}
+.section{background:var(--card);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid var(--border)}
+.section h2{font-size:1.2rem;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.section h2 .icon{font-size:1.4rem}
+.section .section-desc{color:var(--text2);font-size:0.85rem;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.rank-table{width:100%;border-collapse:collapse;font-size:0.88rem}
+.rank-table th{text-align:left;padding:8px 6px;color:var(--text2);font-weight:500;border-bottom:1px solid var(--border);font-size:0.8rem}
+.rank-table td{padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.rank-table tr:hover{background:rgba(255,255,255,0.02)}
+.rank-num{font-weight:700;min-width:28px;display:inline-block}
+.rank-1{color:#ffd700}.rank-2{color:#c0c0c0}.rank-3{color:#cd7f32}
+.movie-name{font-weight:600;color:var(--text)}
+.tag{display:inline-block;font-size:0.7rem;padding:1px 6px;border-radius:4px;margin-left:4px}
+.tag-new{background:rgba(46,213,115,0.15);color:var(--accent3)}
+.tag-hot{background:rgba(255,71,87,0.15);color:var(--accent)}
+.score{color:var(--accent2);font-weight:600;font-size:0.9rem}
+.box{color:var(--accent3);font-weight:600;font-size:0.9rem}
+.insight-box{background:rgba(255,165,2,0.06);border-left:3px solid var(--accent2);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:0.9rem}
+.insight-box strong{color:var(--accent2)}
+.deep-dive{background:linear-gradient(135deg,rgba(255,71,87,0.05),rgba(30,144,255,0.05));border:1px solid rgba(255,71,87,0.15);border-radius:12px;padding:16px;margin-top:16px}
+.deep-dive h3{color:var(--accent);font-size:1.05rem;margin-bottom:8px}
+.deep-dive .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.deep-dive .meta span{background:rgba(255,255,255,0.05);padding:2px 10px;border-radius:12px;font-size:0.8rem}
+.trend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+.trend-card{background:rgba(255,255,255,0.03);border-radius:8px;padding:12px;text-align:center}
+.trend-card .num{font-size:1.6rem;font-weight:700;color:var(--accent2)}
+.trend-card .label{font-size:0.8rem;color:var(--text2)}
+.footer{text-align:center;padding:20px;color:var(--text2);font-size:0.8rem}
+.comparison{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0}
+.comparison .vs{background:rgba(255,255,255,0.03);border-radius:8px;padding:10px;flex:1;min-width:140px}
+.comparison .vs .val{font-size:1.2rem;font-weight:700}
+.badge-up{color:var(--accent3);font-size:0.75rem}.badge-down{color:var(--accent);font-size:0.75rem}
+@media(max-width:600px){.container{padding:10px}.section{padding:14px}.rank-table{font-size:0.78rem}.rank-table th,.rank-table td{padding:6px 4px}.trend-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+<h1>🎬 电影热度月报</h1>
+<div class="sub">2026年7月6日 — 8月6日 · 四大板块 · 全球+院线+流媒体+华语</div>
+<div class="date-badge">📅 生成于 2026-08-06 · Vol.2026-07</div>
+</div>
+
+<div class="toc">
+<h2>📑 报告目录</h2>
+<ul>
+<li><a href="#global">🌍 全球热点</a></li>
+<li><a href="#cinema">🎞️ 院线新片</a></li>
+<li><a href="#streaming">📺 流媒体/网大</a></li>
+<li><a href="#chinese">🐉 华语电影</a></li>
+</ul>
+</div>
+
+<!-- ===== 板块一：全球热点 ===== -->
+<div class="section" id="global">
+<h2><span class="icon">🌍</span> 全球热点</h2>
+<div class="section-desc">综合 IMDb / 烂番茄 / Box Office Mojo / Reddit 社区热度，梳理近一月全球最受关注院线及流媒体电影</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>影片</th><th>IMDb</th><th>烂番茄</th><th>全球票房</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td><span class="rank-num rank-1">1</span></td><td class="movie-name">Spider-Man: Brand New Day</td><td class="score">8.2</td><td>—</td><td class="box">$1.2B</td><td><span class="tag tag-hot">🔥月冠</span></td></tr>
+<tr><td><span class="rank-num rank-2">2</span></td><td class="movie-name">Toy Story 5</td><td class="score">7.5</td><td>—</td><td class="box">$1.1B</td><td><span class="tag tag-hot">长尾</span></td></tr>
+<tr><td><span class="rank-num rank-3">3</span></td><td class="movie-name">Michael (迈克尔·杰克逊传记片)</td><td class="score">7.4</td><td>—</td><td class="box">$1.0B</td><td></td></tr>
+<tr><td><span class="rank-num">4</span></td><td class="movie-name">The Super Mario Galaxy Movie</td><td class="score">6.3</td><td>—</td><td class="box">$1.0B</td><td></td></tr>
+<tr><td><span class="rank-num">5</span></td><td class="movie-name">The Odyssey (诺兰)</td><td class="score">8.5</td><td>—</td><td class="box">$930.9M</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">6</span></td><td class="movie-name">Minions & Monsters</td><td class="score">6.5</td><td>—</td><td class="box">$580M+</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">7</span></td><td class="movie-name">Moana (真人版)</td><td class="score">5.8</td><td>—</td><td class="box">$420M+</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">8</span></td><td class="movie-name">Supergirl</td><td class="score">5.9</td><td>—</td><td class="box">$320M+</td><td></td></tr>
+<tr><td><span class="rank-num">9</span></td><td class="movie-name">Project Hail Mary</td><td class="score">8.2</td><td>—</td><td class="box">$290M+</td><td></td></tr>
+<tr><td><span class="rank-num">10</span></td><td class="movie-name">Evil Dead Burn</td><td class="score">6.0</td><td>—</td><td class="box">$180M+</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">11</span></td><td class="movie-name">The Mandalorian & Grogu</td><td class="score">6.8</td><td>—</td><td class="box">$260M+</td><td></td></tr>
+<tr><td><span class="rank-num">12</span></td><td class="movie-name">Masters of the Universe</td><td class="score">6.5</td><td>—</td><td class="box">$240M+</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">13</span></td><td class="movie-name">Scary Movie (重启)</td><td class="score">4.9</td><td>—</td><td class="box">$210M+</td><td></td></tr>
+<tr><td><span class="rank-num">14</span></td><td class="movie-name">The Devil Wears Prada 2</td><td class="score">6.4</td><td>—</td><td class="box">$190M+</td><td></td></tr>
+<tr><td><span class="rank-num">15</span></td><td class="movie-name">Backrooms</td><td class="score">6.8</td><td>—</td><td class="box">$150M+</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">16</span></td><td class="movie-name">Young Washington</td><td class="score">7.4</td><td>—</td><td class="box">$120M+</td><td></td></tr>
+<tr><td><span class="rank-num">17</span></td><td class="movie-name">The Death of Robin Hood</td><td class="score">6.1</td><td>—</td><td class="box">$95M+</td><td></td></tr>
+<tr><td><span class="rank-num">18</span></td><td class="movie-name">Obsession</td><td class="score">7.9</td><td>—</td><td class="box">$85M+</td><td></td></tr>
+<tr><td><span class="rank-num">19</span></td><td class="movie-name">Bad Counselors</td><td class="score">7.9</td><td>—</td><td class="box">$70M+</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">20</span></td><td class="movie-name">Pinocchio: Unstrung</td><td class="score">6.1</td><td>—</td><td class="box">$60M+</td><td><span class="tag tag-new">新上映</span></td></tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+<strong>📈 排名波动分析：</strong>蜘蛛侠4（Brand New Day）7月31日开画即爆，首周末3.55亿美元碾压全场，迅速登顶2026年度全球票房冠军；诺兰新片《奥德赛》7月17日上映后口碑炸裂（IMDb 8.5），但票房节奏偏慢热；小黄人新篇《Minions & Monsters》凭借合家欢属性稳居月度动画榜首；超女真人版口碑拉胯（5.9），较上月排名下滑3位。
+</div>
+
+<div class="trend-grid">
+<div class="trend-card"><div class="num">5</div><div class="label">全球10亿美元俱乐部（2026年）</div></div>
+<div class="trend-card"><div class="num">$1.2B</div><div class="label">蜘蛛侠4全球累计</div></div>
+<div class="trend-card"><div class="num">8.5</div><div class="label">《奥德赛》IMDb评分（本月最高）</div></div>
+<div class="trend-card"><div class="num">7</div><div class="label">7月北美周末冠军更替次数</div></div>
+</div>
+
+<div class="deep-dive">
+<h3>🔍 爆款拆解：Spider-Man: Brand New Day</h3>
+<div class="meta">
+<span>🎫 全球票房 $1.2B</span><span>⭐ IMDb 8.2</span><span>📅 7.31上映</span><span>🎬 导演: Destin Daniel Cretton</span>
+</div>
+<p>蜘蛛侠4（"崭新之日"）成为2026年首部破12亿美元的电影，也是整个7-8月毫无争议的全球现象级爆款。彼得·帕克在没人记得他的世界里重新定义英雄身份，与"看不见的反派"对决——这个设定让无数漫威粉既心碎又热血。开画首日即打破2026年单日纪录，Reddit r/movies 讨论帖24小时内突破5万条互动，烂番茄新鲜度尚未解禁但口碑已在影迷圈炸开。唯一争议点：是否过度依赖情怀杀？但谁在乎呢——钱在说话。</p>
+</div>
+</div>
+
+<!-- ===== 板块二：院线新片 ===== -->
+<div class="section" id="cinema">
+<h2><span class="icon">🎞️</span> 院线新片（中国大陆）</h2>
+<div class="section-desc">基于猫眼专业版 / 淘票票 / 灯塔月度票房数据，追踪近一月中国大陆上映影片表现</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>影片</th><th>月度票房</th><th>豆瓣</th><th>类型</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td><span class="rank-num rank-1">1</span></td><td class="movie-name">功夫女足</td><td class="box">20.94亿</td><td class="score">7.8</td><td>喜剧/运动</td><td><span class="tag tag-hot">🔥月冠</span></td></tr>
+<tr><td><span class="rank-num rank-2">2</span></td><td class="movie-name">八仙！</td><td class="box">~12.3亿</td><td class="score">8.3</td><td>动画/奇幻</td><td><span class="tag tag-hot">口碑王</span></td></tr>
+<tr><td><span class="rank-num rank-3">3</span></td><td class="movie-name">蜘蛛侠：崭新之日</td><td class="box">~8.5亿</td><td class="score">8.0</td><td>科幻/动作</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">4</span></td><td class="movie-name">给阿嬷的情书</td><td class="box">~5.8亿</td><td class="score">7.2</td><td>家庭/温情</td><td></td></tr>
+<tr><td><span class="rank-num">5</span></td><td class="movie-name">小黄人与大怪兽</td><td class="box">~4.2亿</td><td class="score">6.8</td><td>动画/冒险</td><td></td></tr>
+<tr><td><span class="rank-num">6</span></td><td class="movie-name">四渡</td><td class="box">~3.5亿</td><td class="score">7.0</td><td>战争/历史</td><td></td></tr>
+<tr><td><span class="rank-num">7</span></td><td class="movie-name">三国第一部：争洛阳</td><td class="box">~0.8亿</td><td class="score">8.1</td><td>动画/历史</td><td><span class="badge-down">▼叫好不叫座</span></td></tr>
+<tr><td><span class="rank-num">8</span></td><td class="movie-name">群星闪耀时</td><td class="box">~2.1亿</td><td class="score">7.4</td><td>剧情/科幻</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">9</span></td><td class="movie-name">火遮眼</td><td class="box">~1.8亿</td><td class="score">7.7</td><td>动作/犯罪</td><td></td></tr>
+<tr><td><span class="rank-num">10</span></td><td class="movie-name">悬案</td><td class="box">~1.5亿</td><td class="score">7.5</td><td>犯罪/悬疑</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">11</span></td><td class="movie-name">年会不能停！2</td><td class="box">~3.8亿</td><td class="score">6.8</td><td>喜剧</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">12</span></td><td class="movie-name">震耳欲聋</td><td class="box">~2.6亿</td><td class="score">7.4</td><td>剧情/犯罪</td><td></td></tr>
+<tr><td><span class="rank-num">13</span></td><td class="movie-name">奥德赛（诺兰）</td><td class="box">~1.2亿</td><td class="score">8.3</td><td>冒险/剧情</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">14</span></td><td class="movie-name">镖人：风起大漠</td><td class="box">~14.5亿(累计)</td><td class="score">7.1</td><td>武侠/动作</td><td></td></tr>
+<tr><td><span class="rank-num">15</span></td><td class="movie-name">飞驰人生3</td><td class="box">~44.2亿(累计)</td><td class="score">7.3</td><td>喜剧/赛车</td><td>年度冠军</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+<strong>📊 月度大盘：</strong>2026年7月内地总票房突破50亿元，为历史第七次月度破50亿。<strong>《功夫女足》单片贡献超40%</strong>，头部集中度极高。暑期档（6.1-8.31）截至8月3日累计超75亿元。《八仙！》豆瓣8.3分为档期口碑最高，猫眼9.7、淘票票9.6同样封顶，堪称"国风动画天花板"。《三国第一部：争洛阳》豆瓣8.1却票房不足8000万，追光动画遭遇"叫好不叫座"魔咒。
+</div>
+
+<div class="trend-grid">
+<div class="trend-card"><div class="num">50.04亿</div><div class="label">7月内地总票房</div></div>
+<div class="trend-card"><div class="num">8.3</div><div class="label">《八仙！》豆瓣评分（档期最高）</div></div>
+<div class="trend-card"><div class="num">15.5%</div><div class="label">三人以上结伴观影占比（十年最高）</div></div>
+<div class="trend-card"><div class="num">36%+</div><div class="label">三四线城市票房占比</div></div>
+</div>
+
+<div class="deep-dive">
+<h3>🔍 爆款拆解：功夫女足 × 八仙！</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div>
+<strong style="color:var(--accent)">功夫女足</strong>
+<div style="font-size:0.85rem;margin:6px 0">
+<div>🎫 7月票房 20.94亿</div>
+<div>⭐ 豆瓣 7.8 / 猫眼 9.4</div>
+<div>🎬 周星驰执导 / 张小斐 / 王宝强</div>
+</div>
+<p style="font-size:0.85rem">星爷时隔七年回归导演椅，将功夫+女足两大IP缝合，喜剧密度极高。灯塔预测终票26亿+，片方分账破10亿。猫眼+中国电影联合出品，暑期档当之无愧的"一超"。</p>
+</div>
+<div>
+<strong style="color:var(--accent3)">八仙！</strong>
+<div style="font-size:0.85rem;margin:6px 0">
+<div>🎫 累计票房 ~12.3亿</div>
+<div>⭐ 豆瓣 8.3 / 猫眼 9.7</div>
+<div>🎬 国风动画 / 猫眼+儒意+中影出品</div>
+</div>
+<p style="font-size:0.85rem">国产动画的黑马——开分8.3直接封神，人民日报点名表扬。7月18日上映后口碑发酵，预测终票18亿+，将超越《熊出没·年年有熊》成为2026年最卖座动画。儒意+光线联合出品，老少通吃，家庭观影比例爆表。</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 板块三：流媒体/网大 ===== -->
+<div class="section" id="streaming">
+<h2><span class="icon">📺</span> 流媒体 / 网络大电影</h2>
+<div class="section-desc">基于腾讯视频 / 爱奇艺 / 优酷 / Netflix 月度热度，盘点网络平台高热度电影</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>影片</th><th>平台</th><th>热度/评分</th><th>类型</th></tr></thead>
+<tbody>
+<tr><td><span class="rank-num rank-1">1</span></td><td class="movie-name">Silo S03（末日地堡 第三季）</td><td>Apple TV+</td><td class="score">8.1 豆瓣</td><td>科幻/悬疑</td></tr>
+<tr><td><span class="rank-num rank-2">2</span></td><td class="movie-name">House of the Dragon S03</td><td>HBO Max</td><td class="score">8.3 豆瓣</td><td>奇幻/剧情</td></tr>
+<tr><td><span class="rank-num rank-3">3</span></td><td class="movie-name">Lucky S01</td><td>Apple TV+</td><td class="score">9.5 豆瓣</td><td>犯罪/惊悚</td></tr>
+<tr><td><span class="rank-num">4</span></td><td class="movie-name">Ted Lasso S04</td><td>Apple TV+</td><td class="score">8.3 豆瓣</td><td>喜剧/体育</td></tr>
+<tr><td><span class="rank-num">5</span></td><td class="movie-name">One Hundred Years of Solitude S02</td><td>Netflix</td><td class="score">7.9 豆瓣</td><td>剧情/魔幻现实</td></tr>
+<tr><td><span class="rank-num">6</span></td><td class="movie-name">The Shards S01</td><td>流媒体</td><td class="score">新上线</td><td>悬疑/剧情</td></tr>
+<tr><td><span class="rank-num">7</span></td><td class="movie-name">Soulm8te</td><td>Netflix</td><td class="score">10.0 TMDB</td><td>科幻/恐怖</td></tr>
+<tr><td><span class="rank-num">8</span></td><td class="movie-name">Stuart Fails to Save the Universe</td><td>流媒体</td><td class="score">9.2 TMDB</td><td>喜剧/科幻</td></tr>
+<tr><td><span class="rank-num">9</span></td><td class="movie-name">Cape Fear S01</td><td>Apple TV+</td><td class="score">7.8 豆瓣</td><td>惊悚/犯罪</td></tr>
+<tr><td><span class="rank-num">10</span></td><td class="movie-name">Batman: Caped Crusader S02</td><td>Prime Video</td><td class="score">7.3 豆瓣</td><td>动画/犯罪</td></tr>
+<tr><td><span class="rank-num">11</span></td><td class="movie-name">Sugar S02</td><td>Apple TV+</td><td class="score">7.2 豆瓣</td><td>悬疑/犯罪</td></tr>
+<tr><td><span class="rank-num">12</span></td><td class="movie-name">X-Men '97 S02</td><td>Disney+</td><td class="score">8.5 豆瓣</td><td>动画/动作</td></tr>
+<tr><td><span class="rank-num">13</span></td><td class="movie-name">Futurama S14</td><td>Hulu</td><td class="score">8.4 豆瓣</td><td>动画/喜剧</td></tr>
+<tr><td><span class="rank-num">14</span></td><td class="movie-name">Lioness S03</td><td>Paramount+</td><td class="score">8.0 豆瓣</td><td>动作/惊悚</td></tr>
+<tr><td><span class="rank-num">15</span></td><td class="movie-name">Bleach TYBW 最终章</td><td>流媒体</td><td class="score">8.4 豆瓣</td><td>动画/热血</td></tr>
+<tr><td><span class="rank-num">16</span></td><td class="movie-name">火遮眼</td><td>腾讯/爱奇艺/优酷</td><td class="score">7.7 豆瓣</td><td>动作/犯罪</td></tr>
+<tr><td><span class="rank-num">17</span></td><td class="movie-name">悬案</td><td>爱奇艺首播</td><td class="score">7.5 豆瓣</td><td>犯罪/悬疑</td></tr>
+<tr><td><span class="rank-num">18</span></td><td class="movie-name">震耳欲聋</td><td>流媒体上线</td><td class="score">7.4 豆瓣</td><td>剧情/犯罪</td></tr>
+<tr><td><span class="rank-num">19</span></td><td class="movie-name">群体 (全智贤)</td><td>Netflix</td><td class="score">6.1 豆瓣</td><td>动作/科幻</td></tr>
+<tr><td><span class="rank-num">20</span></td><td class="movie-name">A Shop for Killers S02</td><td>流媒体</td><td class="score">8.1 豆瓣</td><td>动作/悬疑</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+<strong>📺 流媒体趋势：</strong>Apple TV+ 成为本月最大赢家——<strong>Lucky</strong>（豆瓣9.5）刷屏影迷圈，<strong>Silo S03</strong>持续稳定输出，<strong>Ted Lasso S04</strong>回归引发怀旧潮。Netflix方面，<strong>One Hundred Years of Solitude S02</strong>延续魔幻现实质感，韩影<strong>群体</strong>口碑两极。国内平台同步上线院线新片提速，<strong>火遮眼</strong>登陆腾讯/爱奇艺/优酷三端，<strong>悬案</strong>爱奇艺首发。院网窗口期进一步缩短至15-20天。
+</div>
+</div>
+
+<!-- ===== 板块四：华语电影 ===== -->
+<div class="section" id="chinese">
+<h2><span class="icon">🐉</span> 华语电影</h2>
+<div class="section-desc">基于豆瓣 / 猫眼想看 / 抖音话题 / 微博热议，聚焦国产电影综合热度</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>影片</th><th>豆瓣</th><th>猫眼</th><th>话题热度</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td><span class="rank-num rank-1">1</span></td><td class="movie-name">功夫女足</td><td class="score">7.8</td><td>9.4</td><td>抖音45亿+</td><td>🔥上映中</td></tr>
+<tr><td><span class="rank-num rank-2">2</span></td><td class="movie-name">八仙！</td><td class="score">8.3</td><td>9.7</td><td>微博28亿+</td><td>🔥上映中</td></tr>
+<tr><td><span class="rank-num rank-3">3</span></td><td class="movie-name">飞驰人生3</td><td class="score">7.3</td><td>9.2</td><td>抖音60亿+(累计)</td><td>年度冠军</td></tr>
+<tr><td><span class="rank-num">4</span></td><td class="movie-name">给阿嬷的情书</td><td class="score">7.2</td><td>9.1</td><td>微博15亿+</td><td>上映中</td></tr>
+<tr><td><span class="rank-num">5</span></td><td class="movie-name">镖人：风起大漠</td><td class="score">7.1</td><td>8.9</td><td>抖音22亿+</td><td>长尾</td></tr>
+<tr><td><span class="rank-num">6</span></td><td class="movie-name">惊蛰无声</td><td class="score">6.9</td><td>8.8</td><td>微博12亿+</td><td>累计13.65亿</td></tr>
+<tr><td><span class="rank-num">7</span></td><td class="movie-name">群星闪耀时</td><td class="score">7.4</td><td>8.7</td><td>抖音8亿+</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">8</span></td><td class="movie-name">四渡</td><td class="score">7.0</td><td>8.6</td><td>微博10亿+</td><td>上映中</td></tr>
+<tr><td><span class="rank-num">9</span></td><td class="movie-name">火遮眼</td><td class="score">7.7</td><td>8.8</td><td>抖音6亿+</td><td>院网同步</td></tr>
+<tr><td><span class="rank-num">10</span></td><td class="movie-name">年会不能停！2</td><td class="score">6.8</td><td>8.5</td><td>微博18亿+</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">11</span></td><td class="movie-name">悬案</td><td class="score">7.5</td><td>8.4</td><td>抖音5亿+</td><td><span class="tag tag-new">新上映</span></td></tr>
+<tr><td><span class="rank-num">12</span></td><td class="movie-name">震耳欲聋</td><td class="score">7.4</td><td>8.3</td><td>微博7亿+</td><td>上映中</td></tr>
+<tr><td><span class="rank-num">13</span></td><td class="movie-name">三国第一部：争洛阳</td><td class="score">8.1</td><td>8.2</td><td>抖音3亿+</td><td><span class="badge-down">▼口碑票房倒挂</span></td></tr>
+<tr><td><span class="rank-num">14</span></td><td class="movie-name">寒战1994</td><td class="score">7.0</td><td>8.5</td><td>微博6亿+</td><td>长尾</td></tr>
+<tr><td><span class="rank-num">15</span></td><td class="movie-name">熊出没·年年有熊</td><td class="score">6.5</td><td>8.1</td><td>抖音15亿+</td><td>累计10.67亿</td></tr>
+<tr><td><span class="rank-num">16</span></td><td class="movie-name">10间敢死队</td><td class="score">6.7</td><td>8.0</td><td>微博4亿+</td><td>长尾</td></tr>
+<tr><td><span class="rank-num">17</span></td><td class="movie-name">消失的人</td><td class="score">6.5</td><td>7.9</td><td>抖音2亿+</td><td>累计5.72亿</td></tr>
+<tr><td><span class="rank-num">18</span></td><td class="movie-name">今晚正好</td><td class="score">6.0</td><td>7.5</td><td>微博1.5亿+</td><td></td></tr>
+<tr><td><span class="rank-num">19</span></td><td class="movie-name">长安的荔枝（网播）</td><td class="score">7.5</td><td>9.0</td><td>抖音28亿+</td><td>院转网</td></tr>
+<tr><td><span class="rank-num">20</span></td><td class="movie-name">超级少女(超女)</td><td class="score">5.1</td><td>7.2</td><td>微博3亿+</td><td>进口</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+<strong>🐉 华语趋势判断：</strong>
+<br>① <strong>口碑驱动成核心逻辑</strong>：央视财经分析指出，今年票房增长的核心支撑是"故事好、制作精良"的口碑传播，而非流量+IP的旧模式。《八仙！》豆瓣8.3→票房12亿+是最好的证明。
+<br>② <strong>家庭观影比例创十年新高</strong>：7月三人及以上结伴观影占比15.5%，《八仙！》《给阿嬷的情书》等合家欢题材成为最大受益者。
+<br>③ <strong>冷热分化加剧</strong>：头部2-3部影片吃掉70%+票房，超百部影片争夺剩余空间。《三国第一部：争洛阳》豆瓣8.1票房不足8000万，"口碑票房倒挂"现象值得行业警醒。
+<br>④ <strong>三四线下沉</strong>：三四线城市票房占比超36%，同比提升3个百分点，下沉市场成为增量核心。
+</div>
+
+<div class="deep-dive">
+<h3>🔍 爆款拆解：八仙！——国风动画的"天花板时刻"</h3>
+<div class="meta">
+<span>🎫 累计票房 ~12.3亿</span><span>⭐ 豆瓣 8.3</span><span>📊 猫眼 9.7</span><span>📱 抖音话题 28亿+</span><span>💬 微博 18亿+</span>
+</div>
+<p>国风动画《八仙！》凭借豆瓣8.3的高口碑横空出世，猫眼9.7、淘票票9.6双平台封顶，成为2026年暑期档口碑之王。人民日报点名"暑期档一匹亮眼黑马"。灯塔专业版预测终票18.14亿，有望超越《熊出没·年年有熊》成为年度最卖座国产动画。猫眼娱乐+儒意电影+中国电影+大麦娱乐+光线传媒联合出品，"五巨头联合出品"模式成为动画赛道新范式。老少通吃的国风叙事+精良制作，让它在抖音短视频和微博讨论中持续破圈——#八仙动画好看到哭# 话题阅读量突破10亿。</p>
+</div>
+</div>
+
+<!-- ===== 总结 ===== -->
+<div class="section">
+<h2><span class="icon">📋</span> 月度总结 & 行业趋势</h2>
+<div class="trend-grid">
+<div class="trend-card" style="border:1px solid rgba(255,71,87,0.2)"><div class="num" style="color:var(--accent)">75亿+</div><div class="label">暑期档累计票房(截至8.3)</div></div>
+<div class="trend-card" style="border:1px solid rgba(255,165,2,0.2)"><div class="num" style="color:var(--accent2)">8.3</div><div class="label">档期最高豆瓣评分</div></div>
+<div class="trend-card" style="border:1px solid rgba(46,213,115,0.2)"><div class="num" style="color:var(--accent3)">120+</div><div class="label">暑期档上映影片数</div></div>
+<div class="trend-card" style="border:1px solid rgba(30,144,255,0.2)"><div class="num" style="color:var(--accent4)">$1.2B</div><div class="label">蜘蛛侠4全球票房</div></div>
+</div>
+<div class="insight-box">
+<strong>🔑 核心趋势：</strong>
+<br>1️⃣ <strong>超级英雄回血</strong>：蜘蛛侠4以$1.2B证明漫威宇宙尚未"死透"，Brand New Day的新叙事方向获得影迷认可。
+<br>2️⃣ <strong>国风动画崛起</strong>：《八仙！》豆瓣8.3+票房12亿+，国风叙事+精良制作+合家欢定位，成为国产动画新标杆。
+<br>3️⃣ <strong>诺兰神话延续</strong>：《奥德赛》IMDb 8.5再证诺兰金字招牌，但票房增速放缓，"诺兰=票房保证"的等式正在被重新校准。
+<br>4️⃣ <strong>口碑>流量</strong>：暑期档口碑与票房的相关性达到近年最高，低口碑高票房的"流量片"模式正在失灵。
+<br>5️⃣ <strong>院网窗口期缩短</strong>：火遮眼、长安的荔枝等院线片15-20天即上线流媒体，加速了票房向网端的转移。
+<br>6️⃣ <strong>Apple TV+异军突起</strong>：Lucky(9.5)、Silo、Ted Lasso三线并进，在中文影迷圈的存在感首次超越Netflix。
+</div>
+</div>
+
+<div class="footer">
+<p>📊 数据来源：IMDb / Box Office Mojo / 猫眼专业版 / 灯塔专业版 / 淘票票 / 豆瓣 / 微博 / 抖音 / Netflix / Apple TV+ 等</p>
+<p>⚠️ 部分数据为综合估算，以各平台实时数据为准 | 生成时间：2026-08-06</p>
+<p>🎬 本报告由小U同学自动生成 · 数据仅供参考，不构成投资建议</p>
+</div>
+
+</div>
+</body>
+</html>
