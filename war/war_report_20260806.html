@@ -5,444 +5,359 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>全球战争局势速览报告 | 2026年8月6日</title>
 <style>
-:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--dim:#8b949e;--accent:#58a6ff;--red:#f85149;--orange:#d29922;--green:#3fb950;--yellow:#e3b341;--tag-red:#f8514933;--tag-orange:#d2992233;--tag-green:#3fb95033}
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--dim:#8b949e;--accent:#58a6ff;--red:#f85149;--orange:#d29922;--green:#3fb950;--yellow:#e3b341}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;line-height:1.7;max-width:960px;margin:0 auto;padding:12px}
-a{color:var(--accent);text-decoration:none}
-h1{font-size:1.5em;text-align:center;padding:20px 0 8px;border-bottom:1px solid var(--border);margin-bottom:4px}
-.subtitle{text-align:center;color:var(--dim);font-size:.85em;margin-bottom:16px}
-.toc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:20px}
-.toc-title{font-weight:700;margin-bottom:6px;color:var(--accent)}
-.toc a{display:block;padding:3px 0;font-size:.9em}
-.section{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px}
-.section h2{font-size:1.15em;color:var(--accent);border-left:3px solid var(--accent);padding-left:10px;margin-bottom:12px}
-.item{border:1px solid var(--border);border-radius:6px;padding:10px 12px;margin-bottom:10px;background:#0d111788}
-.item-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:6px}
-.item-head .title{font-weight:700;font-size:.95em;flex:1 1 auto}
-.tag{font-size:.7em;padding:1px 6px;border-radius:3px;font-weight:600;white-space:nowrap}
-.tag-hard{background:var(--tag-red);color:var(--red)}
-.tag-soft{background:var(--tag-orange);color:var(--orange)}
-.tag-confirm{background:var(--tag-green);color:var(--green)}
-.tag-media{background:var(--tag-yellow);color:#000}
-.tag-unverified{background:var(--tag-orange);color:#000}
-.summary{color:var(--accent);font-size:.88em;margin-bottom:4px}
-.detail{font-size:.85em;color:var(--dim)}
-.impact{font-size:.85em;color:var(--orange);margin-top:4px}
-.stance{font-size:.82em;background:#1c2333;border-radius:4px;padding:4px 8px;margin-top:4px;color:var(--dim)}
-.stance b{color:var(--text)}
-.trend{background:#1c2333;border-left:3px solid var(--orange);padding:8px 12px;margin-top:10px;border-radius:0 6px 6px 0;font-size:.88em}
-.trend b{color:var(--orange)}
-.disclaimer{font-size:.75em;color:var(--dim);text-align:center;margin-top:20px;padding:10px 0;border-top:1px solid var(--border)}
-@media(max-width:600px){body{padding:8px}.section{padding:10px}.item{padding:8px}h1{font-size:1.2em}}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px}
+.wrap{max-width:960px;margin:0 auto;padding:12px}
+@media(max-width:640px){.wrap{padding:6px}body{font-size:14px}}
+header{text-align:center;padding:28px 0 18px;border-bottom:1px solid var(--border);margin-bottom:20px}
+header h1{font-size:1.65em;color:var(--accent);margin-bottom:6px}
+header .meta{color:var(--dim);font-size:.88em}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;justify-content:center}
+nav a{display:inline-block;padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--accent);text-decoration:none;font-size:.85em;transition:background .2s}
+nav a:hover{background:var(--border)}
+.section{margin-bottom:28px}
+.section-title{font-size:1.3em;color:var(--accent);border-left:4px solid var(--accent);padding-left:12px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px}
+.card-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:.72em;padding:2px 8px;border-radius:4px;font-weight:600;white-space:nowrap}
+.tag-real{background:#1a3a1a;color:var(--green)}
+.tag-analysis{background:#3a2a0a;color:var(--yellow)}
+.conf-green{color:var(--green)}
+.conf-yellow{color:var(--yellow)}
+.conf-orange{color:var(--orange)}
+.summary{font-weight:700;margin-bottom:4px}
+.detail{color:var(--dim);font-size:.92em}
+.impact{margin-top:6px;padding:6px 10px;background:rgba(88,166,255,.08);border-radius:4px;font-size:.88em;color:var(--accent)}
+.trend-box{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.2);border-radius:8px;padding:14px;margin-top:8px}
+.trend-box h3{color:var(--yellow);font-size:1.05em;margin-bottom:6px}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+@media(max-width:540px){.sides{grid-template-columns:1fr}}
+.side-a,.side-b{padding:8px 10px;border-radius:6px;font-size:.88em}
+.side-a{background:rgba(248,81,73,.1);border-left:3px solid var(--red)}
+.side-b{background:rgba(88,166,255,.1);border-left:3px solid var(--accent)}
+footer{text-align:center;padding:20px 0;color:var(--dim);font-size:.8em;border-top:1px solid var(--border);margin-top:20px}
+hr{border:none;border-top:1px solid var(--border);margin:12px 0}
+.badge{font-size:.7em;padding:1px 6px;border-radius:3px;margin-left:4px}
+.b-green{background:#1a3a1a;color:var(--green)}
+.b-yellow{background:#3a2a0a;color:var(--yellow)}
+.b-orange{background:#3a1a0a;color:var(--orange)}
 </style>
 </head>
 <body>
-<h1>⚔️ 全球战争局势速览报告</h1>
-<div class="subtitle">2026年8月6日 · 第1625天（俄乌） / 美以伊冲突第159天 / 巴以冲突第1037天</div>
+<div class="wrap">
+<header>
+<h1>⚔ 全球战争局势速览报告</h1>
+<div class="meta">2026年8月6日 · 北京时间 20:30 · 每日第1次执行</div>
+<div class="meta" style="margin-top:4px;font-size:.82em;color:var(--dim)">数据截止：2026-08-06 20:30 CST | 涵盖周期：8月4日–8月6日</div>
+</header>
 
-<div class="toc">
-<div class="toc-title">📑 今日目录</div>
-<a href="#s1">一、头条焦点</a>
-<a href="#s2">二、热点战区</a>
-<a href="#s2a">　├ 俄乌冲突</a>
-<a href="#s2b">　├ 中东战火（美以伊）</a>
-<a href="#s2c">　├ 巴以冲突（加沙）</a>
-<a href="#s2d">　├ 也门/红海</a>
-<a href="#s2e">　└ 其他热点</a>
-<a href="#s3">三、大国博弈与军备动态</a>
-<a href="#s4">四、冲突影响与趋势研判</a>
+<nav>
+<a href="#sec1">📰 头条焦点</a>
+<a href="#sec2">🌍 热点战区</a>
+<a href="#sec3">⚔ 大国博弈</a>
+<a href="#sec4">📊 冲突影响</a>
+</nav>
+
+<!-- ===== 板块一：头条焦点 ===== -->
+<section class="section" id="sec1">
+<h2 class="section-title">📰 一、头条焦点</h2>
+
+<div class="card">
+<div class="card-head">
+<span class="tag tag-real">【实锤】</span>
+<span class="conf-green">🟢 官方确认</span>
+<span style="color:var(--dim);font-size:.82em">2026-08-06</span>
 </div>
-
-<!-- ============ 一、头条焦点 ============ -->
-<div class="section" id="s1">
-<h2>一、头条焦点</h2>
-
-<div class="item">
-<div class="item-head">
-<span class="title">俄军8月5日凌晨对基辅发动创纪录导弹袭击，24枚弹道导弹零拦截，17死44伤</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
-</div>
-<div class="summary">俄军发射24枚弹道导弹、115架攻击型无人机及多枚巡航导弹（含高超音速），乌军首次公开承认未能拦截任何弹道导弹，基辅州鲍里斯皮尔、布恰等地17人遇难。</div>
-<div class="detail">关键数据：24枚弹道导弹全部命中，乌防空拦截弹严重短缺——平均面对27枚弹道导弹仅能发射1枚"爱国者"拦截弹（北约前司令斯塔夫里迪斯8月2日透露）。死者主要来自基辅州，基辅市内亦有多处建筑起火坍塌。</div>
-<div class="impact">▶ 这是俄乌冲突以来乌方首次公开承认弹道导弹零拦截，暴露防空体系已近极限，进一步加剧基辅安全危机。</div>
-<div class="stance"><b>乌方：</b>泽连斯基再次紧急要求美国提供"爱国者"系统 <b>｜ 俄方：</b>国防部称打击为"高精度集群打击"，目标为军工综合体基础设施</div>
+<div class="summary">🔴 俄防空一夜击落605架乌无人机，俄乌远程互袭烈度创纪录</div>
+<div class="detail">俄罗斯国防部8月6日通报：莫斯科时间5日20时至6日8时，俄防空力量在莫斯科地区及另外16个州、亚速海和黑海水域上空共拦截并摧毁605架乌克兰固定翼无人机。此前8月4日夜至5日凌晨，俄军亦使用高精度武器和攻击型无人机大规模打击基辅市和基辅州的运输与物流中心。乌方称袭击致1死26伤。双方远程打击规模与频次均达开战以来最高水平。</div>
+<div class="impact">⚡ 影响研判：俄乌战场已从"前线争夺"彻底转向"纵深互毁"模式，无人机成为双方核心打击手段，平民与基础设施面临空前威胁。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">特朗普宣布与伊朗重启谈判，伊朗外交部同日否认"正在与美国会谈"</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
+<div class="card">
+<div class="card-head">
+<span class="tag tag-real">【实锤】</span>
+<span class="conf-yellow">🟡 主流媒体证实</span>
+<span style="color:var(--dim);font-size:.82em">2026-08-04~06</span>
 </div>
-<div class="summary">特朗普8月2日称美伊新一轮谈判将于3日开启，聚焦霍尔木兹海峡与伊朗无核化；伊朗外交部发言人巴加埃同日明确表示"目前没有与美国会谈"，仅与阿曼讨论海峡议题。</div>
-<div class="detail">关键矛盾：特朗普称伊朗要求"暂缓攻击"故同意取消打击 → 伊朗军方官员回应"所谓伊朗要求停止攻击是新谎言"。霍尔木兹海峡仍处事实封锁状态，一艘油轮8月2日在海峡附近爆炸。WTI油价因谈判消息3日早盘下跌4.7%至80.72美元/桶。</div>
-<div class="impact">▶ 美伊"打打谈谈"格局延续，双方核心诉求（核权利 vs 政权更迭/无核化）根本对立，谈判前景极为脆弱。</div>
-<div class="stance"><b>美方：</b>特朗普称接近达成协议，要求伊朗无核化 <b>｜ 伊朗方：</b>拒绝放弃浓缩铀权利，要求关闭波斯湾美军基地、解冻240亿美元资产</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">乌情报机构：朝鲜导弹部队已部署至俄罗斯西部，配备120枚弹道导弹</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">乌克兰军事情报官员8月初披露，一支朝鲜导弹部队已开始部署至俄罗斯西部，配备约120枚弹道导弹和6台发射车，用于对乌克兰发动袭击。</div>
-<div class="detail">背景：自2023年底俄已向乌发射数十枚朝鲜弹道导弹；此前约1.5万名朝鲜军人赴库尔斯克参战，累计死伤逾7000人。泽连斯基7月25日披露俄正筹备再接收3万名朝鲜士兵。俄朝已商定将军事合作提升至"可持续长期水平"，并准备签署2027-2031年军事合作计划。</div>
-<div class="impact">▶ 朝鲜从弹药供应方升级为直接军事参战方，俄朝军事绑定制度化、长期化，东亚安全格局面临连锁反应。</div>
-<div class="stance"><b>乌方：</b>朝鲜直接部署导弹部队标志俄朝军事合作进一步扩大 <b>｜ 俄朝官方：</b>均未正面回应部署消息</div>
-</div>
+<div class="summary">🔴 特朗普威胁：霍尔木兹海峡须"很快"开放，否则伊朗遭"猛烈打击"</div>
+<div class="detail">美国总统特朗普8月4日接受采访时称，霍尔木兹海峡将"很快"开放，否则伊朗将遭受"猛烈打击"。伊朗最高领袖军事顾问雷扎伊8月3日回应称，伊朗决不允许美国在霍尔木兹海峡开辟"第二通道"，若美在非法航线上部署军舰，伊朗将将其作为目标。伊朗法尔斯通讯社此前否认"重开海峡"的报道，称纯属谣言。白宫8月5日否认特朗普与防长赫格塞思因导弹库存短缺发生争执。</div>
+<div class="impact">⚡ 影响研判：美伊海峡博弈进入"极限施压"新阶段，特朗普反复在"取消打击"与"威胁猛轰"之间切换，实质为中期选举前高波动策略，海峡通行短期无望恢复正常。</div>
 </div>
 
-<!-- ============ 二、热点战区 ============ -->
-<div class="section" id="s2">
-<h2>二、热点战区</h2>
+<div class="card">
+<div class="card-head">
+<span class="tag tag-real">【实锤】</span>
+<span class="conf-yellow">🟡 主流媒体证实</span>
+<span style="color:var(--dim);font-size:.82em">2026-08-05</span>
+</div>
+<div class="summary">🔴 胡塞武装再次袭击沙特油轮，红海航道安全持续恶化</div>
+<div class="detail">新华社科威特城8月5日电：也门胡塞武装5日称袭击了一艘位于红海海域的沙特油轮。此前8月4日，一艘悬挂印度旗帜的货船"FAIZE NOORE OLIYA"号在红海遭袭后沉没，14名船员获救（含13名印度籍）。印度外交部谴责袭击。也门政府军将此次袭击归咎于胡塞武装，但胡塞方面尚未回应。胡塞自7月20日宣布对沙特实施海上禁运以来，已迫使多艘沙特油轮改道。</div>
+<div class="impact">⚡ 影响研判：红海-曼德海峡正从"沙特专属封锁"演变为"无差别高风险区"，第三国船只沉没标志冲突外溢升级，国际航运保险成本将进一步飙升。</div>
+</div>
+</section>
+
+<!-- ===== 板块二：热点战区 ===== -->
+<section class="section" id="sec2">
+<h2 class="section-title">🌍 二、热点战区</h2>
 
 <!-- 俄乌冲突 -->
-<h3 id="s2a" style="color:var(--red);font-size:1em;margin:14px 0 8px">🔴 俄乌冲突</h3>
+<h3 style="color:var(--red);margin:14px 0 8px;font-size:1.1em">🇺🇦🇷🇺 俄乌冲突</h3>
 
-<div class="item">
-<div class="item-head">
-<span class="title">俄军8月5日凌晨大规模导弹+无人机袭击基辅，乌军零拦截弹道导弹</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
-</div>
-<div class="summary">24枚弹道导弹+115架无人机+多枚巡航导弹/高超音速导弹，乌军未拦截任何弹道导弹，基辅州17死44伤。</div>
-<div class="impact">▶ 乌防空资源极度告急，"爱国者"拦截弹库存濒临枯竭。</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-green">🟢 官方确认</span></div>
+<div class="summary">俄军8月6日通报：一夜击落605架乌无人机，覆盖莫斯科等17个联邦主体</div>
+<div class="detail">俄国防部8月6日通报，莫斯科时间5日20时至6日8时，俄防空在莫斯科地区及另外16个州、1个边疆区及亚速海、黑海水域上空共拦截摧毁605架乌固定翼无人机。此前7月单月俄军人员损失创纪录达42,860人，2026年前7个月累计238,650人。ISW评估俄军7月仅夺取37.85平方公里领土，日均1.22平方公里，夏季攻势未能取得作战显著进展。</div>
+<div class="impact">⚡ 俄方防空压力大增，但乌军远程打击持续瘫痪俄后方炼油、物流体系，"无人机主导"格局固化。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">乌军8月1日夜间发射400架无人机袭击俄纵深，萨拉托夫炼油厂/恩格斯机场被击中</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">乌军袭击俄萨拉托夫炼油厂、恩格斯-2空军基地、乌法炼油厂（年加工600万吨）、柳季诺夫油库等目标，摧毁克拉斯诺达尔1套"道尔-M2"防空系统及7座雷达站。</div>
-<div class="impact">▶ 俄超1/4炼油产能停摆，家庭通胀预期从12.4%跃至14.7%。</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">俄军大规模打击基辅运输与物流中心</div>
+<div class="detail">俄罗斯国防部8月5日通报，俄军4日夜间至5日凌晨使用陆基高精度武器和攻击型无人机大规模打击基辅运输和物流中心。乌方称袭击致1死26伤。此前乌军亦持续对俄境内萨拉托夫炼油厂、恩格斯-2机场、乌法炼油厂等目标实施无人机打击。</div>
+<div class="impact">⚡ 双方"以攻代守"态势明确，前线僵持下后方互炸成为消耗战核心逻辑。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">乌军8月1日在黑海击沉俄10万吨级集装箱船"亚尼娜"号——首次击沉如此巨轮</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">泽连斯基证实，2艘海军无人艇击沉受制裁的俄集装箱船，17名船员获救。自7月6日以来被击中的俄船已达207艘。</div>
-<div class="impact">▶ 战略升级信号：从"袭伤"转向"击沉"，俄黑海海运通道实质性瘫痪。</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-analysis">【分析】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">俄军8月1日起第三次扩编生效，总编制增至242万人</div>
+<div class="detail">普京7月27日签署总统令，将俄武装力量编制总人数增至242万余人（含现役153.5万），新增2.5万现役主要编入新组建的军事建筑工程部队。这是2026年以来第三次扩编，反映俄方在为长期战争搭建制度性底盘。</div>
+<div class="impact">⚡ 从"临时征兵"转向"战时编制常态化"，工程部队独立成建说明俄军正补齐后勤基建短板。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">"野莓"电商仓库14座遭袭——乌克兰经济战升级</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
+<div class="card">
+<div class="card-head"><span class="tag tag-analysis">【分析】</span><span class="conf-orange">🟠 单一来源</span></div>
+<div class="summary">乌方称俄正筹备再接收3万朝鲜士兵</div>
+<div class="detail">泽连斯基7月25日披露，俄罗斯希望在沃罗涅日州为接收3万名朝鲜士兵做准备。此前已有约1.5-2万朝鲜军人参与库尔斯克方向作战。若属实，朝鲜累计对俄派兵将突破4.5万。韩国多次表态违反安理会决议应立即中断。</div>
+<div class="sides">
+<div class="side-a">🇺🇦 乌方：朝鲜正准备向俄提供新型弹道导弹发射装置，俄将向朝开放现代战争实战经验</div>
+<div class="side-b">🇷🇺 俄方：俄朝军事合作提升到"可持续长期水平"，签署《2027-2031年军事合作计划》</div>
 </div>
-<div class="summary">8月2日萨马拉州"野莓"第三大仓库（17.86万㎡/1.2亿件商品）被击中。过去2周前25大仓库中14个遭袭、5个完全摧毁，损失数千亿卢布。Ozon、Yandex等电商平台同样受创。</div>
-<div class="impact">▶ 打击俄罗斯民众日常消费与电商物流体系，动摇国内经济信心。</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">ISW评估：俄军7月夺取仅37.85km²领土，损失42860人——伤亡创新高、推进创近年新低</span>
-<span class="tag tag-soft">【分析】</span><span class="tag tag-confirm">🟢 官方确认</span>
-</div>
-<div class="summary">ISW报告：2026年7月俄军推进仅37.85km²（2025年同期455.74km²），日均1.22km²，损失42860人。前线指挥官涉嫌向克宫虚报战果。</div>
-<div class="impact">▶ 俄夏季攻势未能取得作战上显著进展，"以人换地"策略边际效益急剧递减。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">普京第四次扩军：总编制增至242万、现役153.5万，8月1日生效</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
-</div>
-<div class="summary">半年内三次扩编累计增兵近10万。新增2.5万现役主要编入新组建的军事建筑工程部队（苏军解体后首次独立成建），为长期战争搭建制度性底盘。</div>
-<div class="impact">▶ 从"临时征兵"转向"战时编制常态化"，俄正为持久战构建结构性支撑。</div>
+<div class="trend-box">
+<h3>📌 俄乌战区今日主线</h3>
+<p>双方远程互袭烈度持续攀升，无人机成为绝对主导武器。俄军虽持续扩编但推进停滞，乌军依靠无人机瘫痪俄后方能源与物流。前线态势僵持，战争形态已从"夺地战"转为"纵深消耗战"。关键变量：朝鲜援兵规模、乌军弹道导弹实战化、西方防空弹药补给。</p>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">美对乌军援骤降至拜登时期五分之一</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">美国国会报告：2026年初美对乌武器月均交付仅约2.66亿美元，为拜登时期月均12.8亿美元的1/5。五角大楼库存直接供应全面暂停，仅剩USAI长期合同执行。</div>
-<div class="impact">▶ 乌军"弹药荒"持续恶化，爱国者拦截弹、炮弹等关键物资严重短缺。</div>
-</div>
-
-<div class="trend"><b>⚡ 俄乌今日主线：</b>双方远程对攻升级到空前烈度，俄导弹零拦截暴露乌防空崩溃边缘，乌无人机打击深入俄腹地经济命脉，前线僵持但消耗战代价飙升。克里姆林宫将战事升格为"国家生死战"，乌克兰兵源/财政/外援三线告急。</div>
+<hr>
 
 <!-- 中东战火 -->
-<h3 id="s2b" style="color:var(--orange);font-size:1em;margin:14px 0 8px">🟠 中东战火（美以伊冲突）</h3>
+<h3 style="color:var(--orange);margin:14px 0 8px;font-size:1.1em">🇮🇱🇺🇸🇮🇷 中东战火（美以伊冲突）</h3>
 
-<div class="item">
-<div class="item-head">
-<span class="title">美伊"打打谈谈"：特朗普宣布谈判重启 vs 伊朗否认会谈</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">8月1日美国国务院向中东美国公民发出广泛撤离警告；8月2日特朗普宣布谈判3日开启；伊朗外交部3日否认正在与美会谈，称仅与阿曼讨论海峡。8月3日伊朗处决两名为以色列工作的间谍。</div>
-<div class="impact">▶ 核心分歧不可调和：美要求伊朗无核化，伊坚持浓缩铀权利+海峡管控+解冻资产。谈判"假象"与军事对峙并行。</div>
-<div class="stance"><b>美方：</b>特朗普称接近协议，万斯否决伊朗资产解冻预期 <b>｜ 伊朗方：</b>对停火不感兴趣，要求永久解决方案</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-green">🟢 官方确认</span></div>
+<div class="summary">霍尔木兹海峡已封锁超160天，通行量骤降近90%</div>
+<div class="detail">自2026年2月28日伊朗宣布封锁以来，霍尔木兹海峡通行量从日均88艘骤降至7月23日仅10艘。伊朗革命卫队布设水雷、登船攻击、警告商船"接近即视为与敌方合作"。至少17艘商船受损，7艘被弃，2艘被扣押，12名海员死亡或失踪。伊朗外交部否认"重开海峡"传闻，强调海峡关闭是美方违反停火协议所致。</div>
+<div class="impact">⚡ 全球约1/4海运石油与20%液化天然气经此通道，封锁持续严重冲击亚洲炼厂原料供应。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">霍尔木兹海峡持续事实封锁，全球石油供应中断为史上最大规模</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">美伊谈判进入"猫鼠游戏"阶段，双方各执一词</div>
+<div class="detail">特朗普8月2日声称伊朗请求暂缓攻击并就海峡协议达成框架，宣布取消对伊打击。伊朗军方官员驳斥"伊朗请求停止攻击是谎言"，强调部队处于最高戒备。伊朗外长阿拉格齐称与阿曼的海峡管理谈判进入"最后阶段"，但伊外交部发言人随即补充"即使达成协议也不意味着海峡重新开放"。三大核心分歧：海峡控制权、核问题、伊方2700亿美元战争赔偿要求。</div>
+<div class="sides">
+<div class="side-a">🇺🇸 美方：海峡必须无条件开放，否则将遭受"猛烈打击"；协议框架已达成</div>
+<div class="side-b">🇮🇷 伊方：美方说法是"新谎言"；开不开门由伊方决定，先拿条件来换</div>
 </div>
-<div class="summary">海峡日均通行量已从战前80-130艘骤降至极少数获伊朗选择性放行的船只。全球石油供应初期日均减少约1000万桶。沙特、伊拉克、科威特被迫减产；卡塔尔LNG设施遭袭后全面停产。布伦特原油从战前~70美元飙升至~90-100美元/桶区间。</div>
-<div class="impact">▶ IEA称此为"有记录以来最大石油供应冲击"，G7启动4亿桶紧急释储，但最大释放流速仅200-300万桶/日，杯水车薪。</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">美参议院否决限制对伊军事行动决议（49:50）</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
-</div>
-<div class="summary">7月31日，美参议院以49:50否决推进战争权力决议的程序性动议，该决议要求对伊军事行动前须获国会授权。</div>
-<div class="impact">▶ 白宫在法律层面保留对伊单方面动武的权力，国会制约失效。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">伊朗革命卫队打击约旦/科威特美军基地，科威特1名工人死亡</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">7月30日前后，伊朗革命卫队打击位于约旦和科威特的空军基地。科威特军方确认伊朗袭击北部一栋建筑致1死。埃及达米埃塔港两艘LNG船遭无人机袭击起火（尚无一方宣称负责）。</div>
-<div class="impact">▶ 冲突已从伊朗本土蔓延至周边美军基地和中东多国港口，外溢风险升级。</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">伊朗不允许美开辟霍尔木兹"第二通道"</div>
+<div class="detail">伊朗最高领袖军事顾问雷扎伊8月3日表示，伊朗决不允许美国在霍尔木兹海峡开辟任何非伊朗规定的航线，若美军在非法航线上部署军舰，伊朗将将其作为目标。CENTCOM累计拦截/重定向30艘商船，形成"伊方差别化放行+美方选择性拦截"双重管控。</div>
 </div>
 
-<div class="trend"><b>⚡ 中东今日主线：</b>美伊"以打促谈"但核心立场南辕北辙，霍尔木兹海峡封锁构成全球能源安全最大威胁，冲突已外溢至约旦、科威特、埃及等国，以色列借机打击真主党并蚕食黎巴嫩领土。</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-green">🟢 官方确认</span></div>
+<div class="summary">伊朗革命卫队声称击落MQ-9无人机</div>
+<div class="detail">据伊朗媒体8月3日报道，伊朗伊斯兰革命卫队在霍尔木兹海峡上空击落一架MQ-9无人机。美方尚未对此确认或否认。</div>
+</div>
+
+<div class="card">
+<div class="card-head"><span class="tag tag-analysis">【分析】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">以色列被美方"晃懵"，内塔尼亚胡从社交媒体得知打击取消</div>
+<div class="detail">以色列第12频道报道，包括内塔尼亚胡、国防部长卡茨在内的高官，全是通过刷特朗普社交媒体才得知打击被取消。以防长8月2日宣布要撤换中央司令部司令，遭以军总参谋长拒绝。以色列国防军保持最高戒备状态。</div>
+</div>
+
+<div class="trend-box">
+<h3>📌 中东战区今日主线</h3>
+<p>美伊在霍尔木兹海峡的"猫鼠博弈"进入关键期：特朗普反复切换"威胁打击↔暂停谈判"，伊朗以海峡控制权为筹码寸步不让。以色列被边缘化，海湾盟友对美"保护伞"信心动摇。中期选举压力下，美方缺乏长期对伊战略，局势高度不稳定。</p>
+</div>
+
+<hr>
 
 <!-- 巴以冲突 -->
-<h3 id="s2c" style="color:var(--yellow);font-size:1em;margin:14px 0 8px">🟡 巴以冲突（加沙地带）</h3>
+<h3 style="color:var(--yellow);margin:14px 0 8px;font-size:1.1em">🇵🇸🇮🇱 巴以冲突（加沙地带）</h3>
 
-<div class="item">
-<div class="item-head">
-<span class="title">特朗普宣布哈马斯"全面解除武装"协议，以色列立即泼冷水</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">加沙停火谈判卡在"先撤军还是先解除武装"</div>
+<div class="detail">哈马斯高级官员近日表示，与以色列结束冲突的协议已就哈马斯武器问题、以军撤离等关键议题达成共识，但双方对"前置条件"分歧严重——哈马斯要求先撤军再解除武装，以色列坚持哈马斯先完全解除武装再撤军。以色列总理府发言人施皮尔曼称以方不会在哈马斯解除武装前撤出加沙。</div>
+<div class="sides">
+<div class="side-a">🇮🇱 以方：哈马斯完全并真正解除武装前，任何事情都不会发生</div>
+<div class="side-b">🇵🇸 哈马斯：是否解除武装取决于以色列从加沙撤军进展</div>
 </div>
-<div class="summary">7月30日特朗普宣布"历史性协议"：哈马斯及加沙所有武装团体全面解除武装，国际稳定部队进驻，以军撤出。7月31日以总理办公室称方案"未满足以色列要求"；安全部长本-格维尔公开拒绝。内塔尼亚胡本人保持沉默。</div>
-<div class="impact">▶ 死结：哈马斯说"先撤军再缴械"，以色列说"先缴械再撤军"，三方各说各话。</div>
-<div class="stance"><b>哈马斯：</b>同意将移交重型武器纳入框架，但须与以撤军挂钩；轻武器拒绝上缴 <b>｜ 以色列：</b>坚持加沙彻底非军事化为先决条件方可撤军 <b>｜ 美国：</b>若以色列阻挠将"非常失望"</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">停火协议名义上生效但以军仍持续袭击加沙</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">2025年10月10日停火协议生效以来，以军仍继续每日在加沙发动袭击。截至7月30日，已造成1214名巴勒斯坦人死亡、3977人受伤。7月31日以军在加沙打死两名哈马斯成员——就在特朗普宣布协议的第二天。</div>
-<div class="impact">▶ 协议形同虚设，加沙人道主义灾难持续深化。本轮巴以冲突自2023年10月以来已造成73000名巴勒斯坦人死亡。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">"和平委员会"进不去加沙，重建资金缺口97%</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">美国主导的"和平委员会"筹到的重建资金不足10亿美元，相对170亿美元目标杯水车薪；2026年4月被曝成立以来一直未进入加沙。法国、挪威等盟国公开拒绝参与。</div>
-<div class="impact">▶ 监督机制缺位使解除武装协议沦为空头支票。</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">以色列连续空袭加沙，造成平民伤亡</div>
+<div class="detail">以色列8月2日连续第二天空袭加沙地带，造成至少18名巴勒斯坦人死亡。以军目前控制加沙约53%领土，哈马斯控制约47%。以色列持续对加沙实施空中打击以削弱哈马斯实力。</div>
 </div>
 
-<div class="trend"><b>⚡ 巴以今日主线：</b>美国急于推动停火协议为选举和政治遗产服务，以色列右翼不甘让步，哈马斯拒绝无条件缴械，三方互信为零，协议落地遥遥无期。加沙人道灾难持续恶化。</div>
+<div class="trend-box">
+<h3>📌 巴以战区今日主线</h3>
+<p>停火谈判因"先撤军or先缴械"困局陷入僵局。以色列持续空袭加沙，"不战不和"的灰色状态长期化。哈马斯以"有条件交权"为底线，以色列以"先缴械"为前提，双方立场根本对立，短期内难以突破。</p>
+</div>
+
+<hr>
 
 <!-- 也门/红海 -->
-<h3 id="s2d" style="color:#ff7b72;font-size:1em;margin:14px 0 8px">🔴 也门/红海</h3>
+<h3 style="color:var(--orange);margin:14px 0 8px;font-size:1.1em">🚢 也门/红海</h3>
 
-<div class="item">
-<div class="item-head">
-<span class="title">沙特组建联军对胡塞武装发动地面攻势，胡塞腹背受敌</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">2026年7月，沙特召集也门合法政府和南方过渡委员会组建新联军，从南北夹击胡塞武装。沙特提供先进装备和空中掩护，也门政府军集结约8万大军准备夺取荷台达港。胡塞武装被指责配合伊朗封锁曼德海峡并袭击沙特商船/油轮。</div>
-<div class="impact">▶ 沙特从"忍耐"转为"清剿"，霍尔木兹海峡被封锁后红海通道成为沙特最后油路，不容有失。</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-green">🟢 官方确认</span></div>
+<div class="summary">胡塞袭击沙特油轮持续，印度货船红海沉没</div>
+<div class="detail">胡塞武装8月5日宣称袭击红海沙特油轮。8月4日，悬挂印度旗帜货船"FAIZE NOORE OLIYA"号在红海遭袭后沉没。胡塞7月20日宣布对沙特实施海上禁运以来，已迫使8艘以上沙特油轮改道。胡塞7月25日声称48小时内连续袭击三艘沙特油轮，并对沙特吉赞、延布地区石油设施发动无人机打击。沙特牵头组建多国护航联盟（14-43国口径待核）。</div>
+<div class="impact">⚡ 曼德海峡通行量一周内锐减56%，沙特"三面受压"（霍尔木兹+曼德+伊拉克方向）。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">胡塞武装6月8日向以色列雅法发射导弹，宣布"禁止以色列在红海航行"</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">胡塞武装6月8日向以色列中部发射导弹并宣布红海航行禁令；6月9日以军在埃拉特拦截来自也门方向的无人机。</div>
-<div class="impact">▶ 胡塞武装配合伊朗"抵抗轴心"战略，红海-曼德海峡安全形势持续恶化。</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-analysis">【分析】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">胡塞封锁曼德海峡实为"以封锁换谈判"筹码</div>
+<div class="detail">胡塞武装7月24日澄清：曼德海峡"全程免费、仅封锁沙特"，否认仿伊朗收费。分析认为，胡塞的核心目标指向也门东部马里卜等油气重镇，海上封锁是"向沙特发出的回到谈判桌前的呼吁"——以解除航运封锁换取沙特默许其在也门的军事行动。但印度货船沉没事件表明，封锁正从"精准禁运"滑向"无差别风险区"。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">美军对胡塞武装持续空袭，也门政府军拟大规模地面反攻</span>
-<span class="tag tag-soft">【分析】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">美军空袭造成胡塞超80名重要成员死亡（含导弹专家、指挥官），但胡塞主力犹存，核心高层安然无恙，兵力达35万。也门政府计划8万大军攻取荷台达港及红海沿岸。</div>
-<div class="impact">▶ 分析认为胡塞武装若失去伊朗支援可能撑不过3个月，但若伊朗战事延续，胡塞将继续作为"抵抗轴心"红海支点。</div>
+<div class="trend-box">
+<h3>📌 红海战区今日主线</h3>
+<p>胡塞"精准封锁沙特"策略因第三国船只沉没而失控，红海从"可控风险"滑向"全面高危"。沙特面临霍尔木兹、曼德、伊拉克三面夹击，被迫组建多国护航联盟并准备地面攻势，战略从"收缩"急转"主动干预"。</p>
 </div>
 
-<div class="trend"><b>⚡ 红海今日主线：</b>沙特从幕后走向台前直接对胡塞开战，胡塞武装面临多方围攻但韧性极强，红海航道安全仍无保障，全球航运持续绕行好望角。</div>
+<hr>
 
 <!-- 其他热点 -->
-<h3 id="s2e" style="color:var(--dim);font-size:1em;margin:14px 0 8px">⚪ 其他热点</h3>
+<h3 style="color:var(--accent);margin:14px 0 8px;font-size:1.1em">🌏 其他热点</h3>
 
-<div class="item">
-<div class="item-head">
-<span class="title">台海：中国海警持续位台湾岛以东海域依法常态化执法巡查</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
-</div>
-<div class="summary">央广军事8月1日报道，中国海警持续在台湾岛以东海域依法开展常态化执法巡查。</div>
-<div class="impact">▶ 局势暂无显著变化，但常态化巡逻持续压缩战略灰色空间。</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-green">🟢 官方确认</span></div>
+<div class="summary">台海：台军"汉光42号"演习8月5-14日举行，大陆严正警告</div>
+<div class="detail">台军8月5日至14日进行"汉光42号演习"，首次加入网络断网测试，可能影响导航、移动支付等民生功能。中国国防部发言人蒋斌7月30日回应："民进党当局越喊'全民防卫'，越是'无人卖命'……等待他们的只有'台独'败亡的下场。"解放军近期首次穿越所谓"台海中线"以东限航区域活动长达9小时以上。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">中俄"海上联合-2026"军演完成，转入海上联合巡航</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
-</div>
-<div class="summary">7月5日央视报道，中俄海军7月在青岛附近海空域完成联合演习，已转入海上联合巡航。国防部强调"不结盟、不对抗、不针对第三方"。</div>
-<div class="impact">▶ 中俄军事合作制度化推进，但中方保持战略自主姿态。</div>
+<div class="card">
+<div class="card-head"><span class="tag tag-analysis">【分析】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">日本发布2026年版《防卫白皮书》，大肆渲染"中国威胁"</div>
+<div class="detail">日本防卫省近日公布2026年版《防卫白皮书》，以598页创纪录篇幅将中国定位为"前所未有的最大战略挑战"，提出动用"综合国力"联合盟友应对中国。中国国防部7月30日回应：日本打造服务军事扩张的情报体系，给亚太和平稳定埋下重大隐患，必须高度警惕其复活军国主义野心。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">中国外交部安理会发声：俄乌局势"十分危险"，"危险趋势必须尽快扭转"</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">苏丹武装冲突持续，联合国呼吁紧急保护平民</div>
+<div class="detail">苏丹武装部队与快速支援部队冲突仍在持续。苏丹总理伊德里斯8月21日表示政府首要任务是实现和平，对话大门敞开但拒绝强加的和平。自冲突爆发以来已有120多名人道主义工作者遇难，逾百万儿童严重营养不良。埃及、沙特、美国、瑞士等呼吁紧急行动保护平民。</div>
 </div>
-<div class="summary">7月27日安理会乌克兰问题公开会上，中国常驻联合国代表团临时代办孙磊使用"十分危险""必须尽快扭转"等措辞，语气明显加重。</div>
-<div class="impact">▶ 中方对冲突外溢升级表达更强烈关切，强调"搬不走的邻居须和睦相处"。</div>
+</section>
+
+<!-- ===== 板块三：大国博弈 ===== -->
+<section class="section" id="sec3">
+<h2 class="section-title">⚔ 三、大国博弈与军备动态</h2>
+
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">俄朝军事绑定制度化：签署《2027-2031年军事合作计划》</div>
+<div class="detail">俄国防长别洛乌索夫7月表示俄朝已商定"将军事合作提升到可持续的长期水平"。朝鲜已向俄运出超3.3万个集装箱军用物资，折合约1500万发炮弹。俄军前线炮弹至少25%来自朝鲜，极端阶段占日发射量一半。俄方可能在卫星遥感、固体燃料推进技术、高速无人机平台等领域提供反向技术支持。泽连斯基警告：俄罗斯正向伊朗提供中东地区获取的卫星观测数据。</div>
+<div class="impact">⚡ 俄-朝-伊三方军事数据共享链形成，冲突联动风险向东北亚与中东同时扩散。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">叙利亚局势暂无重大更新</span>
-<span class="tag tag-soft">【分析】</span>
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">援乌武器严重外流：近80万件武器登记失踪或被盗</div>
+<div class="detail">意大利《每日事实报》披露：自2022年冲突爆发至今，乌克兰境内登记失踪、被盗、违规外流的武器弹药已达780,465件。仅2026年前5个月新增14.9万件。武器经摩尔多瓦中转、西巴尔干"洗白"后流入意大利、西班牙、德国等欧洲腹地。意大利黑手党正动用贩毒资金批量采购投弹无人机。俄方称乌克兰正演变为"武器黑市"。</div>
+<div class="impact">⚡ 即使战争结束，犯罪集团建立的武器供应链也不会消失，欧洲安全面临长期隐患。</div>
 </div>
-<div class="summary">2024年12月阿萨德政权倒台后，叙利亚局势持续碎片化，今日暂无重大更新。</div>
+
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">OPEC+ 8月继续日均增产18.8万桶，沙特大幅下调亚洲售价</div>
+<div class="detail">OPEC+ 7个主要产油国决定8月继续日均增产18.8万桶，这是连续第五个月上调产量配额。沙特阿美宣布将8月装船的阿拉伯轻质原油对亚洲官方售价大幅下调每桶11美元。阿联酋已于5月退出OPEC。IEA预计2026年全球石油日均需求同比将萎缩约110万桶。</div>
+<div class="impact">⚡ 产油国内部分歧加深，增产节奏远不足以填补海峡中断缺口，但释放了"长期供应宽松"信号。</div>
+</div>
+
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-green">🟢 官方确认</span></div>
+<div class="summary">中国国防部回应多项国际安全议题，严批日本扩军</div>
+<div class="detail">7月30日国防部例行记者会上，发言人就日本国家情报局成立、防卫大臣涉核言论、菲美日联合巡航、台军汉光演习等一一回应。核心立场：日本打造服务军事扩张的情报体系是重大隐患；冲之鸟礁非岛屿、日方专属经济区主张站不住脚；解放军建设1:1台岛政府建筑模型属正常实战训练。</div>
+</div>
+
+<div class="card">
+<div class="card-head"><span class="tag tag-analysis">【分析】</span><span class="conf-yellow">🟡 主流媒体证实</span></div>
+<div class="summary">美军中东兵力部署过度拉伸，约四成战备舰艇调往伊朗方向</div>
+<div class="detail">美国海军约四成战备舰艇已被调往伊朗方向，防空拦截弹药库存持续走低，舰艇和人员部署时间远超常规水平。海湾盟友对美"保护伞"信心动摇，频繁接触美方要求补充防空拦截弹并就长期安全保障作出承诺。《华尔街日报》报道：挑起战争的是美方，承受伊朗报复后果的却是海湾国家；美国跃居全球石油出口国前列，坐吃油价上涨红利。</div>
+</div>
+
+<div class="card">
+<div class="card-head"><span class="tag tag-real">【实锤】</span><span class="conf-green">🟢 官方确认</span></div>
+<div class="summary">美国制裁国际刑事法院法官和检察官</div>
+<div class="detail">美国国务院宣布对国际刑事法院两名法官和两名副检察长实施制裁，理由是他们参与了未经美以同意的对美以公民调查。塞内加尔政府对此表示"震惊"，呼吁撤销制裁。此举被广泛视为对国际司法独立的公然干涉。</div>
+</div>
+
+<div class="trend-box">
+<h3>📌 大国博弈今日主线</h3>
+<p>俄-朝-伊三方军事合作制度化，形成横跨东欧、东北亚、中东的军事数据共享链。美国中东军事资源过度拉伸，盟友信任流失。援乌武器外流正在将欧洲本土犯罪网络武装化。国际法治体系遭美方制裁ICC法官等行为进一步侵蚀。</p>
+</div>
+</section>
+
+<!-- ===== 板块四：冲突影响 ===== -->
+<section class="section" id="sec4">
+<h2 class="section-title">📊 四、冲突影响与趋势研判</h2>
+
+<div class="card">
+<h3 style="color:var(--orange);margin-bottom:8px">🛢 能源与大宗商品</h3>
+<div class="detail">
+<p><b>原油</b>：7月布伦特原油月涨幅超20%后，受特朗普"取消打击"消息影响8月3日跳空低开近7%。但海峡封锁未解，摩根大通维持120美元情景预测。OPEC+象征性增产仅覆盖海峡缺口约2%。IEA协调释储Q3大幅放缓，SPR逼近3亿桶地板，边际缓冲显著走弱。</p>
+<p><b>天然气</b>：卡塔尔LNG不可抗力延至10月中，TTF约€54-61/MWh，欧盟储气约54-55%（5年低）。</p>
+<p><b>化肥</b>：海湾占全球氨贸易25%+、尿素40%、甲醇45%，经海峡化肥船近归零。硫磺基准9185元/吨处15年高位，尿素企业库存161.86万吨创历史新高。</p>
+<p><b>航运</b>：保险成本飙升成为制约海湾出口主要障碍。绕行好望角航程翻倍，单艘油轮燃料成本增加约150万美元。</p>
 </div>
 </div>
 
-<!-- ============ 三、大国博弈与军备动态 ============ -->
-<div class="section" id="s3">
-<h2>三、大国博弈与军备动态</h2>
-
-<div class="item">
-<div class="item-head">
-<span class="title">普京四次扩军至242万，新建军事工程部队——为长期战争搭骨架</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
+<div class="card">
+<h3 style="color:var(--accent);margin-bottom:8px">🌐 国际秩序与地缘格局</h3>
+<div class="detail">
+<p><b>冲突联动风险</b>：俄乌远程互袭+美伊海峡对峙+胡塞红海封锁形成"三线共振"，任何一条战线升级都可能引发油价飙升→其他战线连锁反应。</p>
+<p><b>阵营分化</b>：海湾盟友对美"保护伞"信任下降，沙特自主组建护航联盟标志地区安全架构"去美国化"起步。欧盟内部对乌援助持续缩水，匈牙利、波兰、保加利亚、荷兰先后叫停。</p>
+<p><b>国际法治侵蚀</b>：美国制裁ICC法官、单方面对委内瑞拉采取军事行动、绕过安理会对伊动武等行为持续冲击战后国际秩序。</p>
 </div>
-<div class="summary">半年内三次扩编，新增兵力主要编入苏军解体后20年来首次独立成建的军事建筑工程部队，核心任务为阵地建设、道路保障、后勤设施搭建。</div>
-<div class="impact">▶ 从临时征兵到战时编制常态化，俄正将战争需求嵌入国家行政体系。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">朝鲜导弹部队部署俄西部，俄朝军事合作排至2031年</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
+<div class="card">
+<h3 style="color:var(--red);margin-bottom:8px">🩸 人道主义状况</h3>
+<div class="detail">
+<p><b>俄乌</b>：俄军2026年前7个月累计损失238,650人，7月单月42,860人创新高。乌方兵源枯竭，利沃夫7月爆发反征兵骚乱。</p>
+<p><b>加沙</b>：以军控制53%领土，连续空袭造成平民伤亡。停火谈判僵持不下，"不战不和"灰色状态致人道危机持续。</p>
+<p><b>苏丹</b>：120+人道工作者遇难，逾百万儿童严重营养不良。</p>
+<p><b>海峡</b>：霍尔木兹至少12名海员死亡或失踪，1.5-2万艘船舶滞留波斯湾。</p>
 </div>
-<div class="summary">朝鲜导弹部队配备120枚弹道导弹/6台发射车部署俄西部；此前已供应超3.3万集装箱军用物资（约1500万发炮弹）；俄军前线25%+炮弹来自朝鲜；俄朝商定签署2027-2031军事合作计划。</div>
-<div class="impact">▶ 朝鲜成为俄战争机器关键供应链和兵力来源，"朝俄同盟"实质化。</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">北约安卡拉峰会敲定2026年向乌提供700亿欧元军援</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">7月8日北约安卡拉峰会确认2026年对乌军援700亿欧元，此为克宫将战事从"特别军事行动"升格为"国家生死战"的直接诱因之一。</div>
-<div class="impact">▶ 欧洲对乌支持力度加码，但实际交付速度和数量仍存疑问。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">美对乌军援降至拜登时期1/5，"爱国者"拦截弹告急</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
+<div class="card">
+<h3 style="color:var(--green);margin-bottom:8px">📈 短期趋势预判</h3>
+<div class="detail">
+<p><b>俄乌（僵持→持续消耗）</b>：双方均无能力发动决定性进攻，"无人机纵深互毁"成为常态。俄军三次扩编为长期战争打底，乌军远程打击能力持续升级但兵源告急。下半年关键变量：朝鲜援兵是否到位、乌弹道导弹是否实战化。</p>
+<p><b>美伊（高波动僵持）</b>：特朗普中期选举前不会真正开战，也不会真正让步。海峡"半开半闭"状态将持续，日均通行量维持低位。谈判若破裂则油价报复性反弹。</p>
+<p><b>红海（升级中）</b>：第三国船只沉没标志冲突外溢新阶段。沙特地面攻势蓄势待发，也门内战可能重启。胡塞以"有限封锁"换谈判的算盘面临失控风险。</p>
+<p><b>总体判断</b>：全球冲突正处于"高危低烈度"平衡态——任何一条战线意外升级都可能打破脆弱均衡，但各方均有"不愿全面开战"的底线约束。未来2周关注：美伊谈判是否突破、俄军扩编后部署动向、沙特对也门地面行动是否启动。</p>
 </div>
-<div class="summary">月均2.66亿美元 vs 拜登时期12.8亿。五角大楼库存直接供应全面暂停。乌军面对27枚弹道导弹仅能发射1枚拦截弹。美继续推进允许乌自主生产"爱国者"拦截导弹谈判。</div>
-<div class="impact">▶ 特朗普政府援乌意愿持续下降，乌军关键装备短缺日益严重。</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">俄罗斯宣布不再受《中导条约》约束，将发展中短程导弹</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
-</div>
-<div class="summary">俄外交部声明：维持单方面暂停部署中短程导弹条件已消失。理由包括美国在菲律宾/澳大利亚部署"泰丰"导弹系统。美国2026年起将在德部署远程火力。</div>
-<div class="impact">▶ 全球军控框架进一步瓦解，中短程导弹竞赛风险加剧。</div>
 </div>
 
-<div class="item">
-<div class="item-head">
-<span class="title">乌军7名将领同日被清洗——指挥体系大规模人事调整</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">8月1日乌最高层对指挥体系大规模人事清理，7名原属前总司令希尔斯基亲信军官被免职，覆盖副总司令、后勤、训练、人事等链条。</div>
-<div class="impact">▶ 军方派系清洗可能短期削弱指挥效率，反映政治-军事内部矛盾加剧。</div>
-</div>
+</section>
 
-<div class="item">
-<div class="item-head">
-<span class="title">乌克兰推出600公里射程中程打击无人机，月产能1000架</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">乌军推出射程600公里、载荷40-50公斤的中程无人机并进入批量生产，月产能将达1000架。同时正寻求英国"流星"空空导弹配备鹰狮战斗机对抗俄滑翔炸弹。</div>
-<div class="impact">▶ 无人机产能扩张改变打击格局，俄纵深目标面临持续威胁。</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">欧盟通过第21轮对俄制裁方案</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-confirm">🟢 官方确认</span>
-</div>
-<div class="summary">7月欧盟通过第21轮对俄制裁，俄经济2026年Q1财政赤字5.47万亿卢布，1-5月GDP增速仅0.2%已实质停滞。</div>
-<div class="impact">▶ 制裁效果滞后显现但累积压力加大，俄经济进入"低速高压"状态。</div>
-</div>
-
-<div class="trend"><b>⚡ 大国博弈今日主线：</b>俄朝军事同盟制度化是本日最显著的地缘变化；美对乌援助断崖式下降迫使欧洲加码；全球军控体系加速崩塌（《中导条约》彻底终结）；无人机战争从辅助手段升级为战略主轴。</div>
-</div>
-
-<!-- ============ 四、冲突影响与趋势研判 ============ -->
-<div class="section" id="s4">
-<h2>四、冲突影响与趋势研判</h2>
-
-<div class="item">
-<div class="item-head">
-<span class="title">能源与大宗商品：史上最大石油供应冲击，布伦特年内均价预计100美元</span>
-<span class="tag tag-soft">【分析】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">霍尔木兹海峡封锁导致全球日减约1000万桶原油供应，为1970年代以来最大。布伦特原油8月初维持在80-100美元区间；EIA预测2026年布伦特均价100美元/桶。2026年全球石油需求首度萎缩（日减110万桶），OECD库存将降至2003年以来最低。化肥价格预计上涨31%，尿素飙升60%。</div>
-<div class="detail">中国影响：约500-600万桶/日原油经霍尔木兹进口，但中国拥有超12亿桶战略/商业库存（覆盖120天）、人民币结算+影子舰队闭环供应链、煤炭托底，缓冲能力全球最强。真正脆弱者为印度（20-25天库存）、日韩（氦气/半导体链断裂风险）。</div>
-<div class="impact">▶ 若霍尔木兹海峡封锁持续至Q4，布伦特可能触及115-150美元/桶，全球面临滞胀风险。</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">国际秩序与地缘格局：多极化加速，美元储备份额或跌破50%</span>
-<span class="tag tag-soft">【分析】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">美元储备占比已从2015年65.4%降至2025年Q4的56.7%。摩根大通预测若冲突持续2年，2027年底美元储备占比将跌破50%——为1971年布雷顿森林体系崩溃以来首次。全球央行黄金净购买量连续4年超800吨，黄金价格突破5137美元/盎司。非美元原油结算占比从2020年18%升至2025年31.8%。</div>
-<div class="impact">▶ 中东冲突加速"去美元化"，黄金重获"准货币"属性，全球货币体系进入多极转型期。</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">人道主义状况：加沙7.3万人遇难，乌克兰5万阵亡/40万受伤</span>
-<span class="tag tag-hard">【实锤】</span><span class="tag tag-media">🟡 主流媒体证实</span>
-</div>
-<div class="summary">巴以冲突自2023年10月以来已造成73000名巴勒斯坦人死亡。泽连斯基7月31日向福克斯新闻称乌军约5万阵亡/40万受伤，估算俄军约70万阵亡。乌克兰近40万军人擅离职守。俄2026年前7月新招22.1万人但同期损失22.55万人，入不敷出。西班牙休达非法移民越境已致72人死亡。</div>
-<div class="impact">▶ 战争对平民和士兵造成毁灭性代价，乌克兰人口结构遭受不可逆损害（新生儿断层），俄罗斯人力消耗不可持续。</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">短期趋势预判：三线僵持，升级风险可控但缓和遥遥无期</span>
-<span class="tag tag-soft">【分析】</span>
-</div>
-<div class="summary"><b>俄乌：</b>前线僵持+远程对攻升级双线并行，双方均无发动决定性攻势能力，秋季可能出现"冻结冲突"外交窗口，但概率低于30%。<b>中东：</b>美伊谈判"假象"大概率延续至美国中期选举（11月），霍尔木兹海峡可能Q3末部分恢复通航但完全正常需数月。<b>加沙：</b>停火协议落地难度极高，以色列10月大选前不会撤军，人道灾难持续。</div>
-<div class="impact">▶ 全球三线冲突整体呈"高烈度僵持"态势，最可能的中期情景是：冲突不进一步大规模升级，但也不会在2026年内实质性结束。</div>
-</div>
-
-<div class="item">
-<div class="item-head">
-<span class="title">下周关注焦点</span>
-<span class="tag tag-soft">【分析】</span>
-</div>
-<div class="summary">① 美伊谈判实际进展——霍尔木兹海峡通航是否出现实质性松动信号 ② 俄军对基辅新一轮大规模打击及乌防空应对 ③ 朝鲜部队在俄西部的部署与实战验证 ④ 沙特联军对胡塞荷台达攻势进展 ⑤ 全球央行对美元储备资产配置调整动向</div>
-</div>
-
-<div class="trend"><b>⚡ 综合研判：</b>2026年8月初的全球冲突格局呈现"三线并烧、僵而不决"的特征。俄乌进入消耗战深水区，中东能源危机重塑全球经济版图，加沙人道灾难无解。最值得警惕的不是某一条战线的突然升级，而是三线联动——朝鲜入俄参战牵动东亚、霍尔木兹封锁冲击全球能源、美元信用松动加速货币体系重构——构成"复合型地缘冲击"，其累积效应远超单一冲突。</div>
-</div>
-
-<div class="disclaimer">
-⚠️ 本报告基于公开信息整合，资讯截至2026年8月6日14:00（北京时间）。部分信息源自单一信源，未经独立核实。涉及伤亡数据均注明来源及核实状态。报告仅供信息参考，不构成任何投资或决策建议。<br>
-数据来源：乌克兰总参谋部战报 / 俄罗斯国防部通报 / 央视新闻 / 新华社 / 参考消息 / 环球网 / 路透社 / 法新社 / 半岛电视台 / ISW战争研究所 / 世界银行 / IEA / EIA / 国防部官网
+<footer>
+<p>⚠ 本报告为信息整合与研判，不构成任何投资、军事或政策建议</p>
+<p>数据来源：新华社 / 央视新闻 / 央广网 / 路透社 / 华尔街日报 / Kpler / EIA / IEA / ISW / CENTCOM / 伊朗法尔斯社 / 乌克兰总参谋部 / 俄罗斯国防部等</p>
+<p>可信度标注：🟢 官方确认 · 🟡 主流媒体证实 · 🟠 单一来源/未经独立证实</p>
+<p>生成时间：2026-08-06 20:30 CST | 自动化定时任务执行</p>
+</footer>
 </div>
 </body>
 </html>
