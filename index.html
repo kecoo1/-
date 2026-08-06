@@ -58,6 +58,13 @@
   .trend-up { background: rgba(78,205,196,0.2); color: #4ecdc4; }
   .trend-down { background: rgba(233,69,96,0.2); color: #e94560; }
   .trend-stable { background: rgba(255,255,255,0.1); color: #9090b0; }
+  .toc-nav { background: rgba(26,26,62,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid #2d1b69; padding: 16px 20px; position: sticky; top: 0; z-index: 100; }
+  .toc-nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .toc-nav-label { color: #9090b0; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+  .toc-nav a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; border-radius: 24px; text-decoration: none; font-size: 0.85rem; font-weight: 700; color: #b0b0d0; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s; white-space: nowrap; }
+  .toc-nav a:hover { background: linear-gradient(135deg, #e94560, #9b59b6); color: #fff; border-color: transparent; transform: translateY(-1px); box-shadow: 0 4px 15px rgba(233,69,96,0.3); }
+  .toc-nav a .toc-emoji { font-size: 1rem; }
+  .toc-nav .toc-badge { font-size: 0.65rem; padding: 2px 6px; border-radius: 6px; vertical-align: middle; }
 </style>
 </head>
 <body>
@@ -72,10 +79,21 @@
   </div>
 </div>
 
+<nav class="toc-nav">
+  <div class="toc-nav-inner">
+    <span class="toc-nav-label">📑 目录导航</span>
+    <a href="#global"><span class="toc-emoji">🌍</span>全球热点 TOP20 <span class="toc-badge badge-hot">HOT</span></a>
+    <a href="#updates"><span class="toc-emoji">⚡</span>最新更新 TOP20 <span class="toc-badge badge-new">NEW</span></a>
+    <a href="#ai"><span class="toc-emoji">🤖</span>AI漫剧 TOP20 <span class="toc-badge badge-ai">AI</span></a>
+    <a href="#cn"><span class="toc-emoji">🐉</span>中国动漫 TOP20 <span class="toc-badge badge-cn">国漫</span></a>
+    <a href="#trends"><span class="toc-emoji">📈</span>行业趋势总览</a>
+    <a href="#meme"><span class="toc-emoji">😂</span>本周梗闻</a>
+  </div>
+</nav>
 <div class="container">
 
 <!-- ============ 全球热点 TOP20 ============ -->
-<div class="section">
+<div class="section" id="global">
   <div class="section-title"><span class="emoji">🌍</span> 全球热点 TOP20 <span class="badge badge-hot">HOT</span></div>
   <div class="section-desc">综合 MyAnimeList / Anime Corner / Reddit 等平台数据，2026夏季番最新人气排行（Anime Corner Week 4 + MAL期待榜）</div>
 
@@ -116,7 +134,7 @@
 </div>
 
 <!-- ============ 最新更新 TOP20 ============ -->
-<div class="section">
+<div class="section" id="updates">
   <div class="section-title"><span class="emoji">⚡</span> 最新更新 TOP20 <span class="badge badge-new">NEW</span></div>
   <div class="section-desc">2026年7月夏季新番 · 综合首周开播表现与各平台评分（Anime Corner / MAL / B站 / Bangumi）</div>
 
@@ -156,7 +174,7 @@
 </div>
 
 <!-- ============ AI漫剧 TOP20 ============ -->
-<div class="section">
+<div class="section" id="ai">
   <div class="section-title"><span class="emoji">🤖</span> AI漫剧 TOP20 <span class="badge badge-ai">AI</span></div>
   <div class="section-desc">红果短剧 / 抖音 AI漫剧热度排行 · 2026上半年·DataEye & 云合数据</div>
 
@@ -206,7 +224,7 @@
 </div>
 
 <!-- ============ 中国动漫 TOP20 ============ -->
-<div class="section">
+<div class="section" id="cn">
   <div class="section-title"><span class="emoji">🐉</span> 中国动漫 TOP20 <span class="badge badge-cn">国漫</span></div>
   <div class="section-desc">腾讯视频 / B站 / 优酷 / 爱奇艺 · 2026上半年云合霸屏榜 + 暑期档新番</div>
 
@@ -257,7 +275,7 @@
 </div>
 
 <!-- ============ 行业趋势总览 ============ -->
-<div class="section">
+<div class="section" id="trends">
   <div class="section-title"><span class="emoji">📈</span> 行业趋势总览 · 2026 Q3</div>
 
   <div class="grid-2">
@@ -289,7 +307,7 @@
 </div>
 
 <!-- ============ 彩蛋·梗图时刻 ============ -->
-<div class="section">
+<div class="section" id="meme">
   <div class="section-title"><span class="emoji">😂</span> 本周梗闻速递</div>
   <div class="insight-card" style="border-left: 4px solid #e94560;">
     <p>🔸 <strong>死神粉</strong>：等了10年终于看到最终季，爷青回的含金量不需要解释<br>
