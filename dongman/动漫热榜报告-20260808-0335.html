@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 动漫热榜报告 | 2026.08.08</title>
+<style>
+:root{--bg:#0a0a1a;--card:#12122a;--accent:#ff6b6b;--accent2:#4ecdc4;--accent3:#ffe66d;--accent4:#a29bfe;--text:#e8e8f0;--muted:#8888aa;--border:#2a2a4a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;line-height:1.6;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:15px}
+.hero{text-align:center;padding:30px 15px 20px;background:linear-gradient(135deg,#1a1a3e 0%,#2d1b69 50%,#1a1a3e 100%);border-radius:20px;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(78,205,196,0.1) 0%,transparent 60%);animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900;position:relative;z-index:1}
+.hero .sub{color:var(--muted);font-size:clamp(0.85rem,2vw,1rem);margin-top:8px;position:relative;z-index:1}
+.hero .time-badge{display:inline-block;background:var(--accent);color:#fff;padding:4px 14px;border-radius:20px;font-size:0.8rem;margin-top:10px;position:relative;z-index:1}
+.tabs{display:flex;overflow-x:auto;gap:8px;padding:10px 0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;cursor:pointer;transition:all .3s;font-size:0.9rem;white-space:nowrap;color:var(--muted)}
+.tab:hover,.tab.active{background:linear-gradient(135deg,var(--accent),var(--accent4));color:#fff;border-color:transparent;transform:translateY(-2px)}
+.section{display:none;animation:fadeIn .4s ease}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.section-header{display:flex;align-items:center;gap:10px;margin:20px 0 12px;font-size:1.2rem;font-weight:700}
+.section-header .icon{font-size:1.4rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;transition:all .3s}
+.card:hover{border-color:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(78,205,196,0.1)}
+.rank-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;font-weight:800;font-size:0.85rem;margin-right:10px;flex-shrink:0}
+.rank-1{background:linear-gradient(135deg,#ffd700,#ffaa00);color:#000}
+.rank-2{background:linear-gradient(135deg,#c0c0c0,#e8e8e8);color:#000}
+.rank-3{background:linear-gradient(135deg,#cd7f32,#e8a862);color:#000}
+.rank-n{background:var(--border);color:var(--text)}
+.rank-item{display:flex;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.03);transition:background .2s}
+.rank-item:hover{background:rgba(78,205,196,0.05)}
+.rank-item:last-child{border-bottom:none}
+.rank-info{flex:1;min-width:0}
+.rank-title{font-weight:600;font-size:0.95rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rank-meta{font-size:0.78rem;color:var(--muted);margin-top:2px}
+.rank-score{font-weight:800;font-size:1.1rem;color:var(--accent2);flex-shrink:0;margin-left:8px}
+.rank-change{font-size:0.75rem;margin-left:6px;flex-shrink:0}
+.up{color:#4ecdc4} .down{color:#ff6b6b} .same{color:var(--muted)}
+.insight-box{background:linear-gradient(135deg,rgba(78,205,196,0.1),rgba(162,155,254,0.1));border:1px solid rgba(78,205,196,0.3);border-radius:14px;padding:16px;margin:12px 0}
+.insight-box h4{color:var(--accent2);margin-bottom:8px;font-size:0.95rem}
+.insight-box p{font-size:0.88rem;color:var(--text);line-height:1.7}
+.trend-tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:0.75rem;margin:3px;font-weight:600}
+.tag-fire{background:rgba(255,107,107,0.2);color:#ff6b6b}
+.tag-up{background:rgba(78,205,196,0.2);color:#4ecdc4}
+.tag-hot{background:rgba(255,230,109,0.2);color:#ffe66d}
+.tag-new{background:rgba(162,155,254,0.2);color:#a29bfe}
+.footer{text-align:center;padding:30px 15px;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);margin-top:30px}
+.source-tag{display:inline-block;background:rgba(255,255,255,0.05);padding:3px 8px;border-radius:6px;font-size:0.7rem;color:var(--muted);margin:2px}
+.chart-bar{height:6px;border-radius:3px;background:var(--border);margin-top:4px;overflow:hidden}
+.chart-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width 1s ease}
+@media(max-width:600px){.container{padding:10px}.hero{padding:20px 12px 15px;border-radius:14px}.hero h1{font-size:1.6rem}.card{padding:12px;border-radius:12px}.rank-item{padding:8px 10px}.tab{padding:8px 14px;font-size:0.82rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="hero">
+<h1>🔥 动漫热榜报告</h1>
+<div class="sub">全球热点 · 最新更新 · AI漫剧 · 中国动漫</div>
+<div class="time-badge">📅 检索时间：2026-08-08 03:35 | 数据周期：2026年夏季 / 本季度</div>
+</div>
+
+<div class="tabs" id="tabs">
+<div class="tab active" data-tab="global">🌍 全球热点</div>
+<div class="tab" data-tab="latest">🆕 最新更新</div>
+<div class="tab" data-tab="ai">🤖 AI漫剧</div>
+<div class="tab" data-tab="china">🇨🇳 中国动漫</div>
+<div class="tab" data-tab="trend">📊 行业趋势</div>
+<div class="tab" data-tab="hit">💥 爆款拆解</div>
+</div>
+
+<!-- ========= 全球热点 TOP50 ========= -->
+<div class="section active" id="global">
+<div class="section-header"><span class="icon">🌍</span> 全球动漫热度 TOP 50</div>
+<div class="insight-box">
+<h4>📌 本季格局速览</h4>
+<p>2025秋季~2026夏季，日常番依然霸场！《我英最终季》凭借收官红利横扫海外票仓，但国内讨论度平平；《间谍过家家3》稳如老狗；《废渊战鬼》靠骨头社制作硬扛。BL惊悚《光死去的夏天》黑马得不像话。中国IP《诡秘之主》MAL评分8.63，在欧美圈杀疯了，但BGM仅6.4——典型的"文化温差"案例。</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px">
+<span class="trend-tag tag-fire">🔥 续作统治</span>
+<span class="trend-tag tag-up">📈 日常番回潮</span>
+<span class="trend-tag tag-hot">⚡ BL题材出圈</span>
+<span class="trend-tag tag-new">🆕 中国IP国际化</span>
+</div>
+<div class="card" id="global-list"></div>
+</div>
+
+<!-- ========= 最新更新 ========= -->
+<div class="section" id="latest">
+<div class="section-header"><span class="icon">🆕</span> 最新更新 · 2026夏季新番热度追踪</div>
+<div class="insight-box">
+<h4>📌 本周新番速递</h4>
+<p>2026年7月番已播出8周，各平台格局基本落定。Anime Corner票仓中《光死去的夏天》从霸主位回落，《胆大党2》与《薰香花朵凛然绽放》你追我赶。Anitrendz榜CW三连弹（《更衣人偶2》《薰香花朵》《青春猪头》）全员前十。MAL上《章鱼噼的原罪》以8.87分断层第一，但Bangumi仅6.9——又一个"海内外撕裂"样本。</p>
+</div>
+<div class="card" id="latest-list"></div>
+</div>
+
+<!-- ========= AI漫剧 ========= -->
+<div class="section" id="ai">
+<div class="section-header"><span class="icon">🤖</span> AI漫剧 · 颠覆式增长 TOP 50</div>
+<div class="insight-box">
+<h4>📌 AI漫剧大事件</h4>
+<p>2026年7月第二周，AI短剧首次在红果实现对真人短剧的<strong>流量超车</strong>！热播榜TOP5中AI占4席——《万妖图录传第八季》8919万热度登顶。上半年市场规模突破220亿，全年有望冲击400亿，用户突破6亿。但爆款率仅0.47%，AI漫剧更惨：每1000部仅1部胜出。千次播放收益从60元暴跌至15-30元，ROI仅1.03-1.07微利区间。<br><br>🔥 最新爆款：《砚边青梅》一人20天手搓，以颜真卿《祭侄文稿》为蓝本火爆出圈，证明"文化叙事"才是AI短剧突围的真正路径。《被裁掉的女孩》播放量破2亿，主角"方桃子"用不完美的五官打破AI脸审美疲劳。</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px">
+<span class="trend-tag tag-fire">🔥 流量超车真人</span>
+<span class="trend-tag tag-up">📈 规模220亿+</span>
+<span class="trend-tag tag-hot">⚡ 爆款率0.47%</span>
+<span class="trend-tag tag-new">🆕 文化叙事突围</span>
+</div>
+<div class="card" id="ai-list"></div>
+</div>
+
+<!-- ========= 中国动漫 ========= -->
+<div class="section" id="china">
+<div class="section-header"><span class="icon">🇨🇳</span> 中国动漫 · 国漫热度 TOP 50</div>
+<div class="insight-box">
+<h4>📌 国漫格局</h4>
+<p>2026年国漫赛道双雄格局：腾讯视频靠《斗罗大陆》《完美世界》《吞噬星空》等玄幻3D霸盘，bilibili则以《罗小黑战记2》《时光代理人》等2D精品突围。值得注意的是《诡秘之主》动画化在MAL拿到8.63分，海外封神但国内口碑两极——画面华丽但节奏和镜头语言被诟病"堆料有余、叙事不足"。《龙族Ⅱ悼亡者之瞳》MAL 7.59，同样呈现"外热内冷"。<br><br>国漫出海已成趋势，昆仑万维、中文在线纷纷布局海外，2026年海外AI剧/漫剧市场规模预计6.5亿美元，同比暴涨550%。</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px">
+<span class="trend-tag tag-fire">🔥 玄幻3D霸屏</span>
+<span class="trend-tag tag-up">📈 2D精品突围</span>
+<span class="trend-tag tag-hot">⚡ 出海同比+550%</span>
+<span class="trend-tag tag-new">🆕 诡秘之主破圈</span>
+</div>
+<div class="card" id="china-list"></div>
+</div>
+
+<!-- ========= 行业趋势 ========= -->
+<div class="section" id="trend">
+<div class="section-header"><span class="icon">📊</span> 行业趋势分析</div>
+<div class="insight-box">
+<h4>1️⃣ 日常番回潮：2025年的关键词就是"日常"</h4>
+<p>从《末日后酒店》到《小城日常》到《时光流逝，饭菜依旧美味》，日常番统治了全年讨论度。七月番更是"日常番的王朝"——CW三部全进前十，全是日常恋爱系。对于喜欢这口的观众是饕餮盛宴，无感的观众则直呼"太闷了"。</p>
+</div>
+<div class="insight-box">
+<h4>2️⃣ AI短剧：从嫌弃到真香，再到审美疲劳</h4>
+<p>2026 Q1 AI短剧上线量占95%，播放量仅占4%；到了7月，AI短剧首次实现流量超车真人。但"AI脸生理性厌恶"话题阅读量超5000万，观众吐槽"圆眼高鼻尖下巴"的标准化脸毫无记忆点。红果7月发布规范AI角色创作公告，抖音将AI仿真人短剧分成系数从60%下调至40%——监管和平台都在给野蛮生长踩刹车。</p>
+</div>
+<div class="insight-box">
+<h4>3️⃣ 续作统治 vs 原创困境</h4>
+<p>2025年度TOP10中续作占7席，新作仅有《金牌得主》《末日后酒店》《小城日常》三部原创突围。整个行业对续作的依赖越来越深，新IP孵化难度持续加大。十月番更是"续作季"，新作几乎集体哑火。</p>
+</div>
+<div class="insight-box">
+<h4>4️⃣ 海内外评分撕裂加剧</h4>
+<p>《诡秘之主》MAL 8.63 vs BGM 6.4；《新吊带袜天使》BGM 8.1 vs MAL 8.07（还算统一）；《光死去的夏天》BGM 7.0 vs MAL 8.16。文化差异导致的审美分裂越来越明显——海外观众偏好热血/奇幻/BL，国内观众更吃日常/推理/悬疑。</p>
+</div>
+<div class="insight-box">
+<h4>5️⃣ 成本雪崩与利益重构</h4>
+<p>AI短剧单部成本从20万美元降至2万美元（降90%），中文在线单分钟制作成本降75%。但省下的钱被流量成本吃掉——投流ROI仅1.03-1.07。字节跳动几乎掌控全链：番茄小说(IP)→Seedance(模型)→抖音/红果(分发)。谁掌握流量入口，谁就掌握分配权。</p>
+</div>
+</div>
+
+<!-- ========= 爆款拆解 ========= -->
+<div class="section" id="hit">
+<div class="section-header"><span class="icon">💥</span> 爆款拆解</div>
+
+<div class="card" style="margin-bottom:16px">
+<h3 style="color:var(--accent2);margin-bottom:10px">🏆 《我英最终季》— 完结红利型爆款</h3>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px">
+<span class="trend-tag tag-fire">Anime Corner 冠军</span>
+<span class="trend-tag tag-up">10.44% 得票率</span>
+<span class="source-tag">Anime Corner</span><span class="source-tag">Reddit</span><span class="source-tag">MAL</span>
+</div>
+<p style="font-size:0.88rem;color:var(--text);line-height:1.8">
+<b>爆款公式：</b>长线IP收官 × 情感高潮集中释放 × 全球同步讨论热潮<br>
+<b>数据拆解：</b>Anime Corner赛季总榜第1（10.44%），最佳动作/最佳改编/最佳叙事/最佳声优/最佳原声全包揽。周榜稳定前三，最终投票碾压第二近一倍。<br>
+<b>波动分析：</b>开播即登顶，几乎从未跌出前三，完结篇投票率爆发。典型的"结尾即巅峰"型。<br>
+<b>国内落差：</b>由于IP本身在国内风评争议，讨论度远不如海外，证明"完结红利"也有地域限制。
+</p>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+<h3 style="color:var(--accent2);margin-bottom:10px">🏆 《光死去的夏天》— 黑马型爆款</h3>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px">
+<span class="trend-tag tag-hot">BL惊悚黑马</span>
+<span class="trend-tag tag-up">Anime Corner 周榜冠军</span>
+<span class="source-tag">Anime Corner</span><span class="source-tag">Netflix</span><span class="source-tag">MAL</span>
+</div>
+<p style="font-size:0.88rem;color:var(--text);line-height:1.8">
+<b>爆款公式：</b>BL+惊悚的稀缺组合 × 高质量制作 × 社交媒体裂变<br>
+<b>数据拆解：</b>Anime Corner周榜多周霸主，票数一度接近8%。MAL评分8.16。Netflix独播策略制造稀缺感。<br>
+<b>波动分析：</b>中期票数接近腰斩后回升，说明"惊悚+BL"的双属性既有破圈力也有审美疲劳风险。<br>
+<b>核心启示：</b>稀缺题材+高品质=出圈密码。但单一情感驱动的作品生命周期较短。
+</p>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+<h3 style="color:var(--accent2);margin-bottom:10px">🏆 《万妖图录传 第八季》— AI漫剧流量王</h3>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px">
+<span class="trend-tag tag-fire">红果热榜TOP1</span>
+<span class="trend-tag tag-up">8919万热度</span>
+<span class="source-tag">红果短剧</span><span class="source-tag">抖音</span>
+</div>
+<p style="font-size:0.88rem;color:var(--text);line-height:1.8">
+<b>爆款公式：</b>玄幻大场面(AI擅长的赛道) × 长季IP积累 × 海量产能铺排<br>
+<b>数据拆解：</b>8919万热度登顶红果热播总榜，AI短剧中排名第一。玄幻/仙侠赛道真人短剧几乎消失。<br>
+<b>波动分析：</b>从Q1播放量仅占4%到7月流量超车真人，增长曲线陡峭。但预约榜和收藏榜AI剧寥寥——"刷但不追"是核心痛点。<br>
+<b>核心启示：</b>AI在视觉冲击赛道碾压真人，但用户忠诚度极低。能制造瞬时流量，尚未建立用户忠诚。
+</p>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+<h3 style="color:var(--accent2);margin-bottom:10px">🏆 《砚边青梅》— 文化叙事型爆款</h3>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px">
+<span class="trend-tag tag-new">一人手搓出圈</span>
+<span class="trend-tag tag-hot">文化叙事标杆</span>
+<span class="source-tag">红果短剧</span><span class="source-tag">抖音</span><span class="source-tag">微博</span>
+</div>
+<p style="font-size:0.88rem;color:var(--text);line-height:1.8">
+<b>爆款公式：</b>传统文化IP × 单人独立制作 × 剧本质量碾压<br>
+<b>数据拆解：</b>作者晚晚仅用20天独立完成全部制作流程，以颜真卿《祭侄文稿》为蓝本，"假人演的比真人还好"成出圈梗。引发观众主动学习历史，形成"观剧→求知"的正循环。<br>
+<b>波动分析：</b>社交裂变型增长，从文化圈扩散到泛娱乐圈。AI角色"颜季明"已申请版权，商业化路径清晰。<br>
+<b>核心启示：</b>AI短剧的破局点不在技术，在内容。文化底蕴+优质剧本才是真正的护城河。
+</p>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+<h3 style="color:var(--accent2);margin-bottom:10px">🏆 《诡秘之主》— 出海型爆款</h3>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px">
+<span class="trend-tag tag-fire">MAL 8.63</span>
+<span class="trend-tag tag-new">中国IP国际化</span>
+<span class="source-tag">MAL</span><span class="source-tag">Crunchyroll</span><span class="source-tag">Bangumi</span>
+</div>
+<p style="font-size:0.88rem;color:var(--text);line-height:1.8">
+<b>爆款公式：</b>顶级网文IP × 维多利亚蒸汽朋克设定 × 海外粉丝基础<br>
+<b>数据拆解：</b>MAL评分8.63（2025夏季番第4），Crunchyroll全球独播。但BGM仅6.4，分差2.23创本季之最。<br>
+<b>波动分析：</b>海外稳定高分，国内持续走低。原作党对动画改编不满是核心原因——"画面华丽但叙事混乱"。<br>
+<b>核心启示：</b>中国IP出海≠中国观众买账。海外观众对"异域风情"天然加分，但国内观众对叙事要求更高。"出海爆款"和"国内爆款"是两套逻辑。
+</p>
+</div>
+</div>
+
+<div class="footer">
+<p>📡 数据来源：MyAnimeList · Anime Corner · Reddit r/anime · Bangumi · Anikore · Anime-Planet · 红果短剧 · 抖音 · bilibili · 腾讯视频 · DataEye · 东方财富</p>
+<p>⏰ 检索截止：2026-08-08 03:35 CST | 📝 报告生成：2026-08-08 03:35</p>
+<p>⚡ 由小U同学自动生成 | 定时任务 daily 03:35</p>
+</div>
+</div>
+
+<script>
+const globalData=[
+{r:1,t:"我英最终季",s:"10.44%",m:"Anime Corner 赛季冠军 | 海外封神",c:"same",src:"AC"},
+{r:2,t:"间谍过家家 第三季",s:"5.96%",m:"稳定输出 | 喜剧/日常标杆",c:"same",src:"AC"},
+{r:3,t:"废渊战鬼 (Gachiakuta)",s:"5.58%",m:"骨头社制作硬扛 | 奇幻动作",c:"up",src:"AC"},
+{r:4,t:"This Monster Wants to Eat Me",s:"5.02%",m:"百合恐怖 | 现象级黑马",c:"up",src:"AC"},
+{r:5,t:"赛马娘 灰姑娘 Part2",s:"4.68%",m:"竞技热血 | 制作升级",c:"same",src:"AC"},
+{r:6,t:"May I Ask for One Final Thing?",s:"4.07%",m:"奇幻复仇 | 新作黑马",c:"up",src:"AC"},
+{r:7,t:"乱马1/2 第二季",s:"3.08%",m:"经典回归 | 日常喜剧",c:"same",src:"AC"},
+{r:8,t:"Sanda",s:"2.21%",m:"悬疑推理 | 口碑佳作",c:"up",src:"AC"},
+{r:9,t:"Wandance",s:"2.17%",m:"舞蹈青春 | 制作精良",c:"up",src:"AC"},
+{r:10,t:"千岁碳酸瓶",s:"2.03%",m:"校园日常 | 恋爱群像",c:"same",src:"AC"},
+{r:11,t:"露营烹饪 第二季",s:"2.03%",m:"异世界美食 | 治愈系",c:"same",src:"AC"},
+{r:12,t:"漫画家的奇妙职场",s:"1.93%",m:"职场日常 | 笑点密集",c:"up",src:"AC"},
+{r:13,t:"刺客明显强于勇者",s:"1.88%",m:"异世界冒险 | 爽文改编",c:"up",src:"AC"},
+{r:14,t:"矢野君的日常",s:"1.87%",m:"恋爱日常 | 甜度拉满",c:"same",src:"AC"},
+{r:15,t:"致不灭的你 第三季",s:"1.87%",m:"催泪奇幻 | 长线IP",c:"same",src:"AC"},
+{r:16,t:"别扭前辈",s:"1.84%",m:"职场恋爱 | 轻松治愈",c:"up",src:"AC"},
+{r:17,t:"朋友的妹妹对我有意见",s:"1.80%",m:"恋爱喜剧 | 轻小说改",c:"same",src:"AC"},
+{r:18,t:"桃源暗鬼",s:"1.59%",m:"暗黑战斗 | 新作潜力",c:"up",src:"AC"},
+{r:19,t:"给小姐递魔物肉",s:"1.58%",m:"奇幻美食 | 反差萌",c:"same",src:"AC"},
+{r:20,t:"银魂 3Z银八先生",s:"1.55%",m:"经典回归 | 喜剧番",c:"up",src:"AC"},
+{r:21,t:"野生最终Boss出现",s:"1.55%",m:"奇幻冒险 | 异世界",c:"same",src:"AC"},
+{r:22,t:"世界尽头的黄昏",s:"1.54%",m:"原创科幻 | 氛围感",c:"same",src:"AC"},
+{r:23,t:"被选中成为公主",s:"1.48%",m:"乙女奇幻 | 女性向",c:"same",src:"AC"},
+{r:24,t:"比太阳更亮的星",s:"1.48%",m:"恋爱青春 | 甜剧",c:"up",src:"AC"},
+{r:25,t:"让悲伤的灵魂退休 C2",s:"1.47%",m:"冒险喜剧 | 续作稳定",c:"same",src:"AC"},
+{r:26,t:"一拳超人 第三季",s:"1.45%",m:"热血动作 | 话题作",c:"down",src:"AC"},
+{r:27,t:"机械玛丽",s:"1.42%",m:"恋爱喜剧 | 甜爽",c:"up",src:"AC"},
+{r:28,t:"异世界四重奏3",s:"1.39%",m:"联动喜剧 | 粉丝向",c:"same",src:"AC"},
+{r:29,t:"无表情柏田与有表情大田",s:"1.36%",m:"校园日常 | 反差萌",c:"up",src:"AC"},
+{r:30,t:"满级无限抽卡复仇",s:"1.35%",m:"异世界爽文 | 轻小说改",c:"same",src:"AC"},
+{r:31,t:"婚戒物语 第二季",s:"1.29%",m:"奇幻恋爱 | 续作",c:"same",src:"AC"},
+{r:32,t:"户岛想当假面骑士",s:"1.17%",m:"特摄致敬 | 喜剧",c:"up",src:"AC"},
+{r:33,t:"渡君的XX即将崩坏",s:"1.17%",m:"恋爱喜剧 | 争议作",c:"down",src:"AC"},
+{r:34,t:"与你的爱能撑过去",s:"1.14%",m:"末世恋爱 | 治愈系",c:"same",src:"AC"},
+{r:35,t:"Gnosia",s:"1.13%",m:"科幻悬疑 | 游戏改",c:"up",src:"AC"},
+{r:36,t:"爱露酱想要家人",s:"1.11%",m:"日常治愈 | 萌系",c:"same",src:"AC"},
+{r:37,t:"爹是英雄娘是精灵",s:"1.10%",m:"异世界冒险 | 轻松向",c:"same",src:"AC"},
+{r:38,t:"被驱逐的宫廷魔术师",s:"1.09%",m:"奇幻复仇 | 爽文改",c:"same",src:"AC"},
+{r:39,t:"吸血鬼小姐吸不好",s:"1.09%",m:"喜剧日常 | 吸血鬼",c:"up",src:"AC"},
+{r:40,t:"转生恶役的黑历史",s:"1.07%",m:"乙女向 | 恋爱喜剧",c:"same",src:"AC"},
+{r:41,t:"没有职业的英雄",s:"1.05%",m:"异世界冒险 | 轻小说改",c:"down",src:"AC"},
+{r:42,t:"异世界采集者",s:"1.02%",m:"冒险日常 | 轻松向",c:"same",src:"AC"},
+{r:43,t:"妖怪物语 第二季",s:"0.97%",m:"妖怪恋爱 | 续作",c:"same",src:"AC"},
+{r:44,t:"蓝色管弦乐 第二季",s:"0.82%",m:"音乐青春 | 佳作续篇",c:"same",src:"AC"},
+{r:45,t:"别碰小手",s:"0.80%",m:"恋爱日常 | 校园系",c:"same",src:"AC"},
+{r:46,t:"末世旅行",s:"0.77%",m:"公路旅行 | 治愈系",c:"same",src:"AC"},
+{r:47,t:"来玩吧",s:"0.72%",m:"游戏改 | 日常系",c:"same",src:"AC"},
+{r:48,t:"数码宝贝 Beatbreak",s:"0.71%",m:"经典IP | 冒险战斗",c:"down",src:"AC"},
+{r:49,t:"王者天下 第六季",s:"0.66%",m:"历史战争 | 长线IP",c:"same",src:"AC"},
+{r:50,t:"双人单身露营",s:"0.66%",m:"户外日常 | 治愈系",c:"same",src:"AC"},
+];
+
+const latestData=[
+{r:1,t:"章鱼噼的原罪",s:"8.87",m:"MAL断层第一 | 悬疑催泪",c:"up",src:"MAL"},
+{r:2,t:"薰香花朵凛然绽放",s:"8.70",m:"MAL第2 | 校园恋爱标杆",c:"same",src:"MAL"},
+{r:3,t:"碧蓝之海 第二季",s:"8.67",m:"MAL第3 | 颜艺喜剧王者",c:"same",src:"MAL"},
+{r:4,t:"诡秘之主",s:"8.63",m:"MAL第4 | 中国IP海外封神",c:"up",src:"MAL"},
+{r:5,t:"胆大党 第二季",s:"8.54",m:"MAL第5 | 超自然喜剧续作",c:"same",src:"MAL"},
+{r:6,t:"更衣人偶坠入爱河 第二季",s:"8.36",m:"Anitrendz冠军 | 恋爱制作升级",c:"up",src:"AT"},
+{r:7,t:"新 吊带袜天使",s:"8.10",m:"BGM冠军8.1 | 怀旧重启",c:"same",src:"BGM"},
+{r:8,t:"琉璃的宝石",s:"7.9",m:"BGM第2 | 地质学日常",c:"up",src:"BGM"},
+{r:9,t:"彻夜之歌 第二季",s:"8.29",m:"Anikore第3 | 吸血鬼悬疑",c:"same",src:"Anikore"},
+{r:10,t:"青春猪头少年不做圣诞服女郎的梦",s:"8.25",m:"MAL第8 | 青春悬疑续作",c:"same",src:"MAL"},
+{r:11,t:"石纪元 科学未来 Part2",s:"8.21",m:"MAL第9 | 科学冒险完结篇",c:"same",src:"MAL"},
+{r:12,t:"光死去的夏天",s:"8.16",m:"AC多周冠军 | BL惊悚黑马",c:"down",src:"AC"},
+{r:13,t:"Silent Witch 沉默魔女的秘密",s:"8.04",m:"MAL第12 | 魔法日常",c:"up",src:"MAL"},
+{r:14,t:"废渊战鬼",s:"8.03",m:"MAL第13 | 骨头社制作",c:"same",src:"MAL"},
+{r:15,t:"地缚少年花子君 第二季Part2",s:"7.99",m:"AT第4 | 校园灵异恋爱",c:"up",src:"AT"},
+{r:16,t:"美乐蒂&库洛米",s:"7.96",m:"AP第12 | 可爱治愈",c:"up",src:"AP"},
+{r:17,t:"坂本日常 Part2",s:"7.93",m:"MAL第16 | 动作喜剧",c:"same",src:"MAL"},
+{r:18,t:"怪兽8号 第二季",s:"7.91",m:"AP第9 | 热血战斗",c:"same",src:"AP"},
+{r:19,t:"小城日常",s:"7.90",m:"日常番精神续作 | BGM 7.6",c:"same",src:"BGM"},
+{r:20,t:"Clevatess 魔兽之王",s:"7.87",m:"MAL第19 | 奇幻冒险",c:"down",src:"MAL"},
+{r:21,t:"拔作岛",s:"7.7",m:"BGM第5 | 恋爱喜剧",c:"up",src:"BGM"},
+{r:22,t:"罗小黑战记2",s:"7.6",m:"BGM第7 | 国漫2D标杆",c:"same",src:"BGM"},
+{r:23,t:"明天美食广场见",s:"7.4",m:"BGM第10 | 日常轻百",c:"same",src:"BGM"},
+{r:24,t:"禁止入内的鼹鼠",s:"77.01",m:"Anikore第1 | 日常新奇",c:"up",src:"Anikore"},
+{r:25,t:"去唱卡拉OK吧！",s:"7.68",m:"MAL第22 | 音乐青春",c:"up",src:"MAL"},
+{r:26,t:"帝乃三姐妹原来很好搞定",s:"7.66",m:"MAL第24 | 恋爱喜剧",c:"up",src:"MAL"},
+{r:27,t:"龙族Ⅱ悼亡者之瞳",s:"7.59",m:"MAL第25 | 中国IP动画化",c:"same",src:"MAL"},
+{r:28,t:"我怎么可能成为你的恋人",s:"7.53",m:"MAL第27 | 恋爱喜剧",c:"up",src:"MAL"},
+{r:29,t:"和雨和你",s:"7.0",m:"BGM第18 | 治愈日常",c:"up",src:"BGM"},
+{r:30,t:"转生第七王子 第二季",s:"7.67",m:"MAL第23 | 异世界魔法",c:"down",src:"MAL"},
+{r:31,t:"噗妮露是可爱史莱姆 第二季",s:"7.4",m:"BGM第12 | 萌系日常",c:"same",src:"BGM"},
+{r:32,t:"明日方舟：焰烬曙明",s:"7.70",m:"MAL第21 | 游戏改",c:"same",src:"MAL"},
+{r:33,t:"地狱老师",s:"73.71",m:"Anikore第13 | 经典回归",c:"up",src:"Anikore"},
+{r:34,t:"盾之勇者成名录 第四季",s:"7.8",m:"AP第23 | 异世界续作",c:"down",src:"AP"},
+{r:35,t:"坏女孩 (Bad Girl)",s:"3.9",m:"AP第20 | 校园喜剧",c:"same",src:"AP"},
+{r:36,t:"水属性魔法师",s:"3.8",m:"AP第24 | 异世界冒险",c:"same",src:"AP"},
+{r:37,t:"银河特急 银河☆地铁",s:"3.7",m:"AP第25 | SF日常",c:"down",src:"AP"},
+{r:38,t:"衣衫褴褛的大小姐",s:"3.7",m:"AP第29 | 恋爱甜剧",c:"up",src:"AP"},
+{r:39,t:"阿松 第四季",s:"3.7",m:"AP第30 | 经典喜剧",c:"same",src:"AP"},
+{r:40,t:"凸变英雄X",s:"—",m:"AC周榜上升14名 | 中日合制",c:"up",src:"AC"},
+{r:41,t:"我不可能成为你的恋人",s:"—",m:"AT上升幅度最大 | 恋爱喜剧",c:"up",src:"AT"},
+{r:42,t:"安妮·雪莉",s:"—",m:"AC上升11名 | 名著改",c:"up",src:"AC"},
+{r:43,t:"欢迎光临流放者食堂",s:"—",m:"AC下降13名 | 异世界日常",c:"down",src:"AC"},
+{r:44,t:"保龄球少女！",s:"69.62",m:"Anikore第25 | 运动日常",c:"same",src:"Anikore"},
+{r:45,t:"最近的侦探真没用",s:"73.31",m:"Anikore第15 | 推理日常",c:"up",src:"Anikore"},
+{r:46,t:"9-nine 支配者的王冠",s:"72.61",m:"Anikore第16 | 游戏改",c:"same",src:"Anikore"},
+{r:47,t:"租借女友 第四季",s:"71.91",m:"Anikore第19 | 恋爱长线",c:"down",src:"Anikore"},
+{r:48,t:"杜鹃的婚约 第二季",s:"—",m:"AT下降5名 | 恋爱续作",c:"down",src:"AT"},
+{r:49,t:"夏日口袋",s:"—",m:"AT持平 | 游戏改",c:"same",src:"AT"},
+{r:50,t:"费马的料理",s:"—",m:"Anikore | 料理推理",c:"same",src:"Anikore"},
+];
+
+const aiData=[
+{r:1,t:"万妖图录传 第八季",s:"8919万",m:"红果热榜TOP1 | 玄幻AI",c:"up",src:"红果"},
+{r:2,t:"都重生了谁还装富二代啊 第二季",s:"热度TOP3",m:"重生爽文 | AI漫剧",c:"up",src:"红果"},
+{r:3,t:"砚边青梅",s:"出圈爆款",m:"一人20天手搓 | 文化叙事标杆",c:"up",src:"多平台"},
+{r:4,t:"被裁掉的女孩",s:"2亿+",m:"播放量破2亿 | 方桃子IP化",c:"up",src:"红果"},
+{r:5,t:"12星练赛",s:"48.8万粉",m:"AI综艺 | 一个月涨粉",c:"up",src:"抖音"},
+{r:6,t:"霍去病",s:"热搜",m:"历史战争 | AI大场面",c:"same",src:"多平台"},
+{r:7,t:"晚风入我怀",s:"品牌榜第2",m:"灵漫快创 | 抖音短剧",c:"up",src:"抖音"},
+{r:8,t:"野火燎原",s:"热榜TOP5",m:"真人短剧守门员 | 唯一真人",c:"down",src:"红果"},
+{r:9,t:"万妖图录传(系列)",s:"8季连载",m:"AI漫剧长线IP | 玄幻顶流",c:"same",src:"红果"},
+{r:10,t:"母凭子贵后被皇家宠上天 S2",s:"5580万",m:"古装AI | 首日热度",c:"up",src:"红果"},
+{r:11,t:"老公消失我担上位",s:"42.9万收藏",m:"AI恋爱 | 开播次日",c:"up",src:"红果"},
+{r:12,t:"昼以继夜2",s:"9582热度",m:"真人悬疑 | 真人剧榜首",c:"same",src:"红果"},
+{r:13,t:"我靠奶奶的金项链青云直上了",s:"5200+",m:"真人情感 | 付费2.5亿",c:"up",src:"红果"},
+{r:14,t:"渐染",s:"10亿+",m:"真人短剧 | 12天破10亿",c:"up",src:"红果"},
+{r:15,t:"新婚有瘾",s:"7100热度",m:"真人甜宠 | 谭盐盐",c:"same",src:"红果"},
+{r:16,t:"厨娘带崽侯府满门团宠我",s:"4481万",m:"甜宠穿越 | 梨小娜",c:"up",src:"红果"},
+{r:17,t:"美人如玉刀如风",s:"持续上涨",m:"古装宿命恋 | 陈杨丹婷",c:"up",src:"红果"},
+{r:18,t:"权臣的黑面月光",s:"4500万",m:"女频爆款 | 梨小娜出圈作",c:"same",src:"红果"},
+{r:19,t:"二次相爱的法则",s:"开机中",m:"至春禾×吴添豪二搭",c:"same",src:"红果"},
+{r:20,t:"不候过期离婚",s:"预约中",m:"失忆丈夫 | 至春禾",c:"same",src:"红果"},
+{r:21,t:"京夜诱温",s:"开机中",m:"记者×医生 | 王小亿",c:"same",src:"红果"},
+{r:22,t:"今天裴总和月亮谈恋爱了吗2",s:"待播",m:"奇幻甜宠 | 李柯以",c:"same",src:"红果"},
+{r:23,t:"世子无双",s:"日榜冠军",m:"古装权谋 | 马瑞泽",c:"same",src:"DataEye"},
+{r:24,t:"我是余欢水(竖屏版)",s:"开机中",m:"经典IP竖屏化 | 山影",c:"same",src:"红果"},
+{r:25,t:"逍遥四公子",s:"爆款",m:"古装权谋 | 马瑞泽",c:"same",src:"多平台"},
+{r:26,t:"家里家外",s:"爆款",m:"年代正剧 | 冯艺然",c:"same",src:"红果"},
+{r:27,t:"阳谋",s:"爆款",m:"古装权谋 | 马瑞泽×冯艺然",c:"same",src:"红果"},
+{r:28,t:"寒门",s:"热播",m:"古装逆袭 | 马瑞泽",c:"same",src:"红果"},
+{r:29,t:"锦鲤你也敢裁",s:"热播",m:"甜爽 | 马瑞泽",c:"same",src:"红果"},
+{r:30,t:"第一驸马爷",s:"热播",m:"古装甜宠 | 马瑞泽",c:"same",src:"红果"},
+{r:31,t:"盛夏芬德拉",s:"20项奖",m:"郭宇欣代表作 | 短剧奖王",c:"same",src:"行业"},
+{r:32,t:"错婚姻缘",s:"热播",m:"冯艺然主演",c:"same",src:"红果"},
+{r:33,t:"Kino视界平台作品",s:"工业化",m:"炫佳科技 | 制作周期压缩70%",c:"up",src:"行业"},
+{r:34,t:"AniShort协作平台作品",s:"工具化",m:"八点八数字 | 近亿融资",c:"up",src:"行业"},
+{r:35,t:"逍遥AI平台作品",s:"降本75%",m:"中文在线 | 单分钟成本降75%",c:"up",src:"行业"},
+{r:36,t:"SkyReels-V4作品",s:"全球第一",m:"昆仑万维 | 文生视频登顶",c:"up",src:"行业"},
+{r:37,t:"Seedance 2.5作品",s:"30秒生成",m:"字节跳动 | 视频模型",c:"up",src:"行业"},
+{r:38,t:"可灵AI作品",s:"6000万用户",m:"快手 | 全球用户规模",c:"up",src:"行业"},
+{r:39,t:"昆仑万维AI短剧平台",s:"7亿$ ARR",m:"天工AI业务 | AI短剧占7亿",c:"up",src:"行业"},
+{r:40,t:"灵漫快创作品",s:"品牌榜第2",m:"万兴科技投资 | 晚风入我怀",c:"up",src:"行业"},
+{r:41,t:"井英科技作品",s:"千万$融资",m:"蚂蚁集团投资 | A轮+A+",c:"up",src:"行业"},
+{r:42,t:"真人短剧上新量",s:"1629部/月",m:"从1934部跌至1629 | 持续收缩",c:"down",src:"DataEye"},
+{r:43,t:"AI短剧市场规模",s:"220亿+",m:"1-5月突破220亿 | 全年400亿预期",c:"up",src:"DataEye"},
+{r:44,t:"AI短剧用户",s:"6亿+",m:"国内用户突破6亿",c:"up",src:"DataEye"},
+{r:45,t:"AI漫剧爆款率",s:"0.1%",m:"每1000部仅1部胜出",c:"down",src:"行业"},
+{r:46,t:"AI短剧爆款率",s:"0.47%",m:"22万部中真正爆款仅0.47%",c:"down",src:"行业"},
+{r:47,t:"千次播放收益",s:"15-30元",m:"从60元暴跌 | 近乎腰斩",c:"down",src:"行业"},
+{r:48,t:"AI仿真人分成系数",s:"40%",m:"抖音从60%下调至40%",c:"down",src:"行业"},
+{r:49,t:"海外AI剧市场",s:"6.5亿$",m:"同比暴涨550%",c:"up",src:"DataEye"},
+{r:50,t:"AI算力成本",s:"涨价34%",m:"4月云厂商AI算力涨价",c:"down",src:"行业"},
+];
+
+const chinaData=[
+{r:1,t:"诡秘之主",s:"8.63",m:"MAL第4 | 中国IP海外封神 | BGM仅6.4",c:"up",src:"MAL"},
+{r:2,t:"罗小黑战记2",s:"7.6",m:"BGM第7 | 国漫2D标杆 | 评分稳定",c:"same",src:"BGM"},
+{r:3,t:"龙族Ⅱ悼亡者之瞳",s:"7.59",m:"MAL第25 | 青春奇幻 | 外热内冷",c:"same",src:"MAL"},
+{r:4,t:"明日方舟：焰烬曙明",s:"7.70",m:"MAL第21 | 游戏改编 | 制作尚可",c:"same",src:"MAL"},
+{r:5,t:"凸变英雄X",s:"—",m:"AC上升14名 | 中日合制 | 国创出海",c:"up",src:"AC"},
+{r:6,t:"斗罗大陆(系列)",s:"持续热播",m:"腾讯视频顶梁柱 | 玄幻3D",c:"same",src:"腾讯"},
+{r:7,t:"完美世界",s:"持续热播",m:"腾讯视频 | 3D玄幻长线",c:"same",src:"腾讯"},
+{r:8,t:"吞噬星空",s:"持续热播",m:"腾讯视频 | 3D科幻玄幻",c:"same",src:"腾讯"},
+{r:9,t:"凡人修仙传",s:"持续热播",m:"bilibili | 3D修仙标杆",c:"same",src:"bilibili"},
+{r:10,t:"时光代理人",s:"高分",m:"bilibili | 2D悬疑佳作",c:"same",src:"bilibili"},
+{r:11,t:"灵笼",s:"高分",m:"bilibili | 3D末日科幻",c:"same",src:"bilibili"},
+{r:12,t:"斗破苍穹(系列)",s:"持续热播",m:"腾讯视频 | 3D玄幻经典",c:"same",src:"腾讯"},
+{r:13,t:"一念永恒",s:"持续热播",m:"腾讯视频 | 修仙日常",c:"same",src:"腾讯"},
+{r:14,t:"雪中悍刀行",s:"热播",m:"腾讯视频 | 武侠3D",c:"same",src:"腾讯"},
+{r:15,t:"画江湖之不良人(系列)",s:"高分",m:"bilibili/优酷 | 武侠2D",c:"same",src:"多平台"},
+{r:16,t:"仙逆",s:"热播",m:"bilibili | 3D修仙",c:"same",src:"bilibili"},
+{r:17,t:"武庚纪(系列)",s:"热播",m:"腾讯视频 | 神话题材3D",c:"same",src:"腾讯"},
+{r:18,t:"星辰变",s:"热播",m:"腾讯视频 | 修仙3D",c:"same",src:"腾讯"},
+{r:19,t:"眷思量",s:"口碑",m:"bilibili | 3D原创古风",c:"same",src:"bilibili"},
+{r:20,t:"天官赐福",s:"高分",m:"bilibili | 2D古风耽美",c:"same",src:"bilibili"},
+{r:21,t:"魔道祖师(系列)",s:"高分",m:"腾讯视频 | 2D古风耽美",c:"same",src:"腾讯"},
+{r:22,t:"中国奇谭",s:"高分",m:"bilibili | 2D短片集",c:"same",src:"bilibili"},
+{r:23,t:"大理寺日志",s:"口碑",m:"bilibili | 2D古风推理",c:"same",src:"bilibili"},
+{r:24,t:"镖人",s:"口碑",m:"腾讯视频 | 2D武侠",c:"same",src:"腾讯"},
+{r:25,t:"左手上篮",s:"口碑",m:"bilibili | 2D篮球",c:"same",src:"bilibili"},
+{r:26,t:"万妖图录传(系列)",s:"8919万热度",m:"红果AI漫剧 | 国创玄幻",c:"up",src:"红果"},
+{r:27,t:"砚边青梅",s:"出圈",m:"AI短剧 | 文化叙事标杆",c:"up",src:"多平台"},
+{r:28,t:"被裁掉的女孩",s:"2亿+",m:"AI短剧 | 方桃子IP",c:"up",src:"红果"},
+{r:29,t:"山海经题材(多部)",s:"热播",m:"AI漫剧 | 玄幻赛道主力",c:"up",src:"红果"},
+{r:30,t:"重生种田类(多部)",s:"热播",m:"AI漫剧 | 下沉市场主力",c:"same",src:"红果"},
+{r:31,t:"修仙归来类(多部)",s:"热播",m:"AI漫剧 | 男频爽文主力",c:"same",src:"红果"},
+{r:32,t:"赘婿逆袭类(多部)",s:"热播",m:"AI漫剧 | 男频经典套路",c:"same",src:"红果"},
+{r:33,t:"末世求生类(多部)",s:"热播",m:"AI漫剧 | 视觉冲击赛道",c:"same",src:"红果"},
+{r:34,t:"剑网3·侠肝义胆",s:"热播",m:"bilibili | 游戏改3D",c:"same",src:"bilibili"},
+{r:35,t:"镇魂街(系列)",s:"热播",m:"bilibili | 2D热血战斗",c:"same",src:"bilibili"},
+{r:36,t:"一人之下(系列)",s:"高分",m:"腾讯视频 | 2D异人战斗",c:"same",src:"腾讯"},
+{r:37,t:"非人哉",s:"口碑",m:"bilibili | 2D神仙日常",c:"same",src:"bilibili"},
+{r:38,t:"万圣街",s:"口碑",m:"bilibili | 2D妖怪日常",c:"same",src:"bilibili"},
+{r:39,t:"三体(动画版)",s:"争议",m:"bilibili | 科幻3D | 口碑两极",c:"same",src:"bilibili"},
+{r:40,t:"故宫里的大怪兽",s:"口碑",m:"腾讯视频 | 2D奇幻",c:"same",src:"腾讯"},
+{r:41,t:"刺客伍六七(系列)",s:"高分",m:"bilibili | 2D搞笑战斗",c:"same",src:"bilibili"},
+{r:42,t:"茶啊二中",s:"口碑",m:"bilibili | 2D校园喜剧",c:"same",src:"bilibili"},
+{r:43,t:"雾山五行",s:"高分",m:"bilibili | 2D水墨武侠",c:"same",src:"bilibili"},
+{r:44,t:"百妖谱(系列)",s:"口碑",m:"bilibili | 2D妖怪治愈",c:"same",src:"bilibili"},
+{r:45,t:"少年歌行(系列)",s:"热播",m:"bilibili/优酷 | 3D武侠",c:"same",src:"多平台"},
+{r:46,t:"神印王座",s:"热播",m:"腾讯视频 | 3D玄幻",c:"same",src:"腾讯"},
+{r:47,t:"绝世唐门",s:"热播",m:"腾讯视频 | 斗罗续作3D",c:"same",src:"腾讯"},
+{r:48,t:"妖神记",s:"热播",m:"bilibili | 3D修仙",c:"same",src:"bilibili"},
+{r:49,t:"炼气十万年",s:"热播",m:"bilibili | 3D修仙爽文",c:"same",src:"bilibili"},
+{r:50,t:"校花的贴身高手",s:"热播",m:"bilibili | 3D校园修仙",c:"same",src:"bilibili"},
+];
+
+function renderList(data,containerId){
+  const c=document.getElementById(containerId);
+  let html='';
+  data.forEach(d=>{
+    const rc=d.r<=3?`rank-${d.r}`:'rank-n';
+    const cc=d.c==='up'?'up':d.c==='down'?'down':'same';
+    const cs=d.c==='up'?'▲':d.c==='down'?'▼':'—';
+    html+=`<div class="rank-item"><span class="rank-badge ${rc}">${d.r}</span><div class="rank-info"><div class="rank-title">${d.t}</div><div class="rank-meta">${d.m} <span class="source-tag">${d.src}</span></div></div><span class="rank-score">${d.s}</span><span class="rank-change ${cc}">${cs}</span></div>`;
+  });
+  c.innerHTML=html;
+}
+
+renderList(globalData,'global-list');
+renderList(latestData,'latest-list');
+renderList(aiData,'ai-list');
+renderList(chinaData,'china-list');
+
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
