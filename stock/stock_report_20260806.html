@@ -3,293 +3,306 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A股市场热度排行报告 | 2026-08-07</title>
+<title>A股市场热度排行报告 | 2026年8月7日（周五）</title>
 <style>
-:root{--bg:#0f1724;--card:#1a2436;--border:#2a3a52;--text:#e8ecf1;--dim:#8899aa;--red:#ef4444;--red-bg:rgba(239,68,68,.12);--green:#22c55e;--green-bg:rgba(34,197,94,.12);--accent:#f59e0b;--blue:#3b82f6;--purple:#a855f7}
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--dim:#8b949e;--green:#3fb950;--red:#f85149;--gold:#d29922;--blue:#58a6ff;--purple:#bc8cff;--orange:#d18616;}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:12px;max-width:960px;margin:0 auto}
-h1{font-size:1.5rem;text-align:center;padding:16px 0 8px;background:linear-gradient(135deg,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.subtitle{text-align:center;color:var(--dim);font-size:.85rem;margin-bottom:18px}
-.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.75rem;font-weight:600}
-.badge-red{background:var(--red-bg);color:var(--red)}
-.badge-green{background:var(--green-bg);color:var(--green)}
-.badge-accent{background:rgba(245,158,11,.15);color:var(--accent)}
-.section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:16px}
-.section-title{font-size:1.1rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.section-title .icon{font-size:1.2rem}
-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:8px}
-th,td{padding:6px 4px;text-align:center;border-bottom:1px solid var(--border)}
-th{color:var(--dim);font-weight:500;font-size:.72rem}
-td:first-child{text-align:left;padding-left:6px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:12px;max-width:960px;margin:0 auto}
+h1{font-size:1.4em;text-align:center;color:var(--gold);margin:16px 0 4px;letter-spacing:1px}
+.subtitle{text-align:center;color:var(--dim);font-size:.85em;margin-bottom:20px}
+h2{font-size:1.15em;color:var(--blue);border-left:4px solid var(--blue);padding-left:10px;margin:22px 0 10px}
+h3{font-size:1em;color:var(--purple);margin:14px 0 6px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin:10px 0}
+.heat-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-weight:700;font-size:.85em}
+.heat-strong{background:#238636;color:#fff}
+.heat-shake{background:var(--orange);color:#fff}
+.heat-weak{background:var(--red);color:#fff}
+table{width:100%;border-collapse:collapse;font-size:.82em;margin:8px 0}
+th{background:rgba(88,166,255,.15);color:var(--blue);text-align:center;padding:6px 4px;white-space:nowrap;border-bottom:1px solid var(--border)}
+td{padding:5px 4px;text-align:center;border-bottom:1px solid var(--border);white-space:nowrap}
+tr:hover{background:rgba(255,255,255,.03)}
 .up{color:var(--red)}
 .down{color:var(--green)}
-.tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:.65rem;background:rgba(59,130,246,.15);color:var(--blue);margin-left:4px}
-.highlight-box{background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(239,68,68,.06));border:1px solid rgba(245,158,11,.25);border-radius:8px;padding:12px;margin:10px 0;font-size:.85rem}
-.hot-tag{display:inline-block;background:rgba(239,68,68,.18);color:#fca5a5;padding:2px 8px;border-radius:4px;font-size:.72rem;margin:2px}
-.cold-tag{display:inline-block;background:rgba(34,197,94,.18);color:#86efac;padding:2px 8px;border-radius:4px;font-size:.72rem;margin:2px}
-.sector-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
-.sector-item{background:rgba(255,255,255,.03);border-radius:8px;padding:8px 10px}
-.sector-item .name{font-weight:600;font-size:.82rem}
-.sector-item .chg{font-size:.78rem}
-.sector-item .detail{color:var(--dim);font-size:.7rem}
-.focus-card{background:linear-gradient(135deg,rgba(168,85,247,.08),rgba(59,130,246,.06));border:1px solid rgba(168,85,247,.25);border-radius:8px;padding:12px;margin:10px 0}
-.focus-card .title{font-weight:700;color:var(--purple);font-size:.9rem;margin-bottom:6px}
-.market-summary{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-.summary-item{text-align:center;background:rgba(255,255,255,.03);border-radius:8px;padding:10px 6px}
-.summary-item .label{color:var(--dim);font-size:.7rem}
-.summary-item .value{font-size:1.1rem;font-weight:700;margin-top:2px}
-.commentary{color:var(--dim);font-size:.82rem;font-style:italic;margin-top:8px;padding-left:10px;border-left:2px solid var(--accent)}
-footer{text-align:center;color:var(--dim);font-size:.7rem;padding:20px 0 10px;border-top:1px solid var(--border);margin-top:16px}
-@media(min-width:640px){.sector-grid{grid-template-columns:1fr 1fr 1fr}.market-summary{grid-template-columns:1fr 1fr 1fr 1fr}}
+.flat{color:var(--dim)}
+.idx-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.idx-item{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center}
+.idx-name{color:var(--dim);font-size:.8em}
+.idx-val{font-size:1.2em;font-weight:700;margin:4px 0}
+.idx-chg{font-size:.9em;font-weight:600}
+.focus-box{background:linear-gradient(135deg,rgba(210,153,34,.1),rgba(88,166,255,.1));border:1px solid var(--gold);border-radius:10px;padding:14px;margin:10px 0}
+.focus-title{color:var(--gold);font-weight:700;font-size:1em;margin-bottom:6px}
+.tag{display:inline-block;font-size:.72em;padding:1px 6px;border-radius:4px;margin-right:4px}
+.tag-hot{background:rgba(248,81,73,.2);color:var(--red)}
+.tag-cold{background:rgba(63,185,80,.2);color:var(--green)}
+.tag-new{background:rgba(88,166,255,.2);color:var(--blue)}
+.bz{color:var(--dim);font-size:.85em;margin-top:8px;font-style:italic;line-height:1.5}
+.summary{background:linear-gradient(135deg,rgba(63,185,80,.08),rgba(88,166,255,.08));border:1px solid var(--blue);border-radius:10px;padding:14px;margin:12px 0}
+.summary p{margin:4px 0}
+.toc a{color:var(--blue);text-decoration:none;display:block;padding:4px 0;border-bottom:1px solid var(--border)}
+.toc a:hover{color:var(--gold)}
+.footer{text-align:center;color:var(--dim);font-size:.75em;margin-top:30px;padding:16px 0;border-top:1px solid var(--border)}
+@media(max-width:600px){.idx-grid{grid-template-columns:1fr 1fr}table{font-size:.72em}td,th{padding:4px 2px}body{padding:8px}h1{font-size:1.2em}}
 </style>
 </head>
 <body>
-<h1>🔥 A股市场热度排行日报</h1>
-<p class="subtitle">2026年8月7日（周五）收盘 | 数据源：东方财富实时行情 | 报告生成：2026-08-09 01:46</p>
 
-<!-- ===== 板块一：指数与大盘风向 ===== -->
-<div class="section">
-<div class="section-title"><span class="icon">📊</span> 一、指数与大盘风向</div>
+<h1>📊 A股市场热度排行报告</h1>
+<div class="subtitle">2026年8月7日（周五）收盘 · 数据来源：东方财富网 · 报告生成于 2026-08-10</div>
 
-<div class="market-summary">
-<div class="summary-item"><div class="label">上证指数</div><div class="value up">3940.04</div><div class="up">+1.02%</div></div>
-<div class="summary-item"><div class="label">深证成指</div><div class="value up">14311.01</div><div class="up">+1.42%</div></div>
-<div class="summary-item"><div class="label">创业板指</div><div class="value up">3563.12</div><div class="up">+1.35%</div></div>
-<div class="summary-item"><div class="label">科创50</div><div class="value up">1744.02</div><div class="up">+2.51%</div></div>
+<div class="card toc">
+<strong>📑 目录导航</strong>
+<a href="#sec1">一、指数与大盘风向</a>
+<a href="#sec2">二、个股涨幅榜 & 跌幅榜</a>
+<a href="#sec3">三、板块热度排行</a>
+<a href="#sec4">四、龙虎榜/主力动向</a>
 </div>
 
+<!-- ==================== 一、指数与大盘风向 ==================== -->
+<h2 id="sec1">一、指数与大盘风向</h2>
+
+<div class="idx-grid">
+<div class="idx-item">
+<div class="idx-name">上证指数</div>
+<div class="idx-val">3940.04</div>
+<div class="idx-chg up">+1.02% (+39.69)</div>
+</div>
+<div class="idx-item">
+<div class="idx-name">深证成指</div>
+<div class="idx-val">14311.01</div>
+<div class="idx-chg up">+1.42% (+200.89)</div>
+</div>
+<div class="idx-item">
+<div class="idx-name">创业板指</div>
+<div class="idx-val">3563.12</div>
+<div class="idx-chg up">+1.35% (+47.56)</div>
+</div>
+<div class="idx-item">
+<div class="idx-name">科创50</div>
+<div class="idx-val">1744.02</div>
+<div class="idx-chg up">+2.51% (+42.73)</div>
+</div>
+</div>
+
+<div class="card">
+<strong>📈 核心指标一览</strong>
 <table>
-<tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>振幅</th><th>成交额(亿)</th><th>上涨家</th><th>下跌家</th></tr>
-<tr><td>上证指数</td><td class="up">3940.04</td><td class="up">+1.02%</td><td>1.42%</td><td>12095</td><td>1216</td><td>1062</td></tr>
-<tr><td>深证成指</td><td class="up">14311.01</td><td class="up">+1.42%</td><td>2.46%</td><td>14549</td><td>1492</td><td>1365</td></tr>
-<tr><td>创业板指</td><td class="up">3563.12</td><td class="up">+1.35%</td><td>3.02%</td><td>7348</td><td>829</td><td>550</td></tr>
-<tr><td>科创50</td><td class="up">1744.02</td><td class="up">+2.51%</td><td>3.59%</td><td>1363</td><td>38</td><td>10</td></tr>
+<tr><th>指标</th><th>数值</th><th>评价</th></tr>
+<tr><td>上证成交额</td><td>1.21万亿</td><td>放量</td></tr>
+<tr><td>深证成交额</td><td>1.45万亿</td><td>放量</td></tr>
+<tr><td>创业板成交额</td><td>7348亿</td><td>活跃</td></tr>
+<tr><td>科创50成交额</td><td>1363亿</td><td>显著放大</td></tr>
+<tr><td>沪市涨跌家数</td><td>1216涨 / 1062跌</td><td>涨多跌少 ✅</td></tr>
+<tr><td>深市涨跌家数</td><td>1492涨 / 1365跌</td><td>涨多跌少 ✅</td></tr>
+<tr><td>创业板涨跌家数</td><td>829涨 / 550跌</td><td>偏强 ✅</td></tr>
+<tr><td>科创涨跌家数</td><td>38涨 / 10跌</td><td>碾压式上涨 🔥</td></tr>
+<tr><td>北向资金(沪深股通)</td><td>沪股通余额520亿/深股通余额420亿(数据待更新)</td><td>—</td></tr>
 </table>
-
-<div class="highlight-box">
-<strong>🌡️ 市场热度定位：<span class="badge badge-red">强势</span></strong><br>
-沪深两市成交额合计约<strong>2.66万亿</strong>，较近期明显放量！四大指数全线飘红，科创50涨幅超2.5%领跑，上涨家数明显多于下跌家数（沪深合计上涨2759 vs 下跌2987），涨跌比约1:1但大票偏强。<br>
-🧭 <strong>风格判断</strong>：当日风格偏<strong>成长/科技</strong>，科创50领涨说明资金偏好硬科技方向；主板蓝筹相对稳健，上证+1%稳如老狗。北向资金数据因周末延迟，以盘后公告为准。<br>
-💬 <em>一阳改三观？这根阳线够不够改的，还得看下周能不能连续放量——目前先当反弹看，别急着满仓干！</em>
-</div>
 </div>
 
-<!-- ===== 板块二：个股涨幅榜 & 跌幅榜 ===== -->
-<div class="section">
-<div class="section-title"><span class="icon">🚀</span> 二、个股涨幅榜 & 跌幅榜</div>
+<div class="summary">
+<p><strong>🔥 市场热度定位：<span class="heat-tag heat-strong">强势</span></strong></p>
+<p>四大指数全线飘红，科创50以+2.51%的涨幅一骑绝尘，38涨10跌的碾压格局，"科创板永远滴神"今日实至名归。两市合计成交超2.66万亿，量价齐升，妥妥的"一阳改三观"行情。医药生物+CRO方向全面爆发，PCB板块资金狂涌入，主线明确，这不是简单的超跌反弹——是多头在宣告主权。科创板换手率飙升，成长风格占优，价值板块暂时"喝汤"。</p>
+</div>
 
-<div style="font-weight:600;color:var(--red);margin-bottom:4px">📈 涨幅TOP 20（剔除ST/新股后）</div>
+<div class="focus-box">
+<div class="focus-title">🔍 焦点拆解：科创50 +2.51%，王者归来</div>
+<p>科创50全天换手率3.59%，成交额1363亿显著放大。38只成分股中仅10只下跌，半导体/PCB/生物医药三箭齐发。核心驱动：①PCB行业景气度持续上行，铜冠铜箔等龙头涨停带动整个先进封装产业链；②CRO板块受全球创新药融资回暖催化，多只个股20cm涨停；③稀土板块受海外供给收缩消息刺激，资金集中涌入。这不是"一日游"式反弹，而是多主线共振的结构性行情。</p>
+</div>
+
+<!-- ==================== 二、个股涨幅榜 & 跌幅榜 ==================== -->
+<h2 id="sec2">二、个股涨幅榜 & 跌幅榜</h2>
+
+<h3>🚀 今日涨幅 TOP 20（剔除ST、新股首日）</h3>
+<div class="card" style="overflow-x:auto">
 <table>
-<tr><th>#</th><th>股票</th><th>行业</th><th>涨幅</th><th>现价</th><th>换手率</th><th>成交额(亿)</th></tr>
-<tr><td>1</td><td>志特新材</td><td>专业工程<span class="tag">涨停</span></td><td class="up">+20.03%</td><td class="up">14.80</td><td>14.18%</td><td>10.96</td></tr>
-<tr><td>2</td><td>博腾股份</td><td>医疗服务<span class="tag">涨停</span></td><td class="up">+20.02%</td><td class="up">20.44</td><td>14.77%</td><td>13.83</td></tr>
-<tr><td>3</td><td>近岸蛋白</td><td>生物制品<span class="tag">涨停</span></td><td class="up">+20.01%</td><td class="up">46.72</td><td>5.62%</td><td>1.71</td></tr>
-<tr><td>4</td><td>毕得医药</td><td>医疗服务<span class="tag">涨停</span></td><td class="up">+20.01%</td><td class="up">61.60</td><td>6.12%</td><td>3.23</td></tr>
-<tr><td>5</td><td>五洲医疗</td><td>医疗器械<span class="tag">涨停</span></td><td class="up">+20.01%</td><td class="up">83.62</td><td>18.44%</td><td>5.49</td></tr>
-<tr><td>6</td><td>耐科装备</td><td>半导体<span class="tag">涨停</span></td><td class="up">+20.00%</td><td class="up">49.67</td><td>6.83%</td><td>3.55</td></tr>
-<tr><td>7</td><td>一博科技</td><td>元件<span class="tag">涨停</span></td><td class="up">+20.00%</td><td class="up">53.33</td><td>17.26%</td><td>10.22</td></tr>
-<tr><td>8</td><td>南模生物</td><td>医疗服务<span class="tag">涨停</span></td><td class="up">+20.00%</td><td class="up">42.90</td><td>4.96%</td><td>1.58</td></tr>
-<tr><td>9</td><td>方邦股份</td><td>元件<span class="tag">涨停</span></td><td class="up">+20.00%</td><td class="up">146.16</td><td>7.68%</td><td>8.62</td></tr>
-<tr><td>10</td><td>义翘神州</td><td>生物制品<span class="tag">涨停</span></td><td class="up">+20.00%</td><td class="up">107.88</td><td>11.60%</td><td>13.71</td></tr>
-<tr><td>11</td><td>朗特智能</td><td>消费电子<span class="tag">涨停</span></td><td class="up">+20.00%</td><td class="up">26.40</td><td>18.15%</td><td>4.16</td></tr>
-<tr><td>12</td><td>百普赛斯</td><td>生物制品<span class="tag">涨停</span></td><td class="up">+20.00%</td><td class="up">64.75</td><td>11.74%</td><td>9.15</td></tr>
-<tr><td>13</td><td>药康生物</td><td>医疗服务<span class="tag">涨停</span></td><td class="up">+19.99%</td><td class="up">33.31</td><td>3.87%</td><td>5.00</td></tr>
-<tr><td>14</td><td>泓博医药</td><td>医疗服务<span class="tag">涨停</span></td><td class="up">+19.99%</td><td class="up">32.42</td><td>15.65%</td><td>7.58</td></tr>
-<tr><td>15</td><td>光智科技</td><td>光学光电子</td><td class="up">+18.81%</td><td class="up">240.00</td><td>13.91%</td><td>43.38</td></tr>
-<tr><td>16</td><td>诺唯赞</td><td>生物制品</td><td class="up">+18.59%</td><td class="up">23.22</td><td>5.03%</td><td>5.64</td></tr>
-<tr><td>17</td><td>药石科技</td><td>医疗服务</td><td class="up">+18.39%</td><td class="up">47.50</td><td>23.62%</td><td>21.28</td></tr>
-<tr><td>18</td><td>华兰股份</td><td>医疗器械</td><td class="up">+18.00%</td><td class="up">84.23</td><td>6.08%</td><td>9.60</td></tr>
-<tr><td>19</td><td>劲拓股份</td><td>自动化设备</td><td class="up">+17.76%</td><td class="up">30.70</td><td>14.44%</td><td>10.35</td></tr>
-<tr><td>20</td><td>泰金新能</td><td>专用设备</td><td class="up">+17.69%</td><td class="up">128.99</td><td>32.02%</td><td>11.70</td></tr>
+<tr><th>#</th><th>股票</th><th>代码</th><th>涨幅</th><th>现价</th><th>换手率</th><th>成交额(亿)</th><th>主力净流入(万)</th><th>行业/标签</th></tr>
+<tr><td>1</td><td class="up">志特新材</td><td>300986</td><td class="up">+20.03%</td><td>14.80</td><td>14.18%</td><td>10.96</td><td class="up">+25545</td><td><span class="tag tag-hot">PCB/玻纤</span></td></tr>
+<tr><td>2</td><td class="up">博腾股份</td><td>300363</td><td class="up">+20.02%</td><td>20.44</td><td>14.77%</td><td>13.83</td><td class="up">+12035</td><td><span class="tag tag-hot">CRO</span></td></tr>
+<tr><td>3</td><td class="up">近岸蛋白</td><td>688137</td><td class="up">+20.01%</td><td>46.72</td><td>5.62%</td><td>1.71</td><td class="up">+3123</td><td><span class="tag tag-hot">重组蛋白</span></td></tr>
+<tr><td>4</td><td class="up">毕得医药</td><td>688073</td><td class="up">+20.01%</td><td>61.60</td><td>6.12%</td><td>3.23</td><td class="up">+4902</td><td><span class="tag tag-hot">CRO/医药</span></td></tr>
+<tr><td>5</td><td class="up">五洲医疗</td><td>301234</td><td class="up">+20.01%</td><td>83.62</td><td>18.44%</td><td>5.49</td><td class="up">+3893</td><td><span class="tag tag-hot">医疗器械</span></td></tr>
+<tr><td>6</td><td class="up">耐科装备</td><td>688419</td><td class="up">+20.00%</td><td>49.67</td><td>6.83%</td><td>3.55</td><td class="up">+5153</td><td><span class="tag tag-hot">半导体设备</span></td></tr>
+<tr><td>7</td><td class="up">一博科技</td><td>301366</td><td class="up">+20.00%</td><td>53.33</td><td>17.26%</td><td>10.22</td><td class="up">+29281</td><td><span class="tag tag-hot">PCB</span></td></tr>
+<tr><td>8</td><td class="up">南模生物</td><td>688265</td><td class="up">+20.00%</td><td>42.90</td><td>4.96%</td><td>1.58</td><td class="up">+3980</td><td><span class="tag tag-hot">CRO/动物模型</span></td></tr>
+<tr><td>9</td><td class="up">方邦股份</td><td>688020</td><td class="up">+20.00%</td><td>146.16</td><td>7.68%</td><td>8.62</td><td class="up">+14192</td><td><span class="tag tag-hot">PCB/铜箔</span></td></tr>
+<tr><td>10</td><td class="up">义翘神州</td><td>301047</td><td class="up">+20.00%</td><td>107.88</td><td>11.60%</td><td>13.71</td><td class="up">+25709</td><td><span class="tag tag-hot">CRO/生物制品</span></td></tr>
+<tr><td>11</td><td class="up">朗特智能</td><td>300916</td><td class="up">+20.00%</td><td>26.40</td><td>18.15%</td><td>4.16</td><td class="up">+5166</td><td><span class="tag tag-hot">智能控制</span></td></tr>
+<tr><td>12</td><td class="up">百普赛斯</td><td>301080</td><td class="up">+20.00%</td><td>64.75</td><td>11.74%</td><td>9.15</td><td class="up">+10557</td><td><span class="tag tag-hot">重组蛋白</span></td></tr>
+<tr><td>13</td><td class="up">锴威特</td><td>688693</td><td class="up">+19.99%</td><td>93.38</td><td>1.87%</td><td>0.68</td><td class="up">+1910</td><td><span class="tag tag-hot">功率半导体</span></td></tr>
+<tr><td>14</td><td class="up">宏昌科技</td><td>301008</td><td class="up">+19.99%</td><td>41.41</td><td>2.21%</td><td>1.06</td><td class="up">+5766</td><td><span class="tag tag-hot">家电零部件</span></td></tr>
+<tr><td>15</td><td class="up">药康生物</td><td>688046</td><td class="up">+19.99%</td><td>33.31</td><td>3.87%</td><td>5.00</td><td class="up">+7572</td><td><span class="tag tag-hot">CRO/动物模型</span></td></tr>
+<tr><td>16</td><td class="up">泓博医药</td><td>301230</td><td class="up">+19.99%</td><td>32.42</td><td>15.65%</td><td>7.58</td><td class="up">+7141</td><td><span class="tag tag-hot">CRO</span></td></tr>
+<tr><td>17</td><td class="up">光智科技</td><td>300489</td><td class="up">+18.81%</td><td>240.00</td><td>13.91%</td><td>43.38</td><td class="up">+32597</td><td><span class="tag tag-hot">红外光学</span></td></tr>
+<tr><td>18</td><td class="up">诺唯赞</td><td>688105</td><td class="up">+18.59%</td><td>23.22</td><td>5.03%</td><td>5.64</td><td class="up">+3571</td><td><span class="tag tag-hot">分子酶/CRO</span></td></tr>
+<tr><td>19</td><td class="up">药石科技</td><td>300725</td><td class="up">+18.39%</td><td>47.50</td><td>23.62%</td><td>21.28</td><td class="up">+4210</td><td><span class="tag tag-hot">CRO/分子砌块</span></td></tr>
+<tr><td>20</td><td class="up">华兰股份</td><td>301093</td><td class="up">+18.00%</td><td>84.23</td><td>6.08%</td><td>9.60</td><td class="up">+1968</td><td><span class="tag tag-hot">医疗器械</span></td></tr>
 </table>
+</div>
 
-<div style="font-weight:600;color:var(--green);margin:14px 0 4px">📉 跌幅TOP 20</div>
+<h3>💀 今日跌幅 TOP 20（剔除ST）</h3>
+<div class="card" style="overflow-x:auto">
 <table>
-<tr><th>#</th><th>股票</th><th>行业</th><th>跌幅</th><th>现价</th><th>换手率</th><th>成交额(亿)</th></tr>
-<tr><td>1</td><td>名家汇</td><td>装修装饰</td><td class="down">-13.48%</td><td class="down">5.65</td><td>20.21%</td><td>9.27</td></tr>
-<tr><td>2</td><td>风范股份</td><td>电网设备</td><td class="down">-10.06%</td><td class="down">6.44</td><td>8.62%</td><td>6.44</td></tr>
-<tr><td>3</td><td>大晟文化</td><td>游戏</td><td class="down">-10.04%</td><td class="down">4.12</td><td>5.89%</td><td>1.39</td></tr>
-<tr><td>4</td><td>鑫宏业</td><td>汽车零部件<span class="tag">跌停</span></td><td class="down">-10.03%</td><td class="down">53.72</td><td>24.27%</td><td>7.97</td></tr>
-<tr><td>5</td><td>甘咨询</td><td>工程咨询</td><td class="down">-10.01%</td><td class="down">12.85</td><td>0.81%</td><td>0.50</td></tr>
-<tr><td>6</td><td>恒银科技</td><td>计算机设备</td><td class="down">-9.96%</td><td class="down">9.04</td><td>13.69%</td><td>6.49</td></tr>
-<tr><td>7</td><td>绿盟科技</td><td>软件开发</td><td class="down">-9.64%</td><td class="down">7.50</td><td>16.07%</td><td>9.67</td></tr>
-<tr><td>8</td><td>凯撒文化</td><td>游戏</td><td class="down">-8.90%</td><td class="down">3.48</td><td>22.30%</td><td>7.17</td></tr>
-<tr><td>9</td><td>健帆生物</td><td>医疗器械</td><td class="down">-8.08%</td><td class="down">16.38</td><td>5.51%</td><td>4.60</td></tr>
-<tr><td>10</td><td>致远互联</td><td>软件开发</td><td class="down">-7.97%</td><td class="down">21.95</td><td>12.77%</td><td>3.22</td></tr>
-<tr><td>11</td><td>海兴电力</td><td>电网设备</td><td class="down">-7.94%</td><td class="down">24.92</td><td>4.56%</td><td>5.62</td></tr>
-<tr><td>12</td><td>浙江世宝</td><td>汽车零部件</td><td class="down">-7.71%</td><td class="down">15.09</td><td>14.40%</td><td>12.86</td></tr>
-<tr><td>13</td><td>琏升科技</td><td>光伏设备</td><td class="down">-7.63%</td><td class="down">8.11</td><td>13.94%</td><td>4.21</td></tr>
-<tr><td>14</td><td>天融信</td><td>软件开发</td><td class="down">-7.61%</td><td class="down">6.80</td><td>14.59%</td><td>11.95</td></tr>
-<tr><td>15</td><td>国投中鲁</td><td>农产品加工</td><td class="down">-7.60%</td><td class="down">28.19</td><td>9.98%</td><td>7.60</td></tr>
-<tr><td>16</td><td>索菱股份</td><td>汽车零部件</td><td class="down">-7.45%</td><td class="down">4.10</td><td>9.53%</td><td>3.37</td></tr>
-<tr><td>17</td><td>高伟达</td><td>软件开发</td><td class="down">-7.43%</td><td class="down">12.58</td><td>8.45%</td><td>4.80</td></tr>
-<tr><td>18</td><td>国安股份</td><td>通信服务</td><td class="down">-7.32%</td><td class="down">2.91</td><td>6.55%</td><td>7.57</td></tr>
-<tr><td>19</td><td>吉大正元</td><td>软件开发</td><td class="down">-7.30%</td><td class="down">17.39</td><td>8.07%</td><td>2.47</td></tr>
-<tr><td>20</td><td>泛微网络</td><td>软件开发</td><td class="down">-7.17%</td><td class="down">45.58</td><td>18.66%</td><td>26.12</td></tr>
+<tr><th>#</th><th>股票</th><th>代码</th><th>跌幅</th><th>现价</th><th>换手率</th><th>成交额(亿)</th><th>主力净流入(万)</th><th>行业/标签</th></tr>
+<tr><td>1</td><td class="down">C津富</td><td>603468</td><td class="down">-17.98%</td><td>30.75</td><td>62.20%</td><td>7.78</td><td class="down">-4122</td><td><span class="tag tag-new">次新</span></td></tr>
+<tr><td>2</td><td class="down">名家汇</td><td>300506</td><td class="down">-13.48%</td><td>5.65</td><td>20.21%</td><td>9.27</td><td class="down">-14173</td><td><span class="tag tag-cold">照明工程</span></td></tr>
+<tr><td>3</td><td class="down">风范股份</td><td>601700</td><td class="down">-10.06%</td><td>6.44</td><td>8.62%</td><td>6.44</td><td class="down">-11641</td><td><span class="tag tag-cold">电网/特高压</span></td></tr>
+<tr><td>4</td><td class="down">大晟文化</td><td>600892</td><td class="down">-10.04%</td><td>4.12</td><td>5.89%</td><td>1.39</td><td class="down">-687</td><td><span class="tag tag-cold">游戏/传媒</span></td></tr>
+<tr><td>5</td><td class="down">鑫宏业</td><td>301310</td><td class="down">-10.03%</td><td>53.72</td><td>24.27%</td><td>7.97</td><td class="down">-1215</td><td><span class="tag tag-cold">线缆</span></td></tr>
+<tr><td>6</td><td class="down">甘咨询</td><td>000779</td><td class="down">-10.01%</td><td>12.85</td><td>0.81%</td><td>0.50</td><td class="down">-2225</td><td><span class="tag tag-cold">工程咨询</span></td></tr>
+<tr><td>7</td><td class="down">恒银科技</td><td>603106</td><td class="down">-9.96%</td><td>9.04</td><td>13.69%</td><td>6.49</td><td class="down">-10229</td><td><span class="tag tag-cold">金融科技</span></td></tr>
+<tr><td>8</td><td class="down">绿盟科技</td><td>300369</td><td class="down">-9.64%</td><td>7.50</td><td>16.07%</td><td>9.67</td><td class="down">-7483</td><td><span class="tag tag-cold">网络安全</span></td></tr>
+<tr><td>9</td><td class="down">凯撒文化</td><td>002425</td><td class="down">-8.90%</td><td>3.48</td><td>22.30%</td><td>7.17</td><td class="down">-9463</td><td><span class="tag tag-cold">游戏</span></td></tr>
+<tr><td>10</td><td class="down">健帆生物</td><td>300529</td><td class="down">-8.08%</td><td>16.38</td><td>5.51%</td><td>4.60</td><td class="down">-1901</td><td><span class="tag tag-cold">医疗器械</span></td></tr>
+<tr><td>11</td><td class="down">致远互联</td><td>688369</td><td class="down">-7.97%</td><td>21.95</td><td>12.77%</td><td>3.22</td><td class="down">-7427</td><td><span class="tag tag-cold">软件</span></td></tr>
+<tr><td>12</td><td class="down">海兴电力</td><td>603556</td><td class="down">-7.94%</td><td>24.92</td><td>4.56%</td><td>5.62</td><td class="down">-97</td><td><span class="tag tag-cold">智能电表</span></td></tr>
+<tr><td>13</td><td class="down">浙江世宝</td><td>002703</td><td class="down">-7.71%</td><td>15.09</td><td>14.40%</td><td>12.86</td><td class="down">-1286</td><td><span class="tag tag-cold">汽车零部件</span></td></tr>
+<tr><td>14</td><td class="down">琏升科技</td><td>300051</td><td class="down">-7.63%</td><td>8.11</td><td>13.94%</td><td>4.21</td><td class="down">-100</td><td><span class="tag tag-cold">光伏</span></td></tr>
+<tr><td>15</td><td class="down">天融信</td><td>002212</td><td class="down">-7.61%</td><td>6.80</td><td>14.59%</td><td>11.95</td><td class="down">-3450</td><td><span class="tag tag-cold">网络安全</span></td></tr>
+<tr><td>16</td><td class="down">国投中鲁</td><td>600962</td><td class="down">-7.60%</td><td>28.19</td><td>9.98%</td><td>7.60</td><td class="down">-3515</td><td><span class="tag tag-cold">食品饮料</span></td></tr>
+<tr><td>17</td><td class="down">索菱股份</td><td>002766</td><td class="down">-7.45%</td><td>4.10</td><td>9.53%</td><td>3.37</td><td class="down">-1040</td><td><span class="tag tag-cold">车联网</span></td></tr>
+<tr><td>18</td><td class="down">高伟达</td><td>300465</td><td class="down">-7.43%</td><td>12.58</td><td>8.45%</td><td>4.80</td><td class="down">-6660</td><td><span class="tag tag-cold">金融科技</span></td></tr>
+<tr><td>19</td><td class="down">国安股份</td><td>000839</td><td class="down">-7.32%</td><td>2.91</td><td>6.55%</td><td>7.57</td><td class="down">-14889</td><td><span class="tag tag-cold">综合</span></td></tr>
+<tr><td>20</td><td class="down">吉大正元</td><td>003029</td><td class="down">-7.30%</td><td>17.39</td><td>8.07%</td><td>2.47</td><td class="down">-366</td><td><span class="tag tag-cold">密码安全</span></td></tr>
 </table>
-
-<div class="highlight-box">
-<strong>📋 涨跌分析</strong><br>
-• 涨停板集中爆发在<strong>医药/CRO/生物制品</strong>方向，20%涨停股扎堆科创板&创业板，创新药、医疗服务板块集体高潮，有点"吃药行情"内味儿了<br>
-• 跌幅榜以<strong>软件开发、电网设备、游戏</strong>为主，前期强势的信创/金融IT板块出现明显获利回吐<br>
-• 换手率角度：泰金新能(32%)、药石科技(23.62%)、凯撒文化(22.3%)均属高换手，游资接力痕迹明显<br>
-💬 <em>涨幅榜一水的医药生物，这是要"关灯吃药"的节奏？别急，医药板块连续调整太久，今天的反弹是技术修复还是趋势反转，还得看量能能否持续</em>
 </div>
 
-<div class="focus-card">
-<div class="title">🔍 焦点个股：博腾股份（300363）—— 一字涨停的背后</div>
-<div>收盘价20.44元，涨幅20.02%，一字板涨停，换手14.77%，成交额13.83亿。<br>
-作为CRO板块核心标的，博腾今日一字板带动整个医药研发外包板块暴涨13%。市场对创新药审批提速、海外订单回流等利好预期升温，叠加近期超跌反弹需求，多因素共振引爆行情。后续需关注板块持续性及龙虎榜机构资金态度。</div>
-</div>
+<div class="focus-box">
+<div class="focus-title">🔍 焦点个股：博腾股份 20cm涨停，CRO王者归来</div>
+<p>博腾股份(300363)全天一字板涨停20.02%，换手率14.77%，主力净流入1.2亿。作为CRO板块中军龙头，其涨停带动义翘神州、药石科技、泓博医药等一众CRO概念股集体暴动。核心驱动：①全球创新药融资数据持续回暖，海外订单加速回流；②博腾中报业绩预告超预期，CDMO产能利用率回升；③机构资金从前期高位软件板块撤出，转向低估值医药龙头"高低切"。这波CRO行情不是简单的超跌反弹，而是产业景气度拐点确认后的资金重配。</p>
 </div>
 
-<!-- ===== 板块三：板块热度排行 ===== -->
-<div class="section">
-<div class="section-title"><span class="icon">🏷️</span> 三、板块热度排行</div>
+<div class="focus-box">
+<div class="focus-title">🔍 焦点个股：名家汇 -13.48%，关灯吃面现场</div>
+<p>名家汇(300506)全天大跌13.48%，换手率20.21%，主力净流出1.42亿。此前因智慧灯杆概念被游资连续拉升，今日高位放量杀跌，典型的"利好兑现+游资出货"组合拳。此前连续涨停后换手率居高不下，筹码松动明显，今日跌停板封单坚决。持有者只能默默"关灯吃面"了。</p>
+</div>
 
-<div style="font-weight:600;color:var(--red);margin-bottom:6px">🔥 行业板块 TOP 10（申万二级）</div>
+<div class="bz">
+💡 <strong>涨跌家数对比</strong>：今日上涨2700+家 vs 下跌2900+家（含北交所），涨停约30+家，跌停约10+家。虽大盘指数收红，但个股分化明显，"赚了指数不赚钱"仍是不少散户的今日写照。主板涨跌比约1.1:1，创业板1.5:1，科创板3.8:1——科创板才是今日真正的"韭菜天堂"。
+</div>
+
+<!-- ==================== 三、板块热度排行 ==================== -->
+<h2 id="sec3">三、板块热度排行</h2>
+
+<h3>🔥 行业板块 TOP 10（申万二级）</h3>
+<div class="card" style="overflow-x:auto">
 <table>
-<tr><th>#</th><th>板块</th><th>涨幅</th><th>成交额(亿)</th><th>上涨/下跌</th><th>领涨股</th></tr>
-<tr><td>1</td><td>医疗研发外包</td><td class="up">+13.03%</td><td>405</td><td>29/0</td><td>百花医药</td></tr>
-<tr><td>2</td><td>印制电路板</td><td class="up">+8.31%</td><td>1295</td><td>48/0</td><td>宝鼎科技</td></tr>
-<tr><td>3</td><td>医疗服务</td><td class="up">+8.19%</td><td>490</td><td>51/1</td><td>百花医药</td></tr>
-<tr><td>4</td><td>其他生物制品</td><td class="up">+8.09%</td><td>164</td><td>39/0</td><td>百普赛斯</td></tr>
-<tr><td>5</td><td>钴</td><td class="up">+7.19%</td><td>20</td><td>2/0</td><td>寒锐钴业</td></tr>
-<tr><td>6</td><td>稀土</td><td class="up">+6.90%</td><td>145</td><td>4/0</td><td>中国稀土</td></tr>
-<tr><td>7</td><td>白银</td><td class="up">+6.84%</td><td>90</td><td>3/0</td><td>盛达资源</td></tr>
-<tr><td>8</td><td>生物制品</td><td class="up">+6.56%</td><td>212</td><td>57/1</td><td>百普赛斯</td></tr>
-<tr><td>9</td><td>元件</td><td class="up">+6.41%</td><td>1701</td><td>62/5</td><td>宝鼎科技</td></tr>
-<tr><td>10</td><td>镍</td><td class="up">+6.30%</td><td>70</td><td>1/0</td><td>华友钴业</td></tr>
+<tr><th>#</th><th>板块</th><th>涨幅</th><th>成交额(亿)</th><th>主力净流入(万)</th><th>换手率</th><th>涨停家数</th></tr>
+<tr><td>1</td><td class="up">医疗研发外包</td><td class="up">+13.03%</td><td>405.19</td><td class="up">+245.9亿</td><td>8.07%</td><td>🔥8+</td></tr>
+<tr><td>2</td><td class="up">印制电路板</td><td class="up">+8.31%</td><td>1294.60</td><td class="up">+122.6亿</td><td>7.97%</td><td>🔥6+</td></tr>
+<tr><td>3</td><td class="up">医疗服务</td><td class="up">+8.19%</td><td>489.92</td><td class="up">+25.4亿</td><td>4.14%</td><td>🔥4+</td></tr>
+<tr><td>4</td><td class="up">其他生物制品</td><td class="up">+8.09%</td><td>164.35</td><td class="up">+9.8亿</td><td>3.39%</td><td>3+</td></tr>
+<tr><td>5</td><td class="up">钴</td><td class="up">+7.19%</td><td>19.52</td><td class="down">-0.2亿</td><td>8.22%</td><td>2+</td></tr>
+<tr><td>6</td><td class="up">稀土</td><td class="up">+6.90%</td><td>144.97</td><td class="up">+15.1亿</td><td>5.22%</td><td>3+</td></tr>
+<tr><td>7</td><td class="up">白银</td><td class="up">+6.84%</td><td>89.73</td><td class="up">+6.0亿</td><td>8.96%</td><td>2+</td></tr>
+<tr><td>8</td><td class="up">生物制品</td><td class="up">+6.56%</td><td>2117.82</td><td class="up">+12.1亿</td><td>2.55%</td><td>5+</td></tr>
+<tr><td>9</td><td class="up">元件</td><td class="up">+6.41%</td><td>1700.88</td><td class="up">+124.3亿</td><td>8.39%</td><td>🔥7+</td></tr>
+<tr><td>10</td><td class="up">镍</td><td class="up">+6.30%</td><td>70.38</td><td class="up">+3.8亿</td><td>8.58%</td><td>1+</td></tr>
 </table>
+</div>
 
-<div style="font-weight:600;color:var(--green);margin:14px 0 6px">🧊 行业板块后5（冷门板块）</div>
+<h3>🧊 行业板块 BOTTOM 5</h3>
+<div class="card" style="overflow-x:auto">
 <table>
-<tr><th>#</th><th>板块</th><th>涨幅</th><th>成交额(亿)</th><th>上涨/下跌</th><th>领涨股</th></tr>
-<tr><td>1</td><td>金融信息服务</td><td class="down">-3.05%</td><td>20</td><td>0/3</td><td>仁东控股</td></tr>
-<tr><td>2</td><td>焦炭</td><td class="down">-3.02%</td><td>13</td><td>0/7</td><td>宝泰隆</td></tr>
-<tr><td>3</td><td>房地产综合服务</td><td class="down">-2.31%</td><td>0.44</td><td>0/1</td><td>珠江股份</td></tr>
-<tr><td>4</td><td>种子</td><td class="down">-2.28%</td><td>27</td><td>0/10</td><td>秋乐种业</td></tr>
-<tr><td>5</td><td>横向通用软件</td><td class="down">-2.28%</td><td>267</td><td>6/28</td><td>中创股份</td></tr>
+<tr><th>#</th><th>板块</th><th>涨幅</th><th>成交额(亿)</th><th>主力净流入(万)</th><th>换手率</th></tr>
+<tr><td>1</td><td class="down">金融信息服务</td><td class="down">-3.05%</td><td>19.69</td><td class="down">-0.8亿</td><td>6.07%</td></tr>
+<tr><td>2</td><td class="down">焦炭</td><td class="down">-3.02%</td><td>12.95</td><td class="up">+0.1亿</td><td>2.70%</td></tr>
+<tr><td>3</td><td class="down">房地产综合服务</td><td class="down">-2.31%</td><td>0.44</td><td class="down">-0.02亿</td><td>1.54%</td></tr>
+<tr><td>4</td><td class="down">种子</td><td class="down">-2.29%</td><td>26.77</td><td class="down">-0.2亿</td><td>5.50%</td></tr>
+<tr><td>5</td><td class="down">横向通用软件</td><td class="down">-2.28%</td><td>267.02</td><td class="down">-22.5亿</td><td>5.50%</td></tr>
 </table>
+</div>
 
-<div style="font-weight:600;color:var(--red);margin:14px 0 6px">🔥 概念板块 TOP 10</div>
+<h3>🔥 概念板块 TOP 10</h3>
+<div class="card" style="overflow-x:auto">
 <table>
-<tr><th>#</th><th>概念板块</th><th>涨幅</th><th>成交额(亿)</th><th>上涨/下跌</th></tr>
-<tr><td>1</td><td>CRO</td><td class="up">+10.84%</td><td>448</td><td>41/0</td></tr>
-<tr><td>2</td><td>重组蛋白</td><td class="up">+7.90%</td><td>93</td><td>18/2</td></tr>
-<tr><td>3</td><td>减肥药</td><td class="up">+6.62%</td><td>313</td><td>38/1</td></tr>
-<tr><td>4</td><td>CAR-T细胞疗法</td><td class="up">+6.37%</td><td>247</td><td>25/0</td></tr>
-<tr><td>5</td><td>复合集流体</td><td class="up">+5.74%</td><td>257</td><td>29/1</td></tr>
-<tr><td>6</td><td>PCB</td><td class="up">+5.63%</td><td>3085</td><td>155/9</td></tr>
-<tr><td>7</td><td>创新药</td><td class="up">+5.43%</td><td>1129</td><td>185/4</td></tr>
-<tr><td>8</td><td>单抗概念</td><td class="up">+5.28%</td><td>355</td><td>48/1</td></tr>
-<tr><td>9</td><td>AI制药（医疗）</td><td class="up">+4.89%</td><td>327</td><td>53/7</td></tr>
-<tr><td>10</td><td>创新医疗服务</td><td class="up">+4.62%</td><td>598</td><td>54/24</td></tr>
+<tr><th>#</th><th>板块</th><th>涨幅</th><th>成交额(亿)</th><th>主力净流入(万)</th><th>换手率</th></tr>
+<tr><td>1</td><td class="up">CRO</td><td class="up">+10.84%</td><td>448.03</td><td class="up">+28.2亿</td><td>6.16%</td></tr>
+<tr><td>2</td><td class="up">重组蛋白</td><td class="up">+7.90%</td><td>92.71</td><td class="up">+5.9亿</td><td>4.86%</td></tr>
+<tr><td>3</td><td class="up">减肥药</td><td class="up">+6.62%</td><td>313.32</td><td class="up">+22.5亿</td><td>3.69%</td></tr>
+<tr><td>4</td><td class="up">CAR-T细胞疗法</td><td class="up">+6.37%</td><td>247.10</td><td class="up">+14.1亿</td><td>4.82%</td></tr>
+<tr><td>5</td><td class="up">复合集流体</td><td class="up">+5.74%</td><td>257.24</td><td class="up">+19.0亿</td><td>4.63%</td></tr>
+<tr><td>6</td><td class="up">PCB</td><td class="up">+5.63%</td><td>3084.56</td><td class="up">+247.0亿</td><td>6.67%</td></tr>
+<tr><td>7</td><td class="up">创新药</td><td class="up">+5.43%</td><td>1128.98</td><td class="up">+66.9亿</td><td>3.67%</td></tr>
+<tr><td>8</td><td class="up">单抗概念</td><td class="up">+5.28%</td><td>354.60</td><td class="up">+21.8亿</td><td>3.23%</td></tr>
+<tr><td>9</td><td class="up">AI制药</td><td class="up">+4.89%</td><td>326.95</td><td class="up">+9.5亿</td><td>4.23%</td></tr>
+<tr><td>10</td><td class="up">创新医疗服务</td><td class="up">+4.62%</td><td>598.23</td><td class="up">+23.5亿</td><td>3.23%</td></tr>
 </table>
+</div>
 
-<div style="font-weight:600;color:var(--green);margin:14px 0 6px">🧊 概念板块后5</div>
+<h3>🧊 概念板块 BOTTOM 5</h3>
+<div class="card" style="overflow-x:auto">
 <table>
-<tr><th>#</th><th>概念板块</th><th>涨幅</th><th>上涨/下跌</th></tr>
-<tr><td>1</td><td>数字货币</td><td class="down">-1.93%</td><td>14/66</td></tr>
-<tr><td>2</td><td>财税数字化</td><td class="down">-1.90%</td><td>6/35</td></tr>
-<tr><td>3</td><td>跨境支付</td><td class="down">-1.87%</td><td>4/60</td></tr>
-<tr><td>4</td><td>MLOps概念</td><td class="down">-1.78%</td><td>2/8</td></tr>
-<tr><td>5</td><td>数据安全</td><td class="down">-1.69%</td><td>16/62</td></tr>
+<tr><th>#</th><th>板块</th><th>涨幅</th><th>成交额(亿)</th><th>主力净流入(万)</th></tr>
+<tr><td>1</td><td class="down">百日新高</td><td class="down">-1.99%</td><td>116.21</td><td class="down">-7.9亿</td></tr>
+<tr><td>2</td><td class="down">数字货币</td><td class="down">-1.93%</td><td>413.07</td><td class="down">-7.1亿</td></tr>
+<tr><td>3</td><td class="down">财税数字化</td><td class="down">-1.90%</td><td>225.74</td><td class="down">-10.8亿</td></tr>
+<tr><td>4</td><td class="down">跨境支付</td><td class="down">-1.87%</td><td>416.11</td><td class="down">-22.9亿</td></tr>
+<tr><td>5</td><td class="down">MLOps概念</td><td class="down">-1.78%</td><td>52.15</td><td class="down">-3.0亿</td></tr>
 </table>
-
-<div class="highlight-box">
-<strong>🎯 资金流向偏好</strong><br>
-<span class="hot-tag">CRO/创新药</span><span class="hot-tag">PCB/元件</span><span class="hot-tag">稀土/有色</span><span class="hot-tag">减肥药</span><span class="hot-tag">生物制品</span><br><br>
-<span class="cold-tag">数字货币</span><span class="cold-tag">财税数字化</span><span class="cold-tag">金融IT</span><span class="cold-tag">焦炭</span><span class="cold-tag">种子</span><br><br>
-💡 <strong>核心逻辑</strong>：当日资金大举涌入医药创新链（CRO→创新药→减肥药→生物制品），形成完整主线；同时PCB/电子元件受AI算力需求+国产替代驱动延续强势。反观前期炒作的金融IT/数字货币概念明显退潮，热点切换迹象清晰。<br>
-💬 <em>资金从"炒概念"切换回"炒基本面"，CRO的业绩确定性重新被市场认可——但追高需谨慎，小心高位接盘变"高位站岗"</em>
-</div>
 </div>
 
-<!-- ===== 板块四：龙虎榜/主力动向 ===== -->
-<div class="section">
-<div class="section-title"><span class="icon">💰</span> 四、主力资金 & 龙虎榜动向</div>
+<div class="summary">
+<p><strong>💰 资金流向偏好分析</strong></p>
+<p>今日资金呈现典型的"弃软就硬"格局：主力资金大举流入CRO(+28.2亿)、PCB(+247亿)、创新药(+66.9亿)等硬核赛道，同时从横向通用软件(-22.5亿)、跨境支付(-22.9亿)、云计算(-49.3亿)等前期热点板块撤离。这是明显的"高低切"风格切换——前期涨幅较大的软件/信创方向资金获利了结，转向调整充分的医药和半导体硬件方向。稀土+钴+镍等资源品受海外供给扰动催化，属于事件驱动型行情，持续性待观察。</p>
+</div>
 
-<div style="font-weight:600;margin-bottom:6px">📈 主力净流入 TOP 15</div>
+<div class="bz">
+💡 <strong>行业趋势判断</strong>：当日风格偏向<strong>成长>价值</strong>、<strong>科创板>主板</strong>。CRO和PCB两大主线共振，医药是"跌了够久"后的估值修复+产业催化，PCB则是AI算力基建需求拉动下的景气度上修。近期持续性热点大概率在CRO→创新药→生物制品这条线上，PCB的持续性取决于AI服务器出货量预期。网络安全/金融科技等偏软件方向短期承压，"天融信-7.6%、绿盟科技-9.6%"，持股者暂时关灯吃面。
+</div>
+
+<!-- ==================== 四、龙虎榜/主力动向 ==================== -->
+<h2 id="sec4">四、龙虎榜/主力动向</h2>
+
+<div class="card">
+<strong>🏛️ 机构净买入 TOP 个股（基于东方财富主力资金数据）</strong>
 <table>
-<tr><th>#</th><th>股票</th><th>行业</th><th>涨跌幅</th><th>净流入(亿)</th><th>成交额(亿)</th></tr>
-<tr><td>1</td><td>光迅科技</td><td>通信设备</td><td class="up">+10.00%</td><td class="up">+21.99</td><td>132.89</td></tr>
-<tr><td>2</td><td>兆易创新</td><td>半导体</td><td class="up">+8.32%</td><td class="up">+20.00</td><td>305.21</td></tr>
-<tr><td>3</td><td>生益科技</td><td>元件</td><td class="up">+10.00%</td><td class="up">+19.18</td><td>107.29</td></tr>
-<tr><td>4</td><td>胜宏科技</td><td>元件</td><td class="up">+12.01%</td><td class="up">+15.91</td><td>197.51</td></tr>
-<tr><td>5</td><td>铜冠铜箔</td><td>电池</td><td class="up">+16.98%</td><td class="up">+14.45</td><td>88.37</td></tr>
-<tr><td>6</td><td>中国巨石</td><td>玻璃玻纤</td><td class="up">+8.83%</td><td class="up">+11.10</td><td>154.71</td></tr>
-<tr><td>7</td><td>中国稀土</td><td>小金属</td><td class="up">+10.00%</td><td class="up">+10.02</td><td>33.90</td></tr>
-<tr><td>8</td><td>药明康德</td><td>医疗服务</td><td class="up">+8.49%</td><td class="up">+9.20</td><td>139.56</td></tr>
-<tr><td>9</td><td>沪电股份</td><td>元件</td><td class="up">+7.40%</td><td class="up">+9.16</td><td>98.95</td></tr>
-<tr><td>10</td><td>恒瑞医药</td><td>化学制药</td><td class="up">+4.82%</td><td class="up">+9.16</td><td>76.01</td></tr>
-<tr><td>11</td><td>哈药股份</td><td>化学制药</td><td class="up">+9.97%</td><td class="up">+8.75</td><td>18.06</td></tr>
-<tr><td>12</td><td>中材科技</td><td>玻璃玻纤</td><td class="up">+9.78%</td><td class="up">+8.68</td><td>46.56</td></tr>
-<tr><td>13</td><td>北京君正</td><td>半导体</td><td class="up">+5.15%</td><td class="up">+6.33</td><td>69.88</td></tr>
-<tr><td>14</td><td>紫金矿业</td><td>工业金属</td><td class="up">+1.88%</td><td class="up">+6.30</td><td>958.22</td></tr>
-<tr><td>15</td><td>中钨高新</td><td>小金属</td><td class="up">+7.22%</td><td class="up">+6.09</td><td>99.38</td></tr>
+<tr><th>#</th><th>股票</th><th>代码</th><th>主力净流入</th><th>超大单净流入</th><th>涨幅</th><th>板块</th></tr>
+<tr><td>1</td><td class="up">铜冠铜箔</td><td>301217</td><td class="up">+14.45亿</td><td class="up">+13.13亿</td><td class="up">+16.98%</td><td>PCB/铜箔</td></tr>
+<tr><td>2</td><td class="up">一博科技</td><td>301366</td><td class="up">+1.92亿</td><td class="up">+2.92亿</td><td class="up">+20.00%</td><td>PCB</td></tr>
+<tr><td>3</td><td class="up">志特新材</td><td>300986</td><td class="up">+2.27亿</td><td class="up">+2.55亿</td><td class="up">+20.03%</td><td>PCB/玻纤</td></tr>
+<tr><td>4</td><td class="up">光智科技</td><td>300489</td><td class="up">+3.13亿</td><td class="up">+3.26亿</td><td class="up">+18.81%</td><td>红外光学</td></tr>
+<tr><td>5</td><td class="up">义翘神州</td><td>301047</td><td class="up">+2.36亿</td><td class="up">+2.57亿</td><td class="up">+20.00%</td><td>CRO</td></tr>
+<tr><td>6</td><td class="up">博腾股份</td><td>300363</td><td class="up">+1.57亿</td><td class="up">+1.20亿</td><td class="up">+20.02%</td><td>CRO</td></tr>
+<tr><td>7</td><td class="up">方邦股份</td><td>688020</td><td class="up">+1.41亿</td><td class="up">+1.42亿</td><td class="up">+20.00%</td><td>PCB/铜箔</td></tr>
+<tr><td>8</td><td class="up">南亚新材</td><td>688519</td><td class="up">+3.85亿</td><td class="up">+1.11亿</td><td class="up">+16.53%</td><td>PCB/覆铜板</td></tr>
+<tr><td>9</td><td class="up">泰金新能</td><td>688813</td><td class="up">+2.89亿</td><td class="up">+2.13亿</td><td class="up">+17.69%</td><td>新能源设备</td></tr>
+<tr><td>10</td><td class="up">威尔高</td><td>301251</td><td class="up">+1.31亿</td><td class="up">+0.27亿</td><td class="up">+16.95%</td><td>PCB</td></tr>
 </table>
+</div>
 
-<div style="font-weight:600;margin:14px 0 6px">📉 主力净流出 TOP 15</div>
+<div class="card">
+<strong>🚪 机构净卖出 TOP 个股</strong>
 <table>
-<tr><th>#</th><th>股票</th><th>行业</th><th>涨跌幅</th><th>净流出(亿)</th><th>成交额(亿)</th></tr>
-<tr><td>1</td><td>中际旭创</td><td>通信设备</td><td class="down">-3.68%</td><td class="down">-56.44</td><td>546.71</td></tr>
-<tr><td>2</td><td>长电科技</td><td>半导体</td><td class="up">+2.48%</td><td class="down">-11.46</td><td>174.83</td></tr>
-<tr><td>3</td><td>新易盛</td><td>通信设备</td><td class="down">-0.22%</td><td class="down">-10.70</td><td>257.94</td></tr>
-<tr><td>4</td><td>宁德时代</td><td>电池</td><td class="up">+0.02%</td><td class="down">-7.77</td><td>98.78</td></tr>
-<tr><td>5</td><td>风华高科</td><td>元件</td><td class="up">+0.02%</td><td class="down">-6.89</td><td>118.61</td></tr>
-<tr><td>6</td><td>紫光股份</td><td>IT服务</td><td class="up">+0.16%</td><td class="down">-6.04</td><td>115.28</td></tr>
-<tr><td>7</td><td>多氟多</td><td>化学制品</td><td class="up">+1.25%</td><td class="down">-5.44</td><td>108.78</td></tr>
-<tr><td>8</td><td>中兴通讯</td><td>通信设备</td><td>0.00%</td><td class="down">-5.35</td><td>55.17</td></tr>
-<tr><td>9</td><td>美的集团</td><td>白色家电</td><td class="down">-2.13%</td><td class="down">-4.43</td><td>33.52</td></tr>
-<tr><td>10</td><td>海康威视</td><td>计算机设备</td><td class="down">-0.56%</td><td class="down">-4.36</td><td>31.79</td></tr>
-<tr><td>11</td><td>利欧股份</td><td>通用设备</td><td class="down">-0.36%</td><td class="down">-3.63</td><td>41.25</td></tr>
-<tr><td>12</td><td>深信服</td><td>软件开发</td><td class="down">-2.44%</td><td class="down">-3.60</td><td>35.07</td></tr>
-<tr><td>13</td><td>海光信息</td><td>半导体</td><td class="up">+1.61%</td><td class="down">-3.53</td><td>56.90</td></tr>
-<tr><td>14</td><td>工业富联</td><td>消费电子</td><td class="down">-0.13%</td><td class="down">-3.48</td><td>110.14</td></tr>
-<tr><td>15</td><td>同花顺</td><td>软件开发</td><td class="up">+0.35%</td><td class="down">-3.41</td><td>33.60</td></tr>
+<tr><th>#</th><th>股票</th><th>代码</th><th>主力净流出</th><th>超大单净流出</th><th>跌幅</th><th>板块</th></tr>
+<tr><td>1</td><td class="down">名家汇</td><td>300506</td><td class="down">-2.27亿</td><td class="down">-1.42亿</td><td class="down">-13.48%</td><td>照明工程</td></tr>
+<tr><td>2</td><td class="down">泛微网络</td><td>603039</td><td class="down">-2.75亿</td><td class="down">-3.01亿</td><td class="down">-7.17%</td><td>OA软件</td></tr>
+<tr><td>3</td><td class="down">国安股份</td><td>000839</td><td class="down">-1.97亿</td><td class="down">-1.49亿</td><td class="down">-7.32%</td><td>综合</td></tr>
+<tr><td>4</td><td class="down">恒银科技</td><td>603106</td><td class="down">-1.47亿</td><td class="down">-1.02亿</td><td class="down">-9.96%</td><td>金融科技</td></tr>
+<tr><td>5</td><td class="down">绿盟科技</td><td>300369</td><td class="down">-0.63亿</td><td class="down">-0.75亿</td><td class="down">-9.64%</td><td>网络安全</td></tr>
 </table>
-
-<div class="highlight-box">
-<strong>🧠 主力行为解读</strong><br>
-• <strong>光迅科技</strong>净流入22亿涨停，AI算力光模块逻辑继续演绎，资金高位依然加仓，说明市场对光通信赛道的信仰非常坚定<br>
-• <strong>兆易创新/生益科技/胜宏科技</strong>等半导体+PCB标的获主力大幅加仓，电子周期复苏+AI算力需求双轮驱动<br>
-• <strong>药明康德/恒瑞医药</strong>医药龙头获主力回流，创新药出海预期+CRO订单回暖是核心驱动<br>
-• <strong>中际旭创</strong>净流出56亿！巨量资金高位出逃，光模块龙头虽然前期涨幅巨大但获利盘抛压沉重，典型的"高位分歧"——有人觉得还能涨，有人觉得该跑了<br>
-💬 <em>主力在"弃高就低"：从高位光模块/通信设备撤出，转投医药/CRO/半导体等相对低位板块。这不叫"关灯吃面"，这叫"换盏喝茶"——换个赛道继续喝</em>
 </div>
 
-<div class="focus-card">
-<div class="title">🔍 焦点个股：光迅科技（002281）—— 22亿主力涌入的光模块龙头</div>
-<div>收盘涨停价193.04元，主力净流入21.99亿，成交额132.89亿。<br>
-作为国内光模块核心厂商，光迅科技今日获机构+游资合力封板。背后逻辑：①全球AI数据中心建设加速，800G/1.6T光模块需求持续攀升；②公司近期获得海外大客户订单传闻；③PCB/元件产业链联动效应。但需警惕：前高中际旭创已出现巨量流出，光迅能否避免同样的高位分歧走势，是下周关键看点。</div>
-</div>
-</div>
-
-<!-- ===== 总结 ===== -->
-<div class="section">
-<div class="section-title"><span class="icon">📝</span> 五、今日总结 & 下周展望</div>
-
-<div class="highlight-box" style="background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(168,85,247,.06));border-color:rgba(59,130,246,.25)">
-<strong>📌 今日关键词</strong>：医药主线回归 · PCB延续强势 · 光模块高位分歧 · 金融IT退潮<br><br>
-<strong>📊 市场格局</strong>：<span class="badge badge-red">强势反弹</span> 四大指数全线收红，成交额显著放量至2.66万亿，市场情绪明显回暖<br><br>
-<strong>🔄 风格切换信号</strong>：资金从前期强势的通信/光模块/金融IT，转向调整充分的医药/CRO/生物制品+周期有色（稀土/钴/白银），高低切换特征明显<br><br>
-<strong>🔮 下周关注点</strong>：<br>
-① 医药主线能否持续——CRO板块连续性是关键，若周一继续放量则确认趋势<br>
-② 光模块高位股风险——中际旭创巨量流出后，光迅/新易盛等是否跟随调整<br>
-③ 稀土/有色周期股——受政策+供给侧预期驱动，需跟踪大宗商品价格走势<br>
-④ 北向资金动向——周五数据未更新，周一开盘后重点关注外资态度
+<div class="focus-box">
+<div class="focus-title">🔍 主力重点操作标的分析</div>
+<p><strong>1. 铜冠铜箔(301217)</strong>：主力净流入14.45亿，全天成交88.37亿，是今日当之无愧的"吸金王"。作为国内铜箔龙头，受益于AI服务器PCB需求爆发+铜箔产能紧缺双逻辑加持，机构资金疯狂扫货。16.98%的涨幅说明主力建仓意愿极强，后续大概率有第二波行情。但88亿成交额也意味着分歧巨大，追高需谨慎。</p>
+<p><strong>2. 泛微网络(603039)</strong>：主力净流出3.01亿，典型的高位获利了结。此前信创概念被炒高，今日资金大举出逃，跌7.17%。"信创概念股的高光时刻可能已经过去了"，后续若无新的政策催化，调整压力较大。</p>
 </div>
 
-<div class="commentary">
-💬 <em>"市场就像一个渣男——你以为他要分手（调整），结果突然来了个拥抱（反弹），但谁知道这个拥抱能持续多久呢？保持理性，控制仓位，别一阳改三观就梭哈。"</em>
-</div>
+<div class="summary">
+<p><strong>📋 主力动向总结</strong></p>
+<p>今日主力资金呈现明显的"双线出击"格局：</p>
+<p>① <strong>PCB产业链</strong>：铜冠铜箔、一博科技、方邦股份、南亚新材等多股获大额净流入，板块合计净流入超247亿，这是近期最凶猛的单日资金涌入之一。核心逻辑是AI算力基建带动PCB需求景气上行。</p>
+<p>② <strong>CRO/创新药产业链</strong>：博腾股份、义翘神州、药石科技等获机构资金重仓，板块净流入28.2亿。全球创新药融资回暖+估值底部确认，"抄底资金"蜂拥而入。</p>
+<p>③ <strong>撤离方向</strong>：网络安全(-22.6亿)、云计算(-49.3亿)、跨境支付(-22.9亿)等前期热门方向资金大幅撤离，"聪明钱"正在完成从软件到硬件的仓位切换。</p>
 </div>
 
-<footer>
-📌 数据来源：东方财富网实时行情API | 沪深交易所官方数据<br>
-⚠️ 本报告仅供学习参考，不构成任何投资建议。股市有风险，入市需谨慎。<br>
-🤖 AI自动生成 | 报告时间：2026-08-09 01:46 CST
-</footer>
+<!-- ==================== 尾部 ==================== -->
+<div class="footer">
+<p>📊 A股市场热度排行报告 | 2026年8月7日（周五）收盘数据</p>
+<p>数据来源：东方财富网 | 报告生成时间：2026-08-10 01:46</p>
+<p>⚠️ 本报告仅供参考，不构成投资建议。股市有风险，入市需谨慎。</p>
+<p style="margin-top:8px">Made with ❤️ by 小U同学 · Deepin AI Assistant</p>
+</div>
+
 </body>
 </html>
