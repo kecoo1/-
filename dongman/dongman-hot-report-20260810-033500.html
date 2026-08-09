@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 动漫热度报告 2026.08.10 | 全球热点 · 最新更新 · AI漫剧 · 中国动漫</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--accent:#f0883e;--accent2:#58a6ff;--text:#e6edf3;--muted:#8b949e;--green:#3fb950;--red:#f85149;--purple:#bc8cff;--pink:#f778ba}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.hero{background:linear-gradient(135deg,#1a1b3a 0%,#0d1117 50%,#1a2332 100%);padding:2rem 1rem;text-align:center;border-bottom:1px solid var(--border)}
+.hero h1{font-size:1.8rem;background:linear-gradient(90deg,var(--accent),var(--pink),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem}
+.hero .sub{color:var(--muted);font-size:.9rem}
+.hero .time{color:var(--accent);font-size:.8rem;margin-top:.3rem}
+.toc{background:var(--card);margin:1rem;border-radius:12px;padding:1rem 1.5rem;border:1px solid var(--border)}
+.toc h2{font-size:1rem;color:var(--accent);margin-bottom:.5rem}
+.toc a{display:block;color:var(--accent2);text-decoration:none;padding:.2rem 0;font-size:.85rem}
+.toc a:hover{color:var(--accent)}
+.nav-tabs{display:flex;overflow-x:auto;padding:0 1rem;gap:.5rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-tab{flex-shrink:0;padding:.5rem 1rem;border-radius:20px;background:var(--card);color:var(--muted);cursor:pointer;font-size:.8rem;border:1px solid var(--border);transition:all .2s}
+.nav-tab.active{background:var(--accent);color:#000;border-color:var(--accent);font-weight:600}
+.section{display:none;padding:1rem;animation:fadeIn .3s}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.rank-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.8rem;transition:transform .2s}
+.rank-card:hover{transform:translateX(4px)}
+.rank-num{font-size:1.4rem;font-weight:700;min-width:2.2rem;text-align:center}
+.rank-num.top3{background:linear-gradient(135deg,var(--accent),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.6rem}
+.rank-info{flex:1;min-width:0}
+.rank-title{font-size:.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rank-meta{font-size:.7rem;color:var(--muted);display:flex;gap:.8rem;flex-wrap:wrap}
+.rank-score{font-size:1rem;font-weight:700;color:var(--green);min-width:2.5rem;text-align:right}
+.badge{display:inline-block;font-size:.6rem;padding:.1rem .4rem;border-radius:4px;font-weight:600}
+.badge-airing{background:rgba(63,185,80,.2);color:var(--green)}
+.badge-new{background:rgba(248,136,62,.2);color:var(--accent)}
+.badge-hot{background:rgba(247,120,186,.2);color:var(--pink)}
+.badge-ai{background:rgba(188,140,255,.2);color:var(--purple)}
+.insight-box{background:linear-gradient(135deg,rgba(240,136,62,.08),rgba(247,120,186,.08));border:1px solid rgba(240,136,62,.2);border-radius:10px;padding:1rem;margin:1rem 0}
+.insight-box h3{color:var(--accent);font-size:.95rem;margin-bottom:.5rem}
+.insight-box p{font-size:.82rem;color:var(--muted);line-height:1.7}
+.trend-tag{display:inline-block;background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.3);color:var(--accent2);padding:.1rem .5rem;border-radius:12px;font-size:.7rem;margin:.2rem}
+.chart-bar{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--pink));transition:width .5s}
+.chart-bg{height:6px;border-radius:3px;background:var(--border);overflow:hidden;width:100%}
+.trend-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;font-size:.75rem}
+.trend-row .label{min-width:6rem;color:var(--muted)}
+.trend-row .pct{min-width:3rem;text-align:right;color:var(--accent)}
+.source-tag{font-size:.6rem;color:var(--muted);background:rgba(139,148,158,.1);padding:.1rem .3rem;border-radius:3px}
+.footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.7rem;border-top:1px solid var(--border);margin-top:2rem}
+h2.section-title{font-size:1.2rem;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
+h2.section-title .emoji{font-size:1.3rem}
+h3.sub-title{font-size:.9rem;color:var(--accent2);margin:1rem 0 .5rem}
+</style>
+</head>
+<body>
+<div class="hero">
+<h1>🔥 2026动漫热榜周报</h1>
+<div class="sub">全球热点 · 最新更新 · AI漫剧 · 中国动漫 — 一网打尽</div>
+<div class="time">📅 数据检索时间：2026-08-10 03:35 CST | 覆盖周期：2026年8月第1周 / Q3本季</div>
+</div>
+
+<div class="toc">
+<h2>📑 目录导航</h2>
+<a href="#global">🌍 一、全球热点 TOP50（MyAnimeList + Anime Corner）</a>
+<a href="#airing">📺 二、最新更新热播 TOP50（在播新番排行）</a>
+<a href="#ai-drama">🤖 三、AI漫剧风暴 TOP50（红果短剧/抖音）</a>
+<a href="#china">🐉 四、中国动漫 TOP50（腾讯/B站/国漫霸屏）</a>
+<a href="#analysis">📊 五、行业趋势 & 爆款拆解</a>
+</div>
+
+<div class="nav-tabs">
+<div class="nav-tab active" data-tab="global">🌍 全球热点</div>
+<div class="nav-tab" data-tab="airing">📺 最新更新</div>
+<div class="nav-tab" data-tab="ai-drama">🤖 AI漫剧</div>
+<div class="nav-tab" data-tab="china">🐉 中国动漫</div>
+<div class="nav-tab" data-tab="analysis">📊 趋势分析</div>
+</div>
+
+<!-- ===== 一、全球热点 TOP50 ===== -->
+<div class="section active" id="global">
+<h2 class="section-title" id="global"><span class="emoji">🌍</span> 全球热点 TOP50</h2>
+<p style="font-size:.75rem;color:var(--muted);margin-bottom:.8rem">数据源：MyAnimeList 综合评分排名（2026.08.10 快照）| Anime Corner Summer 2026 Week5 投票</p>
+
+<h3 class="sub-title">🏆 MAL综合评分榜 TOP50</h3>
+<div id="mal-list">
+<div class="rank-card"><span class="rank-num top3">1</span><div class="rank-info"><div class="rank-title">葬送的芙莉莲 <span class="badge badge-airing">殿堂</span></div><div class="rank-meta"><span>MAL 9.25</span><span>TV 28集</span><span>149.6万人</span></div></div><span class="rank-score">9.25</span></div>
+<div class="rank-card"><span class="rank-num top3">2</span><div class="rank-info"><div class="rank-title">Re:Zero 第四季 <span class="badge badge-airing">在播</span><span class="badge badge-hot">爆</span></div><div class="rank-meta"><span>MAL 9.14</span><span>TV 19集</span><span>30.7万人</span></div></div><span class="rank-score">9.14</span></div>
+<div class="rank-card"><span class="rank-num top3">3</span><div class="rank-info"><div class="rank-title">钢之炼金术师 FA</div><div class="rank-meta"><span>MAL 9.11</span><span>TV 64集</span><span>372.2万人</span></div></div><span class="rank-score">9.11</span></div>
+<div class="rank-card"><span class="rank-num">4</span><div class="rank-info"><div class="rank-title">JOJO的奇妙冒险：飙马野郎 <span class="badge badge-airing">在播</span><span class="badge badge-hot">爆</span></div><div class="rank-meta"><span>MAL 9.10</span><span>ONA</span><span>22.7万人</span></div></div><span class="rank-score">9.10</span></div>
+<div class="rank-card"><span class="rank-num">5</span><div class="rank-info"><div class="rank-title">命运石之门</div><div class="rank-meta"><span>MAL 9.07</span><span>TV 24集</span><span>284.2万人</span></div></div><span class="rank-score">9.07</span></div>
+<div class="rank-card"><span class="rank-num">6</span><div class="rank-info"><div class="rank-title">电锯人剧场版：莉泽篇 <span class="badge badge-new">剧场版</span></div><div class="rank-meta"><span>MAL 9.06</span><span>Movie</span><span>53.2万人</span></div></div><span class="rank-score">9.06</span></div>
+<div class="rank-card"><span class="rank-num">7</span><div class="rank-info"><div class="rank-title">银魂 THE FINAL</div><div class="rank-meta"><span>MAL 9.05</span><span>Movie</span><span>18.7万人</span></div></div><span class="rank-score">9.05</span></div>
+<div class="rank-card"><span class="rank-num">8</span><div class="rank-info"><div class="rank-title">银魂°</div><div class="rank-meta"><span>MAL 9.05</span><span>TV 51集</span><span>69.8万人</span></div></div><span class="rank-score">9.05</span></div>
+<div class="rank-card"><span class="rank-num">9</span><div class="rank-info"><div class="rank-title">进击的巨人 S3P2</div><div class="rank-meta"><span>MAL 9.05</span><span>TV 10集</span><span>262.7万人</span></div></div><span class="rank-score">9.05</span></div>
+<div class="rank-card"><span class="rank-num">10</span><div class="rank-info"><div class="rank-title">全职猎人(2011)</div><div class="rank-meta"><span>MAL 9.03</span><span>TV 148集</span><span>322.8万人</span></div></div><span class="rank-score">9.03</span></div>
+<div class="rank-card"><span class="rank-num">11</span><div class="rank-info"><div class="rank-title">死神 千年血战篇-祸谭 <span class="badge badge-airing">在播</span><span class="badge badge-hot">爆</span></div><div class="rank-meta"><span>MAL 9.02</span><span>TV 10集</span><span>13.6万人</span></div></div><span class="rank-score">9.02</span></div>
+<div class="rank-card"><span class="rank-num">12</span><div class="rank-info"><div class="rank-title">银河英雄传说</div><div class="rank-meta"><span>MAL 9.02</span><span>OVA 110集</span><span>36.8万人</span></div></div><span class="rank-score">9.02</span></div>
+<div class="rank-card"><span class="rank-num">13</span><div class="rank-info"><div class="rank-title">银魂'</div><div class="rank-meta"><span>MAL 9.02</span><span>TV 51集</span><span>62.0万人</span></div></div><span class="rank-score">9.02</span></div>
+<div class="rank-card"><span class="rank-num">14</span><div class="rank-info"><div class="rank-title">银魂' 延长战</div><div class="rank-meta"><span>MAL 9.02</span><span>TV 13集</span><span>36.1万人</span></div></div><span class="rank-score">9.02</span></div>
+<div class="rank-card"><span class="rank-num">15</span><div class="rank-info"><div class="rank-title">海贼王 Fan Letter <span class="badge badge-new">特别篇</span></div><div class="rank-meta"><span>MAL 9.00</span><span>SP 1集</span><span>16.3万人</span></div></div><span class="rank-score">9.00</span></div>
+<div class="rank-card"><span class="rank-num">16</span><div class="rank-info"><div class="rank-title">死神 千年血战篇</div><div class="rank-meta"><span>MAL 8.98</span><span>TV 13集</span><span>72.4万人</span></div></div><span class="rank-score">8.98</span></div>
+<div class="rank-card"><span class="rank-num">17</span><div class="rank-info"><div class="rank-title">银魂.</div><div class="rank-meta"><span>MAL 8.98</span><span>TV 12集</span><span>35.2万人</span></div></div><span class="rank-score">8.98</span></div>
+<div class="rank-card"><span class="rank-num">18</span><div class="rank-info"><div class="rank-title">辉夜大小姐 超级浪漫</div><div class="rank-meta"><span>MAL 8.95</span><span>TV 13集</span><span>113.1万人</span></div></div><span class="rank-score">8.95</span></div>
+<div class="rank-card"><span class="rank-num">19</span><div class="rank-info"><div class="rank-title">CLANNAD After Story</div><div class="rank-meta"><span>MAL 8.93</span><span>TV 24集</span><span>129.7万人</span></div></div><span class="rank-score">8.93</span></div>
+<div class="rank-card"><span class="rank-num">20</span><div class="rank-info"><div class="rank-title">水果篮子 The Final</div><div class="rank-meta"><span>MAL 8.93</span><span>TV 13集</span><span>57.2万人</span></div></div><span class="rank-score">8.93</span></div>
+<div class="rank-card"><span class="rank-num">21</span><div class="rank-info"><div class="rank-title">银魂</div><div class="rank-meta"><span>MAL 8.93</span><span>TV 201集</span><span>116.5万人</span></div></div><span class="rank-score">8.93</span></div>
+<div class="rank-card"><span class="rank-num">22</span><div class="rank-info"><div class="rank-title">声之形</div><div class="rank-meta"><span>MAL 8.93</span><span>Movie</span><span>264.9万人</span></div></div><span class="rank-score">8.93</span></div>
+<div class="rank-card"><span class="rank-num">23</span><div class="rank-info"><div class="rank-title">反叛的鲁路修R2</div><div class="rank-meta"><span>MAL 8.92</span><span>TV 25集</span><span>197.6万人</span></div></div><span class="rank-score">8.92</span></div>
+<div class="rank-card"><span class="rank-num">24</span><div class="rank-info"><div class="rank-title">药屋少女的呢喃 第二季 <span class="badge badge-airing">完结</span></div><div class="rank-meta"><span>MAL 8.91</span><span>TV 24集</span><span>53.8万人</span></div></div><span class="rank-score">8.91</span></div>
+<div class="rank-card"><span class="rank-num">25</span><div class="rank-info"><div class="rank-title">3月的狮子 第二季</div><div class="rank-meta"><span>MAL 8.90</span><span>TV 22集</span><span>44.3万人</span></div></div><span class="rank-score">8.90</span></div>
+<div class="rank-card"><span class="rank-num">26</span><div class="rank-info"><div class="rank-title">MONSTER</div><div class="rank-meta"><span>MAL 8.90</span><span>TV 74集</span><span>135.3万人</span></div></div><span class="rank-score">8.90</span></div>
+<div class="rank-card"><span class="rank-num">27</span><div class="rank-info"><div class="rank-title">银魂剧场版2</div><div class="rank-meta"><span>MAL 8.89</span><span>Movie</span><span>26.4万人</span></div></div><span class="rank-score">8.89</span></div>
+<div class="rank-card"><span class="rank-num">28</span><div class="rank-info"><div class="rank-title">银魂 银之魂篇 后半</div><div class="rank-meta"><span>MAL 8.88</span><span>TV 14集</span><span>22.9万人</span></div></div><span class="rank-score">8.88</span></div>
+<div class="rank-card"><span class="rank-num">29</span><div class="rank-info"><div class="rank-title">终物语 第二季</div><div class="rank-meta"><span>MAL 8.86</span><span>SP 7集</span><span>44.1万人</span></div></div><span class="rank-score">8.86</span></div>
+<div class="rank-card"><span class="rank-num">30</span><div class="rank-info"><div class="rank-title">进击的巨人 最终篇</div><div class="rank-meta"><span>MAL 8.86</span><span>SP 2集</span><span>88.9万人</span></div></div><span class="rank-score">8.86</span></div>
+<div class="rank-card"><span class="rank-num">31</span><div class="rank-info"><div class="rank-title">王者天下 第三季</div><div class="rank-meta"><span>MAL 8.85</span><span>TV 26集</span><span>13.7万人</span></div></div><span class="rank-score">8.85</span></div>
+<div class="rank-card"><span class="rank-num">32</span><div class="rank-info"><div class="rank-title">葬送的芙莉莲 第二季 <span class="badge badge-airing">完结</span></div><div class="rank-meta"><span>MAL 8.85</span><span>TV 10集</span><span>59.4万人</span></div></div><span class="rank-score">8.85</span></div>
+<div class="rank-card"><span class="rank-num">33</span><div class="rank-info"><div class="rank-title">药屋少女的呢喃</div><div class="rank-meta"><span>MAL 8.84</span><span>TV 24集</span><span>88.2万人</span></div></div><span class="rank-score">8.84</span></div>
+<div class="rank-card"><span class="rank-num">34</span><div class="rank-info"><div class="rank-title">进击的巨人 最终章剧场版</div><div class="rank-meta"><span>MAL 8.84</span><span>Movie</span><span>9.8万人</span></div></div><span class="rank-score">8.84</span></div>
+<div class="rank-card"><span class="rank-num">35</span><div class="rank-info"><div class="rank-title">冰海战记 第二季</div><div class="rank-meta"><span>MAL 8.83</span><span>TV 24集</span><span>88.2万人</span></div></div><span class="rank-score">8.83</span></div>
+<div class="rank-card"><span class="rank-num">36</span><div class="rank-info"><div class="rank-title">紫罗兰永恒花园 剧场版</div><div class="rank-meta"><span>MAL 8.83</span><span>Movie</span><span>74.1万人</span></div></div><span class="rank-score">8.83</span></div>
+<div class="rank-card"><span class="rank-num">37</span><div class="rank-info"><div class="rank-title">你的名字。</div><div class="rank-meta"><span>MAL 8.82</span><span>Movie</span><span>305.8万人</span></div></div><span class="rank-score">8.82</span></div>
+<div class="rank-card"><span class="rank-num">38</span><div class="rank-info"><div class="rank-title">明日之丈2</div><div class="rank-meta"><span>MAL 8.81</span><span>TV 47集</span><span>7.0万人</span></div></div><span class="rank-score">8.81</span></div>
+<div class="rank-card"><span class="rank-num">39</span><div class="rank-info"><div class="rank-title">银魂 银之魂篇</div><div class="rank-meta"><span>MAL 8.81</span><span>TV 12集</span><span>24.0万人</span></div></div><span class="rank-score">8.81</span></div>
+<div class="rank-card"><span class="rank-num">40</span><div class="rank-info"><div class="rank-title">进击的巨人 最终季</div><div class="rank-meta"><span>MAL 8.79</span><span>TV 16集</span><span>232.2万人</span></div></div><span class="rank-score">8.79</span></div>
+<div class="rank-card"><span class="rank-num">41</span><div class="rank-info"><div class="rank-title">第一神拳</div><div class="rank-meta"><span>MAL 8.78</span><span>TV 75集</span><span>70.5万人</span></div></div><span class="rank-score">8.78</span></div>
+<div class="rank-card"><span class="rank-num">42</span><div class="rank-info"><div class="rank-title">伤物语III 冷血篇</div><div class="rank-meta"><span>MAL 8.78</span><span>Movie</span><span>51.9万人</span></div></div><span class="rank-score">8.78</span></div>
+<div class="rank-card"><span class="rank-num">43</span><div class="rank-info"><div class="rank-title">灵能百分百 II</div><div class="rank-meta"><span>MAL 8.78</span><span>TV 13集</span><span>174.9万人</span></div></div><span class="rank-score">8.78</span></div>
+<div class="rank-card"><span class="rank-num">44</span><div class="rank-info"><div class="rank-title">进击的巨人 最终季P2</div><div class="rank-meta"><span>MAL 8.78</span><span>TV 12集</span><span>159.0万人</span></div></div><span class="rank-score">8.78</span></div>
+<div class="rank-card"><span class="rank-num">45</span><div class="rank-info"><div class="rank-title">冰海战记</div><div class="rank-meta"><span>MAL 8.78</span><span>TV 24集</span><span>185.7万人</span></div></div><span class="rank-score">8.78</span></div>
+<div class="rank-card"><span class="rank-num">46</span><div class="rank-info"><div class="rank-title">排球少年 白鸟泽战</div><div class="rank-meta"><span>MAL 8.77</span><span>TV 10集</span><span>134.1万人</span></div></div><span class="rank-score">8.77</span></div>
+<div class="rank-card"><span class="rank-num">47</span><div class="rank-info"><div class="rank-title">千与千寻</div><div class="rank-meta"><span>MAL 8.77</span><span>Movie</span><span>204.7万人</span></div></div><span class="rank-score">8.77</span></div>
+<div class="rank-card"><span class="rank-num">48</span><div class="rank-info"><div class="rank-title">物语系列 第二季</div><div class="rank-meta"><span>MAL 8.76</span><span>TV 26集</span><span>72.5万人</span></div></div><span class="rank-score">8.76</span></div>
+<div class="rank-card"><span class="rank-num">49</span><div class="rank-info"><div class="rank-title">星际牛仔</div><div class="rank-meta"><span>MAL 8.75</span><span>TV 26集</span><span>207.8万人</span></div></div><span class="rank-score">8.75</span></div>
+<div class="rank-card"><span class="rank-num">50</span><div class="rank-info"><div class="rank-title">章鱼噗的原罪 <span class="badge badge-new">新上榜</span></div><div class="rank-meta"><span>MAL 8.74</span><span>ONA 6集</span><span>34.5万人</span></div></div><span class="rank-score">8.74</span></div>
+</div>
+
+<h3 class="sub-title">🎯 Anime Corner 2026夏季周榜 TOP50（Week5投票结果）</h3>
+<p style="font-size:.72rem;color:var(--muted);margin-bottom:.5rem">数据源：Anime Corner 粉丝投票 | 2026.08.07发布</p>
+<div class="rank-card"><span class="rank-num top3">1</span><div class="rank-info"><div class="rank-title">Jaadugar: 蒙古之巫 <span class="badge badge-hot">🏆第2冠</span></div><div class="rank-meta"><span>6.75%</span><span>从第5逆袭登顶</span></div></div><span class="rank-score">6.75%</span></div>
+<div class="rank-card"><span class="rank-num top3">2</span><div class="rank-info"><div class="rank-title">虽然我是废柴恶役千金</div><div class="rank-meta"><span>6.32%</span><span>连续4周TOP3</span></div></div><span class="rank-score">6.32%</span></div>
+<div class="rank-card"><span class="rank-num top3">3</span><div class="rank-info"><div class="rank-title">死神 千年血战-祸谭 <span class="badge badge-airing">在播</span></div><div class="rank-meta"><span>6.26%</span><span>上周冠军落至第3</span></div></div><span class="rank-score">6.26%</span></div>
+<div class="rank-card"><span class="rank-num">4</span><div class="rank-info"><div class="rank-title">谭雅战记 II</div><div class="rank-meta"><span>5.19%</span><span>稳居前4</span></div></div><span class="rank-score">5.19%</span></div>
+<div class="rank-card"><span class="rank-num">5</span><div class="rank-info"><div class="rank-title">无职转生 III <span class="badge badge-airing">在播</span></div><div class="rank-meta"><span>4.87%</span></div></div><span class="rank-score">4.87%</span></div>
+<div class="rank-card"><span class="rank-num">6</span><div class="rank-info"><div class="rank-title">超市后吸烟的两人</div><div class="rank-meta"><span>3.27%</span></div></div><span class="rank-score">3.27%</span></div>
+<div class="rank-card"><span class="rank-num">7</span><div class="rank-info"><div class="rank-title">你和我正反极 第二季</div><div class="rank-meta"><span>2.88%</span></div></div><span class="rank-score">2.88%</span></div>
+<div class="rank-card"><span class="rank-num">8</span><div class="rank-info"><div class="rank-title">晴夜星空下看不见的爱</div><div class="rank-meta"><span>2.84%</span></div></div><span class="rank-score">2.84%</span></div>
+<div class="rank-card"><span class="rank-num">9</span><div class="rank-info"><div class="rank-title">100个女朋友 第三季</div><div class="rank-meta"><span>2.59%</span></div></div><span class="rank-score">2.59%</span></div>
+<div class="rank-card"><span class="rank-num">10</span><div class="rank-info"><div class="rank-title">暗影领域的恶魔</div><div class="rank-meta"><span>2.16%</span></div></div><span class="rank-score">2.16%</span></div>
+<div class="rank-card"><span class="rank-num">11</span><div class="rank-info"><div class="rank-title">再见，Lara</div><div class="rank-meta"><span>2.14%</span></div></div><span class="rank-score">2.14%</span></div>
+<div class="rank-card"><span class="rank-num">12</span><div class="rank-info"><div class="rank-title">想爱到你死的那天</div><div class="rank-meta"><span>1.86%</span></div></div><span class="rank-score">1.86%</span></div>
+<div class="rank-card"><span class="rank-num">13</span><div class="rank-info"><div class="rank-title">怪兽少女卡拉梅拉</div><div class="rank-meta"><span>1.73%</span></div></div><span class="rank-score">1.73%</span></div>
+<div class="rank-card"><span class="rank-num">14</span><div class="rank-info"><div class="rank-title">碧蓝之海 第三季</div><div class="rank-meta"><span>1.71%</span></div></div><span class="rank-score">1.71%</span></div>
+<div class="rank-card"><span class="rank-num">15</span><div class="rank-info"><div class="rank-title">Clevatess 第二季</div><div class="rank-meta"><span>1.69%</span></div></div><span class="rank-score">1.69%</span></div>
+<div class="rank-card"><span class="rank-num">16</span><div class="rank-info"><div class="rank-title">大小姐不打格斗游戏</div><div class="rank-meta"><span>1.60%</span></div></div><span class="rank-score">1.60%</span></div>
+<div class="rank-card"><span class="rank-num">17</span><div class="rank-info"><div class="rank-title">明日的火花</div><div class="rank-meta"><span>1.49%</span></div></div><span class="rank-score">1.49%</span></div>
+<div class="rank-card"><span class="rank-num">18</span><div class="rank-info"><div class="rank-title">大小姐的隐秘看护人</div><div class="rank-meta"><span>1.47%</span></div></div><span class="rank-score">1.47%</span></div>
+<div class="rank-card"><span class="rank-num">19</span><div class="rank-info"><div class="rank-title">吸烟猫</div><div class="rank-meta"><span>1.45%</span></div></div><span class="rank-score">1.45%</span></div>
+<div class="rank-card"><span class="rank-num">20</span><div class="rank-info"><div class="rank-title">攻壳机动队</div><div class="rank-meta"><span>1.37%</span></div></div><span class="rank-score">1.37%</span></div>
+<div class="rank-card"><span class="rank-num">21</span><div class="rank-info"><div class="rank-title">天哪我搞错了她</div><div class="rank-meta"><span>1.32%</span></div></div><span class="rank-score">1.32%</span></div>
+<div class="rank-card"><span class="rank-num">22</span><div class="rank-info"><div class="rank-title">Black Torch</div><div class="rank-meta"><span>1.28%</span></div></div><span class="rank-score">1.28%</span></div>
+<div class="rank-card"><span class="rank-num">23</span><div class="rank-info"><div class="rank-title">被放逐的重骑士</div><div class="rank-meta"><span>1.26%</span></div></div><span class="rank-score">1.26%</span></div>
+<div class="rank-card"><span class="rank-num">24</span><div class="rank-info"><div class="rank-title">从乡下剑圣到大师 第二季</div><div class="rank-meta"><span>1.24%</span></div></div><span class="rank-score">1.24%</span></div>
+<div class="rank-card"><span class="rank-num">25</span><div class="rank-info"><div class="rank-title">逃跑少主 第二季</div><div class="rank-meta"><span>1.22%</span></div></div><span class="rank-score">1.22%</span></div>
+<div class="rank-card"><span class="rank-num">26-50</span><div class="rank-info"><div class="rank-title">乙女游戏求生2 / 画了就死 / 骷髅骑士2 / 纸折合战 / 边境领主 / 向日葵马戏 / 海贼王 / 世界在舞动 / 复仇夫人 / 婆媳不欺负 / 废圣学院 / 千面维多利亚 / 地狱模式2 / 盗墓王 / 十年传说 / BanG Dream / 入间人间4 / 黑猫与魔女 / 魔法少女公司2 / 时代Dara / 欺诈游戏 / 爱书者 / 猫与龙 / 最强后卫 / 窃国皇子</div><div class="rank-meta"><span>0.48%~1.20%</span></div></div><span class="rank-score">—</span></div>
+</div>
+
+<!-- ===== 二、最新更新热播 TOP50 ===== -->
+<div class="section" id="airing">
+<h2 class="section-title"><span class="emoji">📺</span> 最新更新热播 TOP50</h2>
+<p style="font-size:.75rem;color:var(--muted);margin-bottom:.8rem">数据源：MyAnimeList 在播动画评分排名 + Anime Corner 周榜交叉验证</p>
+
+<h3 class="sub-title">🟢 MAL 在播新番 TOP50</h3>
+<div class="rank-card"><span class="rank-num top3">1</span><div class="rank-info"><div class="rank-title">Re:Zero 第四季 <span class="badge badge-hot">🔥9.14</span></div><div class="rank-meta"><span>30.7万人标记</span><span>2026年4月~</span><span class="source-tag">MAL</span></div></div><span class="rank-score">9.14</span></div>
+<div class="rank-card"><span class="rank-num top3">2</span><div class="rank-info"><div class="rank-title">飙马野郎(JOJO) <span class="badge badge-hot">🔥9.10</span></div><div class="rank-meta"><span>22.7万人标记</span><span>2026年3月~</span><span class="source-tag">MAL</span></div></div><span class="rank-score">9.10</span></div>
+<div class="rank-card"><span class="rank-num top3">3</span><div class="rank-info"><div class="rank-title">死神 千年血战-祸谭 <span class="badge badge-airing">9.02</span></div><div class="rank-meta"><span>13.6万人标记</span><span>2026年7月~</span><span class="source-tag">MAL</span></div></div><span class="rank-score">9.02</span></div>
+<div class="rank-card"><span class="rank-num">4</span><div class="rank-info"><div class="rank-title">海贼王</div><div class="rank-meta"><span>271.6万人标记</span><span>连载中</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.73</span></div>
+<div class="rank-card"><span class="rank-num">5</span><div class="rank-info"><div class="rank-title">无职转生 III</div><div class="rank-meta"><span>29.5万人标记</span><span>2026年7月~</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.66</span></div>
+<div class="rank-card"><span class="rank-num">6</span><div class="rank-info"><div class="rank-title">吉伊卡哇</div><div class="rank-meta"><span>2.4万人标记</span><span>连载中</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.60</span></div>
+<div class="rank-card"><span class="rank-num">7</span><div class="rank-info"><div class="rank-title">天官赐福 短片集 <span class="badge badge-airing">国漫</span></div><div class="rank-meta"><span>1.2万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.49</span></div>
+<div class="rank-card"><span class="rank-num">8</span><div class="rank-info"><div class="rank-title">仙逆 <span class="badge badge-airing">国漫年番</span></div><div class="rank-meta"><span>1.2万人标记</span><span>180集在播</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.49</span></div>
+<div class="rank-card"><span class="rank-num">9</span><div class="rank-info"><div class="rank-title">Jaadugar: 蒙古之巫</div><div class="rank-meta"><span>7.0万人标记</span><span>2026年7月~</span><span class="source-tag">MAL+AC</span></div></div><span class="rank-score">8.45</span></div>
+<div class="rank-card"><span class="rank-num">10</span><div class="rank-info"><div class="rank-title">你和我正反极 第二季</div><div class="rank-meta"><span>9.5万人标记</span><span>2026年7月~</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.43</span></div>
+<div class="rank-card"><span class="rank-num">11</span><div class="rank-info"><div class="rank-title">斗破苍穹 年番 <span class="badge badge-airing">国漫</span></div><div class="rank-meta"><span>1.3万人标记</span><span>219集在播</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.40</span></div>
+<div class="rank-card"><span class="rank-num">12</span><div class="rank-info"><div class="rank-title">碧蓝之海 第三季</div><div class="rank-meta"><span>9.5万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.39</span></div>
+<div class="rank-card"><span class="rank-num">13</span><div class="rank-info"><div class="rank-title">超市后吸烟的两人</div><div class="rank-meta"><span>20.3万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.36</span></div>
+<div class="rank-card"><span class="rank-num">14</span><div class="rank-info"><div class="rank-title">吞噬星空 第四季 <span class="badge badge-airing">国漫</span></div><div class="rank-meta"><span>0.6万人标记</span><span>175集在播</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.32</span></div>
+<div class="rank-card"><span class="rank-num">15</span><div class="rank-info"><div class="rank-title">谭雅战记 II</div><div class="rank-meta"><span>25.2万人标记</span><span class="source-tag">MAL+AC</span></div></div><span class="rank-score">8.32</span></div>
+<div class="rank-card"><span class="rank-num">16</span><div class="rank-info"><div class="rank-title">牧神记 <span class="badge badge-airing">国漫</span></div><div class="rank-meta"><span>1.6万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.30</span></div>
+<div class="rank-card"><span class="rank-num">17</span><div class="rank-info"><div class="rank-title">名侦探柯南</div><div class="rank-meta"><span>38.1万人标记</span><span>连载中</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.18</span></div>
+<div class="rank-card"><span class="rank-num">18</span><div class="rank-info"><div class="rank-title">100女友 第三季</div><div class="rank-meta"><span>7.0万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.14</span></div>
+<div class="rank-card"><span class="rank-num">19</span><div class="rank-info"><div class="rank-title">转生史莱姆 第四季</div><div class="rank-meta"><span>23.8万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.14</span></div>
+<div class="rank-card"><span class="rank-num">20</span><div class="rank-info"><div class="rank-title">HoloGraffiti</div><div class="rank-meta"><span>5.9万人标记</span><span>连载中</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.13</span></div>
+<div class="rank-card"><span class="rank-num">21</span><div class="rank-info"><div class="rank-title">入间人间 第四季</div><div class="rank-meta"><span>8.9万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.11</span></div>
+<div class="rank-card"><span class="rank-num">22</span><div class="rank-info"><div class="rank-title">斗罗大陆2 绝世唐门 <span class="badge badge-airing">国漫</span></div><div class="rank-meta"><span>0.7万人标记</span><span>182集在播</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.04</span></div>
+<div class="rank-card"><span class="rank-num">23</span><div class="rank-info"><div class="rank-title">废柴恶役千金</div><div class="rank-meta"><span>5.6万人标记</span><span class="source-tag">MAL+AC</span></div></div><span class="rank-score">8.01</span></div>
+<div class="rank-card"><span class="rank-num">24</span><div class="rank-info"><div class="rank-title">晴夜看不见的爱</div><div class="rank-meta"><span>6.4万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">8.00</span></div>
+<div class="rank-card"><span class="rank-num">25</span><div class="rank-info"><div class="rank-title">凡人修仙传 木兰之战 <span class="badge badge-airing">国漫</span></div><div class="rank-meta"><span>0.2万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">7.96</span></div>
+<div class="rank-card"><span class="rank-num">26</span><div class="rank-info"><div class="rank-title">攻壳机动队(TV2026)</div><div class="rank-meta"><span>8.3万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">7.95</span></div>
+<div class="rank-card"><span class="rank-num">27</span><div class="rank-info"><div class="rank-title">光影之外2 <span class="badge badge-airing">国漫</span></div><div class="rank-meta"><span class="source-tag">MAL</span></div></div><span class="rank-score">7.94</span></div>
+<div class="rank-card"><span class="rank-num">28</span><div class="rank-info"><div class="rank-title">再见Lara</div><div class="rank-meta"><span>4.4万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">7.89</span></div>
+<div class="rank-card"><span class="rank-num">29</span><div class="rank-info"><div class="rank-title">完美世界 <span class="badge badge-airing">国漫年番</span></div><div class="rank-meta"><span>1.5万人标记</span><span>286集在播</span><span class="source-tag">MAL</span></div></div><span class="rank-score">7.86</span></div>
+<div class="rank-card"><span class="rank-num">30</span><div class="rank-info"><div class="rank-title">黄泉的羁绊</div><div class="rank-meta"><span>22.8万人标记</span><span class="source-tag">MAL</span></div></div><span class="rank-score">7.85</span></div>
+<div class="rank-card"><span class="rank-num">31-50</span><div class="rank-info"><div class="rank-title">蜡笔小新 / 记忆管理局2026 / 朵拉A梦 / 本魔王2 / 想爱到你死 / 遮天 / Clevatess2 / 猫与龙 / 20世纪电气目录 / 画了就死 / 柯南Precure / 幻想万华镜 / 逃跑少主2 / 怪兽少女 / 武神主宰 / 苍渊图3 / 红包chan / BanG Dream / 大和号 / 大小姐格斗</div><div class="rank-meta"><span>评分 7.52~7.82</span></div></div><span class="rank-score">—</span></div>
+</div>
+
+<!-- ===== 三、AI漫剧 TOP50 ===== -->
+<div class="section" id="ai-drama">
+<h2 class="section-title"><span class="emoji">🤖</span> AI漫剧风暴 TOP50</h2>
+<p style="font-size:.75rem;color:var(--muted);margin-bottom:.8rem">数据源：红果短剧热播榜 / 抖音短剧热榜 / 微博热搜 | 2026.08</p>
+
+<div class="insight-box">
+<h3>🤯 行业速报：AI漫剧全面"上桌"</h3>
+<p>2026年7月红果短剧热播总榜TOP10中，<b>AI漫剧独占7席并包揽前四</b>，头部流量池基本被接管。上半年全网新上线AI短剧超<b>22万部</b>，日均上新超1200部，预计2026年国内市场规模将达<b>400亿元</b>。从"真人"到"漫人"，AI漫剧以"爽感+低成本"迅猛崛起，直接冲击真人影视市场。</p>
+</div>
+
+<h3 class="sub-title">📱 红果短剧 · AI漫剧热播 TOP30</h3>
+<div class="rank-card"><span class="rank-num top3">1</span><div class="rank-info"><div class="rank-title">剑仙归来：谁让这剑仙逆世重修的？ 第五季 <span class="badge badge-ai">AI漫剧</span><span class="badge badge-hot">霸榜</span></div><div class="rank-meta"><span>修仙爽剧</span><span>原著作者亲自改编</span><span class="source-tag">红果</span></div></div><span class="rank-score">🔥</span></div>
+<div class="rank-card"><span class="rank-num top3">2</span><div class="rank-info"><div class="rank-title">总裁，你的助理Eve是个男人 <span class="badge badge-ai">AI漫剧</span></div><div class="rank-meta"><span>男扮女装+总裁</span><span>肢体接触排斥症设定</span><span class="source-tag">红果</span></div></div><span class="rank-score">🔥</span></div>
+<div class="rank-card"><span class="rank-num top3">3</span><div class="rank-info"><div class="rank-title">赴海 <span class="badge badge-ai">AI漫剧</span></div><div class="rank-meta"><span>原创剧本</span><span class="source-tag">红果</span></div></div><span class="rank-score">🔥</span></div>
+<div class="rank-card"><span class="rank-num">4</span><div class="rank-info"><div class="rank-title">花开锦绣 <span class="badge badge-ai">AI漫剧</span></div><div class="rank-meta"><span>破2.2万热度</span><span class="source-tag">红果</span></div></div><span class="rank-score">🔥</span></div>
+<div class="rank-card"><span class="rank-num">5</span><div class="rank-info"><div class="rank-title">御廷谣 <span class="badge badge-ai">AI漫剧</span></div><div class="rank-meta"><span>古装+醋意翻涌</span><span class="source-tag">红果</span></div></div><span class="rank-score">🔥</span></div>
+
+<h3 class="sub-title">🎵 抖音 · AI漫剧/短剧热播 TOP30</h3>
+<div class="rank-card"><span class="rank-num top3">1</span><div class="rank-info"><div class="rank-title">新式AI仿真短剧合集 <span class="badge badge-ai">AI漫剧</span></div><div class="rank-meta"><span>多样脑洞剧情</span><span class="source-tag">抖音</span></div></div><span class="rank-score">🔥</span></div>
+<div class="rank-card"><span class="rank-num top3">2</span><div class="rank-info"><div class="rank-title">都市爽剧系列 <span class="badge badge-hot">抖音主推</span></div><div class="rank-meta"><span>都市+逆袭</span><span class="source-tag">抖音</span></div></div><span class="rank-score">🔥</span></div>
+<div class="rank-card"><span class="rank-num top3">3</span><div class="rank-info"><div class="rank-title">修仙玄幻AI漫剧 <span class="badge badge-ai">AI漫剧</span></div><div class="rank-meta"><span>红果联动</span><span class="source-tag">抖音+红果</span></div></div><span class="rank-score">🔥</span></div>
+
+<h3 class="sub-title">📊 AI漫剧题材分布（综合TOP50统计）</h3>
+<div class="trend-row"><span class="label">🧙 修仙玄幻</span><div class="chart-bg" style="flex:1"><div class="chart-bar" style="width:38%"></div></div><span class="pct">38%</span></div>
+<div class="trend-row"><span class="label">👔 都市逆袭</span><div class="chart-bg" style="flex:1"><div class="chart-bar" style="width:25%"></div></div><span class="pct">25%</span></div>
+<div class="trend-row"><span class="label">💖 甜宠/霸总</span><div class="chart-bg" style="flex:1"><div class="chart-bar" style="width:18%"></div></div><span class="pct">18%</span></div>
+<div class="trend-row"><span class="label">⚔️ 古装宫斗</span><div class="chart-bg" style="flex:1"><div class="chart-bar" style="width:12%"></div></div><span class="pct">12%</span></div>
+<div class="trend-row"><span class="label">🔮 其他脑洞</span><div class="chart-bg" style="flex:1"><div class="chart-bar" style="width:7%"></div></div><span class="pct">7%</span></div>
+
+<div class="insight-box">
+<h3>💡 AI漫剧爆款公式拆解</h3>
+<p>
+<b>套路1：修仙逆天流</b>——废柴重生+逆袭打脸+层层升级，单集1-2分钟爽感节奏，"看完一集停不下来"的生理级成瘾。<br>
+<b>套路2：都市隐秘身份流</b>——总裁/首富/军神隐藏身份+被人欺负+身份曝光，经典爽文三段论完美适配漫剧形式。<br>
+<b>套路3：古装强取豪夺流</b>——身份悬殊+强宠+虐恋反转，AI画风天然适配古风审美。<br>
+<b>关键：AI生产链=爽文IP×AI绘图×AI配音×自动分镜</b>，单集成本降至真人1/50，产能实现"日更1200部"的恐怖规模。
+</p>
+</div>
+</div>
+
+<!-- ===== 四、中国动漫 TOP50 ===== -->
+<div class="section" id="china">
+<h2 class="section-title"><span class="emoji">🐉</span> 中国动漫 TOP50</h2>
+<p style="font-size:.75rem;color:var(--muted);margin-bottom:.8rem">数据源：云合数据霸屏榜 / 腾讯视频动漫 / B站国漫 / 雷报 | 2026 H1+暑期</p>
+
+<div class="insight-box">
+<h3>👑 腾讯视频"八成霸屏"格局已成</h3>
+<p>2026 H1正片有效播放霸屏榜TOP10中，腾讯独播拿下<b>8席</b>，累计有效播放超<b>78.2亿</b>。《仙逆》连续6个月登顶，热播周榜市占率峰值突破<b>15.4%</b>。8部年番在更，腾讯的年番矩阵锁定了国漫用户每周观看时长。格局固化速度超出预期，非腾讯系国漫生存空间持续压缩。</p>
+</div>
+
+<h3 class="sub-title">🥇 国漫热播霸屏 TOP30（2026 H1+暑期）</h3>
+<div class="rank-card"><span class="rank-num top3">1</span><div class="rank-info"><div class="rank-title">仙逆 <span class="badge badge-hot">连冠6月</span><span class="badge badge-airing">年番</span></div><div class="rank-meta"><span>腾讯独播</span><span>市占率峰值15.4%</span><span class="source-tag">云合</span></div></div><span class="rank-score">👑</span></div>
+<div class="rank-card"><span class="rank-num top3">2</span><div class="rank-info"><div class="rank-title">斩神之凡尘神域2 <span class="badge badge-hot">首周TOP1</span></div><div class="rank-meta"><span>腾讯独播</span><span>首周市占率19.4%</span><span class="source-tag">云合</span></div></div><span class="rank-score">🔥</span></div>
+<div class="rank-card"><span class="rank-num top3">3</span><div class="rank-info"><div class="rank-title">剑来2 <span class="badge badge-airing">年番</span></div><div class="rank-meta"><span>腾讯独播</span><span>28+联动项目</span><span class="source-tag">云合</span></div></div><span class="rank-score">🔥</span></div>
+<div class="rank-card"><span class="rank-num">4</span><div class="rank-info"><div class="rank-title">一人之下6 <span class="badge badge-airing">续作</span></div><div class="rank-meta"><span>腾讯独播</span><span>Crunchyroll联播</span><span class="source-tag">云合</span></div></div><span class="rank-score">🔥</span></div>
+<div class="rank-card"><span class="rank-num">5</span><div class="rank-info"><div class="rank-title">诡秘之主特别篇 <span class="badge badge-hot">出海爆款</span></div><div class="rank-meta"><span>腾讯独播</span><span>IMDb 9.6 / MAL 8.79</span><span class="source-tag">云合+MAL</span></div></div><span class="rank-score">🔥</span></div>
+<div class="rank-card"><span class="rank-num">6</span><div class="rank-info"><div class="rank-title">斗破苍穹 年番 <span class="badge badge-airing">年番</span></div><div class="rank-meta"><span>腾讯独播</span><span>MAL 8.40</span><span class="source-tag">云合</span></div></div><span class="rank-score">⭐</span></div>
+<div class="rank-card"><span class="rank-num">7</span><div class="rank-info"><div class="rank-title">完美世界 <span class="badge badge-airing">年番</span></div><div class="rank-meta"><span>腾讯独播</span><span>286集持续更新</span><span class="source-tag">云合</span></div></div><span class="rank-score">⭐</span></div>
+<div class="rank-card"><span class="rank-num">8</span><div class="rank-info"><div class="rank-title">吞噬星空 <span class="badge badge-airing">年番</span></div><div class="rank-meta"><span>腾讯独播</span><span>剧场版H1落地</span><span class="source-tag">云合</span></div></div><span class="rank-score">⭐</span></div>
+<div class="rank-card"><span class="rank-num">9</span><div class="rank-info"><div class="rank-title">星辰变 最终季</div><div class="rank-meta"><span>腾讯独播</span><span class="source-tag">云合</span></div></div><span class="rank-score">⭐</span></div>
+<div class="rank-card"><span class="rank-num">10</span><div class="rank-info"><div class="rank-title">斗罗大陆 <span class="badge badge-airing">常青树</span></div><div class="rank-meta"><span>腾讯独播</span><span>600亿累计播放</span><span class="source-tag">云合</span></div></div><span class="rank-score">⭐</span></div>
+<div class="rank-card"><span class="rank-num">11</span><div class="rank-info"><div class="rank-title">遮天 <span class="badge badge-airing">年番</span></div><div class="rank-meta"><span>腾讯独播</span><span>剧场版上映</span><span class="source-tag">云合</span></div></div><span class="rank-score">⭐</span></div>
+<div class="rank-card"><span class="rank-num">12</span><div class="rank-info"><div class="rank-title">凡人修仙传 木兰之战</div><div class="rank-meta"><span>腾讯独播</span><span class="source-tag">云合</span></div></div><span class="rank-score">⭐</span></div>
+<div class="rank-card"><span class="rank-num">13</span><div class="rank-info"><div class="rank-title">牧神记</div><div class="rank-meta"><span>腾讯独播</span><span>MAL 8.30</span><span class="source-tag">云合</span></div></div><span class="rank-score">⭐</span></div>
+<div class="rank-card"><span class="rank-num">14</span><div class="rank-info"><div class="rank-title">天官赐福 短片集</div><div class="rank-meta"><span>B站</span><span>MAL 8.49</span><span class="source-tag">MAL</span></div></div><span class="rank-score">⭐</span></div>
+<div class="rank-card"><span class="rank-num">15</span><div class="rank-info"><div class="rank-title">斗罗大陆2 绝世唐门</div><div class="rank-meta"><span>腾讯独播</span><span>182集</span><span class="source-tag">云合</span></div></div><span class="rank-score">⭐</span></div>
+
+<h3 class="sub-title">🆕 待播/新上线热门IP</h3>
+<div class="rank-card"><span class="rank-num">16</span><div class="rank-info"><div class="rank-title">火旺 <span class="badge badge-new">待播</span></div><div class="rank-meta"><span>中式民俗志怪</span><span class="source-tag">腾讯</span></div></div><span class="rank-score">期待</span></div>
+<div class="rank-card"><span class="rank-num">17</span><div class="rank-info"><div class="rank-title">清明上河图密码 <span class="badge badge-new">待播</span></div><div class="rank-meta"><span>历史悬疑</span><span class="source-tag">腾讯</span></div></div><span class="rank-score">期待</span></div>
+<div class="rank-card"><span class="rank-num">18</span><div class="rank-info"><div class="rank-title">太白金星有点烦 <span class="badge badge-new">待播</span></div><div class="rank-meta"><span>职场隐喻+文学底蕴</span><span class="source-tag">腾讯</span></div></div><span class="rank-score">期待</span></div>
+<div class="rank-card"><span class="rank-num">19</span><div class="rank-info"><div class="rank-title">武神主宰</div><div class="rank-meta"><span>720集超长年番</span><span class="source-tag">MAL</span></div></div><span class="rank-score">7.60</span></div>
+<div class="rank-card"><span class="rank-num">20</span><div class="rank-info"><div class="rank-title">苍渊图3</div><div class="rank-meta"><span>腾讯</span><span class="source-tag">MAL</span></div></div><span class="rank-score">7.58</span></div>
+
+<h3 class="sub-title">🌐 国漫出海代表</h3>
+<div class="rank-card"><span class="rank-num top3">1</span><div class="rank-info"><div class="rank-title">诡秘之主 <span class="badge badge-hot">出海之王</span></div><div class="rank-meta"><span>7语配音 / 200国 / IMDb 9.6 / MAL 8.79</span><span>Crunchyroll首部10万+评分国漫</span><span class="source-tag">全球</span></div></div><span class="rank-score">🏆</span></div>
+<div class="rank-card"><span class="rank-num">2</span><div class="rank-info"><div class="rank-title">一人之下6</div><div class="rank-meta"><span>Crunchyroll联播 / 200+国</span><span class="source-tag">全球</span></div></div><span class="rank-score">🌍</span></div>
+<div class="rank-card"><span class="rank-num">3</span><div class="rank-info"><div class="rank-title">天官赐福</div><div class="rank-meta"><span>MAL 8.49 / 全球粉丝群</span><span class="source-tag">全球</span></div></div><span class="rank-score">🌍</span></div>
+</div>
+
+<!-- ===== 五、趋势分析 ===== -->
+<div class="section" id="analysis">
+<h2 class="section-title"><span class="emoji">📊</span> 行业趋势 & 爆款拆解</h2>
+
+<div class="insight-box">
+<h3>📈 趋势一：日漫"怀旧稳盘+新番爆点"并行</h3>
+<p>
+MAL榜单依然被<b>银魂、进巨、FMAB</b>等老番霸占，但<b>Re:Zero第四季(9.14)、飙马野郎(9.10)、死神祸谭(9.02)</b>三部在播新番冲入历史TOP15，证明"续作不糊"时代已来。Anime Corner周榜则更敏感反映新番热度，<b>Jaadugar二度登顶</b>说明小众黑马也能靠口碑逆袭。<br>
+🔥 <b>关键波动</b>：死神祸谭首周登顶Anime Corner后回落至第3，Jaadugar从第5逆袭4位夺冠，说明粉丝投票市场比评分市场更"动荡"。
+</p>
+</div>
+
+<div class="insight-box">
+<h3>🤖 趋势二：AI漫剧——400亿市场的"野蛮生长"</h3>
+<p>
+红果短剧TOP10中AI漫剧占7席包揽前4，日均上新1200部——这已经不是"新兴赛道"，而是<b>正在吞噬短剧流量池的海啸</b>。<br>
+<b>爆发逻辑</b>：爽文IP(存量巨大) × AI绘图(成本1/50) × 短视频分发(即产即消) = 产能和流量双爆炸。<br>
+<b>隐患</b>：同质化严重(修仙占38%)，版权灰色地带，质量参差——但市场选择已经做出了回答：爽就是正义。<br>
+🔥 <b>抖音主推都市爽剧，红果火修仙玄幻</b>——平台差异化赛道已成型。
+</p>
+</div>
+
+<div class="insight-box">
+<h3>🐉 趋势三：国漫——腾讯"八成霸屏"与出海破圈</h3>
+<p>
+腾讯视频以8部年番+8成独播构筑了<b>不可复制的结构性壁垒</b>。但真正的行业信号是：<br>
+<b>①</b> 《诡秘之主》IMDb 9.6 + Crunchyroll 10万+评分 = 国漫首次在欧美主流平台证明"跨文化接受度"<br>
+<b>②</b> 《剑来》×龙虎山5A景区 = 国漫首次5A景区联名，IP从屏幕走到线下消费<br>
+<b>③</b> 题材从纯玄幻向<b>蒸汽朋克/克苏鲁/职场隐喻/民俗志怪</b>拓展，"玄幻审美疲劳"的应对已在路上<br>
+🔥 非腾讯系的生存空间在缩小，但B站(天官赐福MAL 8.49)和独立厂牌仍有机会在垂类赛道突围。
+</p>
+</div>
+
+<div class="insight-box">
+<h3>🎬 爆款拆解：2026 Q3四大现象级</h3>
+<p>
+<b>1. Re:Zero 第四季(9.14)</b>——从"从零开始"到"封神从零"，四季越做越强的教科书。核心：原著深度×动画制作升级×粉丝4年等待释放。<br>
+<b>2. 死神 千年血战-祸谭(9.02)</b>——原作最终章动画化，20年等一回。Pierrot倾注全力的战斗作画+情怀轰炸=粉丝评分"报复性"拉满。<br>
+<b>3. 诡秘之主(IMDb 9.6)</b>——蒸汽朋克×克苏鲁×序列体系=国漫出海的"差异化武器"。7语同步配音+Crunchyroll排播=运营方法论成熟。<br>
+<b>4. Jaadugar:蒙古之巫(6.75%)</b>——小众文化(蒙古萨满)+精致制作+独特氛围=口碑逆势登顶。证明"不追热点也能赢"。
+</p>
+</div>
+
+<div class="insight-box">
+<h3>🔮 Q3展望：下半场看点</h3>
+<p>
+<span class="trend-tag">飙马野郎后半程</span>
+<span class="trend-tag">死神祸谭高潮</span>
+<span class="trend-tag">国漫秋季片单</span>
+<span class="trend-tag">AI漫剧监管风声</span>
+<span class="trend-tag">MAPPA 15周年展</span>
+<span class="trend-tag">猎人×花卷合作MV</span><br><br>
+<b>风险提示</b>：AI漫剧若遭遇版权/内容监管收紧，400亿预期可能大幅下修。国漫腾讯独大格局下，中小团队创新意愿和试错空间是隐忧。日漫续作密集上线可能产生"续作疲劳"效应。
+</p>
+</div>
+</div>
+
+<div class="footer">
+<p>📋 动漫热度报告 | 自动生成于 2026-08-10 03:35 CST</p>
+<p>数据来源：MyAnimeList · Anime Corner · Reddit · 红果短剧 · 抖音 · bilibili · 腾讯视频 · 云合数据 · 雷报</p>
+<p>本报告由 AI 自动采集整理，数据仅供参考 | 定时任务：daily 03:35</p>
+</div>
+
+<script>
+document.querySelectorAll('.nav-tab').forEach(tab=>{
+tab.addEventListener('click',()=>{
+document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+tab.classList.add('active');
+document.getElementById(tab.dataset.tab).classList.add('active');
+});
+});
+</script>
+</body>
+</html>
