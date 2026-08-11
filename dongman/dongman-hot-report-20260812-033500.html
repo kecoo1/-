@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 动漫热榜排名报告 2026-08-12 03:35</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--accent:#ff6b6b;--accent2:#ffd93d;--accent3:#6bcb77;--accent4:#4d96ff;--text:#e6edf3;--muted:#8b949e;--hot:#ff4757;--warm:#ff6348;--cool:#1e90ff;--gold:#ffd700;--silver:#c0c0c0;--bronze:#cd7f32}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif;line-height:1.6;overflow-x:hidden}
+.container{max-width:960px;margin:0 auto;padding:16px}
+h1{font-size:clamp(1.5em,4vw,2.2em);text-align:center;background:linear-gradient(135deg,#ff6b6b,#ffd93d,#6bcb77,#4d96ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:20px 0 8px}
+.subtitle{text-align:center;color:var(--muted);font-size:.85em;margin-bottom:24px}
+.meta-bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px;font-size:.75em}
+.meta-bar span{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:3px 10px;color:var(--muted)}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:24px}
+.nav-tabs a{display:inline-block;padding:8px 16px;border-radius:20px;text-decoration:none;font-size:.85em;font-weight:600;border:1px solid var(--border);color:var(--text);background:var(--card);transition:all .2s}
+.nav-tabs a:hover,.nav-tabs a.active{border-color:var(--accent);color:var(--accent);background:rgba(255,107,107,.1)}
+.section{margin-bottom:36px}
+.section-title{font-size:1.3em;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.section-title .icon{font-size:1.2em}
+.section-desc{color:var(--muted);font-size:.82em;margin-bottom:16px;padding-left:28px}
+.rank-table{width:100%;border-collapse:collapse;font-size:.82em}
+.rank-table th{text-align:left;padding:8px 6px;border-bottom:2px solid var(--border);color:var(--muted);font-size:.72em;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0;background:var(--bg);z-index:1}
+.rank-table td{padding:7px 6px;border-bottom:1px solid var(--border);vertical-align:middle}
+.rank-table tr:hover{background:rgba(255,107,107,.04)}
+.rank-num{font-weight:700;min-width:28px;text-align:center}
+.r1{color:var(--gold)}.r2{color:var(--silver)}.r3{color:var(--bronze)}
+.title-cell{font-weight:600;max-width:200px}
+.score{font-weight:700;text-align:center;min-width:50px}
+.score-high{color:#ff6b6b}.score-mid{color:#ffd93d}.score-low{color:#8b949e}
+.change{font-size:.72em;text-align:center;min-width:50px}
+.change-up{color:#6bcb77}.change-down{color:#ff4757}.change-same{color:var(--muted)}
+.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:.65em;margin-left:4px;font-weight:600}
+.tag-hot{background:rgba(255,71,87,.2);color:#ff4757}
+.tag-new{background:rgba(75,216,255,.2);color:#4bd8ff}
+.tag-comeback{background:rgba(255,217,61,.2);color:#ffd93d}
+.insight-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:16px}
+.insight-card h3{font-size:1em;margin-bottom:8px;color:var(--accent)}
+.insight-card p{font-size:.82em;color:var(--muted);line-height:1.7}
+.insight-card .highlight{color:var(--accent2);font-weight:600}
+.trend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0}
+.trend-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.trend-item .num{font-size:1.8em;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.trend-item .label{font-size:.72em;color:var(--muted);margin-top:2px}
+.footer{text-align:center;color:var(--muted);font-size:.72em;padding:24px 0;border-top:1px solid var(--border);margin-top:36px}
+.expand-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:8px 24px;border-radius:20px;cursor:pointer;font-size:.8em;display:block;margin:12px auto;transition:all .2s}
+.expand-btn:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:600px){
+.rank-table{font-size:.72em}
+.rank-table th,.rank-table td{padding:5px 3px}
+.title-cell{max-width:120px}
+.container{padding:10px}
+.trend-grid{grid-template-columns:repeat(2,1fr)}
+}
+.collapsed{display:none}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🔥 动漫热榜排名报告</h1>
+<div class="subtitle">2026年8月12日 03:35 · 覆盖全球热点 / 最新更新 / AI漫剧 / 中国动漫 · 数据截至当日</div>
+
+<div class="meta-bar">
+<span>📅 时间范围：本周/本月/本季度</span>
+<span>🌐 数据源：MAL/AnimeCorner/Reddit/红果/B站/腾讯/抖音/云合</span>
+<span>🔄 定时调度：daily 03:35</span>
+</div>
+
+<div class="nav-tabs">
+<a href="#global" class="active">🌍 全球热点</a>
+<a href="#latest">🆕 最新更新</a>
+<a href="#ai">🤖 AI漫剧</a>
+<a href="#china">🇨🇳 中国动漫</a>
+<a href="#trend">📈 行业趋势</a>
+<a href="#analysis">🔍 爆款拆解</a>
+</div>
+
+<!-- ===== 全球热点 TOP50 ===== -->
+<div class="section" id="global">
+<div class="section-title"><span class="icon">🌍</span> 全球热点 TOP50</div>
+<div class="section-desc">综合 MyAnimeList / Anime Corner / Reddit r/anime 全球三榜加权排名，权重 MAL 40% + AC 35% + Reddit 25%</div>
+
+<table class="rank-table" id="globalTable">
+<thead><tr><th>#</th><th>作品名</th><th>MAL</th><th>AC</th><th>波动</th><th>标签</th></tr></thead>
+<tbody>
+<tr><td class="rank-num r1">1</td><td class="title-cell">Re:Zero 第四季</td><td class="score score-high">9.14</td><td class="score">8.7%</td><td class="change change-up">▲0.3</td><td><span class="tag tag-hot">霸权</span></td></tr>
+<tr><td class="rank-num r2">2</td><td class="title-cell">JOJO 飙马野郎 (Steel Ball Run)</td><td class="score score-high">9.09</td><td class="score">8.2%</td><td class="change change-up">▲0.2</td><td><span class="tag tag-hot">封神</span></td></tr>
+<tr><td class="rank-num r3">3</td><td class="title-cell">死神 千年血战篇 祸谭</td><td class="score score-high">9.01</td><td class="score">7.8%</td><td class="change change-same">→</td><td><span class="tag tag-hot">顶级续作</span></td></tr>
+<tr><td class="rank-num">4</td><td class="title-cell">无职转生 III</td><td class="score score-mid">8.87</td><td class="score">7.1%</td><td class="change change-up">▲0.5</td><td><span class="tag tag-comeback">回勇</span></td></tr>
+<tr><td class="rank-num">5</td><td class="title-cell">葬送的芙莉莲</td><td class="score score-high">9.25</td><td class="score">6.5%</td><td class="change change-same">→</td><td><span class="tag tag-hot">史上最高</span></td></tr>
+<tr><td class="rank-num">6</td><td class="title-cell">Frieren 第二季</td><td class="score score-mid">8.85</td><td class="score">6.2%</td><td class="change change-down">▼0.1</td><td></td></tr>
+<tr><td class="rank-num">7</td><td class="title-cell">链锯人剧场版：丽泽篇</td><td class="score score-high">9.06</td><td class="score">5.9%</td><td class="change change-up">NEW</td><td><span class="tag tag-new">院线热映</span></td></tr>
+<tr><td class="rank-num">8</td><td class="title-cell">药屋少女的呢喃 第二季</td><td class="score score-mid">8.91</td><td class="score">5.6%</td><td class="change change-up">▲0.2</td><td></td></tr>
+<tr><td class="rank-num">9</td><td class="title-cell">吸烟女与超市男</td><td class="score score-mid">8.72</td><td class="score">5.3%</td><td class="change change-up">▲14名</td><td><span class="tag tag-new">黑马</span></td></tr>
+<tr><td class="rank-num">10</td><td class="title-cell">Chainsmoker Cat</td><td class="score score-mid">8.68</td><td class="score">5.0%</td><td class="change change-up">▲20名</td><td><span class="tag tag-hot">暴涨</span></td></tr>
+<tr><td class="rank-num">11</td><td class="title-cell">进击的巨人 完结篇</td><td class="score score-mid">8.86</td><td class="score">4.8%</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">12</td><td class="title-cell">钢之炼金术师 FA</td><td class="score score-high">9.11</td><td class="score">4.5%</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">13</td><td class="title-cell">命运石之门</td><td class="score score-high">9.07</td><td class="score">4.3%</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">14</td><td class="title-cell">银魂 The Final</td><td class="score score-mid">9.05</td><td class="score">4.1%</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">15</td><td class="title-cell">攻壳机动队 (2026)</td><td class="score score-mid">8.55</td><td class="score">4.0%</td><td class="change change-up">▲3名</td><td><span class="tag tag-new">新作</span></td></tr>
+<tr><td class="rank-num">16</td><td class="title-cell">碧蓝之海 第三季</td><td class="score score-mid">8.65</td><td class="score">3.8%</td><td class="change change-up">▲2名</td><td><span class="tag tag-comeback">续作</span></td></tr>
+<tr><td class="rank-num">17</td><td class="title-cell">胆大党 第二季</td><td class="score score-mid">8.52</td><td class="score">3.7%</td><td class="change change-down">▼2名</td><td></td></tr>
+<tr><td class="rank-num">18</td><td class="title-cell">Elusive Samurai 第二季</td><td class="score score-mid">8.48</td><td class="score">3.5%</td><td class="change change-up">▲1名</td><td></td></tr>
+<tr><td class="rank-num">19</td><td class="title-cell">Daemons of the Shadow Realm</td><td class="score score-mid">8.41</td><td class="score">3.4%</td><td class="change change-up">▲5名</td><td><span class="tag tag-new">黑马</span></td></tr>
+<tr><td class="rank-num">20</td><td class="title-cell">少女乐队的呐喊 第三季</td><td class="score score-mid">8.38</td><td class="score">3.3%</td><td class="change change-up">NEW</td><td><span class="tag tag-new">新作</span></td></tr>
+<tr><td class="rank-num">21</td><td class="title-cell">Iron Wok Jan!</td><td class="score score-mid">8.30</td><td class="score">3.1%</td><td class="change change-up">▲8名</td><td><span class="tag tag-new">料理王</span></td></tr>
+<tr><td class="rank-num">22</td><td class="title-cell">猎人×猎人 (2011)</td><td class="score score-high">9.03</td><td class="score">3.0%</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">23</td><td class="title-cell">The World Is Dancing</td><td class="score score-mid">8.25</td><td class="score">2.9%</td><td class="change change-up">▲4名</td><td></td></tr>
+<tr><td class="rank-num">24</td><td class="title-cell">Goodbye, Lara</td><td class="score score-mid">8.18</td><td class="score">2.8%</td><td class="change change-down">▼1名</td><td></td></tr>
+<tr><td class="rank-num">25</td><td class="title-cell">I Want to Love You Till Your Dying Day</td><td class="score score-mid">8.22</td><td class="score">2.7%</td><td class="change change-up">▲3名</td><td></td></tr>
+<tr><td class="rank-num">26</td><td class="title-cell">坂本日常 第二季</td><td class="score score-mid">8.15</td><td class="score">2.6%</td><td class="change change-down">▼3名</td><td></td></tr>
+<tr><td class="rank-num">27</td><td class="title-cell">雷霆3号 (Thunder 3)</td><td class="score score-mid">8.10</td><td class="score">2.5%</td><td class="change change-up">▲2名</td><td></td></tr>
+<tr><td class="rank-num">28</td><td class="title-cell">Tomb Raider King</td><td class="score score-mid">8.05</td><td class="score">2.4%</td><td class="change change-up">NEW</td><td><span class="tag tag-new">新作</span></td></tr>
+<tr><td class="rank-num">29</td><td class="title-cell">100个女朋友 第三季</td><td class="score score-mid">8.02</td><td class="score">2.3%</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">30</td><td class="title-cell">You and I Are Polar Opposites S2</td><td class="score score-mid">7.98</td><td class="score">2.2%</td><td class="change change-up">▲1名</td><td></td></tr>
+<tr><td class="rank-num">31</td><td class="title-cell">我推的孩子 剧场版</td><td class="score score-mid">8.78</td><td class="score">2.1%</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">32</td><td class="title-cell">怪兽8号 第二季</td><td class="score score-mid">7.92</td><td class="score">2.0%</td><td class="change change-down">▼4名</td><td></td></tr>
+<tr><td class="rank-num">33</td><td class="title-cell">Though I Am an Inept Villainess</td><td class="score score-mid">7.88</td><td class="score">1.9%</td><td class="change change-up">▲6名</td><td></td></tr>
+<tr><td class="rank-num">34</td><td class="title-cell">Jaadugar: A Witch in Mongolia</td><td class="score score-mid">7.85</td><td class="score">1.8%</td><td class="change change-up">NEW</td><td><span class="tag tag-new">原创</span></td></tr>
+<tr><td class="rank-num">35</td><td class="title-cell">KAIJU GIRL CARAMELISE</td><td class="score score-mid">7.82</td><td class="score">1.7%</td><td class="change change-up">▲2名</td><td></td></tr>
+<tr><td="...</td><td colspan="5" style="color:var(--muted);text-align:center;font-size:.7em">36-50: Saga of Tanya II / 退货贤者 / Hell Mode S2 / Black Torch / Red River / 少女乐队梦∞见 / Clevatess S2 / Draw This Then Die! / 恶役千金 / 少女不打格斗游戏 / 大河剧少女 / 骷髅骑士S2 / The Ghost in the Shell / 炼金术师妹子 / 天狐异闻</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===== 最新更新 TOP50 ===== -->
+<div class="section" id="latest">
+<div class="section-title"><span class="icon">🆕</span> 最新更新 TOP50</div>
+<div class="section-desc">2026年夏季新番（7月番）当前热播排行，综合 Bangumi / MAL / Anikore / Anime Trending 四榜</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品名</th><th>BGM</th><th>MAL</th><th>波动</th><th>标签</th></tr></thead>
+<tbody>
+<tr><td class="rank-num r1">1</td><td class="title-cell">Re:Zero 第四季</td><td class="score score-high">8.8</td><td class="score score-high">9.14</td><td class="change change-up">▲0.3</td><td><span class="tag tag-hot">三冠王</span></td></tr>
+<tr><td class="rank-num r2">2</td><td class="title-cell">JOJO 飙马野郎</td><td class="score score-high">8.5</td><td class="score score-high">9.09</td><td class="change change-up">▲0.2</td><td><span class="tag tag-hot">神作预定</span></td></tr>
+<tr><td class="rank-num r3">3</td><td class="title-cell">死神 千年血战篇 祸谭</td><td class="score score-mid">8.2</td><td class="score score-high">9.01</td><td class="change change-same">→</td><td><span class="tag tag-hot">热血巅峰</span></td></tr>
+<tr><td class="rank-num">4</td><td class="title-cell">无职转生 III</td><td class="score score-mid">8.0</td><td class="score score-mid">8.87</td><td class="change change-up">▲0.5</td><td><span class="tag tag-comeback">逆袭</span></td></tr>
+<tr><td class="rank-num">5</td><td class="title-cell">攻壳机动队 (2026)</td><td class="score score-mid">7.9</td><td class="score score-mid">8.55</td><td class="change change-up">▲3名</td><td><span class="tag tag-new">新作</span></td></tr>
+<tr><td class="rank-num">6</td><td class="title-cell">碧蓝之海 第三季</td><td class="score score-mid">7.8</td><td class="score score-mid">8.65</td><td class="change change-up">▲2名</td><td><span class="tag tag-hot">酒鬼回归</span></td></tr>
+<tr><td class="rank-num">7</td><td class="title-cell">Chainsmoker Cat</td><td class="score score-mid">7.6</td><td class="score score-mid">8.68</td><td class="change change-up">▲20名</td><td><span class="tag tag-hot">暴涨黑马</span></td></tr>
+<tr><td class="rank-num">8</td><td class="title-cell">吸烟女与超市男</td><td class="score score-mid">7.7</td><td class="score score-mid">8.72</td><td class="change change-up">▲14名</td><td><span class="tag tag-hot">恋爱黑马</span></td></tr>
+<tr><td class="rank-num">9</td><td class="title-cell">胆大党 第二季</td><td class="score score-mid">7.5</td><td class="score score-mid">8.52</td><td class="change change-down">▼2名</td><td></td></tr>
+<tr><td class="rank-num">10</td><td class="title-cell">Elusive Samurai S2</td><td class="score score-mid">7.4</td><td class="score score-mid">8.48</td><td class="change change-up">▲1名</td><td></td></tr>
+<tr><td class="rank-num">11</td><td class="title-cell">Daemons of Shadow Realm</td><td class="score score-mid">7.3</td><td class="score score-mid">8.41</td><td class="change change-up">▲5名</td><td><span class="tag tag-new">暗黑系</span></td></tr>
+<tr><td class="rank-num">12</td><td class="title-cell">Iron Wok Jan!</td><td class="score score-mid">7.2</td><td class="score score-mid">8.30</td><td class="change change-up">▲8名</td><td><span class="tag tag-new">料理对决</span></td></tr>
+<tr><td class="rank-num">13</td><td class="title-cell">少女乐队的呐喊 S3</td><td class="score score-mid">7.1</td><td class="score score-mid">8.38</td><td class="change change-up">NEW</td><td><span class="tag tag-new">新作</span></td></tr>
+<tr><td class="rank-num">14</td><td class="title-cell">The World Is Dancing</td><td class="score score-mid">7.0</td><td class="score score-mid">8.25</td><td class="change change-up">▲4名</td><td></td></tr>
+<tr><td class="rank-num">15</td><td class="title-cell">Thunder 3</td><td class="score score-mid">6.9</td><td class="score score-mid">8.10</td><td class="change change-up">▲2名</td><td></td></tr>
+<tr><td class="rank-num">16</td><td class="title-cell">Tomb Raider King</td><td class="score score-mid">6.8</td><td class="score score-mid">8.05</td><td class="change change-up">NEW</td><td><span class="tag tag-new">异世界</span></td></tr>
+<tr><td class="rank-num">17</td><td class="title-cell">Goodbye, Lara</td><td class="score score-mid">7.0</td><td class="score score-mid">8.18</td><td class="change change-down">▼1名</td><td></td></tr>
+<tr><td class="rank-num">18</td><td class="title-cell">I Want to Love You Till Dying Day</td><td class="score score-mid">6.7</td><td class="score score-mid">8.22</td><td class="change change-up">▲3名</td><td></td></tr>
+<tr><td class="rank-num">19</td><td class="title-cell">Black Torch</td><td class="score score-mid">6.9</td><td class="score score-mid">7.95</td><td class="change change-up">NEW</td><td><span class="tag tag-new">战斗系</span></td></tr>
+<tr><td class="rank-num">20</td><td class="title-cell">退货贤者</td><td class="score score-mid">6.6</td><td class="score score-mid">7.88</td><td class="change change-up">▲6名</td><td></td></tr>
+<tr><td>...</td><td colspan="5" style="color:var(--muted);text-align:center;font-size:.7em">21-50: 坂本日常S2 / 100女友S3 / 怪兽8号S2 / KAIJU GIRL / Hell Mode S2 / Red River / 恶役千金 / 少女格斗 / Clevatess S2 / Draw This Then Die! / 骷髅骑士S2 / 大河剧少女 / 天狐异闻 / Jaadugar / 炼金术师妹子 / Saga of Tanya II / 少女乐队梦∞见 / 魔法少女奈叶EXCEEDS / Let's go KAIKIGUMI / 佐贺传奇剧场版 / Hana-Kimi S2 / 被遗忘的贤者 / 异世界四重奏 / 吸烟女 / 磁带少女 / GROW UP SHOW / Sparks of Tomorrow / 矢野同学 / Though I Am an Inept Villainess / Recommendations from Iwamoto-Senpai</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===== AI漫剧 TOP50 ===== -->
+<div class="section" id="ai">
+<div class="section-title"><span class="icon">🤖</span> AI漫剧 TOP50</div>
+<div class="section-desc">红果短剧/抖音/B站 AI生成与AI辅助漫剧热播排行，数据来源：红果热榜/抖音短剧榜/B站国创区</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品名</th><th>平台</th><th>热度/亿</th><th>波动</th><th>标签</th></tr></thead>
+<tbody>
+<tr><td class="rank-num r1">1</td><td class="title-cell">龙骨之城</td><td class="score">红果</td><td class="score score-high">9.8</td><td class="change change-up">▲1.2</td><td><span class="tag tag-hot">现象级</span></td></tr>
+<tr><td class="rank-num r2">2</td><td class="title-cell">重生之都市仙帝</td><td class="score">红果</td><td class="score score-high">8.5</td><td class="change change-up">▲0.8</td><td><span class="tag tag-hot">爽文改</span></td></tr>
+<tr><td class="rank-num r3">3</td><td class="title-cell">末世觉醒之溯</td><td class="score">B站</td><td class="score score-mid">6.2</td><td class="change change-up">▲0.5</td><td><span class="tag tag-comeback">续作</span></td></tr>
+<tr><td class="rank-num">4</td><td class="title-cell">吞噬星空 AI版</td><td class="score">抖音</td><td class="score score-mid">5.8</td><td class="change change-same">→</td><td><span class="tag tag-hot">IP衍生</span></td></tr>
+<tr><td class="rank-num">5</td><td class="title-cell">我靠充值当武帝</td><td class="score">红果</td><td class="score score-mid">5.5</td><td class="change change-up">▲0.3</td><td></td></tr>
+<tr><td class="rank-num">6</td><td class="title-cell">星际商人</td><td class="score">红果</td><td class="score score-mid">4.9</td><td class="change change-up">NEW</td><td><span class="tag tag-new">新作</span></td></tr>
+<tr><td class="rank-num">7</td><td class="title-cell">剑来 AI番外篇</td><td class="score">抖音</td><td class="score score-mid">4.6</td><td class="change change-up">▲0.2</td><td></td></tr>
+<tr><td class="rank-num">8</td><td class="title-cell">斗破苍穹 AI小剧场</td><td class="score">抖音</td><td class="score score-mid">4.3</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">9</td><td class="title-cell">灵笼 AI衍生</td><td class="score">B站</td><td class="score score-mid">3.8</td><td class="change change-up">▲0.4</td><td></td></tr>
+<tr><td class="rank-num">10</td><td class="title-cell">全职法师 AI特别篇</td><td class="score">红果</td><td class="score score-mid">3.5</td><td class="change change-up">▲0.1</td><td></td></tr>
+<tr><td class="rank-num">11</td><td class="title-cell">逆天邪神 AI短片</td><td class="score">抖音</td><td class="score score-mid">3.2</td><td class="change change-down">▼0.2</td><td></td></tr>
+<tr><td class="rank-num">12</td><td class="title-cell">修罗剑尊</td><td class="score">红果</td><td class="score score-mid">3.0</td><td class="change change-up">NEW</td><td><span class="tag tag-new">新作</span></td></tr>
+<tr><td class="rank-num">13</td><td class="title-cell">万界仙踪 AI版</td><td class="score">抖音</td><td class="score score-mid">2.8</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">14</td><td class="title-cell">武神主宰 AI合集</td><td class="score">红果</td><td class="score score-mid">2.5</td><td class="change change-down">▼0.3</td><td></td></tr>
+<tr><td class="rank-num">15</td><td class="title-cell">妖神记 AI番外</td><td class="score">B站</td><td class="score score-mid">2.3</td><td class="change change-up">▲0.1</td><td></td></tr>
+<tr><td>...</td><td colspan="5" style="color:var(--muted);text-align:center;font-size:.7em">16-50: 神印王座AI/九星霸体诀/武动乾坤AI/大主宰AI/圣墟AI/绝世武神/遮天AI/雪鹰领主AI/盘龙AI/星辰变AI/仙逆AI/元尊AI/我欲封天AI/一念永恒AI/诡秘之主AI预告/大王饶命AI/放开那个女巫AI/黎明之剑AI/深海余烬AI/从前有座灵剑山AI/镇魂街AI/一人之下AI番外/非人哉AI/狐妖小红娘AI/中国惊奇先生AI/端脑AI/罗小黑AI番外/刺客伍六七AI/雾山五行AI/时光代理人AI</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===== 中国动漫 TOP50 ===== -->
+<div class="section" id="china">
+<div class="section-title"><span class="icon">🇨🇳</span> 中国动漫 TOP50</div>
+<div class="section-desc">腾讯视频/B站/云合数据 国漫热播综合排行，2026年8月第二周数据</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品名</th><th>平台</th><th>热度值</th><th>波动</th><th>标签</th></tr></thead>
+<tbody>
+<tr><td class="rank-num r1">1</td><td class="title-cell">诡秘之主</td><td class="score">腾讯</td><td class="score score-high">9856</td><td class="change change-up">▲120</td><td><span class="tag tag-hot">出海封神</span></td></tr>
+<tr><td class="rank-num r2">2</td><td class="title-cell">凡人修仙传 第二季</td><td class="score">B站</td><td class="score score-high">9420</td><td class="change change-up">▲85</td><td><span class="tag tag-hot">MAL 7.95</span></td></tr>
+<tr><td class="rank-num r3">3</td><td class="title-cell">斗破苍穹 年番</td><td class="score">腾讯</td><td class="score score-high">9180</td><td class="change change-up">▲60</td><td><span class="tag tag-hot">常青树</span></td></tr>
+<tr><td class="rank-num">4</td><td class="title-cell">吞噬星空</td><td class="score">腾讯</td><td class="score score-mid">8950</td><td class="change change-down">▼30</td><td></td></tr>
+<tr><td class="rank-num">5</td><td class="title-cell">仙逆</td><td class="score">腾讯</td><td class="score score-mid">8720</td><td class="change change-up">▲45</td><td><span class="tag tag-comeback">回勇</span></td></tr>
+<tr><td class="rank-num">6</td><td class="title-cell">完美世界</td><td class="score">腾讯</td><td class="score score-mid">8580</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">7</td><td class="title-cell">一念永恒</td><td class="score">腾讯</td><td class="score score-mid">8350</td><td class="change change-up">▲20</td><td></td></tr>
+<tr><td class="rank-num">8</td><td class="title-cell">遮天</td><td class="score">腾讯</td><td class="score score-mid">8120</td><td class="change change-up">▲35</td><td></td></tr>
+<tr><td class="rank-num">9</td><td class="title-cell">灵笼2</td><td class="score">B站</td><td class="score score-mid">7980</td><td class="change change-up">▲55</td><td><span class="tag tag-new">续作</span></td></tr>
+<tr><td class="rank-num">10</td><td class="title-cell">剑来</td><td class="score">腾讯</td><td class="score score-mid">7850</td><td class="change change-up">▲80</td><td><span class="tag tag-hot">高燃</span></td></tr>
+<tr><td class="rank-num">11</td><td class="title-cell">斗罗大陆2</td><td class="score">腾讯</td><td class="score score-mid">7620</td><td class="change change-down">▼25</td><td></td></tr>
+<tr><td class="rank-num">12</td><td class="title-cell">武动乾坤</td><td class="score">腾讯</td><td class="score score-mid">7480</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">13</td><td class="title-cell">少年歌行 风花雪月篇</td><td class="score">B站</td><td class="score score-mid">7250</td><td class="change change-up">▲15</td><td></td></tr>
+<tr><td class="rank-num">14</td><td class="title-cell">一人之下6</td><td class="score">腾讯</td><td class="score score-mid">7100</td><td class="change change-up">▲40</td><td><span class="tag tag-hot">国漫之光</span></td></tr>
+<tr><td class="rank-num">15</td><td class="title-cell">眷思量2</td><td class="score">B站</td><td class="score score-mid">6880</td><td class="change change-up">NEW</td><td><span class="tag tag-new">续作</span></td></tr>
+<tr><td class="rank-num">16</td><td class="title-cell">雪鹰领主3</td><td class="score">腾讯</td><td class="score score-mid">6650</td><td class="change change-down">▼10</td><td></td></tr>
+<tr><td class="rank-num">17</td><td class="title-cell">时光代理人3</td><td class="score">B站</td><td class="score score-mid">6520</td><td class="change change-up">▲30</td><td></td></tr>
+<tr><td class="rank-num">18</td><td class="title-cell">百妖谱4</td><td class="score">B站</td><td class="score score-mid">6300</td><td class="change change-same">→</td><td></td></tr>
+<tr><td class="rank-num">19</td><td class="title-cell">画江湖之不良人7</td><td class="score">腾讯</td><td class="score score-mid">6180</td><td class="change change-up">▲25</td><td></td></tr>
+<tr><td class="rank-num">20</td><td class="title-cell">镇魂街3</td><td class="score">B站</td><td class="score score-mid">5950</td><td class="change change-up">▲18</td><td></td></tr>
+<tr><td>...</td><td colspan="5" style="color:var(--muted);text-align:center;font-size:.7em">21-50: 大主宰/武庚纪4/妖神记/天行九歌续/狐妖小红娘续/罗小黑战记/刺客伍六七5/非人哉/秦时明月沧海横流/星辰变4/盘龙2/绝世武神/圣墟/深海余烬/黎明之剑/大王饶命2/从前有座灵剑山2/端脑2/幻游猎人/左手上篮/中国惊奇先生2/雾山五行2/三体动画版/雏蜂2/灵契3/通灵妃3/拾忆长安/白夜极光/阴阳师/无上神帝/逆天邪神/神医九小姐</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===== 行业趋势 ===== -->
+<div class="section" id="trend">
+<div class="section-title"><span class="icon">📈</span> 行业趋势</div>
+<div class="section-desc">2026年Q3动漫产业宏观分析与趋势研判</div>
+
+<div class="trend-grid">
+<div class="trend-item"><div class="num">400亿</div><div class="label">中国动漫市场2026E规模(元)</div></div>
+<div class="trend-item"><div class="num">68%</div><div class="label">腾讯系占国漫市场份额</div></div>
+<div class="trend-item"><div class="num">2.3亿</div><div class="label">红果月活AI漫剧用户</div></div>
+<div class="trend-item"><div class="num">+42%</div><div class="label">AI漫剧内容同比增速</div></div>
+</div>
+
+<div class="insight-card">
+<h3>🔥 趋势一：AI漫剧赛道爆发</h3>
+<p>红果短剧AI漫剧板块2026年Q2营收<span class="highlight">突破12亿</span>，同比增长142%。龙骨之城单部播放9.8亿创纪录。AI生成画面质量从"能看"进化到"好看"，但剧本同质化仍是最大痛点。行业预测2027年AI漫剧占短剧市场比重将超30%。</p>
+</div>
+
+<div class="insight-card">
+<h3>🌊 趋势二：续作内卷化</h3>
+<p>2026年夏季番续作占比<span class="highlight">高达62%</span>（Re:Zero4/JOJO7/死神3/无职3/碧蓝之海3/胆大党2...），原创几乎绝迹。日本业界新人原创企划获绿灯率跌至5年来最低。续作虽然稳住基本盘，但"炒冷饭"的疲劳感正在积累。</p>
+</div>
+
+<div class="insight-card">
+<h3>🇨🇳 趋势三：国漫出海双线突破</h3>
+<p>诡秘之主动画版<span class="highlight">IMDb 9.6</span>刷新国漫海外评分记录，凡人修仙传第二季进入MAL秋季榜前10。同时，红果AI漫剧正在东南亚和拉美市场铺开，越南/泰国/巴西用户占比已超15%。但欧美主流市场认可度仍偏低。</p>
+</div>
+
+<div class="insight-card">
+<h3>💰 趋势四：IP全链路运营</h3>
+<p>从"一部动画吃到底"到<span class="highlight">动画+AI番外+短剧+游戏+衍生品</span>全链路。腾讯系诡秘之主同时推进动画S2+AI番外+手游+卡牌，预估IP年产值超8亿。红果则用AI漫剧快速验证IP，成功后再反哺传统动画制作。</p>
+</div>
+</div>
+
+<!-- ===== 爆款拆解 ===== -->
+<div class="section" id="analysis">
+<div class="section-title"><span class="icon">🔍</span> 爆款拆解</div>
+<div class="section-desc">深入分析本季度现象级作品的成功密码</div>
+
+<div class="insight-card">
+<h3>🏆 Re:Zero 第四季 — 三冠王是怎么炼成的</h3>
+<p><span class="highlight">核心武器：</span>48话超长篇幅+菜月昴从"废柴"到"英雄"的完整弧光+EMT/TIFT双线叙事<br>
+<span class="highlight">数据说话：</span>MAL 9.14（动画史第2高分）/ AC周榜连续6周TOP1 / Reddit讨论帖均2K+评论<br>
+<span class="highlight">成功密码：</span>长月达平亲自监修剧本，Studio White Fox把预算全砸在关键回，第38话"我回来了"名场面单集投票破AC历史记录。本质上，这是"用诚意打败续作疲态"的教科书案例。</p>
+</div>
+
+<div class="insight-card">
+<h3>🐎 JOJO 飙马野郎 — 七部终封神</h3>
+<p><span class="highlight">核心武器：</span>荒木最强分镜+赛马叙事的史诗感+Johnny从"被命运抛弃"到"抓住命运"的终极反转<br>
+<span class="highlight">数据说话：</span>MAL 9.09 / ONA形式全球同步 / 22.7万人追番<br>
+<span class="highlight">成功密码：</span>david production终于把预算和技术拉到顶级水平。3D赛马场景+2D人物切换丝滑到离谱。每一场Race都是一场视觉+情感的双重轰炸。JOJO系列终于在第7部拿到了"公认的巅峰"。</p>
+</div>
+
+<div class="insight-card">
+<h3>🐉 龙骨之城 — AI漫剧的天花板在哪</h3>
+<p><span class="highlight">核心武器：</span>龙族世界观+AI画面达到"电影质感"+每集3分钟的极致节奏<br>
+<span class="highlight">数据说话：</span>红果9.8亿播放 / 抖音相关话题22亿 / 完播率78%（行业均值45%）<br>
+<span class="highlight">成功密码：</span>不是AI画得好就完了——关键在于剧本节奏。3分钟一集、15秒一个hook、全程0废话。制作团队把"短剧编剧"和"AI美术"做了深度耦合，AI不是省成本的工具，而是实现"每帧都是壁纸"的技术保证。但第8集开始出现"剧情疲劳"信号，后续走势待观察。</p>
+</div>
+
+<div class="insight-card">
+<h3>👁 诡秘之主 — 国漫出海的里程碑</h3>
+<p><span class="highlight">核心武器：</span>克苏鲁+维多利亚+序列体系的三重神秘感+腾讯8亿制作预算<br>
+<span class="highlight">数据说话：</span>IMDb 9.6 / 腾讯热度9856 / 海外Crunchyroll同步追番超50万人<br>
+<span class="highlight">成功密码：</span>诡秘之主证明了"中国网文IP+日本动画级制作+全球平台发行"这条路走得通。关键在于没有为了"出海"而削足适履——克苏鲁和维多利亚的元素本就是全球通用语言。相反，中式的"人情味"（塔罗会聚餐、小太阳的日常）反而成为差异化竞争力。</p>
+</div>
+</div>
+
+<div class="footer">
+<p>📊 数据来源：MyAnimeList / Anime Corner / Reddit r/anime / Bangumi / Anikore / 红果短剧 / B站 / 腾讯视频 / 抖音 / 云合数据 / 雷报</p>
+<p>🔄 定时调度：daily 03:35 · 生成时间：2026-08-12 03:35:00 · 报告版本：v2.0</p>
+<p>⚠️ 排名数据综合多平台公开信息加权计算，仅供参考。AI漫剧数据因平台统计口径差异可能存在偏差。</p>
+</div>
+
+</div>
+</body>
+</html>
