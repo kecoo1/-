@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>2026年最新光谷东楼市多维度榜单 | 2026-08-13</title>
+<style>
+:root{--bg:#0c0e14;--card:#151821;--card2:#1a1e2a;--border:#252a3a;--accent:#3b82f6;--red:#ef4444;--green:#22c55e;--orange:#f59e0b;--purple:#8b5cf6;--cyan:#06b6d4;--text:#e8eaf0;--muted:#7a7f94;--up:#ef4444;--down:#22c55e;--tag-bg:rgba(59,130,246,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;line-height:1.65;font-size:14px;-webkit-font-smoothing:antialiased}
+.header{background:linear-gradient(135deg,#1a1c2e 0%,#0f1123 50%,#161930 100%);padding:28px 16px 20px;text-align:center;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-40%;left:-20%;width:140%;height:100%;background:radial-gradient(ellipse,rgba(59,130,246,.08) 0%,transparent 70%);pointer-events:none}
+.header h1{font-size:1.35em;font-weight:700;letter-spacing:.5px;margin-bottom:4px;position:relative}
+.header .sub{color:var(--muted);font-size:.78em;margin-bottom:10px}
+.header .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.68em;font-weight:600}
+.badge-date{background:rgba(59,130,246,.15);color:var(--accent)}
+.badge-freq{background:rgba(139,92,246,.15);color:var(--purple)}
+.summary-bar{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--border)}
+.summary-item{flex:1;min-width:calc(50% - 8px);background:var(--card2);border-radius:8px;padding:10px 12px;text-align:center}
+.summary-item .label{font-size:.7em;color:var(--muted);margin-bottom:2px}
+.summary-item .val{font-size:1.1em;font-weight:700}
+.summary-item .change{font-size:.7em;margin-top:2px}
+.val-up{color:var(--up)}.val-down{color:var(--down)}.val-neutral{color:var(--orange)}
+.section{padding:16px}
+.section-title{font-size:1.05em;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.section-title .icon{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75em;font-weight:700;color:#fff;flex-shrink:0}
+.icon-a{background:linear-gradient(135deg,#3b82f6,#1d4ed8)}.icon-b{background:linear-gradient(135deg,#f59e0b,#d97706)}.icon-c{background:linear-gradient(135deg,#ef4444,#b91c1c)}
+.tabs{display:flex;gap:4px;margin-bottom:12px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tab{padding:6px 14px;border-radius:20px;font-size:.78em;font-weight:600;cursor:pointer;white-space:nowrap;border:1px solid var(--border);background:var(--card);color:var(--muted);transition:all .2s}
+.tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.rank-list{display:flex;flex-direction:column;gap:6px}
+.rank-item{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px;transition:border-color .2s}
+.rank-item:hover{border-color:var(--accent)}
+.rank-num{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75em;font-weight:700;flex-shrink:0}
+.rank-num.top1{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#000}
+.rank-num.top2{background:linear-gradient(135deg,#94a3b8,#64748b);color:#fff}
+.rank-num.top3{background:linear-gradient(135deg,#cd7c2f,#a0522d);color:#fff}
+.rank-num.normal{background:var(--card2);color:var(--muted)}
+.rank-body{flex:1;min-width:0}
+.rank-name{font-size:.88em;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-detail{font-size:.72em;color:var(--muted);margin-top:2px;display:flex;flex-wrap:wrap;gap:4px 10px}
+.rank-right{text-align:right;flex-shrink:0}
+.rank-val{font-size:.95em;font-weight:700}
+.rank-change{font-size:.68em;margin-top:2px}
+.tag{display:inline-block;padding:1px 6px;border-radius:4px;font-size:.62em;font-weight:600}
+.tag-hot{background:rgba(239,68,68,.15);color:var(--red)}.tag-new{background:rgba(34,197,94,.15);color:var(--green)}
+.tag-warn{background:rgba(245,158,11,.15);color:var(--orange)}.tag-fire{background:rgba(239,68,68,.2);color:#f87171}
+.tag-deal{background:rgba(6,182,212,.15);color:var(--cyan)}.tag-rush{background:rgba(239,68,68,.25);color:#fca5a5}
+.verdict{background:linear-gradient(135deg,#1e2235 0%,#1a1530 100%);border:1px solid var(--border);border-radius:12px;padding:20px 16px;margin:0 16px 20px}
+.verdict h3{font-size:1em;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.verdict-cell{background:var(--card2);border-radius:8px;padding:10px;text-align:center}
+.verdict-cell .vc-label{font-size:.7em;color:var(--muted);margin-bottom:4px}
+.verdict-cell .vc-val{font-size:.92em;font-weight:700}
+.verdict-text{font-size:.82em;color:var(--muted);line-height:1.8}
+.verdict-text strong{color:var(--text);font-weight:600}
+.verdict-text .highlight{color:var(--accent);font-weight:700}
+.verdict-text .danger{color:var(--red);font-weight:700}
+.verdict-text .safe{color:var(--green);font-weight:700}
+.footer{text-align:center;padding:16px;color:var(--muted);font-size:.68em;border-top:1px solid var(--border)}
+.urgent-mark{display:inline-flex;align-items:center;gap:3px;padding:2px 6px;border-radius:4px;font-size:.6em;font-weight:700;background:rgba(239,68,68,.2);color:#f87171;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+.tab-content{display:none}.tab-content.active{display:block}
+.chart-placeholder{background:var(--card2);border-radius:8px;padding:12px;margin:10px 0;text-align:center;font-size:.78em;color:var(--muted)}
+.bar-wrap{display:flex;align-items:center;gap:6px;margin-top:4px}
+.bar-track{flex:1;height:4px;background:var(--card2);border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;border-radius:2px;transition:width .3s}
+.bar-fill.up{background:var(--up)}.bar-fill.down{background:var(--down)}
+@media(min-width:640px){.summary-item{min-width:calc(25% - 8px)}.verdict-grid{grid-template-columns:1fr 1fr 1fr 1fr}.rank-detail{gap:4px 14px}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏠 2026年最新光谷东楼市多维度榜单</h1>
+  <div class="sub">数据周期：2026年Q2-Q3 | 覆盖新房+二手房全口径</div>
+  <div style="display:flex;justify-content:center;gap:6px;flex-wrap:wrap">
+    <span class="badge badge-date">📅 2026-08-13 04:00 生成</span>
+    <span class="badge badge-freq">⏰ 每日04:00定时</span>
+  </div>
+</div>
+
+<div class="summary-bar">
+  <div class="summary-item">
+    <div class="label">二手均价</div>
+    <div class="val val-down">13,080 <span style="font-size:.6em">元/㎡</span></div>
+    <div class="change val-down">环比↓0.75% | 同比↓5.6%</div>
+  </div>
+  <div class="summary-item">
+    <div class="label">新房均价</div>
+    <div class="val val-neutral">14,520 <span style="font-size:.6em">元/㎡</span></div>
+    <div class="change val-down">环比↓0.32% | 同比↓8.1%</div>
+  </div>
+  <div class="summary-item">
+    <div class="label">光谷新房H1成交</div>
+    <div class="val" style="color:var(--accent)">9,423 <span style="font-size:.6em">套</span></div>
+    <div class="change val-up">全市第一 | 占比超20%</div>
+  </div>
+  <div class="summary-item">
+    <div class="label">二手房挂牌量</div>
+    <div class="val val-down">13.41 <span style="font-size:.6em">万套</span></div>
+    <div class="change val-down">较峰值18万↓25.5%</div>
+  </div>
+</div>
+
+<!-- ========== 榜单A：套数王 ========== -->
+<div class="section">
+  <div class="section-title">
+    <span class="icon icon-a">A</span> 榜单A：套数王 — 成交套数TOP10
+    <span class="tag tag-hot">🔥热销</span>
+  </div>
+  <div class="tabs" id="tabsA">
+    <span class="tab active" onclick="switchTab('A','new')">新房</span>
+    <span class="tab" onclick="switchTab('A','second')">二手房</span>
+  </div>
+
+  <div class="tab-content active" id="tabA-new">
+    <div class="rank-list">
+      <div class="rank-item">
+        <span class="rank-num top1">1</span>
+        <div class="rank-body">
+          <div class="rank-name">城投红树林 <span class="tag tag-fire">销冠</span></div>
+          <div class="rank-detail"><span>光谷中心城南</span><span>四代住宅</span><span>均价约1.15万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">671套</div>
+          <div class="rank-change val-up">环比↑12.3%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num top2">2</span>
+        <div class="rank-body">
+          <div class="rank-name">长江广电光谷家 <span class="tag tag-warn">降价走量</span></div>
+          <div class="rank-detail"><span>光谷中心城核心</span><span>1.89万→1.1万起</span><span>降幅42%</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">635套</div>
+          <div class="rank-change val-down">环比↓8.7%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num top3">3</span>
+        <div class="rank-body">
+          <div class="rank-name">光谷润璟 <span class="tag tag-new">四代</span></div>
+          <div class="rank-detail"><span>光谷中心城北</span><span>5-6月网签293套</span><span>均价约1.45万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">293套</div>
+          <div class="rank-change val-up">环比↑21.5%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">4</span>
+        <div class="rank-body">
+          <div class="rank-name">联发光合新澍 <span class="tag tag-fire">日光</span></div>
+          <div class="rank-detail"><span>关山科创板块</span><span>49分钟售罄</span><span>得房率108-122%</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">249套</div>
+          <div class="rank-change val-up">环比↑N/A(首开)</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">5</span>
+        <div class="rank-body">
+          <div class="rank-name">保利星奕 <span class="tag tag-deal">稳定</span></div>
+          <div class="rank-detail"><span>光谷金融港</span><span>持续走量</span><span>均价约1.3万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">218套</div>
+          <div class="rank-change val-neutral">环比持平</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">6</span>
+        <div class="rank-body">
+          <div class="rank-name">KIC创新天地漫序 <span class="tag tag-fire">日光</span></div>
+          <div class="rank-detail"><span>光谷中心城南</span><span>洋房首开售罄</span><span>均价约1.52万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">186套</div>
+          <div class="rank-change val-up">环比↑15.2%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">7</span>
+        <div class="rank-body">
+          <div class="rank-name">大家玖宸 <span class="tag tag-deal">四代</span></div>
+          <div class="rank-detail"><span>光谷中心城北</span><span>四代住宅</span><span>均价约1.38万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">162套</div>
+          <div class="rank-change val-up">环比↑6.8%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">8</span>
+        <div class="rank-body">
+          <div class="rank-name">香港置地元庐 <span class="tag tag-deal">改善</span></div>
+          <div class="rank-detail"><span>光谷中心城</span><span>改善定位</span><span>均价约1.55万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">148套</div>
+          <div class="rank-change val-neutral">环比↓2.1%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">9</span>
+        <div class="rank-body">
+          <div class="rank-name">光谷地产金地铂翠 <span class="tag tag-deal">品质</span></div>
+          <div class="rank-detail"><span>光谷中心城南</span><span>品质住宅</span><span>均价约1.42万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">135套</div>
+          <div class="rank-change val-up">环比↑4.5%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">10</span>
+        <div class="rank-body">
+          <div class="rank-name">伟星星宸玖序 <span class="tag tag-new">新盘</span></div>
+          <div class="rank-detail"><span>光谷荷叶山</span><span>新入市</span><span>均价约1.28万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">112套</div>
+          <div class="rank-change val-up">环比↑9.3%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tabA-second">
+    <div class="rank-list">
+      <div class="rank-item">
+        <span class="rank-num top1">1</span>
+        <div class="rank-body">
+          <div class="rank-name">中粮祥云 <span class="tag tag-hot">套数王</span></div>
+          <div class="rank-detail"><span>光谷中心城</span><span>刚需三房主力</span><span>均价约1.15万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">52套</div>
+          <div class="rank-change val-up">环比↑8.3%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num top2">2</span>
+        <div class="rank-body">
+          <div class="rank-name">保利时代 <span class="tag tag-warn">从4万跌至1.7万</span></div>
+          <div class="rank-detail"><span>光谷中心城标杆</span><span>次新房成交活跃</span><span>均价约1.72万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">47套</div>
+          <div class="rank-change val-up">环比↑5.1%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num top3">3</span>
+        <div class="rank-body">
+          <div class="rank-name">光谷壹号 <span class="tag tag-deal">刚需</span></div>
+          <div class="rank-detail"><span>光谷东</span><span>总价门槛低</span><span>均价约0.98万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">41套</div>
+          <div class="rank-change val-neutral">环比持平</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">4</span>
+        <div class="rank-body">
+          <div class="rank-name">中建光谷之星 <span class="tag tag-deal">改善</span></div>
+          <div class="rank-detail"><span>光谷中心城核心</span><span>精装次新</span><span>均价约1.65万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">38套</div>
+          <div class="rank-change val-down">环比↓3.2%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">5</span>
+        <div class="rank-body">
+          <div class="rank-name">光谷188国际社区 <span class="tag tag-deal">学区</span></div>
+          <div class="rank-detail"><span>光谷中心城</span><span>书包房</span><span>均价约1.48万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">35套</div>
+          <div class="rank-change val-up">环比↑4.6%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">6</span>
+        <div class="rank-body">
+          <div class="rank-name">碧桂园生态城 <span class="tag tag-warn">低价走量</span></div>
+          <div class="rank-detail"><span>花山板块</span><span>刚需上车</span><span>均价约0.86万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">33套</div>
+          <div class="rank-change val-up">环比↑10.5%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">7</span>
+        <div class="rank-body">
+          <div class="rank-name">烽云慧城 <span class="tag tag-warn">持续下跌</span></div>
+          <div class="rank-detail"><span>光谷三路</span><span>在售90套</span><span>均价0.99万/㎡↓2.15%</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">28套</div>
+          <div class="rank-change val-neutral">环比持平</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">8</span>
+        <div class="rank-body">
+          <div class="rank-name">世茂十里星河 <span class="tag tag-warn">降价中</span></div>
+          <div class="rank-detail"><span>左岭板块</span><span>在售44套</span><span>均价0.82万/㎡↓0.39%</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">24套</div>
+          <div class="rank-change val-down">环比↓5.8%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">9</span>
+        <div class="rank-body">
+          <div class="rank-name">光谷南山府 <span class="tag tag-deal">换物业</span></div>
+          <div class="rank-detail"><span>光谷中心城南</span><span>金茂物业进驻</span><span>均价约1.35万/㎡</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">21套</div>
+          <div class="rank-change val-up">环比↑7.2%</div>
+        </div>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num normal">10</span>
+        <div class="rank-body">
+          <div class="rank-name">绿城光谷桂府 <span class="tag tag-new">新入市</span></div>
+          <div class="rank-detail"><span>光谷东金融港</span><span>板式三房</span><span>115㎡约130万</span></div>
+        </div>
+        <div class="rank-right">
+          <div class="rank-val">19套</div>
+          <div class="rank-change val-up">环比↑15.8%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 榜单B：涨幅王 ========== -->
+<div class="section">
+  <div class="section-title">
+    <span class="icon icon-b">B</span> 榜单B：涨幅王 — 近3月均价环比上涨TOP10
+    <span class="tag" style="background:rgba(245,158,11,.15);color:var(--orange)">📈涨价</span>
+  </div>
+  <div class="rank-list">
+    <div class="rank-item">
+      <span class="rank-num top1">1</span>
+      <div class="rank-body">
+        <div class="rank-name">铭山筑 <span class="tag tag-fire">四代住宅</span></div>
+        <div class="rank-detail"><span>光谷中心城北</span><span>低密洋房</span><span>当前均价约1.78万/㎡</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">+17.5%</span><div class="bar-track"><div class="bar-fill up" style="width:100%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-up">+17.5%</div>
+        <div class="rank-change val-up">环比↑3.2%</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num top2">2</span>
+      <div class="rank-body">
+        <div class="rank-name">璞拾光屿 <span class="tag tag-fire">稀缺改善</span></div>
+        <div class="rank-detail"><span>光谷中心城</span><span>小高层改善盘</span><span>当前均价约1.62万/㎡</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">+15.2%</span><div class="bar-track"><div class="bar-fill up" style="width:87%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-up">+15.2%</div>
+        <div class="rank-change val-up">环比↑2.1%</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num top3">3</span>
+      <div class="rank-body">
+        <div class="rank-name">大家中心 <span class="tag tag-new">新规红利</span></div>
+        <div class="rank-detail"><span>光谷中心城核心</span><span>四代住宅</span><span>当前均价约1.55万/㎡</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">+12.8%</span><div class="bar-track"><div class="bar-fill up" style="width:73%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-up">+12.8%</div>
+        <div class="rank-change val_up">环比↑1.5%</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">4</span>
+      <div class="rank-body">
+        <div class="rank-name">联发光合新澍 <span class="tag tag-fire">日光盘</span></div>
+        <div class="rank-detail"><span>关山科创板块</span><span>得房率122%</span><span>当前均价约1.48万/㎡</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">+10.6%</span><div class="bar-track"><div class="bar-fill up" style="width:61%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-up">+10.6%</div>
+        <div class="rank-change val-up">首开即涨</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">5</span>
+      <div class="rank-body">
+        <div class="rank-name">招商长江序 <span class="tag tag-hot">豪宅</span></div>
+        <div class="rank-detail"><span>武昌滨江</span><span>一线观江大平层</span><span>均价约3.2万/㎡</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">+8.4%</span><div class="bar-track"><div class="bar-fill up" style="width:48%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-up">+8.4%</div>
+        <div class="rank-change val-up">环比↑1.8%</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">6</span>
+      <div class="rank-body">
+        <div class="rank-name">KIC创新天地漫序 <span class="tag tag-fire">日光</span></div>
+        <div class="rank-detail"><span>光谷中心城南</span><span>洋房产品</span><span>均价约1.52万/㎡</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">+7.1%</span><div class="bar-track"><div class="bar-fill up" style="width:41%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-up">+7.1%</div>
+        <div class="rank-change val-up">环比↑0.8%</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">7</span>
+      <div class="rank-body">
+        <div class="rank-name">绿城沁百合 <span class="tag tag-new">改善标杆</span></div>
+        <div class="rank-detail"><span>汉口核心</span><span>开盘去化八成</span><span>均价约2.1万/㎡</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">+6.3%</span><div class="bar-track"><div class="bar-fill up" style="width:36%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-up">+6.3%</div>
+        <div class="rank-change val-up">环比↑0.5%</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">8</span>
+      <div class="rank-body">
+        <div class="rank-name">保利时代 <span class="tag tag-deal">触底反弹</span></div>
+        <div class="rank-detail"><span>光谷中心城标杆</span><span>次新二手房</span><span>均价约1.72万/㎡</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">+5.2%</span><div class="bar-track"><div class="bar-fill up" style="width:30%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-up">+5.2%</div>
+        <div class="rank-change val-up">环比↑0.3%</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">9</span>
+      <div class="rank-body">
+        <div class="rank-name">中建光谷之星 <span class="tag tag-deal">精装次新</span></div>
+        <div class="rank-detail"><span>光谷中心城核心</span><span>精装品质</span><span>均价约1.65万/㎡</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">+3.8%</span><div class="bar-track"><div class="bar-fill up" style="width:22%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-up">+3.8%</div>
+        <div class="rank-change val-neutral">环比持平</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">10</span>
+      <div class="rank-body">
+        <div class="rank-name">光谷南山府 <span class="tag tag-new">换物业利好</span></div>
+        <div class="rank-detail"><span>光谷中心城南</span><span>金茂物业进驻</span><span>均价约1.35万/㎡</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">+2.9%</span><div class="bar-track"><div class="bar-fill up" style="width:17%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-up">+2.9%</div>
+        <div class="rank-change val-up">环比↑0.2%</div>
+      </div>
+    </div>
+  </div>
+  <div class="chart-placeholder">💡 涨幅核心驱动力：四代住宅产品力红利 + "汉七条"政策加持 + 产业人才刚需托底</div>
+</div>
+
+<!-- ========== 榜单C：降价王 ========== -->
+<div class="section">
+  <div class="section-title">
+    <span class="icon icon-c">C</span> 榜单C：降价王 — 挂牌价下调+调价次数TOP10
+    <span class="urgent-mark">🚨 急售捡漏</span>
+  </div>
+  <div class="rank-list">
+    <div class="rank-item">
+      <span class="rank-num top1">1</span>
+      <div class="rank-body">
+        <div class="rank-name">新城领峯 <span class="urgent-mark">🚨急售</span></div>
+        <div class="rank-detail"><span>光谷中心城东</span><span>2.8万→0.97万/㎡</span><span>降幅59% | 调价8次</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">-59%</span><div class="bar-track"><div class="bar-fill down" style="width:100%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-down">-59%</div>
+        <div class="rank-change" style="color:#f87171;font-size:.68em">8次调价 | 暴雷开发商</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num top2">2</span>
+      <div class="rank-body">
+        <div class="rank-name">奥山府 <span class="urgent-mark">🚨急售</span></div>
+        <div class="rank-detail"><span>光谷中心城南</span><span>1.8万→1.03万/㎡</span><span>降幅43% | 调价7次</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">-43%</span><div class="bar-track"><div class="bar-fill down" style="width:73%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-down">-43%</div>
+        <div class="rank-change" style="color:#f87171;font-size:.68em">7次调价 | 停工风险</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num top3">3</span>
+      <div class="rank-body">
+        <div class="rank-name">绿地星河绘 <span class="urgent-mark">🚨急售</span></div>
+        <div class="rank-detail"><span>光谷东左岭</span><span>1.65万→0.95万/㎡</span><span>降幅42% | 调价7次</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">-42%</span><div class="bar-track"><div class="bar-fill down" style="width:71%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-down">-42%</div>
+        <div class="rank-change" style="color:#f87171;font-size:.68em">7次调价 | 品质维权</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">4</span>
+      <div class="rank-body">
+        <div class="rank-name">长江广电光谷家 <span class="tag tag-warn">以价换量</span></div>
+        <div class="rank-detail"><span>光谷中心城核心</span><span>1.89万→1.1万起/㎡</span><span>降幅42% | 调价3次</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">-42%</span><div class="bar-track"><div class="bar-fill down" style="width:71%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-down">-42%</div>
+        <div class="rank-change" style="color:var(--orange);font-size:.68em">3次调价 | 主动降价走量</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">5</span>
+      <div class="rank-body">
+        <div class="rank-name">碧桂园十里春风 <span class="urgent-mark">🚨急售</span></div>
+        <div class="rank-detail"><span>光谷东</span><span>1.4万→0.85万/㎡</span><span>降幅39% | 调价6次</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">-39%</span><div class="bar-track"><div class="bar-fill down" style="width:66%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-down">-39%</div>
+        <div class="rank-change" style="color:#f87171;font-size:.68em">6次调价 | 碧桂园暴雷</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">6</span>
+      <div class="rank-body">
+        <div class="rank-name">光谷正荣府 <span class="urgent-mark">🚨急售</span></div>
+        <div class="rank-detail"><span>光谷东</span><span>1.55万→0.98万/㎡</span><span>降幅37% | 调价5次</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">-37%</span><div class="bar-track"><div class="bar-fill down" style="width:63%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-down">-37%</div>
+        <div class="rank-change" style="color:#f87171;font-size:.68em">5次调价 | 正荣违约</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">7</span>
+      <div class="rank-body">
+        <div class="rank-name">MOMA焕城 <span class="tag tag-warn">直降26万</span></div>
+        <div class="rank-detail"><span>东湖高新</span><span>213万→187万</span><span>降幅12% | 调价4次</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">-12%</span><div class="bar-track"><div class="bar-fill down" style="width:20%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-down">-12%</div>
+        <div class="rank-change" style="color:var(--orange);font-size:.68em">4次调价 | 业主急售</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">8</span>
+      <div class="rank-body">
+        <div class="rank-name">烽云慧城 <span class="tag tag-warn">持续阴跌</span></div>
+        <div class="rank-detail"><span>光谷三路</span><span>1.2万→0.99万/㎡</span><span>降幅17% | 调价4次 | 在售90套</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">-17%</span><div class="bar-track"><div class="bar-fill down" style="width:29%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-down">-17%</div>
+        <div class="rank-change" style="color:var(--orange);font-size:.68em">4次调价 | 挂牌量极大</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">9</span>
+      <div class="rank-body">
+        <div class="rank-name">世茂十里星河 <span class="tag tag-warn">左岭边缘</span></div>
+        <div class="rank-detail"><span>左岭板块</span><span>1.1万→0.82万/㎡</span><span>降幅25% | 调价3次 | 在售44套</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">-25%</span><div class="bar-track"><div class="bar-fill down" style="width:42%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-down">-25%</div>
+        <div class="rank-change" style="color:var(--orange);font-size:.68em">3次调价 | 世茂暴雷</div>
+      </div>
+    </div>
+    <div class="rank-item">
+      <span class="rank-num normal">10</span>
+      <div class="rank-body">
+        <div class="rank-name">统建天成美景 <span class="tag tag-warn">直降25万</span></div>
+        <div class="rank-detail"><span>东湖高新</span><span>195万→170万</span><span>降幅13% | 调价3次</span></div>
+        <div class="bar-wrap"><span style="font-size:.65em;color:var(--muted);width:36px">-13%</span><div class="bar-track"><div class="bar-fill down" style="width:22%"></div></div></div>
+      </div>
+      <div class="rank-right">
+        <div class="rank-val val-down">-13%</div>
+        <div class="rank-change" style="color:var(--orange);font-size:.68em">3次调价 | 近地铁</div>
+      </div>
+    </div>
+  </div>
+  <div class="chart-placeholder">⚠️ 急售捡漏特征：暴雷开发商项目(新城/奥山/绿地/碧桂园/正荣/世茂) → 降幅30-59% → 多次调价仍无人接盘 → 核心风险为交付/品质/流通性三重坍塌</div>
+</div>
+
+<!-- ========== 综合研判 ========== -->
+<div class="verdict">
+  <h3>📋 综合研判：当前光谷东是"刚需入场"还是"抛售潮延续"？</h3>
+  <div class="verdict-grid">
+    <div class="verdict-cell">
+      <div class="vc-label">市场定性</div>
+      <div class="vc-val" style="color:var(--orange)">结构性分化</div>
+    </div>
+    <div class="verdict-cell">
+      <div class="vc-label">四代住宅占比</div>
+      <div class="vc-val" style="color:var(--accent)">48%↑</div>
+    </div>
+    <div class="verdict-cell">
+      <div class="vc-label">暴雷盘最大降幅</div>
+      <div class="vc-val val-down">-59%</div>
+    </div>
+    <div class="verdict-cell">
+      <div class="vc-label">Q4二手筑底区间</div>
+      <div class="vc-val" style="color:var(--cyan)">12,800-13,500</div>
+    </div>
+  </div>
+  <div class="verdict-text">
+    <p style="margin-bottom:8px"><strong>结论：<span class="highlight">"抛售潮延续中的结构性刚需窗口期"</span></strong>——不是简单的非此即彼，而是冰火两重天的撕裂格局。</p>
+    
+    <p style="margin-bottom:6px"><strong class="safe">✅ 可入场信号：</strong></p>
+    <p style="margin-bottom:8px">① <span class="highlight">四代住宅</span>成为绝对主力，成交占比从22%→48%，开盘去化率80%+，"日光"频现；② <span class="highlight">产业托底</span>扎实——光谷H1新房9,423套全市断层第一，"光谷七星"万亿市值催生高净值人群持续流入；③ <span class="highlight">政策红利</span>叠加——"汉七条"首套认定放宽+1.5%购房补贴+公积金月提，刚需上车成本显著降低；④ <span class="highlight">核心区优质次新</span>价格韧性足，保利时代、中建光谷之星等触底反弹迹象初现。</p>
+    
+    <p style="margin-bottom:6px"><strong class="danger">❌ 抛售潮延续证据：</strong></p>
+    <p style="margin-bottom:8px">① <span class="danger">暴雷开发商项目崩盘</span>——新城领峯-59%、奥山府-43%、绿地星河绘-42%，多次调价仍无人接盘，交付品质流通三重风险；② <span class="danger">边缘板块深度回调</span>——左岭(世茂0.82万)、花山(碧桂园0.85万)等远郊盘持续阴跌，二手房流动性极差；③ <span class="danger">挂牌量仍处高位</span>——13.41万套虽较峰值降25.5%，但市场选择面依然宽裕；④ <span class="danger">老一代产品被抛弃</span>——同地段新旧产品价差拉大，超高层/低得房率项目无人问津。</p>
+    
+    <p style="margin-bottom:4px"><strong>操作建议：</strong></p>
+    <p>🔵 <strong>刚需自住</strong>：当前是近3年最佳窗口期，优先选四代住宅+地铁+书包房，预算有限可关注光谷家1.1万起走量盘；<br>
+    🟡 <strong>改善置换</strong>：趁老房尚未进一步贬值，尽快"以旧换新"进入四代住宅赛道；<br>
+    🔴 <strong>投资回避</strong>：暴雷盘≠捡漏=接飞刀，左岭/花山等远郊短期无反转逻辑，二手房Q4预计在12,800-13,500元/㎡区间筑底。</p>
+  </div>
+</div>
+
+<div class="footer">
+  数据来源：房天下/链家/安居客/中指研究院/武汉房管局/央广网/荆楚网/普睿数据中心 | 生成时间：2026-08-13 04:00<br>
+  免责声明：本报告数据来源于公开渠道整理，仅供参考，不构成投资建议
+</div>
+
+<script>
+function switchTab(group,tab){
+  document.querySelectorAll('#tab'+group.charAt(0).toUpperCase()+group.slice(1)+' .tab-content').forEach(function(el){el.classList.remove('active')});
+  document.getElementById('tab'+group.charAt(0).toUpperCase()+group.slice(1)+'-'+tab).classList.add('active');
+  var tabs=document.querySelectorAll('#tabs'+group.charAt(0).toUpperCase()+group.slice(1)+' .tab');
+  tabs.forEach(function(t){t.classList.remove('active')});
+  if(tab==='new')tabs[0].classList.add('active');else tabs[1].classList.add('active');
+}
+</script>
+</body>
+</html>
