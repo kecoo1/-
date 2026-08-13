@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年最新光谷东楼市多维度榜单 | 生成时间: 2026-08-14 04:00</title>
+<style>
+:root {
+  --primary: #1a73e8;
+  --danger: #e53935;
+  --success: #43a047;
+  --warning: #ff9800;
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #333333;
+  --text2: #666666;
+  --border: #e0e0e0;
+  --tag-up: #e53935;
+  --tag-down: #43a047;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.header { background: linear-gradient(135deg, #1a237e, #0d47a1, #01579b); color: #fff; padding: 24px 16px 20px; text-align: center; }
+.header h1 { font-size: 22px; margin-bottom: 6px; font-weight: 700; letter-spacing: 1px; }
+.header .sub { font-size: 13px; opacity: .85; }
+.header .meta { font-size: 12px; opacity: .7; margin-top: 8px; }
+.nav-tabs { display: flex; background: #fff; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; overflow-x: auto; }
+.nav-tabs a { flex: 1; text-align: center; padding: 12px 6px; font-size: 14px; font-weight: 600; color: var(--text2); text-decoration: none; white-space: nowrap; border-bottom: 3px solid transparent; transition: all .2s; }
+.nav-tabs a.active, .nav-tabs a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+.section { padding: 16px; }
+.card { background: var(--card); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); margin-bottom: 16px; overflow: hidden; }
+.card-header { padding: 14px 16px; font-size: 16px; font-weight: 700; border-left: 4px solid var(--primary); background: #f0f4ff; display: flex; align-items: center; justify-content: space-between; }
+.card-header .badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; color: #fff; font-weight: 500; }
+.badge-new { background: var(--primary); }
+.badge-second { background: var(--warning); }
+.badge-up { background: var(--tag-up); }
+.badge-down { background: var(--tag-down); }
+.badge-hot { background: #e53935; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead th { background: #fafafa; padding: 10px 8px; text-align: left; font-weight: 600; color: var(--text2); font-size: 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody td { padding: 10px 8px; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
+tbody tr:nth-child(even) { background: #fafbfc; }
+tbody tr:hover { background: #e8f0fe; }
+.rank { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 12px; font-weight: 700; color: #fff; }
+.rank-1 { background: #e53935; }
+.rank-2 { background: #ff9800; }
+.rank-3 { background: #ffc107; color: #333; }
+.rank-n { background: #90a4ae; }
+.trend-up { color: var(--tag-up); font-weight: 600; }
+.trend-down { color: var(--tag-down); font-weight: 600; }
+.trend-flat { color: var(--text2); }
+.tag-jiqiang { background: #e53935; color: #fff; font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: 600; animation: blink 1.2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.5} }
+.tag-jianlou { background: #ff6f00; color: #fff; font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+.summary { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; padding: 20px 16px; margin: 16px; }
+.summary h2 { font-size: 18px; color: #0d47a1; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #fff; border-radius: 8px; padding: 12px; text-align: center; }
+.summary-item .label { font-size: 12px; color: var(--text2); margin-bottom: 4px; }
+.summary-item .value { font-size: 20px; font-weight: 700; }
+.summary-item .change { font-size: 12px; }
+.verdict { background: #fff; border-radius: 10px; padding: 16px; border-left: 5px solid #e53935; }
+.verdict h3 { font-size: 16px; margin-bottom: 8px; }
+.verdict p { font-size: 14px; color: var(--text2); line-height: 1.8; }
+.verdict .highlight { color: #e53935; font-weight: 700; font-size: 16px; }
+.verdict .highlight2 { color: #0d47a1; font-weight: 700; }
+.data-note { padding: 12px 16px; font-size: 12px; color: #999; text-align: center; }
+.chart-box { padding: 16px; }
+.chart-title { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: var(--text2); }
+.bar-row { display: flex; align-items: center; margin-bottom: 8px; }
+.bar-label { width: 100px; font-size: 12px; text-align: right; padding-right: 8px; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-track { flex: 1; height: 22px; background: #eee; border-radius: 4px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; font-size: 11px; color: #fff; font-weight: 600; min-width: 30px; }
+.bar-fill.blue { background: linear-gradient(90deg, #1a73e8, #4fc3f7); }
+.bar-fill.orange { background: linear-gradient(90deg, #e65100, #ff9800); }
+.bar-fill.red { background: linear-gradient(90deg, #b71c1c, #e53935); }
+.bar-fill.green { background: linear-gradient(90deg, #1b5e20, #43a047); }
+@media (min-width: 768px) {
+  .header h1 { font-size: 28px; }
+  .section { padding: 24px 32px; max-width: 960px; margin: 0 auto; }
+  .summary { margin: 24px 32px; max-width: 960px; margin-left: auto; margin-right: auto; }
+  .summary-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  table { font-size: 14px; }
+  thead th, tbody td { padding: 12px 12px; }
+  .bar-label { width: 130px; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 2026年最新光谷东楼市多维度榜单</h1>
+  <div class="sub">新房 · 二手房 · 涨跌幅 · 急售捡漏 · 一榜尽览</div>
+  <div class="meta">数据周期：2026年Q2-Q3 | 生成时间：2026-08-14 04:00</div>
+</div>
+
+<div class="nav-tabs">
+  <a href="#list-a" class="active" onclick="switchTab(this)">🏆 套数王</a>
+  <a href="#list-b" onclick="switchTab(this)">📈 涨幅王</a>
+  <a href="#list-c" onclick="switchTab(this)">📉 降价王</a>
+  <a href="#summary" onclick="switchTab(this)">🧭 综合研判</a>
+</div>
+
+<!-- ===== 榜单A：套数王 ===== -->
+<div class="section" id="list-a">
+  <div class="card">
+    <div class="card-header">
+      榜单A · 套数王 — 新房成交TOP10
+      <span class="badge badge-new">新房</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th>排名</th><th>楼盘名称</th><th>成交套数</th><th>均价(元/㎡)</th><th>环比变化</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="rank rank-1">1</span></td><td>长江广电光谷家</td><td><strong>635</strong></td><td>约11,000</td><td class="trend-down">↓ 大幅降价走量</td></tr>
+        <tr><td><span class="rank rank-2">2</span></td><td>城投红树林</td><td><strong>671</strong></td><td>约17,500</td><td class="trend-up">↑ 稳步攀升</td></tr>
+        <tr><td><span class="rank rank-3">3</span></td><td>万科璞拾光屿</td><td><strong>500</strong></td><td>约16,800</td><td class="trend-up">↑ 持续热销</td></tr>
+        <tr><td><span class="rank rank-n">4</span></td><td>光谷壹号院</td><td><strong>420</strong></td><td>约14,500</td><td class="trend-flat">→ 持平</td></tr>
+        <tr><td><span class="rank rank-n">5</span></td><td>招商天青府</td><td><strong>380</strong></td><td>约16,000</td><td class="trend-up">↑ 四代宅热销</td></tr>
+        <tr><td><span class="rank rank-n">6</span></td><td>招商原颂</td><td><strong>310</strong></td><td>约15,200</td><td class="trend-flat">→ 平稳</td></tr>
+        <tr><td><span class="rank rank-n">7</span></td><td>绿城雲墅</td><td><strong>150+</strong></td><td>约18,000</td><td class="trend-up">↑ 首开售罄</td></tr>
+        <tr><td><span class="rank rank-n">8</span></td><td>新希望长粼府</td><td><strong>145</strong></td><td>约14,800</td><td class="trend-up">↑ 新盘首开</td></tr>
+        <tr><td><span class="rank rank-n">9</span></td><td>城建光谷龙山湖</td><td><strong>120</strong></td><td>约13,500</td><td class="trend-down">↓ 以价换量</td></tr>
+        <tr><td><span class="rank rank-n">10</span></td><td>城投南山领峯</td><td><strong>95</strong></td><td>约11,500</td><td class="trend-down">↓ 跌价促销</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      榜单A · 套数王 — 二手房成交TOP10
+      <span class="badge badge-second">二手房</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th>排名</th><th>小区名称</th><th>成交套数(估算)</th><th>均价(元/㎡)</th><th>环比变化</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="rank rank-1">1</span></td><td>朗诗里程</td><td><strong>28</strong></td><td>约13,200</td><td class="trend-down">↓ -3.2%</td></tr>
+        <tr><td><span class="rank rank-2">2</span></td><td>中建星光城</td><td><strong>25</strong></td><td>约14,800</td><td class="trend-flat">→ -0.5%</td></tr>
+        <tr><td><span class="rank rank-3">3</span></td><td>光谷188国际社区</td><td><strong>22</strong></td><td>约16,800</td><td class="trend-down">↓ -2.8%</td></tr>
+        <tr><td><span class="rank rank-n">4</span></td><td>中粮光谷祥云</td><td><strong>20</strong></td><td>约17,500</td><td class="trend-flat">→ -1.0%</td></tr>
+        <tr><td><span class="rank rank-n">5</span></td><td>碧桂园生态城·剑桥郡</td><td><strong>18</strong></td><td>约12,800</td><td class="trend-down">↓ -4.1%</td></tr>
+        <tr><td><span class="rank rank-n">6</span></td><td>绿地光谷中心城</td><td><strong>16</strong></td><td>约15,500</td><td class="trend-down">↓ -5.2%</td></tr>
+        <tr><td><span class="rank rank-n">7</span></td><td>碧桂园生态城·叠翠台</td><td><strong>14</strong></td><td>约14,200</td><td class="trend-down">↓ -3.5%</td></tr>
+        <tr><td><span class="rank rank-n">8</span></td><td>龙湖光谷城</td><td><strong>12</strong></td><td>约15,300</td><td class="trend-up">↑ +0.7%</td></tr>
+        <tr><td><span class="rank rank-n">9</span></td><td>烽云慧城</td><td><strong>10</strong></td><td>约9,960</td><td class="trend-down">↓ -2.2%</td></tr>
+        <tr><td><span class="rank rank-n">10</span></td><td>世茂十里星河</td><td><strong>8</strong></td><td>约8,230</td><td class="trend-down">↓ -0.4%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 套数王可视化 -->
+  <div class="card">
+    <div class="card-header">新房成交套数对比</div>
+    <div class="chart-box">
+      <div class="bar-row"><span class="bar-label">城投红树林</span><div class="bar-track"><div class="bar-fill blue" style="width:100%">671</div></div></div>
+      <div class="bar-row"><span class="bar-label">广电光谷家</span><div class="bar-track"><div class="bar-fill blue" style="width:94.6%">635</div></div></div>
+      <div class="bar-row"><span class="bar-label">万科璞拾光屿</span><div class="bar-track"><div class="bar-fill blue" style="width:74.5%">500</div></div></div>
+      <div class="bar-row"><span class="bar-label">光谷壹号院</span><div class="bar-track"><div class="bar-fill blue" style="width:62.6%">420</div></div></div>
+      <div class="bar-row"><span class="bar-label">招商天青府</span><div class="bar-track"><div class="bar-fill blue" style="width:56.6%">380</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 榜单B：涨幅王 ===== -->
+<div class="section" id="list-b">
+  <div class="card">
+    <div class="card-header">
+      榜单B · 涨幅王 — 近3月成交均价环比上涨TOP10
+      <span class="badge badge-up">📈 上涨</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th>排名</th><th>楼盘/小区</th><th>类型</th><th>当前均价</th><th>3月环比涨幅</th><th>上涨原因</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="rank rank-1">1</span></td><td>绿城雲墅</td><td>新房</td><td>约18,000</td><td class="trend-up">↑ +8.2%</td><td>首开售罄，稀缺四代宅</td></tr>
+        <tr><td><span class="rank rank-2">2</span></td><td>招商天青府</td><td>新房</td><td>约16,000</td><td class="trend-up">↑ +6.5%</td><td>四代住宅+宋韵园林</td></tr>
+        <tr><td><span class="rank rank-3">3</span></td><td>万科璞拾光屿</td><td>新房</td><td>约16,800</td><td class="trend-up">↑ +5.1%</td><td>品牌溢价+品质交付</td></tr>
+        <tr><td><span class="rank rank-n">4</span></td><td>城投红树林</td><td>新房</td><td>约17,500</td><td class="trend-up">↑ +4.3%</td><td>改善需求集中释放</td></tr>
+        <tr><td><span class="rank rank-n">5</span></td><td>龙湖光谷城</td><td>二手</td><td>约15,300</td><td class="trend-up">↑ +0.7%</td><td>核心地段+龙湖物业</td></tr>
+        <tr><td><span class="rank rank-n">6</span></td><td>国采光立方</td><td>二手</td><td>约19,500</td><td class="trend-up">↑ +0.5%</td><td>学区支撑+低密度</td></tr>
+        <tr><td><span class="rank rank-n">7</span></td><td>中建星光城</td><td>二手</td><td>约14,800</td><td class="trend-up">↑ +0.3%</td><td>配套成熟抗跌</td></tr>
+        <tr><td><span class="rank rank-n">8</span></td><td>驿山高尔夫·洋房</td><td>二手</td><td>约28,000</td><td class="trend-up">↑ +0.2%</td><td>稀缺洋房产品</td></tr>
+        <tr><td><span class="rank rank-n">9</span></td><td>联投驿园</td><td>二手</td><td>约18,500</td><td class="trend-up">↑ +0.1%</td><td>光谷核心区价值回归</td></tr>
+        <tr><td><span class="rank rank-n">10</span></td><td>光谷和昌城·逸园</td><td>二手</td><td>约13,600</td><td class="trend-flat">→ 持平</td><td>刚需盘横盘企稳</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 涨幅王可视化 -->
+  <div class="card">
+    <div class="card-header">近3月涨幅对比（%）</div>
+    <div class="chart-box">
+      <div class="bar-row"><span class="bar-label">绿城雲墅</span><div class="bar-track"><div class="bar-fill green" style="width:82%">8.2%</div></div></div>
+      <div class="bar-row"><span class="bar-label">招商天青府</span><div class="bar-track"><div class="bar-fill green" style="width:65%">6.5%</div></div></div>
+      <div class="bar-row"><span class="bar-label">万科璞拾光屿</span><div class="bar-track"><div class="bar-fill green" style="width:51%">5.1%</div></div></div>
+      <div class="bar-row"><span class="bar-label">城投红树林</span><div class="bar-track"><div class="bar-fill green" style="width:43%">4.3%</div></div></div>
+      <div class="bar-row"><span class="bar-label">龙湖光谷城</span><div class="bar-track"><div class="bar-fill green" style="width:7%">0.7%</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 榜单C：降价王 ===== -->
+<div class="section" id="list-c">
+  <div class="card">
+    <div class="card-header">
+      榜单C · 降价王 — 近3月挂牌价下调+调价次数TOP10
+      <span class="badge badge-hot">🔥 急售捡漏</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th>排名</th><th>楼盘/小区</th><th>类型</th><th>挂牌均价</th><th>下调幅度</th><th>调价次数</th><th>特征标签</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="rank rank-1">1</span></td><td>长江广电光谷家</td><td>新房</td><td>约11,000</td><td class="trend-down">↓ -41.8%</td><td>5次</td><td><span class="tag-jiqiang">🔥急售捡漏</span> 从1.89万降至1.1万</td></tr>
+        <tr><td><span class="rank rank-2">2</span></td><td>城投南山领峯</td><td>新房</td><td>约11,500</td><td class="trend-down">↓ -58.9%</td><td>4次</td><td><span class="tag-jiqiang">🔥急售捡漏</span> 从2.8万降至1.15万</td></tr>
+        <tr><td><span class="rank rank-3">3</span></td><td>城建光谷龙山湖</td><td>新房</td><td>约13,500</td><td class="trend-down">↓ -30.8%</td><td>3次</td><td><span class="tag-jianlou">捡漏</span> 含精装从1.95万调至1.35万</td></tr>
+        <tr><td><span class="rank rank-n">4</span></td><td>绿地光谷星河绘</td><td>二手</td><td>约10,500</td><td class="trend-down">↓ -45.0%</td><td>6次</td><td><span class="tag-jiqiang">🔥急售捡漏</span> 投资客抛售，交付争议</td></tr>
+        <tr><td><span class="rank rank-n">5</span></td><td>碧桂园生态城·桃花源</td><td>二手</td><td>约13,200</td><td class="trend-down">↓ -28.5%</td><td>4次</td><td><span class="tag-jianlou">捡漏</span> 大户型滞销</td></tr>
+        <tr><td><span class="rank rank-n">6</span></td><td>世茂十里星河</td><td>二手</td><td>约8,230</td><td class="trend-down">↓ -22.0%</td><td>4次</td><td><span class="tag-jianlou">捡漏</span> 远郊盘流动性差</td></tr>
+        <tr><td><span class="rank rank-n">7</span></td><td>绿地光谷中心城</td><td>二手</td><td>约15,500</td><td class="trend-down">↓ -21.8%</td><td>3次</td><td><span class="tag-jianlou">捡漏</span> 投资客占比高</td></tr>
+        <tr><td><span class="rank rank-n">8</span></td><td>烽云慧城</td><td>二手</td><td>约9,960</td><td class="trend-down">↓ -18.0%</td><td>3次</td><td>刚需低价盘持续探底</td></tr>
+        <tr><td><span class="rank rank-n">9</span></td><td>光谷满庭春MOMΛ</td><td>二手</td><td>约12,500</td><td class="trend-down">↓ -15.6%</td><td>3次</td><td>物业老化+配套不足</td></tr>
+        <tr><td><span class="rank rank-n">10</span></td><td>碧桂园生态城·剑桥郡</td><td>二手</td><td>约12,800</td><td class="trend-down">↓ -14.3%</td><td>2次</td><td>投资房集中抛售</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 降价王可视化 -->
+  <div class="card">
+    <div class="card-header">挂牌价下调幅度对比（%）</div>
+    <div class="chart-box">
+      <div class="bar-row"><span class="bar-label">城投南山领峯</span><div class="bar-track"><div class="bar-fill red" style="width:100%">-58.9%</div></div></div>
+      <div class="bar-row"><span class="bar-label">绿地光谷星河绘</span><div class="bar-track"><div class="bar-fill red" style="width:76%">-45.0%</div></div></div>
+      <div class="bar-row"><span class="bar-label">广电光谷家</span><div class="bar-track"><div class="bar-fill red" style="width:71%">-41.8%</div></div></div>
+      <div class="bar-row"><span class="bar-label">城建光谷龙山湖</span><div class="bar-track"><div class="bar-fill red" style="width:52%">-30.8%</div></div></div>
+      <div class="bar-row"><span class="bar-label">碧桂园桃花源</span><div class="bar-track"><div class="bar-fill red" style="width:48%">-28.5%</div></div></div>
+      <div class="bar-row"><span class="bar-label">世茂十里星河</span><div class="bar-track"><div class="bar-fill red" style="width:37%">-22.0%</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 综合研判 ===== -->
+<div class="summary" id="summary">
+  <h2>🧭 综合研判：刚需入场还是抛售潮延续？</h2>
+
+  <div class="summary-grid">
+    <div class="summary-item">
+      <div class="label">光谷东8月二手房均价</div>
+      <div class="value" style="color:var(--primary)">13,145</div>
+      <div class="change trend-down">环比↓0.65%  同比↓5.16%</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">东湖高新上半年新房成交</div>
+      <div class="value" style="color:var(--success)">9,423套</div>
+      <div class="change trend-up">全市第一 断层领先</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">库存去化周期</div>
+      <div class="value" style="color:var(--warning)">~18个月</div>
+      <div class="change trend-down">高于全市平均</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">典型降价幅度</div>
+      <div class="value" style="color:var(--danger)">30-59%</div>
+      <div class="change trend-down">部分楼盘腰斩</div>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <h3>📋 核心结论</h3>
+    <p>
+      当前光谷东楼市呈现<span class="highlight">"量价背离"</span>的典型特征：成交量领跑全市（东湖高新上半年成交9423套，全市占比超20%），但价格仍在持续下行（8月二手房均价13,145元/㎡，同比跌5.16%，较巅峰期2万+回落超35%）。
+    </p>
+    <p style="margin-top:10px;">
+      <strong>新房端：</strong>以价换量是绝对主旋律。广电光谷家从1.89万/㎡暴降至1.1万/㎡后狂卖635套，城投南山领峯从2.8万/㎡跌至1.15万/㎡——<span class="highlight">没有卖不出的房子，只有卖不出的价格</span>。四代住宅（招商天青府、绿城雲墅）逆势上涨，说明产品迭代正在加速淘汰三代宅。
+    </p>
+    <p style="margin-top:10px;">
+      <strong>二手房端：</strong>投资客集中抛售，绿地光谷中心城、碧桂园生态城等投资客重仓小区跌幅居前。但核心地段次新盘（龙湖光谷城、国采光立方）已现企稳迹象，配套兑现的区域抗跌性明显。
+    </p>
+    <p style="margin-top:10px;">
+      <strong>终极研判：</strong>光谷东正处于<span class="highlight2">"刚需入场期"</span>而非<span class="highlight">"抛售潮延续期"</span>。理由如下：<br>
+      ① 产业底盘坚实——"光谷七星"市值破万亿，高薪人才持续导入；<br>
+      ② 成交量已率先回暖——全市每5套房就有1套在光谷；<br>
+      ③ 价格已跌至刚需甜蜜区——1.1-1.3万/㎡的门槛远低于2021年高峰；<br>
+      ④ 四代宅溢价证明——市场并非全面崩塌，而是结构性出清。<br>
+      <span class="highlight">风险提示：</span>远郊盘（左岭/世茂十里星河）去化周期超20个月，投资客占比超30%的楼盘仍需警惕。刚需可择机入场核心区次新，投资仍需等待右侧信号。
+    </p>
+  </div>
+</div>
+
+<div class="data-note">
+  ⚠️ 数据来源：房天下、贝壳、中指研究院、公开媒体报道 | 2026年8月14日自动生成<br>
+  部分数据为估算，不构成投资建议，仅供参考
+</div>
+
+<script>
+function switchTab(el) {
+  document.querySelectorAll('.nav-tabs a').forEach(a => a.classList.remove('active'));
+  el.classList.add('active');
+}
+// Smooth scroll
+document.querySelectorAll('.nav-tabs a').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+</script>
+</body>
+</html>
