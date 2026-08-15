@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股市场热度排行报告 | 2026年8月15日（周五）</title>
+<style>
+:root{--red:#e74c3c;--green:#27ae60;--blue:#3498db;--orange:#e67e22;--purple:#9b59b6;--dark:#2c3e50;--light:#ecf0f1;--card:#fff;--bg:#f5f7fa;--border:#e0e4e8;--gold:#f39c12}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--dark);line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:15px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;border-radius:16px;margin-bottom:20px;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.03) 0%,transparent 70%);animation:pulse 4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.header h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:8px;letter-spacing:2px}
+.header .subtitle{font-size:clamp(0.85rem,2vw,1rem);opacity:0.85;margin-bottom:12px}
+.header .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;font-size:0.85rem;opacity:0.9}
+.header .meta span{background:rgba(255,255,255,0.12);padding:3px 12px;border-radius:20px}
+.market-sentiment{text-align:center;padding:20px;border-radius:12px;margin-bottom:20px;font-size:1.3rem;font-weight:700;letter-spacing:4px}
+.sentiment-strong{background:linear-gradient(135deg,#ff6b6b,#ee5a24);color:#fff}
+.sentiment-shock{background:linear-gradient(135deg,#f9ca24,#f0932b);color:#fff}
+.sentiment-weak{background:linear-gradient(135deg,#6ab04c,#009432);color:#fff}
+.section{background:var(--card);border-radius:12px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.06);overflow:hidden}
+.section-title{padding:16px 20px;font-size:1.15rem;font-weight:700;border-bottom:2px solid var(--bg);display:flex;align-items:center;gap:10px}
+.section-title .icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;font-weight:700}
+.section-body{padding:16px 20px}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:16px}
+.index-card{background:var(--bg);border-radius:10px;padding:14px;text-align:center;border:1px solid var(--border)}
+.index-card .name{font-size:0.9rem;color:#666;margin-bottom:6px}
+.index-card .value{font-size:1.6rem;font-weight:700}
+.index-card .change{font-size:1.1rem;font-weight:600;margin-top:2px}
+.index-card .detail{font-size:0.78rem;color:#888;margin-top:6px}
+.up{color:var(--red)}.down{color:var(--green)}
+.flow-info{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.flow-item{flex:1;min-width:150px;background:var(--bg);border-radius:8px;padding:12px;text-align:center;border:1px solid var(--border)}
+.flow-item .label{font-size:0.8rem;color:#888;margin-bottom:4px}
+.flow-item .val{font-size:1.2rem;font-weight:700}
+table{width:100%;border-collapse:collapse;font-size:0.82rem}
+thead{background:#f8f9fa}
+th{padding:10px 8px;text-align:center;font-weight:600;color:#555;border-bottom:2px solid var(--border);white-space:nowrap}
+td{padding:8px;text-align:center;border-bottom:1px solid #f0f0f0;white-space:nowrap}
+tr:hover{background:#f8f9fb}
+.stock-name{font-weight:600;text-align:left!important;padding-left:12px!important}
+.sector-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.sector-card{background:var(--bg);border-radius:10px;padding:14px;border:1px solid var(--border)}
+.sector-card h4{font-size:0.95rem;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.sector-card li{display:flex;justify-content:space-between;padding:4px 0;font-size:0.82rem}
+.sector-card .rank{display:inline-block;width:20px;height:20px;border-radius:50%;text-align:center;line-height:20px;font-size:0.7rem;color:#fff;margin-right:6px}
+.r1{background:#e74c3c}.r2{background:#e67e22}.r3{background:#f39c12}.r4{background:rgba(231,76,60,0.5)}.r5{background:rgba(230,126,34,0.5)}
+.r6,.r7,.r8,.r9,.r10{background:rgba(52,152,219,0.4)}
+.focus-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border:1px solid #f0d060;border-radius:10px;padding:16px;margin-top:16px}
+.focus-box h4{color:#b8860b;margin-bottom:8px;font-size:0.95rem}
+.focus-box p{font-size:0.85rem;line-height:1.7;color:#5d4e0f}
+.lhb-card{background:var(--bg);border-radius:10px;padding:14px;border:1px solid var(--border);margin-bottom:12px}
+.lhb-card h4{font-size:0.95rem;margin-bottom:8px}
+.lhb-card table{font-size:0.78rem}
+.comment-box{background:linear-gradient(135deg,#e8f4fd,#d1ecf8);border:1px solid #a0d2e8;border-radius:10px;padding:16px;margin-top:16px}
+.comment-box h4{color:#2980b9;margin-bottom:8px;font-size:0.95rem}
+.comment-box p{font-size:0.85rem;line-height:1.7;color:#1a5276}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin-right:4px}
+.tag-up{background:#fde8e8;color:var(--red)}.tag-down{background:#e8f8e8;color:var(--green)}.tag-hot{background:#fff3e0;color:var(--orange)}
+.footer{text-align:center;padding:20px;font-size:0.78rem;color:#aaa}
+.footer a{color:var(--blue);text-decoration:none}
+@media(max-width:768px){.container{padding:8px}.header{padding:20px 12px}.section-title{font-size:1rem;padding:12px 14px}.section-body{padding:12px 14px}table{font-size:0.72rem}th,td{padding:6px 4px}.index-grid{grid-template-columns:repeat(2,1fr)}.sector-grid{grid-template-columns:1fr}.flow-info{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+<h1>📊 A股市场热度排行报告</h1>
+<div class="subtitle">2026年8月15日（周五）盘后数据</div>
+<div class="meta">
+<span>🗓️ 2026.08.15 收盘</span>
+<span>📈 沪深两市</span>
+<span>🕐 生成时间: 2026-08-16 01:46</span>
+</div>
+</div>
+
+<!-- 市场热度定位 -->
+<div class="market-sentiment sentiment-shock">
+🔥 震荡偏强 — "一阳改三观？先别急，看看再说"
+</div>
+
+<!-- 板块1：指数与大盘风向 -->
+<div class="section">
+<div class="section-title">
+<span class="icon" style="background:linear-gradient(135deg,#e74c3c,#c0392b)">📈</span>
+一、指数与大盘风向
+</div>
+<div class="section-body">
+
+<div class="index-grid">
+<div class="index-card">
+<div class="name">上证指数</div>
+<div class="value up">3,927.18</div>
+<div class="change up">+0.22 +0.01%</div>
+<div class="detail">高3932.64 低3903.70 | 成交9,904亿</div>
+</div>
+<div class="index-card">
+<div class="name">深证成指</div>
+<div class="value up">14,354.31</div>
+<div class="change up">+64.87 +0.45%</div>
+<div class="detail">高14384.18 低14204.00 | 成交11,525亿</div>
+</div>
+<div class="index-card">
+<div class="name">创业板指</div>
+<div class="value up">3,626.30</div>
+<div class="change up">+40.26 +1.12%</div>
+<div class="detail">高3633.03 低3578.61 | 成交5,565亿</div>
+</div>
+<div class="index-card">
+<div class="name">沪深300</div>
+<div class="value up">4,665.88</div>
+<div class="change up">+1.93 +0.04%</div>
+<div class="detail">高4676.71 低4637.13 | 成交5,498亿</div>
+</div>
+</div>
+
+<div class="flow-info">
+<div class="flow-item">
+<div class="label">沪深两市总成交额</div>
+<div class="val up">2.14万亿</div>
+</div>
+<div class="flow-item">
+<div class="label">上证成交</div>
+<div class="val">9,904亿</div>
+</div>
+<div class="flow-item">
+<div class="label">深证成交</div>
+<div class="val">11,525亿</div>
+</div>
+<div class="flow-item">
+<div class="label">市场热度判定</div>
+<div class="val" style="color:var(--orange)">震荡偏强</div>
+</div>
+</div>
+
+<div class="comment-box">
+<h4>💡 大盘解读</h4>
+<p>周五沪深两市维持震荡格局，上证指数微涨0.01%险守3,927点，深证成指和创业板指相对活跃，创业板指涨超1%领涨主要指数。<b>风格上明显偏向小盘成长</b>，大盘蓝筹（沪深300仅+0.04%）"躺平装死"，中小创"蹦迪狂欢"——典型的结构性行情。两市成交额2.14万亿，量能维持在较高水平但较前几日略有缩量，增量资金入场节奏放缓。总体来看，<b>市场处于"上有顶下有底"的震荡偏强区间</b>，短期内仍以板块轮动为主，别一阳改三观，也别一阴改信仰。</p>
+</div>
+
+</div>
+</div>
+
+<!-- 板块2：个股涨跌幅榜 -->
+<div class="section">
+<div class="section-title">
+<span class="icon" style="background:linear-gradient(135deg,#e67e22,#d35400)">🏆</span>
+二、个股涨幅榜 & 跌幅榜
+</div>
+<div class="section-body">
+
+<h4 style="margin:0 0 10px;color:var(--red)">🔴 今日涨幅TOP20（剔除ST、新股）</h4>
+<div style="overflow-x:auto">
+<table>
+<thead><tr><th>#</th><th style="text-align:left">股票</th><th>代码</th><th>最新价</th><th>涨跌幅</th><th>成交额</th><th>换手率</th><th>量比</th><th>市值</th></tr></thead>
+<tbody>
+<tr><td>1</td><td class="stock-name">网宿科技</td><td>300017</td><td>17.33</td><td class="up">+20.01%</td><td>76.6亿</td><td>20.3%</td><td>20.91</td><td>432.5亿</td></tr>
+<tr><td>2</td><td class="stock-name">中石科技</td><td>300684</td><td>67.36</td><td class="up">+20.01%</td><td>2.86亿</td><td>2.08%</td><td>-</td><td>201.7亿</td></tr>
+<tr><td>3</td><td class="stock-name">九州一轨</td><td>688485</td><td>72.10</td><td class="up">+20.01%</td><td>12.79亿</td><td>12.25%</td><td>19.92</td><td>108.4亿</td></tr>
+<tr><td>4</td><td class="stock-name">富信科技</td><td>688662</td><td>98.40</td><td class="up">+20.00%</td><td>16.87亿</td><td>15.52%</td><td>15.73</td><td>112.9亿</td></tr>
+<tr><td>5</td><td class="stock-name">阿莱德</td><td>301419</td><td>37.62</td><td class="up">+20.00%</td><td>4.38亿</td><td>12.31%</td><td>13.14</td><td>56.4亿</td></tr>
+<tr><td>6</td><td class="stock-name">博济医药</td><td>300404</td><td>17.34</td><td class="up">+20.00%</td><td>13.20亿</td><td>27.53%</td><td>12.39</td><td>66.9亿</td></tr>
+<tr><td>7</td><td class="stock-name">蓝盾光电</td><td>300862</td><td>47.29</td><td class="up">+19.99%</td><td>34.95亿</td><td>51.69%</td><td>14.79</td><td>87.3亿</td></tr>
+<tr><td>8</td><td class="stock-name">西点药业</td><td>301130</td><td>30.85</td><td class="up">+19.99%</td><td>3.19亿</td><td>17.98%</td><td>21.59</td><td>23.6亿</td></tr>
+<tr><td>9</td><td class="stock-name">华骐环保</td><td>300929</td><td>16.82</td><td class="up">+19.97%</td><td>2.02亿</td><td>10.33%</td><td>21.54</td><td>22.2亿</td></tr>
+<tr><td>10</td><td class="stock-name">经纬辉开</td><td>300120</td><td>9.26</td><td class="up">+19.95%</td><td>9.03亿</td><td>20.49%</td><td>20.21</td><td>53.2亿</td></tr>
+<tr><td>11</td><td class="stock-name">翔楼新材</td><td>301160</td><td>44.80</td><td class="up">+18.49%</td><td>4.97亿</td><td>10.59%</td><td>19.52</td><td>74.7亿</td></tr>
+<tr><td>12</td><td class="stock-name">致远新能</td><td>300985</td><td>42.05</td><td class="up">+18.28%</td><td>5.68亿</td><td>7.56%</td><td>20.25</td><td>78.4亿</td></tr>
+<tr><td>13</td><td class="stock-name">瑞丰高材</td><td>300243</td><td>16.88</td><td class="up">+16.09%</td><td>6.19亿</td><td>17.47%</td><td>15.47</td><td>47.2亿</td></tr>
+<tr><td>14</td><td class="stock-name">思泉新材</td><td>301489</td><td>119.80</td><td class="up">+14.96%</td><td>15.86亿</td><td>19.73%</td><td>12.86</td><td>139.3亿</td></tr>
+<tr><td>15</td><td class="stock-name">长盈通</td><td>688143</td><td>140.00</td><td class="up">+14.88%</td><td>27.05亿</td><td>16.71%</td><td>14.68</td><td>180.3亿</td></tr>
+<tr><td>16</td><td class="stock-name">长进光子</td><td>688635</td><td>355.55</td><td class="up">+13.99%</td><td>19.05亿</td><td>32.50%</td><td>18.88</td><td>333.0亿</td></tr>
+<tr><td>17</td><td class="stock-name">金博股份</td><td>688598</td><td>37.02</td><td class="up">+13.56%</td><td>9.56亿</td><td>13.57%</td><td>15.86</td><td>76.8亿</td></tr>
+<tr><td>18</td><td class="stock-name">矩阵股份</td><td>301365</td><td>43.41</td><td class="up">+12.99%</td><td>3.56亿</td><td>6.91%</td><td>15.10</td><td>79.2亿</td></tr>
+<tr><td>19</td><td class="stock-name">思看科技</td><td>688583</td><td>92.68</td><td class="up">+11.89%</td><td>5.03亿</td><td>13.29%</td><td>16.81</td><td>114.7亿</td></tr>
+<tr><td>20</td><td class="stock-name">敏芯股份</td><td>688286</td><td>53.56</td><td class="up">+20.01%</td><td>6.15亿</td><td>15.57%</td><td>19.45</td><td>41.9亿</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="focus-box">
+<h4>🌟 焦点个股：网宿科技（300017）— 一字板涨停，换手20%</h4>
+<p>网宿科技今日强势涨停，成交额高达76.6亿，换手率20.3%，量比20.91——典型的资金暴力涌入。结合近期龙虎榜数据，该股获机构与游资联合买入，背后逻辑主要是<b>AI算力基础设施景气度提升+CDN/边缘计算业务预期改善</b>。中际旭创17亿入股中石科技进一步强化光通信散热概念，整个算力产业链情绪被点燃。不过换手20%意味着多空分歧极大，追高需谨慎——"涨停板上的筹码，可能明天就是你的关灯吃面券"。</p>
+</div>
+
+<h4 style="margin:16px 0 10px;color:var(--green)">🟢 今日跌幅TOP20</h4>
+<div style="overflow-x:auto">
+<table>
+<thead><tr><th>#</th><th style="text-align:left">股票</th><th>代码</th><th>最新价</th><th>涨跌幅</th><th>成交额</th><th>换手率</th><th>市值</th></tr></thead>
+<tbody>
+<tr><td>1</td><td class="stock-name">盈建科</td><td>300935</td><td>31.47</td><td class="down">-10.55%</td><td>2.39亿</td><td>12.27%</td><td>25.0亿</td></tr>
+<tr><td>2</td><td class="stock-name">北投科技</td><td>600936</td><td>5.36</td><td class="down">-10.07%</td><td>7.52亿</td><td>8.16%</td><td>89.6亿</td></tr>
+<tr><td>3</td><td class="stock-name">锦和商管</td><td>603682</td><td>11.84</td><td class="down">-10.03%</td><td>5.08亿</td><td>8.50%</td><td>55.9亿</td></tr>
+<tr><td>4</td><td class="stock-name">安记食品</td><td>603696</td><td>14.73</td><td class="down">-10.02%</td><td>5.45亿</td><td>15.47%</td><td>34.6亿</td></tr>
+<tr><td>5</td><td class="stock-name">恒尚节能</td><td>603137</td><td>26.08</td><td class="down">-10.01%</td><td>9.13亿</td><td>18.57%</td><td>47.7亿</td></tr>
+<tr><td>6</td><td class="stock-name">同力天启</td><td>605286</td><td>30.68</td><td class="down">-10.00%</td><td>5.89亿</td><td>11.08%</td><td>51.5亿</td></tr>
+<tr><td>7</td><td class="stock-name">北部湾港</td><td>000582</td><td>11.34</td><td class="down">-10.00%</td><td>11.19亿</td><td>4.44%</td><td>285.4亿</td></tr>
+<tr><td>8</td><td class="stock-name">德龙汇能</td><td>000593</td><td>25.02</td><td class="down">-10.00%</td><td>9.42亿</td><td>10.40%</td><td>89.7亿</td></tr>
+<tr><td>9</td><td class="stock-name">宝鹰股份</td><td>002047</td><td>3.78</td><td class="down">-10.00%</td><td>3.43亿</td><td>5.95%</td><td>57.3亿</td></tr>
+<tr><td>10</td><td class="stock-name">志特新材</td><td>300986</td><td>12.99</td><td class="down">-9.98%</td><td>10.15亿</td><td>13.21%</td><td>74.8亿</td></tr>
+<tr><td>11</td><td class="stock-name">京投发展</td><td>600683</td><td>11.64</td><td class="down">-9.98%</td><td>11.62亿</td><td>12.79%</td><td>86.2亿</td></tr>
+<tr><td>12</td><td class="stock-name">甘咨询</td><td>000779</td><td>9.66</td><td class="down">-9.97%</td><td>9.43亿</td><td>20.55%</td><td>44.9亿</td></tr>
+<tr><td>13</td><td class="stock-name">秦安股份</td><td>603758</td><td>13.82</td><td class="down">-9.97%</td><td>1.90亿</td><td>3.09%</td><td>59.9亿</td></tr>
+<tr><td>14</td><td class="stock-name">立新能源</td><td>001258</td><td>13.75</td><td class="down">-9.95%</td><td>21.12亿</td><td>16.08%</td><td>128.3亿</td></tr>
+<tr><td>15</td><td class="stock-name">省广集团</td><td>002400</td><td>7.16</td><td class="down">-9.94%</td><td>18.21亿</td><td>14.43%</td><td>124.8亿</td></tr>
+<tr><td>16</td><td class="stock-name">梅雁吉祥</td><td>600868</td><td>2.81</td><td class="down">-9.94%</td><td>5.79亿</td><td>10.69%</td><td>53.3亿</td></tr>
+<tr><td>17</td><td class="stock-name">金牛化工</td><td>600722</td><td>11.28</td><td class="down">-9.90%</td><td>11.45亿</td><td>14.50%</td><td>76.7亿</td></tr>
+<tr><td>18</td><td class="stock-name">华银电力</td><td>600744</td><td>7.03</td><td class="down">-9.87%</td><td>18.57亿</td><td>12.81%</td><td>142.8亿</td></tr>
+<tr><td>19</td><td class="stock-name">龙洲股份</td><td>002682</td><td>4.64</td><td class="down">-9.38%</td><td>4.61亿</td><td>17.49%</td><td>26.1亿</td></tr>
+<tr><td>20</td><td class="stock-name">盈建科</td><td>300935</td><td>31.47</td><td class="down">-10.55%</td><td>2.39亿</td><td>12.27%</td><td>25.0亿</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="focus-box">
+<h4>💀 焦点个股：华银电力（600744）— 火电板块集体吃面</h4>
+<p>华银电力跌停，整个火电板块跌幅居前（板块跌幅-3.31%）。背后逻辑清晰：<b>1）煤价反弹预期+夏季用电高峰已过，火电利润边际恶化；2）新能源替代预期加速，资金从传统电力撤退；3）板块前期涨幅较大，获利回吐压力集中释放</b>。同板块的北部湾港也跌停，"关灯吃面"的火电人，短期别急着抄底——底下面可能还有地下室。</p>
+</div>
+
+</div>
+</div>
+
+<!-- 板块3：板块热度排行 -->
+<div class="section">
+<div class="section-title">
+<span class="icon" style="background:linear-gradient(135deg,#9b59b6,#8e44ad)">🔥</span>
+三、板块热度排行
+</div>
+<div class="section-body">
+
+<div class="sector-grid">
+<div class="sector-card">
+<h4><span class="tag tag-hot">HOT</span> 行业板块涨幅TOP10（申万二级）</h4>
+<ul>
+<li><span><span class="rank r1">1</span>稀土</span><span class="up">+5.82%</span></li>
+<li><span><span class="rank r2">2</span>通信线缆及配套</span><span class="up">+5.33%</span></li>
+<li><span><span class="rank r3">3</span>激光设备</span><span class="up">+4.44%</span></li>
+<li><span><span class="rank r4">4</span>电子化学品</span><span class="up">+3.75%</span></li>
+<li><span><span class="rank r5">5</span>非金属材料</span><span class="up">+3.61%</span></li>
+<li><span><span class="rank r6">6</span>玻纤制造</span><span class="up">+3.52%</span></li>
+<li><span><span class="rank r7">7</span>被动元件</span><span class="up">+3.40%</span></li>
+<li><span><span class="rank r8">8</span>磁性材料</span><span class="up">+3.07%</span></li>
+<li><span><span class="rank r9">9</span>模拟芯片设计</span><span class="up">+2.84%</span></li>
+<li><span><span class="rank r10">10</span>元件</span><span class="up">+2.68%</span></li>
+</ul>
+</div>
+
+<div class="sector-card">
+<h4><span class="tag tag-hot">HOT</span> 概念板块涨幅TOP10</h4>
+<ul>
+<li><span><span class="rank r1">1</span>CPO概念</span><span class="up">+3.18%</span></li>
+<li><span><span class="rank r2">2</span>F5G概念</span><span class="up">+3.09%</span></li>
+<li><span><span class="rank r3">3</span>光通信模块</span><span class="up">+2.93%</span></li>
+<li><span><span class="rank r4">4</span>IPv6</span><span class="up">+2.75%</span></li>
+<li><span><span class="rank r5">5</span>纳米银</span><span class="up">+2.70%</span></li>
+<li><span><span class="rank r6">6</span>光纤概念</span><span class="up">+2.60%</span></li>
+<li><span><span class="rank r7">7</span>噪声防治</span><span class="up">+2.49%</span></li>
+<li><span><span class="rank r8">8</span>AI手机</span><span class="up">+2.38%</span></li>
+<li><span><span class="rank r9">9</span>高带宽内存</span><span class="up">+2.34%</span></li>
+<li><span><span class="rank r10">10</span>稀土永磁</span><span class="up">+2.30%</span></li>
+</ul>
+</div>
+
+<div class="sector-card">
+<h4><span class="tag tag-down">COLD</span> 行业板块跌幅TOP5</h4>
+<ul>
+<li><span><span class="rank r1">1</span>其他数字媒体</span><span class="down">-3.78%</span></li>
+<li><span><span class="rank r2">2</span>院线</span><span class="down">-3.64%</span></li>
+<li><span><span class="rank r3">3</span>火力发电</span><span class="down">-3.31%</span></li>
+<li><span><span class="rank r4">4</span>宠物食品</span><span class="down">-3.30%</span></li>
+<li><span><span class="rank r5">5</span>公路货运</span><span class="down">-3.24%</span></li>
+</ul>
+</div>
+
+<div class="sector-card">
+<h4>📊 板块资金净流入TOP5</h4>
+<ul>
+<li><span><span class="rank r1">1</span>通信线缆及配套</span><span>567.3亿</span></li>
+<li><span><span class="rank r2">2</span>通信设备</span><span>179.6亿</span></li>
+<li><span><span class="rank r3">3</span>印制电路板</span><span>81.0亿</span></li>
+<li><span><span class="rank r4">4</span>电子化学品</span><span>37.0亿</span></li>
+<li><span><span class="rank r5">5</span>稀土</span><span>13.6亿</span></li>
+</ul>
+</div>
+</div>
+
+<div class="comment-box">
+<h4>💡 板块趋势判断</h4>
+<p><b>今日风格明确：成长>价值，小盘>大盘，科技>消费。</b>光通信/CPO/通信线缆霸占涨幅榜首，核心驱动力来自英伟达CPO交换机全面量产消息，天孚通信等供应商直接受益。稀土板块受政策预期+缅甸供给扰动双重催化，涨停家数4只。电子化学品、被动元件等上游材料板块跟涨，反映的是<b>AI算力→光通信→上游材料</b>的传导链条。<br><br>
+冷门板块方面，火电、院线、宠物食品等消费/传统板块领跌，资金虹吸效应明显——"科技抽血，消费失血"的存量博弈格局持续。乳品板块也跌超3%，消费股的日子不好过，"喝奶不如追光"。</p>
+</div>
+
+</div>
+</div>
+
+<!-- 板块4：龙虎榜/主力动向 -->
+<div class="section">
+<div class="section-title">
+<span class="icon" style="background:linear-gradient(135deg,#2ecc71,#27ae60)">🐋</span>
+四、龙虎榜 / 主力动向
+</div>
+<div class="section-body">
+
+<div class="lhb-card">
+<h4>📋 8月14日龙虎榜焦点（最新完整数据）</h4>
+<div style="overflow-x:auto">
+<table>
+<thead><tr><th>股票</th><th>买入额</th><th>卖出额</th><th>净买入</th><th>看点</th></tr></thead>
+<tbody>
+<tr><td class="stock-name">网宿科技</td><td>13.79亿</td><td>4.07亿</td><td class="up">9.72亿</td><td>机构+游资合力买入，算力概念龙头</td></tr>
+<tr><td class="stock-name">中国稀土</td><td>11.24亿</td><td>6.02亿</td><td class="up">5.22亿</td><td>稀土板块龙头，缅甸供给扰动</td></tr>
+<tr><td class="stock-name">杭电股份</td><td>6.53亿</td><td>2.58亿</td><td class="up">3.96亿</td><td>通信线缆概念，CPO产业链受益</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="lhb-card">
+<h4>🐋 主力资金重点操作标的</h4>
+<div style="overflow-x:auto">
+<table>
+<thead><tr><th>方向</th><th style="text-align:left">标的</th><th>逻辑</th></tr></thead>
+<tbody>
+<tr><td class="up">净买入</td><td class="stock-name">网宿科技</td><td>AI算力基建+CDN业务预期改善，机构大额买入</td></tr>
+<tr><td class="up">净买入</td><td class="stock-name">中国稀土</td><td>缅甸稀土供给受限+新能源需求，稀土价格上行周期</td></tr>
+<tr><td class="up">净买入</td><td class="stock-name">杭电股份</td><td>英伟达CPO量产催化，光通信线缆需求预期提升</td></tr>
+<tr><td class="down">净卖出</td><td class="stock-name">华银电力</td><td>火电利润承压+资金获利了结，板块轮动出局</td></tr>
+<tr><td class="down">净卖出</td><td class="stock-name">省广集团</td><td>前期炒作退潮，游资撤离</td></tr>
+<tr><td class="down">净卖出</td><td class="stock-name">京投发展</td><td>地产链情绪低迷，资金避险出逃</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="lhb-card">
+<h4>🌍 北向资金/机构动向</h4>
+<p style="font-size:0.85rem;line-height:1.7">
+<b>社保基金、QFII二季度调仓动向曝光：</b>社保基金新进多只科技成长股，QFII大幅加仓硬科技与新能源方向。中央汇金、证金公司退出贵州茅台前十大股东——"国家队"从消费龙头转向科技赛道，信号意义明确。<br>
+<b>百亿私募最新动向：</b>高毅资产加仓美光、闪迪等海外存储芯片龙头，但斌高呼"小荷刚露尖尖角"，闪迪一夜狂飙13%，存储芯片超级周期逻辑持续强化。<br>
+<b>北向资金：</b>本周北向资金整体延续净流入态势，偏好从大盘蓝筹向中小盘成长扩散，AI算力与光通信成为主要加仓方向。
+</p>
+</div>
+
+<div class="comment-box">
+<h4>💡 主力逻辑点评</h4>
+<p>本周主力资金的核心叙事非常清晰：<b>"AI算力→光通信→存储→上游材料"</b>的传导链条。英伟达CPO交换机量产是引爆点，网宿科技（算力基础设施）、杭电股份（光通信线缆）、中国稀土（上游材料）依次受益。同时，"国家队"从消费龙头撤退、加码科技赛道的动作，进一步确认了政策资金的风向。<br><br>
+但需要注意几个风险信号：<b>1）成交额虽维持高位但已开始缩量</b>，增量资金入场节奏放缓；<b>2）涨停股中换手率普遍偏高</b>（网宿科技20%、蓝盾光电51%），说明获利盘松动风险加大；<b>3）消费板块持续被抽血</b>，市场结构分化加剧——这种"冰火两重天"的格局往往意味着行情进入中后段。<br><br>
+<b>操作建议：跟随主力方向但要留一半清醒一半醉</b>，别在AI算力的涨停板上all in，也别在消费股的地下室里躺平。适度配置、控制仓位，"追光"可以但别追太高。</p>
+</div>
+
+</div>
+</div>
+
+<!-- 数据来源声明 -->
+<div class="section">
+<div class="section-title">
+<span class="icon" style="background:#7f8c8d">📌</span>
+数据来源与声明
+</div>
+<div class="section-body" style="font-size:0.82rem;color:#888;line-height:1.8">
+<p><b>数据来源：</b>东方财富网实时行情API / 东方财富龙虎榜 / 东方财富板块数据 / 东方财富资金流向 / 沪深交易所公开数据</p>
+<p><b>免责声明：</b>本报告由AI自动生成，仅供学习参考，不构成任何投资建议。股市有风险，投资需谨慎。数据截至2026年8月15日收盘，可能存在延迟或偏差。</p>
+<p><b>报告生成：</b>小U同学 AI Assistant | 2026-08-16 01:46 CST</p>
+</div>
+</div>
+
+<div class="footer">
+<p>📊 A股市场热度排行 | 每日自动生成</p>
+<p>Powered by <a href="https://www.eastmoney.com" target="_blank">东方财富</a> 数据接口</p>
+</div>
+
+</div>
+</body>
+</html>
