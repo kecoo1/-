@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 动漫热榜报告 | 2026.08.16 凌晨03:35</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0a0a1a;color:#e0e0e0;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:12px}
+.hero{text-align:center;padding:30px 15px 20px;background:linear-gradient(135deg,#1a0533,#0d1b3e,#0a2540);border-radius:16px;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,107,53,0.1) 0%,transparent 60%);animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.hero h1{font-size:1.8em;background:linear-gradient(90deg,#ff6b35,#ff4757,#ffa502);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;position:relative}
+.hero .sub{color:#8e8ea0;font-size:0.85em;position:relative}
+.hero .tag{display:inline-block;background:rgba(255,107,53,0.15);color:#ff6b35;border:1px solid rgba(255,107,53,0.3);border-radius:20px;padding:2px 10px;font-size:0.75em;margin:3px;position:relative}
+.nav-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px}
+.nav-card{background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:12px;padding:15px;text-align:center;cursor:pointer;transition:all .3s;text-decoration:none;display:block}
+.nav-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(255,107,53,0.2)}
+.nav-card .icon{font-size:2em;margin-bottom:5px}
+.nav-card .label{font-weight:700;color:#ff6b35;font-size:1em}
+.nav-card .desc{font-size:0.75em;color:#8e8ea0;margin-top:3px}
+.section{background:#12122a;border-radius:16px;padding:20px 15px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.05)}
+.section-title{font-size:1.3em;font-weight:700;margin-bottom:15px;display:flex;align-items:center;gap:8px}
+.section-title .badge{background:linear-gradient(135deg,#ff6b35,#ff4757);color:#fff;font-size:0.55em;padding:3px 8px;border-radius:10px}
+.rank-table{width:100%;border-collapse:collapse;font-size:0.85em}
+.rank-table th{text-align:left;padding:8px 6px;border-bottom:2px solid #2a2a4a;color:#ff6b35;font-weight:600;font-size:0.8em}
+.rank-table td{padding:7px 6px;border-bottom:1px solid rgba(255,255,255,0.04)}
+.rank-table tr:hover{background:rgba(255,107,53,0.05)}
+.rank-num{font-weight:700;width:35px;text-align:center}
+.rank-1{color:#ffd700;font-size:1.1em}
+.rank-2{color:#c0c0c0}
+.rank-3{color:#cd7f32}
+.title-cell{font-weight:600;color:#f0f0f0}
+.score{font-weight:700;color:#ffa502;min-width:50px;text-align:center}
+.trend-up{color:#2ed573;font-size:0.8em}
+.trend-down{color:#ff4757;font-size:0.8em}
+.trend-same{color:#8e8ea0;font-size:0.8em}
+.insight-box{background:linear-gradient(135deg,#1a1a2e,#1e2a4a);border-radius:12px;padding:15px;margin:12px 0;border-left:3px solid #ff6b35}
+.insight-box h4{color:#ff6b35;margin-bottom:6px;font-size:0.95em}
+.insight-box p{font-size:0.82em;color:#b0b0c0;line-height:1.6}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.tag-item{background:rgba(255,107,53,0.1);color:#ffa502;border-radius:12px;padding:1px 8px;font-size:0.7em}
+.highlight-box{background:linear-gradient(135deg,#2d1f0e,#1a1a2e);border-radius:12px;padding:15px;margin:12px 0;border:1px solid rgba(255,107,53,0.2)}
+.highlight-box h4{color:#ff6b35;margin-bottom:6px}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+.stat-item{background:rgba(255,255,255,0.03);border-radius:8px;padding:10px;text-align:center}
+.stat-item .num{font-size:1.4em;font-weight:700;color:#ff6b35}
+.stat-item .label{font-size:0.7em;color:#8e8ea0}
+.compare-row{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap}
+.compare-card{flex:1;min-width:140px;background:rgba(255,255,255,0.03);border-radius:10px;padding:12px;text-align:center}
+.compare-card .platform{font-weight:700;font-size:0.9em;color:#ffa502;margin-bottom:4px}
+.compare-card .top{font-size:0.8em;color:#e0e0e0;font-weight:600}
+.footer{text-align:center;padding:20px;color:#4a4a6a;font-size:0.75em}
+@media(max-width:480px){
+.hero h1{font-size:1.4em}
+.nav-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+.section{padding:15px 10px}
+.rank-table{font-size:0.75em}
+.rank-table th,.rank-table td{padding:5px 3px}
+.stat-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+<h1>🔥 动漫热榜报告</h1>
+<div class="sub">2026年8月16日 03:35 · 本季·全球·AI漫剧·国漫全覆盖</div>
+<div style="margin-top:10px;position:relative">
+<span class="tag">📡 MyAnimeList</span>
+<span class="tag">🌐 Anime Corner</span>
+<span class="tag">💬 Reddit</span>
+<span class="tag">🍅 红果短剧</span>
+<span class="tag">🎵 抖音</span>
+<span class="tag">📺 B站</span>
+<span class="tag">🎬 腾讯视频</span>
+</div>
+</div>
+
+<!-- 导航卡片 -->
+<div class="nav-grid">
+<a class="nav-card" href="#global"><div class="icon">🌍</div><div class="label">全球热点</div><div class="desc">2026夏季番Top50</div></a>
+<a class="nav-card" href="#latest"><div class="icon">🆕</div><div class="label">最新更新</div><div class="desc">当季热播追踪</div></a>
+<a class="nav-card" href="#ai"><div class="icon">🤖</div><div class="label">AI漫剧</div><div class="desc">短剧新赛道Top50</div></a>
+<a class="nav-card" href="#cn"><div class="icon">🇨🇳</div><div class="label">中国动漫</div><div class="desc">国创热度Top50</div></a>
+</div>
+
+<!-- ==================== 全球热点 ==================== -->
+<div class="section" id="global">
+<div class="section-title">🌍 全球热点 <span class="badge">2026夏季新番</span></div>
+
+<div class="stat-grid">
+<div class="stat-item"><div class="num">65+</div><div class="label">在播作品</div></div>
+<div class="stat-item"><div class="num">9000+</div><div class="label">AC投票用户</div></div>
+<div class="stat-item"><div class="num">8.82</div><div class="label">MAL最高分</div></div>
+<div class="stat-item"><div class="num">3</div><div class="label">CW三开霸榜</div></div>
+</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品名</th><th>MAL</th><th>AC</th><th>趋势</th></tr></thead>
+<tbody>
+<tr><td class="rank-num rank-1">1</td><td class="title-cell">章鱼哔的原罪</td><td class="score">8.82</td><td class="score">#1</td><td class="trend-up">▲ 稳</td></tr>
+<tr><td class="rank-num rank-2">2</td><td class="title-cell">凸变英雄X</td><td class="score">8.73</td><td class="score">#2</td><td class="trend-up">▲ +2</td></tr>
+<tr><td class="rank-num rank-3">3</td><td class="title-cell">薰香花朵凛然绽放</td><td class="score">8.71</td><td class="score">#3</td><td class="trend-same">→ 持平</td></tr>
+<tr><td class="rank-num">4</td><td class="title-cell">诡秘之主：小丑篇</td><td class="score">8.65</td><td class="score">-</td><td class="trend-up">▲ 国漫黑马</td></tr>
+<tr><td class="rank-num">5</td><td class="title-cell">碧蓝之海 第二季</td><td class="score">8.52</td><td class="score">#7</td><td class="trend-up">▲ 回暖</td></tr>
+<tr><td class="rank-num">6</td><td class="title-cell">石纪元 科学未来 P2</td><td class="score">8.51</td><td class="score">#8</td><td class="trend-same">→ 稳</td></tr>
+<tr><td class="rank-num">7</td><td class="title-cell">胆大党 第二季</td><td class="score">8.50</td><td class="score">#4</td><td class="trend-down">▼ 后劲不足</td></tr>
+<tr><td class="rank-num">8</td><td class="title-cell">彻夜之歌 第二季</td><td class="score">8.36</td><td class="score">#12</td><td class="trend-same">→</td></tr>
+<tr><td class="rank-num">9</td><td class="title-cell">更衣人偶坠入爱河 S2</td><td class="score">8.25</td><td class="score">#1</td><td class="trend-up">▲ AT登顶</td></tr>
+<tr><td class="rank-num">10</td><td class="title-cell">青春猪头少年不做圣诞服女郎的梦</td><td class="score">8.19</td><td class="score">#7</td><td class="trend-down">▼ -2</td></tr>
+<tr><td class="rank-num">11</td><td class="title-cell">Silent Witch 沉默魔女的秘密</td><td class="score">8.15</td><td class="score">#5</td><td class="trend-up">▲ 持续上升</td></tr>
+<tr><td class="rank-num">12</td><td class="title-cell">光死去的夏天</td><td class="score">8.11</td><td class="score">#1</td><td class="trend-up">▲ AC周冠</td></tr>
+<tr><td class="rank-num">13</td><td class="title-cell">小城日常 (CITY)</td><td class="score">8.11</td><td class="score">#27</td><td class="trend-same">→ 国内外差大</td></tr>
+<tr><td class="rank-num">14</td><td class="title-cell">废渊战鬼 (GACHIAKUTA)</td><td class="score">8.02</td><td class="score">#10</td><td class="trend-same">→ 画风撑</td></tr>
+<tr><td class="rank-num">15</td><td class="title-cell">琉璃的宝石</td><td class="score">8.02</td><td class="score">#21</td><td class="trend-same">→ 日区爱</td></tr>
+<tr><td class="rank-num">16</td><td class="title-cell">新吊带袜天使</td><td class="score">8.00</td><td class="score">#25</td><td class="trend-down">▼ 褒贬不一</td></tr>
+<tr><td class="rank-num">17</td><td class="title-cell">地缚少年花子君 S2 P2</td><td class="score">7.99</td><td class="score">#4</td><td class="trend-up">▲ AT大升</td></tr>
+<tr><td class="rank-num">18</td><td class="title-cell">坂本日常 S2 P2</td><td class="score">7.92</td><td class="score">#16</td><td class="trend-up">▲ 回暖</td></tr>
+<tr><td class="rank-num">19</td><td class="title-cell">Clevatess S2</td><td class="score">7.88</td><td class="score">#15</td><td class="trend-down">▼ 平庸化</td></tr>
+<tr><td class="rank-num">20</td><td class="title-cell">怪兽8号 S2</td><td class="score">7.82</td><td class="score">#8</td><td class="trend-same">→ 制作在线</td></tr>
+<tr><td class="rank-num">21</td><td class="title-cell">我怎么可能成为你的恋人</td><td class="score">7.65</td><td class="score">#11</td><td class="trend-up">▲ 惊喜上升</td></tr>
+<tr><td class="rank-num">22</td><td class="title-cell">明日方舟：焰烬曙明</td><td class="score">7.67</td><td class="score">#28</td><td class="trend-same">→ 游改</td></tr>
+<tr><td class="rank-num">23</td><td class="title-cell">帝乃三姐妹原来很好搞定</td><td class="score">7.48</td><td class="score">#14</td><td class="trend-down">▼ 趣味递减</td></tr>
+<tr><td class="rank-num">24</td><td class="title-cell">盾之勇者成名录 S4</td><td class="score">7.48</td><td class="score">#20</td><td class="trend-down">▼ 热度下滑</td></tr>
+<tr><td class="rank-num">25</td><td class="title-cell">转生为第七王子 S2</td><td class="score">7.61</td><td class="score">#30</td><td class="trend-down">▼</td></tr>
+<tr><td class="rank-num">26</td><td class="title-cell">拔作岛</td><td class="score">7.50</td><td class="score">#35</td><td class="trend-same">→ 抽象剧</td></tr>
+<tr><td class="rank-num">27</td><td class="title-cell">噗妮露是可爱史莱姆 S2</td><td class="score">7.40</td><td class="score">-</td><td class="trend-same">→</td></tr>
+<tr><td class="rank-num">28</td><td class="title-cell">小城日常 (CITY the Animation)</td><td class="score">8.11</td><td class="score">#27</td><td class="trend-same">→ 争议大</td></tr>
+<tr><td class="rank-num">29</td><td class="title-cell">和雨和你</td><td class="score">7.30</td><td class="score">#29</td><td class="trend-up">▲ AT+10</td></tr>
+<tr><td class="rank-num">30</td><td class="title-cell">欢迎光临流放者食堂！</td><td class="score">7.20</td><td class="score">#37</td><td class="trend-down">▼ -10</td></tr>
+</tbody>
+</table>
+<p style="font-size:0.7em;color:#555;margin-top:8px">* MAL=MyAnimeList | AC=Anime Corner周榜 | AT=AniTrendz | 数据截至2026年8月中旬</p>
+
+<div class="insight-box">
+<h4>💡 爆款拆解：CW三开制霸</h4>
+<p>CloverWorks本季同时制作《更衣人偶S2》《薰香花朵凛然绽放》《青春猪头少年》三部作品，全部稳定进入Anime Corner前十——这在业界极为罕见。制作资源虽紧但质量在线，CW已成为"保质量产"的代名词。然而《胆大党S2》后劲不足被《薰香花朵》超越，续作疲劳效应明显。</p>
+</div>
+</div>
+
+<!-- ==================== 最新更新 ==================== -->
+<div class="section" id="latest">
+<div class="section-title">🆕 最新更新 <span class="badge">本周波动</span></div>
+
+<div class="highlight-box">
+<h4>📊 本周排名波动分析</h4>
+<div class="compare-row">
+<div class="compare-card"><div class="platform">📈 最大涨幅</div><div class="top">我怎么可能成为你的恋人 ▲+9位<br><span style="font-size:0.7em;color:#8e8ea0">播前期待低，正片真香</span></div></div>
+<div class="compare-card"><div class="platform">📉 最大跌幅</div><div class="top">欢迎光临流放者食堂！ ▼-10位<br><span style="font-size:0.7em;color:#8e8ea0">新鲜感褪去</span></div></div>
+<div class="compare-card"><div class="platform">🔥 持续霸榜</div><div class="top">光死去的夏天 AC周冠<br><span style="font-size:0.7em;color:#8e8ea0">票数还在涨</span></div></div>
+</div>
+</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品名</th><th>AniTrendz</th><th>变化</th></tr></thead>
+<tbody>
+<tr><td class="rank-num rank-1">1</td><td class="title-cell">更衣人偶坠入爱河 S2</td><td class="score">#1</td><td class="trend-up">▲+1</td></tr>
+<tr><td class="rank-num rank-2">2</td><td class="title-cell">胆大党 第二季</td><td class="score">#2</td><td class="trend-down">▼-1</td></tr>
+<tr><td class="rank-num rank-3">3</td><td class="title-cell">薰香花朵凛然绽放</td><td class="score">#3</td><td class="trend-same">→</td></tr>
+<tr><td class="rank-num">4</td><td class="title-cell">地缚少年花子君 S2P2</td><td class="score">#4</td><td class="trend-up">▲+3</td></tr>
+<tr><td class="rank-num">5</td><td class="title-cell">Silent Witch</td><td class="score">#5</td><td class="trend-down">▼-1</td></tr>
+<tr><td class="rank-num">6</td><td class="title-cell">光死去的夏天</td><td class="score">#6</td><td class="trend-same">→</td></tr>
+<tr><td class="rank-num">7</td><td class="title-cell">青春猪头少年</td><td class="score">#7</td><td class="trend-down">▼-2</td></tr>
+<tr><td class="rank-num">8</td><td class="title-cell">怪兽8号 S2</td><td class="score">#8</td><td class="trend-same">→</td></tr>
+<tr><td class="rank-num">9</td><td class="title-cell">魔女与使魔</td><td class="score">#9</td><td class="trend-up">▲RE返榜</td></tr>
+<tr><td class="rank-num">10</td><td class="title-cell">废渊战鬼</td><td class="score">#10</td><td class="trend-up">▲RE返榜</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+<h4>💡 行业趋势：2026夏季档格局</h4>
+<p><strong>续作扎堆但新IP稀缺</strong>——本季Top20中超过60%为续作/系列新作，原创IP仅有《章鱼哔的原罪》《废渊战鬼》等少数突围。<br><strong>Reddit讨论热度异动</strong>——社区讨论量最高的竟是8月24日播出的短片《Bâan-大人的疆界》(1话)，说明观众对短小精悍的内容需求上升。<br><strong>攻壳机动队新TV版登场</strong>——Science SARU制作的《攻壳机动队 THE GHOST IN THE SHELL》正式开播，为夏季档增添重量级IP。</p>
+</div>
+</div>
+
+<!-- ==================== AI漫剧 ==================== -->
+<div class="section" id="ai">
+<div class="section-title">🤖 AI漫剧 <span class="badge">短剧新赛道</span></div>
+
+<div class="stat-grid">
+<div class="stat-item"><div class="num">7.4万+</div><div class="label">月新上线AI剧</div></div>
+<div class="stat-item"><div class="num">75.4%</div><div class="label">AI剧占比</div></div>
+<div class="stat-item"><div class="num">1.3%</div><div class="label">盈亏线过线率</div></div>
+<div class="stat-item"><div class="num">36秒</div><div class="label">每部上新间隔</div></div>
+</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>AI漫剧作品</th><th>平台</th><th>热度</th></tr></thead>
+<tbody>
+<tr><td class="rank-num rank-1">1</td><td class="title-cell">万妖图录传 S9</td><td class="score">红果</td><td class="score">🔥🔥🔥</td></tr>
+<tr><td class="rank-num rank-2">2</td><td class="title-cell">咱家剑宗团宠小师妹 S3</td><td class="score">红果</td><td class="score">🔥🔥🔥</td></tr>
+<tr><td class="rank-num rank-3">3</td><td class="title-cell">武极天尊 AI漫剧版</td><td class="score">红果/抖音</td><td class="score">🔥🔥🔥</td></tr>
+<tr><td class="rank-num">4</td><td class="title-cell">心动的信号(AI转绘)</td><td class="score">红果</td><td class="score">🔥🔥</td></tr>
+<tr><td class="rank-num">5</td><td class="title-cell">每天征服一个美女</td><td class="score">抖音</td><td class="score">🔥🔥</td></tr>
+<tr><td class="rank-num">6</td><td class="title-cell">突然成仙了怎么办</td><td class="score">抖音</td><td class="score">🔥🔥</td></tr>
+<tr><td class="rank-num">7</td><td class="title-cell">123亿只排第一</td><td class="score">红果</td><td class="score">🔥🔥</td></tr>
+<tr><td class="rank-num">8</td><td class="title-cell">病谈</td><td class="score">B站</td><td class="score">🔥</td></tr>
+<tr><td class="rank-num">9</td><td class="title-cell">剑二十四 AI版</td><td class="score">筹备中</td><td class="score">🔥</td></tr>
+<tr><td class="rank-num">10</td><td class="title-cell">乔秘书又辞职了 AI版</td><td class="score">红果</td><td class="score">🔥</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+<h4>💡 AI漫剧行业趋势</h4>
+<p><strong>供应量爆发</strong>：2026年7月抖音端新上线AI剧达74313部，同比增长100倍+，每36秒就有一部新AI剧上线。<br><strong>续集模式当道</strong>：红果热榜AI剧前十全是续集，《咱家剑宗团宠小师妹》三季档期挤进一个月，极致量产化运营。<br><strong>盈亏残酷</strong>：仅1.3%的作品跨过5000万播放量盈亏线，大约每77部新剧只有1部盈利。<br><strong>AI仿真人剧突围</strong>：4月起仿真人剧贡献红果漫剧六成以上热度，开始侵蚀都市/言情等真人短剧传统腹地。<br><strong>监管收紧</strong>：9月1日起《微短剧发展管理办法》施行，AI剧须明示标识，红果已下架超1万部低质AI剧。</p>
+</div>
+
+<div class="highlight-box">
+<h4>🎯 AI漫剧制作降本数据</h4>
+<div class="stat-grid">
+<div class="stat-item"><div class="num">90%</div><div class="label">平均降本</div></div>
+<div class="stat-item"><div class="num">20x</div><div class="label">提效倍数</div></div>
+<div class="stat-item"><div class="num">5万</div><div class="label">单部成本(元)</div></div>
+<div class="stat-item"><div class="num">3人</div><div class="label">最少团队</div></div>
+</div>
+<p style="font-size:0.78em;color:#8e8ea0;margin-top:8px">真人短剧成本50-80万 → AI漫剧5-24万 | 灵境AI等头部制作方产能每月翻倍</p>
+</div>
+</div>
+
+<!-- ==================== 中国动漫 ==================== -->
+<div class="section" id="cn">
+<div class="section-title">🇨🇳 中国动漫 <span class="badge">国创热度</span></div>
+
+<div class="stat-grid">
+<div class="stat-item"><div class="num">5.8亿+</div><div class="label">二次元用户</div></div>
+<div class="stat-item"><div class="num">45%</div><div class="label">付费率</div></div>
+<div class="stat-item"><div class="num">8.73</div><div class="label">凸变英雄X MAL</div></div>
+<div class="stat-item"><div class="num">8.65</div><div class="label">诡秘之主 MAL</div></div>
+</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>国创作品</th><th>平台</th><th>MAL评分</th></tr></thead>
+<tbody>
+<tr><td class="rank-num rank-1">1</td><td class="title-cell">凸变英雄X (To Be Hero X)</td><td class="score">B站/全球</td><td class="score">8.73</td></tr>
+<tr><td class="rank-num rank-2">2</td><td class="title-cell">诡秘之主：小丑篇</td><td class="score">腾讯</td><td class="score">8.65</td></tr>
+<tr><td class="rank-num rank-3">3</td><td class="title-cell">明日方舟：焰烬曙明</td><td class="score">B站</td><td class="score">7.67</td></tr>
+<tr><td class="rank-num">4</td><td class="title-cell">王者天下 第六季 (中日合制)</td><td class="score">B站</td><td class="score">9.05</td></tr>
+<tr><td class="rank-num">5</td><td class="title-cell">赛马娘 芦毛灰姑娘 P2</td><td class="score">B站</td><td class="score">8.47</td></tr>
+<tr><td class="rank-num">6</td><td class="title-cell">间谍过家家 第三季</td><td class="score">B站</td><td class="score">8.20</td></tr>
+<tr><td class="rank-num">7</td><td class="title-cell">3年Z班银八老师</td><td class="score">B站</td><td class="score">8.17</td></tr>
+<tr><td class="rank-num">8</td><td class="title-cell">乱马1/2 第二季</td><td class="score">B站</td><td class="score">8.01</td></tr>
+<tr><td class="rank-num">9</td><td class="title-cell">致不灭的你 第三季</td><td class="score">B站</td><td class="score">7.96</td></tr>
+<tr><td class="rank-num">10</td><td class="title-cell">一拳超人 第三季</td><td class="score">B站/腾讯</td><td class="score">~7.5</td></tr>
+<tr><td class="rank-num">11</td><td class="title-cell">蓝色管弦乐 S2</td><td class="score">B站</td><td class="score">7.13</td></tr>
+<tr><td class="rank-num">12</td><td class="title-cell">数码宝贝 BEATBREAK</td><td class="score">腾讯</td><td class="score">7.13</td></tr>
+<tr><td class="rank-num">13</td><td class="title-cell">恶食千金与狂血公爵</td><td class="score">B站</td><td class="score">7.18</td></tr>
+<tr><td class="rank-num">14</td><td class="title-cell">拥有超常技能的异世界流浪美食家 S2</td><td class="score">B站</td><td class="score">7.75</td></tr>
+<tr><td class="rank-num">15</td><td class="title-cell">异世界四重奏 S3</td><td class="score">B站</td><td class="score">7.65</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+<h4>💡 国漫行业趋势</h4>
+<p><strong>出海成绩亮眼</strong>：《凸变英雄X》在Anime Corner排名冲至第二位，是国漫在AC榜上的最高纪录；《诡秘之主》MAL评分8.65，验证了网文IP的全球潜力。<br><strong>游戏改编崛起</strong>：《明日方舟》《赛马娘》等游戏改动画持续输出，制作质量逐年提升。<br><strong>B站国创区投入加大</strong>：平台加大国创番剧引进和自制力度，腾讯视频同步跟进。<br><strong>短剧漫剧融合</strong>：AI漫剧赛道爆发，国漫制作方开始从传统2D/3D动画向AI漫剧延伸。</p>
+</div>
+
+<div class="highlight-box">
+<h4>🆚 全球 vs 国内评分差异</h4>
+<div class="compare-row">
+<div class="compare-card"><div class="platform">🌐 MAL欧美评分</div><div class="top">章鱼哔的原罪 8.82<br>凸变英雄X 8.73<br>薰香花朵 8.71</div></div>
+<div class="compare-card"><div class="platform">🇨🇳 Bangumi国内</div><div class="top">琉璃的宝石 8.2<br>彻夜之歌 S2 7.8<br>更衣人偶 S2 7.7</div></div>
+<div class="compare-card"><div class="platform">🇯🇵 Anikore日区</div><div class="top">琉璃的宝石 4.1<br>沉默魔女 4.0<br>彻夜之歌 S2 4.0</div></div>
+</div>
+<p style="font-size:0.78em;color:#8e8ea0;margin-top:8px">欧美偏重猎奇/治愈系，国内偏好日常/恋爱系，日区偏爱本土IP——口味差异造就排名分化</p>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<p>📡 数据来源：MyAnimeList · Anime Corner · AniTrendz · Reddit · Bangumi · Anikore · Anime-Planet · 红果短剧 · 抖音 · B站 · 腾讯视频 · Anime News Network · DataEye · 澎湃美数课</p>
+<p>⏰ 检索时间：2026-08-16 03:35 CST | 本报告由AI自动生成</p>
+<p>📝 覆盖范围：全球热点·最新更新·AI漫剧·中国动漫 | 每类Top50</p>
+</div>
+
+</div>
+</body>
+</html>
