@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🔥 2026动漫热榜风暴 | 8月18日生成</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:#0a0a1a;color:#e0e0f0;line-height:1.7;overflow-x:hidden}
+::selection{background:#ff6b9d;color:#fff}
+a{color:#7c5cfc;text-decoration:none}
+.container{max-width:960px;margin:0 auto;padding:12px}
+.hero{text-align:center;padding:30px 15px 20px;background:linear-gradient(135deg,#1a0533 0%,#0d1b3e 40%,#0a2540 100%);border-radius:16px;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse,rgba(124,92,252,0.15) 0%,transparent 70%);animation:pulse 8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.hero h1{font-size:clamp(1.6rem,5vw,2.8rem);background:linear-gradient(90deg,#ff6b9d,#c084fc,#7c5cfc,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;position:relative;z-index:1}
+.hero .sub{font-size:clamp(0.85rem,2.5vw,1.1rem);color:#a0a0c0;position:relative;z-index:1}
+.hero .meta{font-size:0.75rem;color:#606080;margin-top:8px;position:relative;z-index:1}
+.toc{background:#111128;border-radius:12px;padding:16px;margin-bottom:16px}
+.toc h2{font-size:1rem;color:#c084fc;margin-bottom:10px}
+.toc ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px}
+.toc li a{display:block;padding:8px 12px;background:#1a1a3a;border-radius:8px;color:#b0b0d0;font-size:0.85rem;transition:all .2s}
+.toc li a:hover{background:#7c5cfc;color:#fff;transform:translateY(-1px)}
+.section{background:#111128;border-radius:14px;padding:16px;margin-bottom:16px}
+.section h2{font-size:clamp(1.1rem,3vw,1.5rem);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.section h2 .icon{font-size:1.3em}
+.section .desc{font-size:0.8rem;color:#8080a0;margin-bottom:12px}
+.tab-bar{display:flex;overflow-x:auto;gap:6px;margin-bottom:12px;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.tab-bar::-webkit-scrollbar{height:3px}
+.tab-bar::-webkit-scrollbar-thumb{background:#333;border-radius:3px}
+.tab-btn{flex-shrink:0;padding:6px 14px;border-radius:20px;border:1px solid #2a2a4a;background:#151530;color:#9090b0;font-size:0.8rem;cursor:pointer;transition:all .2s;white-space:nowrap}
+.tab-btn.active{background:linear-gradient(135deg,#7c5cfc,#c084fc);color:#fff;border-color:transparent}
+.rank-list{display:none}
+.rank-list.active{display:block}
+.rank-item{display:flex;align-items:center;gap:10px;padding:10px 8px;border-bottom:1px solid #1a1a3a;transition:background .2s}
+.rank-item:hover{background:#1a1a3a;border-radius:8px}
+.rank-item:last-child{border-bottom:none}
+.rank-num{flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-weight:700;font-size:0.85rem}
+.rank-num.gold{background:linear-gradient(135deg,#ffd700,#ffaa00);color:#1a0a00}
+.rank-num.silver{background:linear-gradient(135deg,#c0c0c0,#a0a0a0);color:#1a1a1a}
+.rank-num.bronze{background:linear-gradient(135deg,#cd7f32,#b06a28);color:#1a0a00}
+.rank-num.normal{background:#1a1a3a;color:#606080}
+.rank-info{flex:1;min-width:0}
+.rank-title{font-size:0.9rem;font-weight:600;color:#e0e0f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-title-en{font-size:0.7rem;color:#606080;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-meta{font-size:0.7rem;color:#8080a0;margin-top:2px;display:flex;gap:8px;flex-wrap:wrap}
+.rank-score{flex-shrink:0;text-align:right}
+.rank-score .val{font-size:1.1rem;font-weight:700;color:#c084fc}
+.rank-score .label{font-size:0.6rem;color:#606080}
+.trend-up{color:#4ade80;font-size:0.7rem}
+.trend-down{color:#f87171;font-size:0.7rem}
+.trend-same{color:#606080;font-size:0.7rem}
+.insight{background:#0d0d25;border-radius:10px;padding:12px;margin-top:12px;border-left:3px solid #7c5cfc}
+.insight h3{font-size:0.9rem;color:#c084fc;margin-bottom:6px}
+.insight p{font-size:0.8rem;color:#a0a0c0;line-height:1.8}
+.insight .tag{display:inline-block;padding:2px 8px;background:#1a1a3a;border-radius:10px;font-size:0.7rem;color:#7c5cfc;margin:2px}
+.highlight-box{background:linear-gradient(135deg,#1a0533,#0d1b3e);border-radius:12px;padding:14px;margin:10px 0;border:1px solid #2a2a4a}
+.highlight-box h3{font-size:0.95rem;color:#ff6b9d;margin-bottom:8px}
+.highlight-box p{font-size:0.82rem;color:#b0b0d0;line-height:1.8}
+.footer{text-align:center;padding:20px;font-size:0.7rem;color:#404060}
+.badge{display:inline-block;padding:2px 7px;border-radius:6px;font-size:0.65rem;font-weight:600}
+.badge-hot{background:#ff6b9d20;color:#ff6b9d}
+.badge-new{background:#4ade8020;color:#4ade80}
+.badge-ai{background:#c084fc20;color:#c084fc}
+@media(max-width:480px){.container{padding:8px}.rank-item{gap:6px;padding:8px 4px}.rank-num{width:24px;height:24px;font-size:0.75rem}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+<h1>🔥 2026动漫热榜风暴</h1>
+<div class="sub">全球热点 · 最新更新 · AI漫剧 · 中国动漫</div>
+<div class="meta">⏰ 生成时间：2026-08-18 03:35 · 数据源：MyAnimeList / Anime Corner / Reddit / 红果短剧 / 抖音 / Bilibili / 腾讯视频</div>
+</div>
+
+<div class="toc">
+<h2>📋 快速导航</h2>
+<ul>
+<li><a href="#global">🌍 全球热点</a></li>
+<li><a href="#latest">📺 最新更新</a></li>
+<li><a href="#ai-manga">🤖 AI漫剧</a></li>
+<li><a href="#china">🇨🇳 中国动漫</a></li>
+<li><a href="#trend">📈 行业趋势</a></li>
+<li><a href="#boom">💥 爆款拆解</a></li>
+</ul>
+</div>
+
+<!-- ======== 全球热点 ======== -->
+<div class="section" id="global">
+<h2><span class="icon">🌍</span> 全球热点 Top 50</h2>
+<div class="desc">综合 MyAnimeList / Anime Corner / Reddit 多平台评分与热度 · 本季度数据</div>
+
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab('global','mal')">MyAnimeList</button>
+<button class="tab-btn" onclick="switchTab('global','ac')">Anime Corner</button>
+<button class="tab-btn" onclick="switchTab('global','reddit')">Reddit热度</button>
+</div>
+
+<div class="rank-list active" id="global-mal">
+<div class="rank-item"><span class="rank-num gold">1</span><div class="rank-info"><div class="rank-title">章鱼噼的原罪</div><div class="rank-title-en">Takopi's Original Sin</div><div class="rank-meta"><span>🏷️ 剧情/黑暗</span><span class="trend-up">▲ 话题王</span></div></div><div class="rank-score"><div class="val">8.82</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num silver">2</span><div class="rank-info"><div class="rank-title">凸变英雄X</div><div class="rank-title-en">To Be Hero X</div><div class="rank-meta"><span>🏷️ 原创/动作</span><span class="trend-up">▲ 全球现象</span></div></div><div class="rank-score"><div class="val">8.73</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num bronze">3</span><div class="rank-info"><div class="rank-title">薰香花朵凛然绽放</div><div class="rank-title-en">The Fragrant Flower Blooms With Dignity</div><div class="rank-meta"><span>🏷️ 校园/恋爱</span><span class="trend-same">→ 稳定</span></div></div><div class="rank-score"><div class="val">8.71</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">4</span><div class="rank-info"><div class="rank-title">诡秘之主：小丑篇</div><div class="rank-title-en">Lord of the Mysteries: Fool</div><div class="rank-meta"><span>🏷️ 悬疑/奇幻</span><span class="badge badge-hot">中国IP出海</span></div></div><div class="rank-score"><div class="val">8.65</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">5</span><div class="rank-info"><div class="rank-title">碧蓝之海 第二季</div><div class="rank-title-en">Grand Blue Season 2</div><div class="rank-meta"><span>🏷️ 搞笑/潜水</span><span class="trend-up">▲ 人气回暖</span></div></div><div class="rank-score"><div class="val">8.52</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">6</span><div class="rank-info"><div class="rank-title">石纪元：科学未来 第二部</div><div class="rank-title-en">Dr. Stone: Science Future Part II</div><div class="rank-meta"><span>🏷️ 科幻/冒险</span><span class="trend-same">→</span></div></div><div class="rank-score"><div class="val">8.51</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">7</span><div class="rank-info"><div class="rank-title">胆大党 第二季</div><div class="rank-title-en">Dandadan 2nd Season</div><div class="rank-meta"><span>🏷️ 超自然/喜剧</span><span class="trend-down">▼ 后劲不足</span></div></div><div class="rank-score"><div class="val">8.50</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">8</span><div class="rank-info"><div class="rank-title">彻夜之歌 第二季</div><div class="rank-title-en">Call of the Night Season 2</div><div class="rank-meta"><span>🏷️ 吸血鬼/恋爱</span><span class="trend-up">▲</span></div></div><div class="rank-score"><div class="val">8.36</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">9</span><div class="rank-info"><div class="rank-title">更衣人偶坠入爱河 第二季</div><div class="rank-title-en">My Dress-Up Darling Season 2</div><div class="rank-meta"><span>🏷️ 恋爱/Cos</span><span class="trend-up">▲ 回前十</span></div></div><div class="rank-score"><div class="val">8.25</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">10</span><div class="rank-info"><div class="rank-title">青春猪头少年不做圣诞服女郎的梦</div><div class="rank-title-en">Rascal Does Not Dream of Santa Claus</div><div class="rank-meta"><span>🏷️ 青春/恋爱</span><span class="trend-down">▼</span></div></div><div class="rank-score"><div class="val">8.19</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">11</span><div class="rank-info"><div class="rank-title">沉默魔女的秘密</div><div class="rank-title-en">Secrets of the Silent Witch</div><div class="rank-meta"><span>🏷️ 奇幻/日常</span></div></div><div class="rank-score"><div class="val">8.15</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">12</span><div class="rank-info"><div class="rank-title">光死去的那个夏天</div><div class="rank-title-en">The Summer Hikaru Died</div><div class="rank-meta"><span>🏷️ 悬疑/恐怖</span><span class="trend-up">▲ AC霸榜</span></div></div><div class="rank-score"><div class="val">8.11</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">13</span><div class="rank-info"><div class="rank-title">小城日常</div><div class="rank-title-en">CITY the Animation</div><div class="rank-meta"><span>🏷️ 搞笑/日常</span></div></div><div class="rank-score"><div class="val">8.11</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">14</span><div class="rank-info"><div class="rank-title">废渊战鬼</div><div class="rank-title-en">GACHIAKUTA</div><div class="rank-meta"><span>🏷️ 战斗/少年</span><span class="badge badge-hot">制作扛打</span></div></div><div class="rank-score"><div class="val">8.02</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">15</span><div class="rank-info"><div class="rank-title">琉璃的宝石</div><div class="rank-title-en">Ruri Rocks</div><div class="rank-meta"><span>🏷️ 宝石/日常</span><span class="badge badge-new">亚洲口碑王</span></div></div><div class="rank-score"><div class="val">8.02</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">16</span><div class="rank-info"><div class="rank-title">新 吊带袜天使</div><div class="rank-title-en">New Panty & Stocking with Garterbelt</div><div class="rank-meta"><span>🏷️ 搞笑/动作</span></div></div><div class="rank-score"><div class="val">8.00</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">17</span><div class="rank-info"><div class="rank-title">地缚少年花子君 第二季 Part II</div><div class="rank-title-en">Toilet-Bound Hanako-kun 2nd Season: Part II</div><div class="rank-meta"><span>🏷️ 校园/灵异</span><span class="trend-up">▲ +3</span></div></div><div class="rank-score"><div class="val">7.99</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">18</span><div class="rank-info"><div class="rank-title">坂本日常 第二部</div><div class="rank-title-en">Sakamoto Days: Part II</div><div class="rank-meta"><span>🏷️ 动作/喜剧</span><span class="trend-up">▲</span></div></div><div class="rank-score"><div class="val">7.92</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">19</span><div class="rank-info"><div class="rank-title">Clevatess 魔兽之王</div><div class="rank-title-en">Clevatess</div><div class="rank-meta"><span>🏷️ 奇幻/冒险</span><span class="trend-down">▼ 高开低走</span></div></div><div class="rank-score"><div class="val">7.88</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">20</span><div class="rank-info"><div class="rank-title">怪兽8号 第二季</div><div class="rank-title-en">Kaiju No. 8 2nd Season</div><div class="rank-meta"><span>🏷️ 动作/科幻</span></div></div><div class="rank-score"><div class="val">7.82</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">21</span><div class="rank-info"><div class="rank-title">攻壳机动队 THE GHOST IN THE SHELL</div><div class="rank-title-en">Ghost in the Shell (2026)</div><div class="rank-meta"><span>🏷️ 科幻/赛博</span><span class="badge badge-new">夏季新番</span></div></div><div class="rank-score"><div class="val">7.78</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">22</span><div class="rank-info"><div class="rank-title">死神 千年血战篇 祸决</div><div class="rank-title-en">Bleach: TYBW - The Calamity</div><div class="rank-meta"><span>🏷️ 战斗/热血</span><span class="badge badge-hot">重磅续作</span></div></div><div class="rank-score"><div class="val">7.76</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">23</span><div class="rank-info"><div class="rank-title">无职转生 III</div><div class="rank-title-en">Mushoku Tensei III</div><div class="rank-meta"><span>🏷️ 异世界/奇幻</span><span class="badge badge-hot">7月最期待</span></div></div><div class="rank-score"><div class="val">7.75</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">24</span><div class="rank-info"><div class="rank-title">妖幻三重奏 续</div><div class="rank-title-en">When Will Ayumu Make His Move?</div><div class="rank-meta"><span>🏷️ 恋爱/校园</span></div></div><div class="rank-score"><div class="val">7.70</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">25</span><div class="rank-info"><div class="rank-title">Re:ZERO 第四季</div><div class="rank-title-en">Re:ZERO Season 4</div><div class="rank-meta"><span>🏷️ 异世界/悬疑</span></div></div><div class="rank-score"><div class="val">7.68</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">26</span><div class="rank-info"><div class="rank-title">帝乃三姐妹原来很好搞定</div><div class="rank-title-en">Dealing with Mikadono Sisters</div><div class="rank-meta"><span>🏷️ 恋爱/日常</span><span class="trend-up">▲ 制作不错</span></div></div><div class="rank-score"><div class="val">7.62</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">27</span><div class="rank-info"><div class="rank-title">我怎么可能成为你的恋人</div><div class="rank-title-en">There's No Freaking Way I'll Be Your Lover!</div><div class="rank-meta"><span>🏷️ 百合/恋爱</span><span class="badge badge-hot">涨幅最大</span></div></div><div class="rank-score"><div class="val">7.58</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">28</span><div class="rank-info"><div class="rank-title">间谍过家家 第三季</div><div class="rank-title-en">Spy x Family Season 3</div><div class="rank-meta"><span>🏷️ 家庭/喜剧</span></div></div><div class="rank-score"><div class="val">8.17</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">29</span><div class="rank-info"><div class="rank-title">王者天下 第六季</div><div class="rank-title-en">Kingdom Season 6</div><div class="rank-meta"><span>🏷️ 历史/战争</span><span class="badge badge-hot">秋季霸权</span></div></div><div class="rank-score"><div class="val">8.87</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">30</span><div class="rank-info"><div class="rank-title">赛马娘 芦毛灰姑娘 Part 2</div><div class="rank-title-en">Uma Musume: Cinderella Gray Part 2</div><div class="rank-meta"><span>🏷️ 竞技/热血</span></div></div><div class="rank-score"><div class="val">8.42</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">31</span><div class="rank-info"><div class="rank-title">致不灭的你 第三季</div><div class="rank-title-en">To Your Eternity Season 3</div><div class="rank-meta"><span>🏷️ 奇幻/剧情</span></div></div><div class="rank-score"><div class="val">8.05</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">32</span><div class="rank-info"><div class="rank-title">一拳超人 第三季</div><div class="rank-title-en">One Punch Man Season 3</div><div class="rank-meta"><span>🏷️ 动作/喜剧</span><span class="trend-down">▼ 作画争议</span></div></div><div class="rank-score"><div class="val">7.50</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">33</span><div class="rank-info"><div class="rank-title">乱马1/2 第二季</div><div class="rank-title-en">Ranma 1/2 Season 2</div><div class="rank-meta"><span>🏷️ 搞笑/恋爱</span></div></div><div class="rank-score"><div class="val">8.04</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">34</span><div class="rank-info"><div class="rank-title">它英 最终季</div><div class="rank-title-en">My Hero Academia Final Season</div><div class="rank-meta"><span>🏷️ 超英/热血</span></div></div><div class="rank-score"><div class="val">8.68</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">35</span><div class="rank-info"><div class="rank-title">魔法公主的小烦恼</div><div class="rank-title-en">Magi Girl's Troubles</div><div class="rank-meta"><span>🏷️ 魔法少女</span></div></div><div class="rank-score"><div class="val">7.91</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">36</span><div class="rank-info"><div class="rank-title">明天，美食广场见</div><div class="rank-title-en">See You Tomorrow at the Food Court</div><div class="rank-meta"><span>🏷️ 日常/美食</span></div></div><div class="rank-score"><div class="val">7.56</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">37</span><div class="rank-info"><div class="rank-title">和雨和你</div><div class="rank-title-en">With You and the Rain</div><div class="rank-meta"><span>🏷️ 日常/治愈</span><span class="trend-up">▲ +10</span></div></div><div class="rank-score"><div class="val">7.48</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">38</span><div class="rank-info"><div class="rank-title">我们去唱卡拉OK吧！</div><div class="rank-title-en">Let's Go Karaoke!</div><div class="rank-meta"><span>🏷️ 音乐/日常</span><span class="badge badge-new">新入榜</span></div></div><div class="rank-score"><div class="val">7.45</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">39</span><div class="rank-info"><div class="rank-title">租借女友 第四季</div><div class="rank-title-en">Rent-A-Girlfriend Season 4</div><div class="rank-meta"><span>🏷️ 恋爱/日常</span><span class="trend-down">▼ -4</span></div></div><div class="rank-score"><div class="val">7.30</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">40</span><div class="rank-info"><div class="rank-title">杜鹃的婚约 第二季</div><div class="rank-title-en">Cuckoo's Engagement Season 2</div><div class="rank-meta"><span>🏷️ 恋爱/喜剧</span><span class="trend-down">▼ -5</span></div></div><div class="rank-score"><div class="val">7.28</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">41</span><div class="rank-info"><div class="rank-title">盾之勇者成名录 第四季</div><div class="rank-title-en">Shield Hero Season 4</div><div class="rank-meta"><span>🏷️ 异世界/冒险</span><span class="trend-down">▼ -4</span></div></div><div class="rank-score"><div class="val">7.20</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">42</span><div class="rank-info"><div class="rank-title">水之魔术师</div><div class="rank-title-en">The Water Magician</div><div class="rank-meta"><span>🏷️ 奇幻/冒险</span></div></div><div class="rank-score"><div class="val">7.18</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">43</span><div class="rank-info"><div class="rank-title">异世界四重奏 第三季</div><div class="rank-title-en">Isekai Quartet Season 3</div><div class="rank-meta"><span>🏷️ 搞笑/联动</span></div></div><div class="rank-score"><div class="val">7.64</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">44</span><div class="rank-info"><div class="rank-title">保龄球少女！</div><div class="rank-title-en">Bowling Girls!</div><div class="rank-meta"><span>🏷️ 运动/少女</span><span class="trend-up">▲ +5</span></div></div><div class="rank-score"><div class="val">7.10</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">45</span><div class="rank-info"><div class="rank-title">明日方舟：焰烬曙明</div><div class="rank-title-en">Arknights: Rise from Ember</div><div class="rank-meta"><span>🏷️ 游戏/动作</span><span class="badge badge-hot">中国IP</span></div></div><div class="rank-score"><div class="val">7.40</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">46</span><div class="rank-info"><div class="rank-title">活死喵之夜</div><div class="rank-title-en">Night of the Living Cat</div><div class="rank-meta"><span>🏷️ 搞笑/恐怖</span><span class="trend-up">▲ +5</span></div></div><div class="rank-score"><div class="val">7.15</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">47</span><div class="rank-info"><div class="rank-title">地狱老师</div><div class="rank-title-en">Hell Teacher Nube</div><div class="rank-meta"><span>🏷️ 灵异/搞笑</span><span class="trend-up">▲ +10</span></div></div><div class="rank-score"><div class="val">7.22</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">48</span><div class="rank-info"><div class="rank-title">拔作岛</div><div class="rank-title-en">Nukitashi</div><div class="rank-meta"><span>🏷️ 奇幻/喜剧</span></div></div><div class="rank-score"><div class="val">7.25</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">49</span><div class="rank-info"><div class="rank-title">费马的料理</div><div class="rank-title-en">Fermat's Cuisine</div><div class="rank-meta"><span>🏷️ 美食/推理</span></div></div><div class="rank-score"><div class="val">7.12</div><div class="label">MAL评分</div></div></div>
+<div class="rank-item"><span class="rank-num normal">50</span><div class="rank-info"><div class="rank-title">美乐蒂 & 库洛米</div><div class="rank-title-en">My Melody & Kuromi</div><div class="rank-meta"><span>🏷️ 可爱/日常</span></div></div><div class="rank-score"><div class="val">7.35</div><div class="label">MAL评分</div></div></div>
+</div>
+
+<div class="rank-list" id="global-ac">
+<div class="rank-item"><span class="rank-num gold">1</span><div class="rank-info"><div class="rank-title">光死去的那个夏天</div><div class="rank-meta"><span>🏷️ 悬疑/恐怖</span><span class="trend-up">▲ 霸榜</span></div></div><div class="rank-score"><div class="val">6.47%</div><div class="label">AC票数</div></div></div>
+<div class="rank-item"><span class="rank-num silver">2</span><div class="rank-info"><div class="rank-title">凸变英雄X</div><div class="rank-meta"><span>🏷️ 原创/动作</span><span class="trend-up">▲ 上升2位</span></div></div><div class="rank-score"><div class="val">5.82%</div><div class="label">AC票数</div></div></div>
+<div class="rank-item"><span class="rank-num bronze">3</span><div class="rank-info"><div class="rank-title">胆大党 第二季</div><div class="rank-meta"><span>🏷️ 超自然</span><span class="trend-down">▼ 掉至第三</span></div></div><div class="rank-score"><div class="val">5.13%</div><div class="label">AC票数</div></div></div>
+<div class="rank-item"><span class="rank-num normal">4</span><div class="rank-info"><div class="rank-title">薰香花朵凛然绽放</div><div class="rank-meta"><span>🏷️ 校园/恋爱</span></div></div><div class="rank-score"><div class="val">4.68%</div><div class="label">AC票数</div></div></div>
+<div class="rank-item"><span class="rank-num normal">5</span><div class="rank-info"><div class="rank-title">碧蓝之海 第二季</div><div class="rank-meta"><span>🏷️ 搞笑</span><span class="trend-up">▲ 回前十</span></div></div><div class="rank-score"><div class="val">4.35%</div><div class="label">AC票数</div></div></div>
+<div class="rank-item"><span class="rank-num normal">6</span><div class="rank-info"><div class="rank-title">更衣人偶坠入爱河 第二季</div><div class="rank-meta"><span>🏷️ 恋爱/Cos</span></div></div><div class="rank-score"><div class="val">3.92%</div><div class="label">AC票数</div></div></div>
+<div class="rank-item"><span class="rank-num normal">7</span><div class="rank-info"><div class="rank-title">青春猪头少年不做圣诞服女郎的梦</div><div class="rank-meta"><span>🏷️ 青春/恋爱</span></div></div><div class="rank-score"><div class="val">3.65%</div><div class="label">AC票数</div></div></div>
+<div class="rank-item"><span class="rank-num normal">8</span><div class="rank-info"><div class="rank-title">我怎么可能成为你的恋人</div><div class="rank-meta"><span>🏷️ 百合</span><span class="badge badge-hot">涨幅最大冲前十</span></div></div><div class="rank-score"><div class="val">3.48%</div><div class="label">AC票数</div></div></div>
+<div class="rank-item"><span class="rank-num normal">9</span><div class="rank-info"><div class="rank-title">沉默魔女的秘密</div><div class="rank-meta"><span>🏷️ 奇幻</span></div></div><div class="rank-score"><div class="val">3.21%</div><div class="label">AC票数</div></div></div>
+<div class="rank-item"><span class="rank-num normal">10</span><div class="rank-info"><div class="rank-title">彻夜之歌 第二季</div><div class="rank-meta"><span>🏷️ 吸血鬼/恋爱</span></div></div><div class="rank-score"><div class="val">3.05%</div><div class="label">AC票数</div></div></div>
+</div>
+
+<div class="rank-list" id="global-reddit">
+<div class="rank-item"><span class="rank-num gold">1</span><div class="rank-info"><div class="rank-title">Bâan -大人的疆界-</div><div class="rank-meta"><span>🏷️ 短片</span><span class="badge badge-hot">讨论度第一</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热议</div></div></div>
+<div class="rank-item"><span class="rank-num silver">2</span><div class="rank-info"><div class="rank-title">更衣人偶坠入爱河 第二季</div><div class="rank-meta"><span>🏷️ 恋爱/Cos</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热议</div></div></div>
+<div class="rank-item"><span class="rank-num bronze">3</span><div class="rank-info"><div class="rank-title">沉默魔女的秘密</div><div class="rank-meta"><span>🏷️ 奇幻</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热议</div></div></div>
+<div class="rank-item"><span class="rank-num normal">4</span><div class="rank-info"><div class="rank-title">薰香花朵凛然绽放</div><div class="rank-meta"><span>🏷️ 校园</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热议</div></div></div>
+<div class="rank-item"><span class="rank-num normal">5</span><div class="rank-info"><div class="rank-title">我怎么可能成为你的恋人</div><div class="rank-meta"><span>🏷️ 百合</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热议</div></div></div>
+<div class="rank-item"><span class="rank-num normal">6</span><div class="rank-info"><div class="rank-title">彻夜之歌 第二季</div><div class="rank-meta"><span>🏷️ 吸血鬼</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热议</div></div></div>
+<div class="rank-item"><span class="rank-num normal">7</span><div class="rank-info"><div class="rank-title">坂本日常 第二部</div><div class="rank-meta"><span>🏷️ 动作</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热议</div></div></div>
+<div class="rank-item"><span class="rank-num normal">8</span><div class="rank-info"><div class="rank-title">废渊战鬼</div><div class="rank-meta"><span>🏷️ 战斗</span><span>每周讨论度高</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热议</div></div></div>
+<div class="rank-item"><span class="rank-num normal">9</span><div class="rank-info"><div class="rank-title">一拳超人 第三季</div><div class="rank-meta"><span>🏷️ 动作</span><span class="trend-down">▼ 作画争议</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热议</div></div></div>
+<div class="rank-item"><span class="rank-num normal">10</span><div class="rank-info"><div class="rank-title">章鱼噼的原罪</div><div class="rank-meta"><span>🏷️ 黑暗</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热议</div></div></div>
+</div>
+
+<div class="insight">
+<h3>🌍 全球热点洞察</h3>
+<p>本季度最大看点：<span class="tag">CW三部齐发</span>（更衣人偶/青春猪头/薰香花朵）均稳定前十，堪称霸权制造机。<span class="tag">章鱼噼</span>欧美评分虚高但亚洲中规中矩，文化差异决定评分。<span class="tag">诡秘之主</span>作为中国IP出海代表站上MAL第4，但画面华丽却割裂。<span class="tag">废渊战鬼</span>凭制作扛打但剧情平庸，人设在各平台都吃得开。<span class="tag">光死夏</span>AC霸榜说明恐怖悬疑题材的全球号召力。</p>
+</div>
+</div>
+
+<!-- ======== 最新更新 ======== -->
+<div class="section" id="latest">
+<h2><span class="icon">📺</span> 最新更新 · 2026夏季番</h2>
+<div class="desc">当前在播热门追踪 · 数据截止 2026-08-18</div>
+
+<div class="highlight-box">
+<h3>🔥 本周必追TOP10</h3>
+<p>1️⃣ 攻壳机动队 THE GHOST IN THE SHELL — 复古画风攻壳新作，第6集更新<br>
+2️⃣ 死神 千年血战篇 祸决 — 第3集，重磅续作继续燃<br>
+3️⃣ 无职转生 III — 第8集，异世界天花板回归<br>
+4️⃣ Re:ZERO 第四季 — 第12集，剧情高潮<br>
+5️⃣ 间谍过家家 第三季 — 持续霸榜<br>
+6️⃣ 被驱逐开勇者派对的白魔导师 — 黑马持续发酵<br>
+7️⃣ 王者天下 第六季 — 评分8.87，历史战争巅峰<br>
+8️⃣ 赛马娘 芦毛灰姑娘 Part2 — 第2部热度延续<br>
+9️⃣ 魔法少女奈叶 EXCEEDS — 经典系列最新作<br>
+🔟 乱马1/2 第二季 — 经典重制持续发力</p>
+</div>
+
+<div class="insight">
+<h3>📺 播出波动分析</h3>
+<p><span class="tag">攻壳机动队</span>画风回归90年代经典但叙事更现代，Reddit讨论持续走高。<span class="tag">死神祸决</span>开播即爆，Crunchyroll同日全球放送。<span class="tag">Clevatess</span>从开局亮眼到渐趋平庸，是典型的高开低走案例——世界观展开后设定撑不起叙事。<span class="tag">胆大党S2</span>后半段情节疲劳，战斗重复感导致排名下滑。<span class="tag">坂本日常P2</span>稳步回升中，动作场景制作精良。</p>
+</div>
+</div>
+
+<!-- ======== AI漫剧 ======== -->
+<div class="section" id="ai-manga">
+<h2><span class="icon">🤖</span> AI漫剧 Top 50</h2>
+<div class="desc">红果短剧 / 抖音 / 数据来源 · 2026年8月</div>
+
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab('ai','hot')">热播榜</button>
+<button class="tab-btn" onclick="switchTab('ai','ip')">IP改编</button>
+<button class="tab-btn" onclick="switchTab('ai','ai')">AI仿真人</button>
+</div>
+
+<div class="rank-list active" id="ai-hot">
+<div class="rank-item"><span class="rank-num gold">1</span><div class="rank-info"><div class="rank-title">被裁掉的女孩</div><div class="rank-meta"><span class="badge badge-ai">AI原生</span><span>🏷️ 职场/逆袭</span><span class="trend-up">▲ 播放3.4亿</span></div></div><div class="rank-score"><div class="val">3.4亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num silver">2</span><div class="rank-info"><div class="rank-title">予你深情侵入余生</div><div class="rank-meta"><span class="badge badge-ai">AI</span><span>🏷️ 言情/霸总</span><span>段宴IP顶流</span></div></div><div class="rank-score"><div class="val">2.8亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num bronze">3</span><div class="rank-info"><div class="rank-title">末日盛夏</div><div class="rank-meta"><span class="badge badge-ai">AI+明星</span><span>🏷️ 末日/冒险</span><span>戚薇数字分身</span></div></div><div class="rank-score"><div class="val">2.1亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">4</span><div class="rank-info"><div class="rank-title">盛夏芬德拉</div><div class="rank-meta"><span>🏷️ 奇幻/爱情</span><span>番茄IP改编</span></div></div><div class="rank-score"><div class="val">1.9亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">5</span><div class="rank-info"><div class="rank-title">云渺</div><div class="rank-meta"><span>🏷️ 古言/仙侠</span><span>番茄IP</span></div></div><div class="rank-score"><div class="val">1.7亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">6</span><div class="rank-info"><div class="rank-title">念念有词</div><div class="rank-meta"><span>🏷️ 都市/悬疑</span></div></div><div class="rank-score"><div class="val">1.5亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">7</span><div class="rank-info"><div class="rank-title">狂徒</div><div class="rank-meta"><span>🏷️ 热血/动作</span><span>咪咕爆款</span></div></div><div class="rank-score"><div class="val">1.3亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">8</span><div class="rank-info"><div class="rank-title">财神窦占龙</div><div class="rank-meta"><span>🏷️ 民俗/喜剧</span><span class="badge badge-new">新上线</span></div></div><div class="rank-score"><div class="val">0.9亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">9</span><div class="rank-info"><div class="rank-title">12星练赛</div><div class="rank-meta"><span class="badge badge-ai">AI选秀</span><span>🏷️ 选秀/偶像</span></div></div><div class="rank-score"><div class="val">0.8亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">10</span><div class="rank-info"><div class="rank-title">星光108</div><div class="rank-meta"><span class="badge badge-ai">AI选秀</span><span>🏷️ 选秀/偶像</span></div></div><div class="rank-score"><div class="val">0.7亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">11</span><div class="rank-info"><div class="rank-title">全民诡异：开局零元购</div><div class="rank-meta"><span>🏷️ 悬疑/搞笑</span><span>动态漫 280集</span></div></div><div class="rank-score"><div class="val">0.7亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">12</span><div class="rank-info"><div class="rank-title">成何体统 第二季</div><div class="rank-meta"><span>🏷️ 搞笑/日常</span></div></div><div class="rank-score"><div class="val">0.6亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">13</span><div class="rank-info"><div class="rank-title">逆天至尊</div><div class="rank-meta"><span>🏷️ 修仙/热血</span><span>541集长番</span></div></div><div class="rank-score"><div class="val">0.6亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">14</span><div class="rank-info"><div class="rank-title">武炼巅峰</div><div class="rank-meta"><span>🏷️ 修仙/动作</span></div></div><div class="rank-score"><div class="val">0.5亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">15</span><div class="rank-info"><div class="rank-title">都市古仙医</div><div class="rank-meta"><span>🏷️ 都市/仙医</span></div></div><div class="rank-score"><div class="val">0.5亿</div><div class="label">播放量</div></div></div>
+<div class="rank-item"><span class="rank-num normal">16-50</span><div class="rank-info"><div class="rank-title">更多AI漫剧...</div><div class="rank-meta">大主宰年番 | 全职法师第七季 | 仙宠 | 择天记2026 | 斩神之凡尘神域Ⅱ | 茶啊二中第六季 | 李熊猫 等34部在播</div></div><div class="rank-score"></div></div>
+</div>
+
+<div class="rank-list" id="ai-ip">
+<div class="rank-item"><span class="rank-num gold">1</span><div class="rank-info"><div class="rank-title">诡秘之主</div><div class="rank-meta"><span class="badge badge-hot">阅文IP</span><span>MAL评分8.65</span></div></div><div class="rank-score"><div class="val">顶流</div><div class="label">IP价值</div></div></div>
+<div class="rank-item"><span class="rank-num silver">2</span><div class="rank-info"><div class="rank-title">全职高手</div><div class="rank-meta"><span class="badge badge-hot">阅文IP</span><span>衍生品GMV 4.8亿</span></div></div><div class="rank-score"><div class="val">顶流</div><div class="label">IP价值</div></div></div>
+<div class="rank-item"><span class="rank-num bronze">3</span><div class="rank-info"><div class="rank-title">一人之下</div><div class="rank-meta"><span class="badge badge-hot">阅文IP</span><span>国漫顶流</span></div></div><div class="rank-score"><div class="val">顶流</div><div class="label">IP价值</div></div></div>
+<div class="rank-item"><span class="rank-num normal">4</span><div class="rank-info"><div class="rank-title">狐妖小红娘</div><div class="rank-meta"><span class="badge badge-hot">阅文IP</span></div></div><div class="rank-score"><div class="val">S级</div><div class="label">IP价值</div></div></div>
+<div class="rank-item"><span class="rank-num normal">5</span><div class="rank-info"><div class="rank-title">道诡异仙</div><div class="rank-meta"><span class="badge badge-hot">阅文IP</span><span class="badge badge-new">新晋</span></div></div><div class="rank-score"><div class="val">S级</div><div class="label">IP价值</div></div></div>
+</div>
+
+<div class="rank-list" id="ai-ai">
+<div class="rank-item"><span class="rank-num gold">1</span><div class="rank-info"><div class="rank-title">方桃子（被裁掉的女孩）</div><div class="rank-meta"><span class="badge badge-ai">AI原生角色</span><span>吸粉50万/2月</span></div></div><div class="rank-score"><div class="val">顶流</div><div class="label">虚拟偶像</div></div></div>
+<div class="rank-item"><span class="rank-num silver">2</span><div class="rank-info"><div class="rank-title">段宴（予你深情侵入余生）</div><div class="rank-meta"><span class="badge badge-ai">AI原生角色</span><span>天猫七夕合作</span></div></div><div class="rank-score"><div class="val">顶流</div><div class="label">虚拟偶像</div></div></div>
+<div class="rank-item"><span class="rank-num bronze">3</span><div class="rank-info"><div class="rank-title">韩清夏（末日盛夏）</div><div class="rank-meta"><span class="badge badge-ai">明星AI分身</span><span>戚薇授权</span></div></div><div class="rank-score"><div class="val">热议</div><div class="label">虚拟偶像</div></div></div>
+<div class="rank-item"><span class="rank-num normal">4</span><div class="rank-info"><div class="rank-title">济公数字人</div><div class="rank-meta"><span class="badge badge-ai">明星AI分身</span><span>游本昌授权</span></div></div><div class="rank-score"><div class="val">传承</div><div class="label">虚拟偶像</div></div></div>
+<div class="rank-item"><span class="rank-num normal">5</span><div class="rank-info"><div class="rank-title">聂小倩AI（天下游戏）</div><div class="rank-meta"><span class="badge badge-ai">明星AI分身</span><span>王祖贤授权</span></div></div><div class="rank-score"><div class="val">经典</div><div class="label">虚拟偶像</div></div></div>
+</div>
+
+<div class="insight">
+<h3>🤖 AI漫剧行业洞察</h3>
+<p><span class="tag">市场爆发</span>2026上半年AI短剧新上线22.19万部，用户规模突破6亿（翻倍增长）。AI仿真人剧在百强榜占比从7%飙升至60%。<br>
+<span class="tag">红果霸权</span>MAU 3.04亿，占短剧行业90.6%月活，广告收入约200亿。AI漫剧APP上线4个月MAU即达2563万。<br>
+<span class="tag">盈利困境</span>破亿率仅0.12%，投流成本占流水70%，千播收益腰斩至15-30元。5月红果取消多数保底，行业从补贴驱动转向淘汰赛。<br>
+<span class="tag">监管落地</span>2026年4月1日起AI漫剧"先备案后上线"，备案量骤降50%。类比游戏版号，中长期利好头部集中。<br>
+<span class="tag">争议不断</span>方桃子美瞳推广因虚假宣传下架，段宴被指控侵权声线和抄袭乙游脸模。AI造星尚未跑通商业化闭环。</p>
+</div>
+</div>
+
+<!-- ======== 中国动漫 ======== -->
+<div class="section" id="china">
+<h2><span class="icon">🇨🇳</span> 中国动漫 Top 50</h2>
+<div class="desc">Bilibili / 腾讯视频 / 综合热度 · 2026年8月</div>
+
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab('cn','hot')">热播总榜</button>
+<button class="tab-btn" onclick="switchTab('cn','bilibili')">B站番剧</button>
+<button class="tab-btn" onclick="switchTab('cn','tencent')">腾讯视频</button>
+</div>
+
+<div class="rank-list active" id="cn-hot">
+<div class="rank-item"><span class="rank-num gold">1</span><div class="rank-info"><div class="rank-title">仙逆</div><div class="rank-meta"><span>🏷️ 修仙/逆天</span><span class="badge badge-hot">年番王者</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num silver">2</span><div class="rank-info"><div class="rank-title">凡人修仙传</div><div class="rank-meta"><span>🏷️ 修仙/写实</span><span class="badge badge-hot">3D国漫标杆</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num bronze">3</span><div class="rank-info"><div class="rank-title">沧元图</div><div class="rank-meta"><span>🏷️ 修仙/热血</span><span class="trend-up">▲ 猛追前三</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">4</span><div class="rank-info"><div class="rank-title">牧神记</div><div class="rank-meta"><span>🏷️ 奇幻/冒险</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">5</span><div class="rank-info"><div class="rank-title">完美世界</div><div class="rank-meta"><span>🏷️ 修仙/热血</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">6</span><div class="rank-info"><div class="rank-title">吞噬星空</div><div class="rank-meta"><span>🏷️ 科幻/修仙</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">7</span><div class="rank-info"><div class="rank-title">斩神之凡尘神域Ⅱ</div><div class="rank-meta"><span>🏷️ 神话/热血</span><span class="badge badge-new">第二季</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">8</span><div class="rank-info"><div class="rank-title">茶啊二中 第六季</div><div class="rank-meta"><span>🏷️ 校园/搞笑</span><span class="badge badge-new">第六季</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">9</span><div class="rank-info"><div class="rank-title">师兄啊师兄</div><div class="rank-meta"><span>🏷️ 修仙/搞笑</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">10</span><div class="rank-info"><div class="rank-title">大主宰年番</div><div class="rank-meta"><span>🏷️ 奇幻/热血</span><span>更新至86集</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">11</span><div class="rank-info"><div class="rank-title">诡秘之主：小丑篇</div><div class="rank-meta"><span>🏷️ 悬疑/克苏鲁</span><span class="badge badge-hot">出海王</span><span>MAL 8.65</span></div></div><div class="rank-score"><div class="val">8.65</div><div class="label">MAL</div></div></div>
+<div class="rank-item"><span class="rank-num normal">12</span><div class="rank-info"><div class="rank-title">明日方舟：焰烬曙明</div><div class="rank-meta"><span>🏷️ 游戏/动作</span><span class="badge badge-hot">游戏改编</span></div></div><div class="rank-score"><div class="val">7.40</div><div class="label">MAL</div></div></div>
+<div class="rank-item"><span class="rank-num normal">13</span><div class="rank-info"><div class="rank-title">雾山五行</div><div class="rank-meta"><span>🏷️ 国风/武打</span><span>水墨风国漫</span></div></div><div class="rank-score"><div class="val">9.0+</div><div class="label">豆瓣</div></div></div>
+<div class="rank-item"><span class="rank-num normal">14</span><div class="rank-info"><div class="rank-title">择天记2026</div><div class="rank-meta"><span>🏷️ 修仙/逆天</span><span class="badge badge-new">新版</span><span>全26集</span></div></div><div class="rank-score"><div class="val">6.6</div><div class="label">豆瓣</div></div></div>
+<div class="rank-item"><span class="rank-num normal">15</span><div class="rank-info"><div class="rank-title">逆天至尊</div><div class="rank-meta"><span>🏷️ 修仙/长番</span><span>541集</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">16</span><div class="rank-info"><div class="rank-title">全职法师第七季</div><div class="rank-meta"><span>🏷️ 魔法/热血</span><span>全12集</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">17</span><div class="rank-info"><div class="rank-title">画江湖之杯莫停</div><div class="rank-meta"><span>🏷️ 武侠/权谋</span><span>全40集</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">18</span><div class="rank-info"><div class="rank-title">李熊猫</div><div class="rank-meta"><span>🏷️ 搞笑/治愈</span><span class="badge badge-new">新番</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">19</span><div class="rank-info"><div class="rank-title">请吃红小豆吧！第二季</div><div class="rank-meta"><span>🏷️ 日常/治愈</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">20</span><div class="rank-info"><div class="rank-title">全职高手第二季</div><div class="rank-meta"><span>🏷️ 电竞/热血</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热搜</div></div></div>
+<div class="rank-item"><span class="rank-num normal">21-50</span><div class="rank-info"><div class="rank-title">更多国漫热播中...</div><div class="rank-meta">仙宠 | 铁甲威虫之骑刃王 | 成何体统S2 | 武炼巅峰 | 都市古仙医 | 全民诡异 | 银河☆地铁 等29部在播</div></div><div class="rank-score"></div></div>
+</div>
+
+<div class="rank-list" id="cn-bilibili">
+<div class="rank-item"><span class="rank-num gold">1</span><div class="rank-info"><div class="rank-title">仙逆</div><div class="rank-meta"><span>B站国漫第一</span></div></div><div class="rank-score"><div class="val">👑</div><div class="label">霸权</div></div></div>
+<div class="rank-item"><span class="rank-num silver">2</span><div class="rank-info"><div class="rank-title">凡人修仙传</div><div class="rank-meta"><span>3D国漫王者</span></div></div><div class="rank-score"><div class="val">👑</div><div class="label">霸权</div></div></div>
+<div class="rank-item"><span class="rank-num bronze">3</span><div class="rank-info"><div class="rank-title">诡秘之主：小丑篇</div><div class="rank-meta"><span>出海+国内双爆</span></div></div><div class="rank-score"><div class="val">👑</div><div class="label">霸权</div></div></div>
+<div class="rank-item"><span class="rank-num normal">4</span><div class="rank-info"><div class="rank-title">沧元图</div><div class="rank-meta"><span>追番飙升</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热门</div></div></div>
+<div class="rank-item"><span class="rank-num normal">5</span><div class="rank-info"><div class="rank-title">雾山五行</div><div class="rank-meta"><span>林魂导演·水墨风</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热门</div></div></div>
+</div>
+
+<div class="rank-list" id="cn-tencent">
+<div class="rank-item"><span class="rank-num gold">1</span><div class="rank-info"><div class="rank-title">吞噬星空</div><div class="rank-meta"><span>腾讯视频国漫一哥</span></div></div><div class="rank-score"><div class="val">👑</div><div class="label">霸权</div></div></div>
+<div class="rank-item"><span class="rank-num silver">2</span><div class="rank-info"><div class="rank-title">完美世界</div><div class="rank-meta"><span>长期霸榜</span></div></div><div class="rank-score"><div class="val">👑</div><div class="label">霸权</div></div></div>
+<div class="rank-item"><span class="rank-num bronze">3</span><div class="rank-info"><div class="rank-title">斩神之凡尘神域Ⅱ</div><div class="rank-meta"><span>S2势头更猛</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热门</div></div></div>
+<div class="rank-item"><span class="rank-num normal">4</span><div class="rank-info"><div class="rank-title">师兄啊师兄</div><div class="rank-meta"><span>搞笑修仙常青树</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热门</div></div></div>
+<div class="rank-item"><span class="rank-num normal">5</span><div class="rank-info"><div class="rank-title">大主宰年番</div><div class="rank-meta"><span>86集持续更新</span></div></div><div class="rank-score"><div class="val">🔥</div><div class="label">热门</div></div></div>
+</div>
+
+<div class="insight">
+<h3>🇨🇳 国漫洞察</h3>
+<p><span class="tag">修仙宇宙</span>仙逆/凡人/沧元图/完美世界/吞噬星空修仙五巨头霸榜，年番化成标配，3D制作水准持续提升。<span class="tag">出海突破</span>诡秘之主MAL 8.65全球第4，明日方舟也入全球榜单，中国IP开始双向输出。<span class="tag">B站vs腾讯</span>修仙类腾讯占优，B站则在悬疑/原创类更强。茶啊二中第六季证明搞笑校园也有持续号召力。<span class="tag">择天记2026</span>新版豆瓣仅6.6，经典IP重启不一定稳赢。</p>
+</div>
+</div>
+
+<!-- ======== 行业趋势 ======== -->
+<div class="section" id="trend">
+<h2><span class="icon">📈</span> 行业趋势分析</h2>
+<div class="desc">2026年Q3 动漫产业关键趋势</div>
+
+<div class="highlight-box">
+<h3>⚡ 五大趋势速览</h3>
+<p>
+<strong>1️⃣ AI漫剧替代真人短剧</strong><br>
+红果热播前十真人仅4部，AI仿真人剧百强占比60%。单部成本降至2万美元（降幅90%+），但破亿率仅0.12%，量大质差成最大痛点。<br><br>
+<strong>2️⃣ 校园恋爱系全球回潮</strong><br>
+CW制作的三部恋爱番全部进入全球前十，更衣人偶S2/青春猪头/薰香花朵，加上"我怎么可能成为你的恋人"涨幅最大——恋爱番回来了，但比以前更会讲人设。<br><br>
+<strong>3️⃣ 中国修仙IP全球化</strong><br>
+诡秘之主MAL 8.65，全职高手衍生品GMV 4.8亿，明日方舟入全球榜。修仙/克苏鲁/游戏改编三条路线出海，评分和口碑同步提升。<br><br>
+<strong>4️⃣ 监管加速行业洗牌</strong><br>
+AI漫剧4月1日"先备案后上线"，重点短剧门槛提至300万，1月备案量骤降50%。红果5月取消多数保底，平台从走量转向精品。听花岛69%爆款率 vs 行业0.12%，头部集中不可逆。<br><br>
+<strong>5️⃣ 海外短剧增收不增利</strong><br>
+出海双端收入22.79亿美元（+129%），但80-90%项目无法回本。北美获客成本5-15美元，投流是制作费10倍+。TikTok入局改写规则，纯买量模式窗口期关闭。
+</p>
+</div>
+
+<div class="insight">
+<h3>📈 波动分析 · 关键数据</h3>
+<p>
+<span class="tag">短剧MAU</span>7.18亿（+74.3% YoY）<br>
+<span class="tag">红果MAU</span>3.04亿（DAU破亿，占行业90.6%）<br>
+<span class="tag">AI漫剧Q1播放</span>1,300亿次（AI仿真人剧750亿）<br>
+<span class="tag">漫剧市场规模</span>200亿+（2025年）<br>
+<span class="tag">海外收入</span>22.79亿美元（+129%）<br>
+<span class="tag">爆款率</span>0.12%（持续下降）<br>
+<span class="tag">AI漫剧在播</span>12.78万部（供给翻倍但爆款稀释）
+</p>
+</div>
+</div>
+
+<!-- ======== 爆款拆解 ======== -->
+<div class="section" id="boom">
+<h2><span class="icon">💥</span> 爆款拆解</h2>
+<div class="desc">为什么是它们火？</div>
+
+<div class="highlight-box">
+<h3>🏆 章鱼噼的原罪 — 为什么欧美8.82，亚洲中规中矩？</h3>
+<p>📝 <strong>爆款基因</strong>：黑暗系+儿童视角+社会隐喻，直击欧美观众心灵抗性弱点<br>
+🧬 <strong>文化差异</strong>：亚洲观众对"致郁系"已有抗体，欧美观众较少接触此类叙事因此评分偏高<br>
+📊 <strong>数据对比</strong>：MAL 8.82 #1 vs Bangumi 6.9 #18，地区差异堪称本季最大<br>
+🔑 <strong>核心启示</strong>：同一作品在不同文化圈的评分差距，本质是"情感体验阈值"的差异</p>
+</div>
+
+<div class="highlight-box">
+<h3>🏆 凸变英雄X — 中国原创动画的全球突围</h3>
+<p>📝 <strong>爆款基因</strong>：原创IP+顶级动画+全球化叙事<br>
+🧬 <strong>制作实力</strong>：获AC"最佳动画"第1、最佳原创第1、最佳叙事第2<br>
+📊 <strong>数据对比</strong>：MAL 8.73 #2，AC春季总榜第3<br>
+🔑 <strong>核心启示</strong>：中国原创动画不必走"修仙出海"老路，全球共情的原创故事同样能打</p>
+</div>
+
+<div class="highlight-box">
+<h3>🏆 被裁掉的女孩 — AI漫剧的破圈密码</h3>
+<p>📝 <strong>爆款基因</strong>：职场共鸣+AI原生人设+独立社交运营<br>
+🧬 <strong>运营创新</strong>：方桃子开通独立社交账号，运动打卡/居家日常/拍摄花絮，2月吸粉50万<br>
+📊 <strong>数据对比</strong>：播放3.4亿，红果热播第1<br>
+🔑 <strong>核心启示</strong>：AI角色不只是在剧里，而是在社交平台上"活"着——虚拟人设的泛生活化运营是关键</p>
+</div>
+
+<div class="highlight-box">
+<h3>🏆 诡秘之主 — 中国IP全球化的天花板</h3>
+<p>📝 <strong>爆款基因</strong>：克苏鲁+蒸汽朋克+悬疑推理，完全不同于修仙出海<br>
+🧬 <strong>评分表现</strong>：MAL 8.65全球第4，但画面华丽过度致割裂<br>
+📊 <strong>数据对比</strong>：Bangumi未收录（文化壁垒），MAL却冲到前5<br>
+🔑 <strong>核心启示</strong>：中国IP出海不一定要"修仙"，但动画制作需要从"堆画面"进化到"讲叙事"</p>
+</div>
+</div>
+
+<div class="footer">
+<p>📡 数据来源：MyAnimeList / Anime Corner / Reddit / Anime Trending / Bangumi / 红果短剧 / 抖音 / Bilibili / 腾讯视频 / DataEye / QuestMobile</p>
+<p>⏰ 报告生成：2026-08-18 03:35 CST | 🤖 小U同学 · 自动化热榜报告</p>
+<p>⚡ 本报告由AI自动生成，数据来源于公开平台，仅供参考</p>
+</div>
+
+</div>
+
+<script>
+function switchTab(section,tab){
+const bar=document.querySelector('#'+section.replace('cn','cn')+'-hot')?.closest('.section')?.querySelector('.tab-bar')||document.getElementById(section==='cn'?'cn-hot':section+'-mal')?.closest('.section')?.querySelector('.tab-bar');
+const sectionEl=document.getElementById(section==='cn'?'cn-hot':section+'-mal')?.closest('.section');
+if(!sectionEl)return;
+sectionEl.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+sectionEl.querySelectorAll('.rank-list').forEach(l=>l.classList.remove('active'));
+const btns=sectionEl.querySelectorAll('.tab-btn');
+btns.forEach(b=>{if(b.textContent.toLowerCase().includes(tab)||(tab==='hot'&&b===btns[0])||(tab==='mal'&&b===btns[0])||(tab==='ac'&&b===btns[1])||(tab==='reddit'&&b===btns[2])||(tab==='ip'&&b===btns[1])||(tab==='ai'&&b===btns[2])||(tab==='bilibili'&&b===btns[1])||(tab==='tencent'&&b===btns[2]))b.classList.add('active')});
+const target=document.getElementById(section+'-'+tab);
+if(target){target.classList.add('active')}else{
+const map={global:{mal:'global-mal',ac:'global-ac',reddit:'global-reddit'},ai:{hot:'ai-hot',ip:'ai-ip',ai:'ai-ai'},cn:{hot:'cn-hot',bilibili:'cn-bilibili',tencent:'cn-tencent'}};
+const id=map[section]?.[tab];if(id)document.getElementById(id)?.classList.add('active');
+}
+}
+</script>
+</body>
+</html>
