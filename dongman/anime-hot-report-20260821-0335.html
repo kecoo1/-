@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 动漫热榜排名报告 | 2026-08-21 03:35</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--card2:#1c2333;--border:#30363d;--accent:#f85149;--accent2:#58a6ff;--accent3:#3fb950;--accent4:#d2a8ff;--accent5:#f0883e;--text:#e6edf3;--muted:#8b949e;--tag1:#f85149;--tag2:#58a6ff;--tag3:#3fb950;--tag4:#d2a8ff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;line-height:1.6}
+.container{max-width:960px;margin:0 auto;padding:16px}
+@media(min-width:768px){.container{padding:32px}}
+h1{font-size:1.6em;text-align:center;margin-bottom:4px;background:linear-gradient(135deg,#f85149,#d2a8ff,#58a6ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{text-align:center;color:var(--muted);font-size:.85em;margin-bottom:24px}
+.meta-bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px}
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.72em;color:#fff;font-weight:500}
+.section{margin-bottom:28px}
+.section-title{font-size:1.2em;font-weight:700;padding:8px 14px;border-radius:8px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.section-title.globe{background:linear-gradient(135deg,#f8514933,#f8514911);border-left:3px solid var(--accent)}
+.section-title.fresh{background:linear-gradient(135deg,#58a6ff33,#58a6ff11);border-left:3px solid var(--accent2)}
+.section-title.ai{background:linear-gradient(135deg,#d2a8ff33,#d2a8ff11);border-left:3px solid var(--accent4)}
+.section-title.cn{background:linear-gradient(135deg,#3fb95033,#3fb95011);border-left:3px solid var(--accent3)}
+.rank-table{width:100%;border-collapse:collapse;font-size:.82em}
+.rank-table th{text-align:left;padding:6px 8px;border-bottom:1px solid var(--border);color:var(--muted);font-weight:500;font-size:.78em;white-space:nowrap}
+.rank-table td{padding:5px 8px;border-bottom:1px solid #21262d}
+.rank-table tr:hover{background:#1c233380}
+.rk{font-weight:700;width:32px;text-align:center}
+.rk.top1{color:#ffd700}.rk.top2{color:#c0c0c0}.rk.top3{color:#cd7f32}
+.rk.up{color:#3fb950}.rk.down{color:#f85149}.rk.same{color:#8b949e}
+.chg{font-size:.75em;margin-left:2px}
+.title-cell{max-width:200px}
+@media(min-width:768px){.title-cell{max-width:320px}}
+.title-cell a{color:var(--accent2);text-decoration:none}
+.title-cell a:hover{text-decoration:underline}
+.score{font-weight:600;color:#f0883e}
+.members{color:var(--muted);font-size:.78em}
+.insight-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px}
+.insight-card h3{font-size:1em;margin-bottom:8px;color:var(--accent5)}
+.insight-card p{font-size:.85em;color:var(--muted);line-height:1.7}
+.insight-card .highlight{color:var(--accent3);font-weight:600}
+.insight-card .warn{color:var(--accent);font-weight:600}
+.badge{display:inline-block;padding:1px 6px;border-radius:4px;font-size:.7em;margin-left:4px}
+.badge.new{background:#3fb95033;color:#3fb950}
+.badge.hot{background:#f8514933;color:#f85149}
+.badge.ai{background:#d2a8ff33;color:#d2a8ff}
+.badge.cn{background:#58a6ff33;color:#58a6ff}
+.badge.movie{background:#f0883e33;color:#f0883e}
+.footer{text-align:center;color:var(--muted);font-size:.75em;margin-top:32px;padding-top:16px;border-top:1px solid var(--border)}
+.tab-nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;justify-content:center}
+.tab-btn{padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-size:.82em;transition:all .2s}
+.tab-btn:hover,.tab-btn.active{border-color:var(--accent2);color:var(--accent2)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.trend-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:20px}
+@media(min-width:640px){.trend-grid{grid-template-columns:1fr 1fr}}
+.trend-item{background:var(--card2);border-radius:8px;padding:12px;border:1px solid var(--border)}
+.trend-item h4{font-size:.88em;margin-bottom:4px}
+.trend-item p{font-size:.78em;color:var(--muted)}
+.mini-rank{font-size:.82em}
+.mini-rank ol{padding-left:20px}
+.mini-rank li{margin-bottom:2px}
+.source-tag{display:inline-block;font-size:.65em;padding:1px 5px;border-radius:3px;background:#30363d;color:var(--muted);margin-left:3px}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🔥 动漫热榜排名报告</h1>
+<div class="subtitle">2026年8月21日 03:35 · 覆盖全球热点 / 最新更新 / AI漫剧 / 中国动漫 · 数据截止当前</div>
+
+<div class="meta-bar">
+<span class="tag" style="background:var(--tag1)">全球热点</span>
+<span class="tag" style="background:var(--tag2)">最新更新</span>
+<span class="tag" style="background:var(--tag4)">AI漫剧</span>
+<span class="tag" style="background:var(--tag3)">中国动漫</span>
+</div>
+
+<div class="tab-nav">
+<button class="tab-btn active" onclick="switchTab('global')">🌍 全球热点</button>
+<button class="tab-btn" onclick="switchTab('fresh')">📺 最新更新</button>
+<button class="tab-btn" onclick="switchTab('ai')">🤖 AI漫剧</button>
+<button class="tab-btn" onclick="switchTab('cn')">🇨🇳 中国动漫</button>
+<button class="tab-btn" onclick="switchTab('trend')">📊 趋势分析</button>
+</div>
+
+<!-- ========== 全球热点 TOP50 ========== -->
+<div id="tab-global" class="tab-content active">
+<div class="section">
+<div class="section-title globe">🌍 全球热点 TOP50 · MyAnimeList权威排名</div>
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品</th><th>评分</th><th>成员数</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td class="rk top1">1</td><td class="title-cell">Sousou no Frieren (葬送的芙莉莲)</td><td class="score">9.25</td><td class="members">1,501,613</td><td>👑 历史第一 2023-24</td></tr>
+<tr><td class="rk top2">2</td><td class="title-cell">Re:Zero S4 (从零开始的异世界生活4) <span class="badge hot">热播中</span></td><td class="score">9.14</td><td class="members">313,731</td><td>🔥 本季封神</td></tr>
+<tr><td class="rk top3">3</td><td class="title-cell">Fullmetal Alchemist: Brotherhood (钢之炼金术师FA)</td><td class="score">9.11</td><td class="members">3,725,879</td><td>永恒经典</td></tr>
+<tr><td class="rk">4</td><td class="title-cell">Steel Ball Run: JoJo (JOJO SBR) <span class="badge new">2026新番</span></td><td class="score">9.09</td><td class="members">228,980</td><td>🏇 飙马野郎!</td></tr>
+<tr><td class="rk">5</td><td class="title-cell">Steins;Gate (命运石之门)</td><td class="score">9.07</td><td class="members">2,844,842</td><td></td></tr>
+<tr><td class="rk">6</td><td class="title-cell">Chainsaw Man Movie: Reze-hen (电锯人蕾泽篇) <span class="badge movie">剧场版</span></td><td class="score">9.06</td><td class="members">537,208</td><td>⚡ 蕾泽封神</td></tr>
+<tr><td class="rk">7</td><td class="title-cell">Gintama: The Final (银魂THE FINAL)</td><td class="score">9.05</td><td class="members">187,624</td><td></td></tr>
+<tr><td class="rk">8</td><td class="title-cell">Gintama° (银魂°)</td><td class="score">9.05</td><td class="members">698,022</td><td></td></tr>
+<tr><td class="rk">9</td><td class="title-cell">Shingeki no Kyojin S3P2 (进击的巨人S3P2)</td><td class="score">9.05</td><td class="members">2,630,911</td><td></td></tr>
+<tr><td class="rk">10</td><td class="title-cell">Bleach: Kashin-tan (死神千年血战诃刑谭) <span class="badge hot">热播中</span></td><td class="score">9.04</td><td class="members">142,709</td><td>💀 最终季!</td></tr>
+<tr><td class="rk">11</td><td class="title-cell">Hunter x Hunter (2011) (全职猎人)</td><td class="score">9.03</td><td class="members">3,231,862</td><td></td></tr>
+<tr><td class="rk">12</td><td class="title-cell">Ginga Eiyuu Densetsu (银河英雄传说)</td><td class="score">9.02</td><td class="members">368,601</td><td>史诗级</td></tr>
+<tr><td class="rk">13</td><td class="title-cell">Gintama' (银魂')</td><td class="score">9.02</td><td class="members">620,971</td><td></td></tr>
+<tr><td class="rk">14</td><td class="title-cell">Gintama': Enchousen (银魂'延长战)</td><td class="score">9.02</td><td class="members">361,612</td><td></td></tr>
+<tr><td class="rk">15</td><td class="title-cell">One Piece Fan Letter (海贼王粉丝信) <span class="badge new">特别篇</span></td><td class="score">9.00</td><td class="members">164,239</td><td>💌 情书封神</td></tr>
+<tr><td class="rk">16</td><td class="title-cell">Bleach: Sennen Kessen-hen (死神千年血战篇)</td><td class="score">8.98</td><td class="members">725,759</td><td></td></tr>
+<tr><td class="rk">17</td><td class="title-cell">Gintama. (银魂.)</td><td class="score">8.98</td><td class="members">352,428</td><td></td></tr>
+<tr><td class="rk">18</td><td class="title-cell">Kaguya-sama: Ultra Romantic (辉夜大小姐超浪漫)</td><td class="score">8.95</td><td class="members">1,133,164</td><td></td></tr>
+<tr><td class="rk">19</td><td class="title-cell">Clannad: After Story</td><td class="score">8.93</td><td class="members">1,298,192</td><td>催泪弹</td></tr>
+<tr><td class="rk">20</td><td class="title-cell">Fruits Basket: The Final (水果篮子最终季)</td><td class="score">8.93</td><td class="members">572,497</td><td></td></tr>
+<tr><td class="rk">21</td><td class="title-cell">Gintama (银魂)</td><td class="score">8.93</td><td class="members">1,166,323</td><td></td></tr>
+<tr><td class="rk">22</td><td class="title-cell">Koe no Katachi (声之形)</td><td class="score">8.93</td><td class="members">2,653,404</td><td></td></tr>
+<tr><td class="rk">23</td><td class="title-cell">Code Geass R2 (反叛的鲁路修R2)</td><td class="score">8.92</td><td class="members">1,978,215</td><td></td></tr>
+<tr><td class="rk">24</td><td class="title-cell">Kusuriya no Hitorigoto S2 (药屋少女呢喃S2)</td><td class="score">8.91</td><td class="members">541,227</td><td>🐱 猫猫yyds</td></tr>
+<tr><td class="rk">25</td><td class="title-cell">3-gatsu no Lion S2 (3月的狮子S2)</td><td class="score">8.90</td><td class="members">442,935</td><td></td></tr>
+<tr><td class="rk">26</td><td class="title-cell">Monster (怪物)</td><td class="score">8.90</td><td class="members">1,355,086</td><td></td></tr>
+<tr><td class="rk">27</td><td class="title-cell">Gintama Movie 2 (银魂剧场版2)</td><td class="score">8.89</td><td class="members">264,544</td><td></td></tr>
+<tr><td class="rk">28</td><td class="title-cell">Gintama Shirogane Kōhan (银魂银之魂后半)</td><td class="score">8.88</td><td class="members">229,019</td><td></td></tr>
+<tr><td class="rk">29</td><td class="title-cell">Owarimonogatari S2 (终物语S2)</td><td class="score">8.86</td><td class="members">441,750</td><td></td></tr>
+<tr><td class="rk">30</td><td class="title-cell">Shingeki no Kyojin: Kanketsu-hen (进击的巨人完结篇)</td><td class="score">8.86</td><td class="members">890,788</td><td></td></tr>
+<tr><td class="rk">31</td><td class="title-cell">Kingdom S3 (王者天下S3)</td><td class="score">8.85</td><td class="members">137,162</td><td></td></tr>
+<tr><td class="rk">32</td><td class="title-cell">Sousou no Frieren S2 (葬送的芙莉莲S2) <span class="badge new">2026冬季</span></td><td class="score">8.85</td><td class="members">599,169</td><td>✨ 二季续写</td></tr>
+<tr><td class="rk">33</td><td class="title-cell">Kusuriya no Hitorigoto (药屋少女呢喃)</td><td class="score">8.84</td><td class="members">886,679</td><td></td></tr>
+<tr><td class="rk">34</td><td class="title-cell">Shingeki no Kyojin: The Last Attack (进击的巨人最后攻击)</td><td class="score">8.84</td><td class="members">98,473</td><td></td></tr>
+<tr><td class="rk">35</td><td class="title-cell">Vinland Saga S2 (冰海战记S2)</td><td class="score">8.83</td><td class="members">884,613</td><td></td></tr>
+<tr><td class="rk">36</td><td class="title-cell">Violet Evergarden Movie (紫罗兰永恒花园剧场版)</td><td class="score">8.83</td><td class="members">742,637</td><td></td></tr>
+<tr><td class="rk">37</td><td class="title-cell">Kimi no Na wa. (你的名字)</td><td class="score">8.82</td><td class="members">3,061,827</td><td></td></tr>
+<tr><td class="rk">38</td><td class="title-cell">Ashita no Joe 2 (明日之丈2)</td><td class="score">8.81</td><td class="members">69,997</td><td>经典老番</td></tr>
+<tr><td class="rk">39</td><td class="title-cell">Gintama Shirogane Zenhan (银魂银之魂前半)</td><td class="score">8.81</td><td class="members">240,705</td><td></td></tr>
+<tr><td class="rk">40</td><td class="title-cell">Shingeki no Kyojin: The Final Season (进巨最终季)</td><td class="score">8.79</td><td class="members">2,325,613</td><td></td></tr>
+<tr><td class="rk">41</td><td class="title-cell">Hajime no Ippo (第一神拳)</td><td class="score">8.78</td><td class="members">706,518</td><td></td></tr>
+<tr><td class="rk">42</td><td class="title-cell">Kizumonogatari III (伤物语III)</td><td class="score">8.78</td><td class="members">519,571</td><td></td></tr>
+<tr><td class="rk">43</td><td class="title-cell">Mob Psycho 100 II (灵能百分百II)</td><td class="score">8.78</td><td class="members">1,750,777</td><td></td></tr>
+<tr><td class="rk">44</td><td class="title-cell">Shingeki no Kyojin: FSP2 (进巨最终季P2)</td><td class="score">8.78</td><td class="members">1,593,124</td><td></td></tr>
+<tr><td class="rk">45</td><td class="title-cell">Vinland Saga (冰海战记)</td><td class="score">8.78</td><td class="members">1,860,228</td><td></td></tr>
+<tr><td class="rk">46</td><td class="title-cell">Haikyuu!! vs Shiratorizawa (排球少年VS白鸟泽)</td><td class="score">8.77</td><td class="members">1,342,139</td><td></td></tr>
+<tr><td class="rk">47</td><td class="title-cell">Sen to Chihiro (千与千寻)</td><td class="score">8.77</td><td class="members">2,049,283</td><td></td></tr>
+<tr><td class="rk">48</td><td class="title-cell">Monogatari Series: Second Season (物语系列S2)</td><td class="score">8.76</td><td class="members">725,423</td><td></td></tr>
+<tr><td class="rk">49</td><td class="title-cell">Cowboy Bebop (星际牛仔)</td><td class="score">8.75</td><td class="members">2,080,567</td><td>🎸 See you space cowboy</td></tr>
+<tr><td class="rk">50</td><td class="title-cell">Takopii no Genzai (章鱼噗的原罪) <span class="badge new">2025夏</span></td><td class="score">8.74</td><td class="members">347,222</td><td>🐙 黑马</td></tr>
+</tbody></table>
+</div>
+</div>
+
+<!-- ========== 最新更新 ========== -->
+<div id="tab-fresh" class="tab-content">
+<div class="section">
+<div class="section-title fresh">📺 2026年夏 · 最新更新热播番 TOP50</div>
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品</th><th>评分</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td class="rk top1">1</td><td class="title-cell">Re:Zero S4 (从零开始的异世界生活4)</td><td class="score">9.14</td><td>🔥 连载中 4-9月</td></tr>
+<tr><td class="rk top2">2</td><td class="title-cell">Bleach: Kashin-tan (死神千年血战诃刑谭)</td><td class="score">9.04</td><td>💀 最终季 7月开播</td></tr>
+<tr><td class="rk top3">3</td><td class="title-cell">Steel Ball Run (JOJO SBR)</td><td class="score">9.09</td><td>🏇 Netflix热播</td></tr>
+<tr><td class="rk">4</td><td class="title-cell">Sousou no Frieren S2 (葬送的芙莉莲S2)</td><td class="score">8.85</td><td>✨ 冬季完结</td></tr>
+<tr><td class="rk">5</td><td class="title-cell">The Ghost in the Shell (攻壳机动队新系列)</td><td class="score">8.52</td><td>🤖 Prime Video 7月</td></tr>
+<tr><td class="rk">6</td><td class="title-cell">Black Torch (黑炬)</td><td class="score">8.30</td><td>7月新番</td></tr>
+<tr><td class="rk">7</td><td class="title-cell">Clevatess S2 (克雷瓦特斯S2)</td><td class="score">8.15</td><td>7月新番</td></tr>
+<tr><td class="rk">8</td><td class="title-cell">Jujutsu Kaisen S3 (咒术回战S3)</td><td class="score">8.68</td><td>⚡ 冬季开播 热播中</td></tr>
+<tr><td class="rk">9</td><td class="title-cell">My Hero Academia: Vigilantes S2 (我的英雄学院Vigilantes S2)</td><td class="score">8.35</td><td>🦸 冬季回归</td></tr>
+<tr><td class="rk">10</td><td class="title-cell">One Piece: Elbaph Arc (海贼王艾尔巴夫篇)</td><td class="score">8.42</td><td>🏴‍☠️ 年限26集</td></tr>
+<tr><td class="rk">11</td><td class="title-cell">Oshi no Ko S3 (我推的孩子S3)</td><td class="score">8.55</td><td>⭐ 冬季开播</td></tr>
+<tr><td class="rk">12</td><td class="title-cell">Dr. Stone: Science Future P3 (石纪元科学未来P3)</td><td class="score">8.20</td><td>🔬 春季完结</td></tr>
+<tr><td class="rk">13</td><td class="title-cell">That Time I Got Reincarnated as a Slime S4 (关于我转生史莱姆S4)</td><td class="score">8.10</td><td>🟢 春季开播</td></tr>
+<tr><td class="rk">14</td><td class="title-cell">Witch Hat Atelier (尖帽子的魔法工房)</td><td class="score">8.25</td><td>🧙 春季新番</td></tr>
+<tr><td class="rk">15</td><td class="title-cell">Devil May Cry S2 (鬼泣S2)</td><td class="score">8.18</td><td>😈 Netflix 5月</td></tr>
+<tr><td class="rk">16</td><td class="title-cell">Dorohedoro S2 (异兽魔都S2)</td><td class="score">8.30</td><td>🦎 春季回归</td></tr>
+<tr><td class="rk">17</td><td class="title-cell">Fire Force S3P2 (炎炎消防队S3P2)</td><td class="score">8.05</td><td>🔥 冬季完结</td></tr>
+<tr><td class="rk">18</td><td class="title-cell">Golden Kamuy Final Season (黄金神威最终季)</td><td class="score">8.60</td><td>⛄ 冬季完结</td></tr>
+<tr><td class="rk">19</td><td class="title-cell">Fate/strange Fake (命运/奇异伪造)</td><td class="score">8.45</td><td>⚔️ 冬季开播</td></tr>
+<tr><td class="rk">20</td><td class="title-cell">Skeleton Knight in Another World S2 (骨骑士异世界S2)</td><td class="score">7.65</td><td>💀 7月回归</td></tr>
+<tr><td class="rk">21</td><td class="title-cell">The Elusive Samurai S2 (逃跑殿下S2)</td><td class="score">7.90</td><td>🏹 夏季回归</td></tr>
+<tr><td class="rk">22</td><td class="title-cell">Smoking Behind the Supermarket With You</td><td class="score">7.55</td><td>💏 7月新番</td></tr>
+<tr><td class="rk">23</td><td class="title-cell">Takopii no Genzai (章鱼噗的原罪)</td><td class="score">8.74</td><td>🐙 黑马完结</td></tr>
+<tr><td class="rk">24</td><td class="title-cell">Chainsaw Man Movie: Reze-hen (电锯人蕾泽篇)</td><td class="score">9.06</td><td>🎬 剧场版封神</td></tr>
+<tr><td class="rk">25</td><td class="title-cell">Liar Game (欺诈游戏)</td><td class="score">7.80</td><td>🎴 春季新番</td></tr>
+<tr><td class="rk">26</td><td class="title-cell">The Beginning After the End S2 (始之终末S2)</td><td class="score">7.75</td><td>🐉 春季开播</td></tr>
+<tr><td class="rk">27</td><td class="title-cell">Ace of the Diamond S2 (钻石王牌S2)</td><td class="score">8.05</td><td>⚾ 春季回归</td></tr>
+<tr><td class="rk">28</td><td class="title-cell">Daemons of the Shadow Realm (影界之魔)</td><td class="score">7.70</td><td>🌑 春季新番</td></tr>
+<tr><td class="rk">29</td><td class="title-cell">Kill Blue (杀蓝)</td><td class="score">7.50</td><td>🔫 春季新番</td></tr>
+<tr><td class="rk">30</td><td class="title-cell">Wistoria: Wand and Sword S2 (杖与剑S2)</td><td class="score">7.85</td><td>⚔️ 春季回归</td></tr>
+<tr><td class="rk">31</td><td class="title-cell">Rent-a-Girlfriend S5 (租借女友S5)</td><td class="score">6.20</td><td>😅 还在播???</td></tr>
+<tr><td class="rk">32</td><td class="title-cell">BanG Dream! YUME∞MITA</td><td class="score">7.60</td><td>🎸 夏季新番</td></tr>
+<tr><td class="rk">33</td><td class="title-cell">Yamato yo, Towa ni: Rebel 3199 (宇宙战舰大和号3199)</td><td class="score">7.90</td><td>🚀 连续剧场上映</td></tr>
+<tr><td class="rk">34</td><td class="title-cell">Jibaku Shounen Hanako-kun 2 (地缚少年花子君2)</td><td class="score">7.70</td><td>👻 夏季回归</td></tr>
+<tr><td class="rk">35</td><td class="title-cell">Yami Shibai 16 (暗芝居16)</td><td class="score">6.80</td><td>👹 长寿恐怖番</td></tr>
+<tr><td class="rk">36</td><td class="title-cell">Tensei Slime Movie 2 (转生史莱姆剧场版2)</td><td class="score">7.00</td><td>🎬 剧场版</td></tr>
+<tr><td class="rk">37</td><td class="title-cell">Baki-dou P2 (刃牙道P2)</td><td class="score">7.30</td><td>👊 格斗继续</td></tr>
+<tr><td class="rk">38</td><td class="title-cell">One Piece Fan Letter (海贼王粉丝信)</td><td class="score">9.00</td><td>💌 特别篇</td></tr>
+<tr><td class="rk">39</td><td class="title-cell">My Hero Academia Special (我英特别篇)</td><td class="score">7.50</td><td>🦸 5月特别篇</td></tr>
+<tr><td class="rk">40</td><td class="title-cell">To Your Eternity S3 (致不灭的你S3)</td><td class="score">7.60</td><td>❄️ 冬季回归</td></tr>
+<tr><td class="rk">41</td><td class="title-cell">Trigun Stargaze (枪神Stargaze)</td><td class="score">7.45</td><td>🌵 冬季新番</td></tr>
+<tr><td class="rk">42</td><td class="title-cell">Hell's Paradise S2 (地狱乐S2)</td><td class="score">7.80</td><td>🌸 冬季回归</td></tr>
+<tr><td class="rk">43</td><td class="title-cell">'Tis Time for Torture Princess C2 (拷问公主C2)</td><td class="score">7.35</td><td>😈 冬季回归</td></tr>
+<tr><td class="rk">44</td><td class="title-cell">GNOSIA (诺斯ia)</td><td class="score">7.20</td><td>🛸 冬季开播</td></tr>
+<tr><td class="rk">45</td><td class="title-cell">Beastars Final P2 (动物狂想曲最终P2)</td><td class="score">7.85</td><td>🦌 3月完结</td></tr>
+<tr><td class="rk">46</td><td class="title-cell">Young Ladies Don't Play Fighting Games (大小姐不打格斗游戏)</td><td class="score">7.10</td><td>🎮 7月新番</td></tr>
+<tr><td class="rk">47</td><td class="title-cell">Around 40 Otoko no Isekai Tsuuhan (40男异世界通販)</td><td class="score">6.50</td><td>📦 后半崩盘</td></tr>
+<tr><td class="rk">48</td><td class="title-cell">Tojima Wants to Be a Kamen Rider (东岛想当假面骑士)</td><td class="score">6.90</td><td>🛵 小众番</td></tr>
+<tr><td class="rk">49</td><td class="title-cell">Tsuihou Tensei Juukishi (被放逐的转生重骑士)</td><td class="score">6.00</td><td>🗡️ 水时超长</td></tr>
+<tr><td class="rk">50</td><td class="title-cell">Wareware wa Uchuujin (我们是外星人)</td><td class="score">N/A</td><td>👽 9月剧场版</td></tr>
+</tbody></table>
+</div>
+</div>
+
+<!-- ========== AI漫剧 ========== -->
+<div id="tab-ai" class="tab-content">
+<div class="section">
+<div class="section-title ai">🤖 AI漫剧 TOP50 · 红果/抖音/快手热播</div>
+
+<div class="insight-card">
+<h3>💡 2026年AI漫剧行业大爆炸</h3>
+<p>
+<span class="highlight">Q1全网上线约12.8万部短剧，AI占12.2万部占比超95%</span>；真人短剧开机量暴跌75%。<br>
+红果热播TOP10中<span class="warn">AI漫剧已占6席</span>，从年初全部真人剧到如今格局大洗牌。<br>
+DataEye数据：AI短剧用户规模已突破<span class="highlight">6亿</span>，从业者超50万，市场规模预计<span class="highlight">243.6亿</span>。<br>
+制作成本断崖下降：AI漫剧单集数千-2万 vs 真人短剧10万+起步，5天可批量产出几十集。<br>
+戚薇数字分身"韩清夏"主演AI漫剧《末日盛夏》引发舆论地震，AI原生角色"方桃子"出道两月吸粉近50万。<br>
+</p>
+</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品</th><th>平台</th><th>热度/备注</th></tr></thead>
+<tbody>
+<tr><td class="rk top1">1</td><td class="title-cell">都重生了这富二代我不装了 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>🔥 8月榜榜首</td></tr>
+<tr><td class="rk top2">2</td><td class="title-cell">斩仙台 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>10.1亿播放 现象级</td></tr>
+<tr><td class="rk top3">3</td><td class="title-cell">万妖图录 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>日热9442万</td></tr>
+<tr><td class="rk">4</td><td class="title-cell">我在末世当老板，员工全是S级丧尸 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>热度4370万</td></tr>
+<tr><td class="rk">5</td><td class="title-cell">全民诡异：开局掌握零元购 <span class="badge ai">AI漫剧</span></td><td>红果/抖音</td><td>规则怪谈爆款</td></tr>
+<tr><td class="rk">6</td><td class="title-cell">末日盛夏 <span class="badge ai">戚薇数字分身</span></td><td>多平台</td><td>🎬 明星AI分身首作</td></tr>
+<tr><td class="rk">7</td><td class="title-cell">被裁掉的女孩 <span class="badge ai">AI原生</span></td><td>抖音</td><td>方桃子 3.4亿播放</td></tr>
+<tr><td class="rk">8</td><td class="title-cell">予你深情侵入余生 <span class="badge ai">AI原生</span></td><td>抖音/天猫</td><td>段宴 商业化标杆</td></tr>
+<tr><td class="rk">9</td><td class="title-cell">规则怪谈 <span class="badge ai">AI漫剧</span></td><td>红果/抖音</td><td>诡异题材吃香</td></tr>
+<tr><td class="rk">10</td><td class="title-cell">归墟 <span class="badge ai">AI漫剧</span></td><td>全平台</td><td>单集2万成本 1亿播放</td></tr>
+<tr><td class="rk">11</td><td class="title-cell">12星练赛 <span class="badge ai">AI选秀</span></td><td>抖音</td><td>赛博追星</td></tr>
+<tr><td class="rk">12</td><td class="title-cell">星光108 <span class="badge ai">AI选秀</span></td><td>抖音</td><td>虚拟人设+粉丝打投</td></tr>
+<tr><td class="rk">13</td><td class="title-cell">谁的三杯鸡 <span class="badge ai">AI真人微短剧</span></td><td>红果/抖音/B站</td><td>两岸文化 8月12日上线</td></tr>
+<tr><td class="rk">14</td><td class="title-cell">重生之都市修仙 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>仙侠题材</td></tr>
+<tr><td class="rk">15</td><td class="title-cell">末世避难所 <span class="badge ai">AI漫剧</span></td><td>红果/快手</td><td>末世题材主力</td></tr>
+<tr><td class="rk">16</td><td class="title-cell">诡异降临 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>克苏鲁+中式恐怖</td></tr>
+<tr><td class="rk">17</td><td class="title-cell">赘婿逆袭 <span class="badge ai">AI漫剧</span></td><td>红果/快手</td><td>经典爽文</td></tr>
+<tr><td class="rk">18</td><td class="title-cell">都市甜宠系列 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>批量产出</td></tr>
+<tr><td class="rk">19</td><td class="title-cell">逆天改命 <span class="badge ai">AI漫剧</span></td><td>红果/抖音</td><td>玄幻赛道</td></tr>
+<tr><td class="rk">20</td><td class="title-cell">修仙归来 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>仙侠类</td></tr>
+<tr><td class="rk">21</td><td class="title-cell">全球异变：我能看到血条 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>系统流</td></tr>
+<tr><td class="rk">22</td><td class="title-cell">龙族狂想 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>玄幻批量</td></tr>
+<tr><td class="rk">23</td><td class="title-cell">深渊求生 <span class="badge ai">AI漫剧</span></td><td>红果/抖音</td><td>末世求生</td></tr>
+<tr><td class="rk">24</td><td class="title-cell">开局签到十万年 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>玄幻签到流</td></tr>
+<tr><td class="rk">25</td><td class="title-cell">我的异能是花钱 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>都市异能</td></tr>
+<tr><td class="rk">26</td><td class="title-cell">开局一座城 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>建设流</td></tr>
+<tr><td class="rk">27</td><td class="title-cell">嫡女毒妃 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>女频宫斗</td></tr>
+<tr><td class="rk">28</td><td class="title-cell">冰山总裁的贴身高手 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>都市爽文</td></tr>
+<tr><td class="rk">29</td><td class="title-cell">全球觉醒 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>觉醒流</td></tr>
+<tr><td class="rk">30</td><td class="title-cell">我靠签到拯救世界 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>签到+拯救</td></tr>
+<tr><td class="rk">31</td><td class="title-cell">皇后的逆袭 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>古风女频</td></tr>
+<tr><td class="rk">32</td><td class="title-cell">重生之最强剑神 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>游戏穿越</td></tr>
+<tr><td class="rk">33</td><td class="title-cell">天降萌宝 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>甜宠</td></tr>
+<tr><td class="rk">34</td><td class="title-cell">仙界归来当奶爸 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>修仙+都市</td></tr>
+<tr><td class="rk">35</td><td class="title-cell">开局满级账号 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>游戏流</td></tr>
+<tr><td class="rk">36</td><td class="title-cell">我的傲娇女总裁 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>都市甜宠</td></tr>
+<tr><td class="rk">37</td><td class="title-cell">丧尸末日：我有空间 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>末世+空间</td></tr>
+<tr><td class="rk">38</td><td class="title-cell">最强赘婿 <span class="badge ai">AI漫剧</span></td><td>红果/快手</td><td>赘婿经典</td></tr>
+<tr><td class="rk">39</td><td class="title-cell">鬼王的宠妻 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>灵异+甜宠</td></tr>
+<tr><td class="rk">40</td><td class="title-cell">逆天邪神 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>玄幻改编</td></tr>
+<tr><td class="rk">41</td><td class="title-cell">穿越之我是大反派 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>反派流</td></tr>
+<tr><td class="rk">42</td><td class="title-cell">魔尊的日常 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>修仙喜剧</td></tr>
+<tr><td class="rk">43</td><td class="title-cell">全球冰封：我打造了末日安全屋 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>末世求生流</td></tr>
+<tr><td class="rk">44</td><td class="title-cell">龙王殿 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>都市隐藏大佬</td></tr>
+<tr><td class="rk">45</td><td class="title-cell">医妃惊天下 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>古风女频</td></tr>
+<tr><td class="rk">46</td><td class="title-cell">我靠吃升级 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>吃货修仙</td></tr>
+<tr><td class="rk">47</td><td class="title-cell">神豪的日常 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>都市神豪</td></tr>
+<tr><td class="rk">48</td><td class="title-cell">我在古代开超市 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>穿越+商业</td></tr>
+<tr><td class="rk">49</td><td class="title-cell">国师大人请自重 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>古风甜宠</td></tr>
+<tr><td class="rk">50</td><td class="title-cell">全民领主：我的兵种是恶魔 <span class="badge ai">AI漫剧</span></td><td>红果</td><td>领主建设流</td></tr>
+</tbody></table>
+</div>
+</div>
+
+<!-- ========== 中国动漫 ========== -->
+<div id="tab-cn" class="tab-content">
+<div class="section">
+<div class="section-title cn">🇨🇳 中国动漫 TOP50 · B站/腾讯/优酷</div>
+
+<div class="insight-card">
+<h3>💡 国漫年番统治力</h3>
+<p>
+灯塔数据：2025年全年406部国漫中，<span class="highlight">26部年番占据总播放量47%</span>，全大盘占比35.9%。<br>
+TOP5年番播放量：<span class="highlight">凡人修仙传26.14亿</span> > <span class="highlight">仙逆24.16亿</span> > <span class="highlight">斗破苍穹20.18亿</span> > <span class="highlight">完美世界16.93亿</span> > <span class="highlight">航海王16.15亿</span><br>
+腾讯规划IP至2035年：《斗罗大陆》17年、《诡秘之主》+《仙逆》+《剑来》10年基线。<br>
+<span class="warn">仙逆7月断层第一</span>：骨朵热度50.48+鲜果播放指数1092，但原著党vs改编党冲突加剧。<br>
+院线化启动：腾讯首次官宣剑来/斗罗/仙逆/斩神剧场版，优酷沧元图院线筹备中。
+</p>
+</div>
+
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品</th><th>平台</th><th>播放量/热度</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td class="rk top1">1</td><td class="title-cell">仙逆 <span class="badge cn">年番</span></td><td>腾讯视频</td><td class="score">24.16亿</td><td>👑 年度亚军 断层第一</td></tr>
+<tr><td class="rk top2">2</td><td class="title-cell">凡人修仙传 <span class="badge cn">年番</span></td><td>B站</td><td class="score">26.14亿</td><td>🏆 年度冠军 新年番6月</td></tr>
+<tr><td class="rk top3">3</td><td class="title-cell">斗破苍穹年番 <span class="badge cn">年番</span></td><td>腾讯视频</td><td class="score">20.18亿</td><td>🔥 净莲妖火篇高潮</td></tr>
+<tr><td class="rk">4</td><td class="title-cell">完美世界 <span class="badge cn">年番</span></td><td>腾讯视频</td><td class="score">16.93亿</td><td>快节奏爽番</td></tr>
+<tr><td class="rk">5</td><td class="title-cell">沧元图 <span class="badge cn">半年番</span></td><td>优酷</td><td>骨朵48.00</td><td>水墨3D美学 新国风</td></tr>
+<tr><td class="rk">6</td><td class="title-cell">诡秘之主 <span class="badge cn">季番</span></td><td>腾讯视频</td><td>鲜果862</td><td>🔍 站内声势如虹</td></tr>
+<tr><td class="rk">7</td><td class="title-cell">龙族S2 <span class="badge cn">2D</span></td><td>腾讯视频</td><td>400万+预约</td><td>🐲 2D最佳 质量争议</td></tr>
+<tr><td class="rk">8</td><td class="title-cell">吞噬星空 <span class="badge cn">年番</span></td><td>腾讯视频</td><td class="score">稳</td><td>🚀 科幻国漫标杆</td></tr>
+<tr><td class="rk">9</td><td class="title-cell">斗罗大陆2绝世唐门 <span class="badge cn">年番</span></td><td>腾讯视频</td><td>鲜果747</td><td>魂导器蒸汽魔法</td></tr>
+<tr><td class="rk">10</td><td class="title-cell">牧神记 <span class="badge cn">年番</span></td><td>B站</td><td>骨朵46.93</td><td>暗黑国风 B站顶流</td></tr>
+<tr><td class="rk">11</td><td class="title-cell">神印王座 <span class="badge cn">年番</span></td><td>腾讯视频</td><td>鲜果713</td><td>第二梯队稳定</td></tr>
+<tr><td class="rk">12</td><td class="title-cell">剑来S2 <span class="badge cn">季番</span></td><td>腾讯视频</td><td>高</td><td>水墨仙侠 文戏天花板</td></tr>
+<tr><td class="rk">13</td><td class="title-cell">一人之下6 <span class="badge cn">2D</span></td><td>腾讯视频</td><td>豆瓣8.2</td><td>2D国漫标杆</td></tr>
+<tr><td class="rk">14</td><td class="title-cell">遮天 <span class="badge cn">年番</span></td><td>腾讯视频</td><td>高</td><td>对标凡人</td></tr>
+<tr><td class="rk">15</td><td class="title-cell">中国奇谭2 <span class="badge cn">原创</span></td><td>B站</td><td>24h破亿</td><td>🎨 美学天花板</td></tr>
+<tr><td class="rk">16</td><td class="title-cell">师兄啊师兄 <span class="badge cn">年番</span></td><td>优酷</td><td>稳</td><td>苟道修仙 搞笑</td></tr>
+<tr><td class="rk">17</td><td class="title-cell">一念永恒 <span class="badge cn">季番年播</span></td><td>腾讯视频</td><td>高</td><td>2D优质 白小纯</td></tr>
+<tr><td class="rk">18</td><td class="title-cell">画江湖之不良人S7 <span class="badge cn">原创</span></td><td>优酷</td><td>2亿+</td><td>十年IP 口碑骤降</td></tr>
+<tr><td class="rk">19</td><td class="title-cell">云深不知梦 <span class="badge cn">女频</span></td><td>优酷</td><td>鲜果738</td><td>国漫第一大女主</td></tr>
+<tr><td class="rk">20</td><td class="title-cell">灵笼S2 <span class="badge cn">原创</span></td><td>B站</td><td>2亿+</td><td>科幻硬核</td></tr>
+<tr><td class="rk">21</td><td class="title-cell">仙剑奇侠传三 <span class="badge cn">改编</span></td><td>腾讯视频</td><td>热度18128</td><td>游戏vs电视剧党争议</td></tr>
+<tr><td class="rk">22</td><td class="title-cell">凸变英雄X <span class="badge cn">原创</span></td><td>B站</td><td>2亿+</td><td>原创黑马</td></tr>
+<tr><td class="rk">23</td><td class="title-cell">光阴之外 <span class="badge cn">新番</span></td><td>优酷</td><td>新上线</td><td>废土暗黑风</td></tr>
+<tr><td class="rk">24</td><td class="title-cell">星辰变S6 <span class="badge cn">季番</span></td><td>腾讯视频</td><td>鲜果704</td><td>仙侠老IP</td></tr>
+<tr><td class="rk">25</td><td class="title-cell">深空彼岸 <span class="badge cn">新番</span></td><td>B站</td><td>新上线</td><td>辰东新作</td></tr>
+<tr><td class="rk">26</td><td class="title-cell">时光代理人III <span class="badge cn">原创</span></td><td>B站</td><td>MAL 8.56</td><td>🌐 国创MAL最高</td></tr>
+<tr><td class="rk">27</td><td class="title-cell">斩神 <span class="badge cn">季番</span></td><td>腾讯视频</td><td>高</td><td>院线版筹备中</td></tr>
+<tr><td class="rk">28</td><td class="title-cell">凡人修仙传：慕兰之战 <span class="badge cn">新年番</span></td><td>B站</td><td>6月定档</td><td>📅 新年番回归</td></tr>
+<tr><td class="rk">29</td><td class="title-cell">浪浪山小妖怪 <span class="badge cn">剧场版</span></td><td>院线</td><td>暑期动画票冠</td><td>🎬 中国奇谭长片</td></tr>
+<tr><td class="rk">30</td><td class="title-cell">火旺(道诡异仙) <span class="badge cn">官宣</span></td><td>腾讯视频</td><td>未上线</td><td>⚡ 暗黑中式恐怖</td></tr>
+<tr><td class="rk">31</td><td class="title-cell">纸嫁衣 <span class="badge cn">官宣</span></td><td>腾讯视频</td><td>未上线</td><td>👻 中式恐怖手游改编</td></tr>
+<tr><td class="rk">32</td><td class="title-cell">斗罗大陆(2018) <span class="badge cn">年番完结</span></td><td>腾讯视频</td><td>史诗级</td><td>国漫年番开创者</td></tr>
+<tr><td class="rk">33</td><td class="title-cell">许我耀眼 <span class="badge cn">季番</span></td><td>腾讯视频</td><td>经典畅销</td><td>会员热推</td></tr>
+<tr><td class="rk">34</td><td class="title-cell">天蚕土豆宇宙 <span class="badge cn">IP宇宙</span></td><td>爱奇艺</td><td>布局中</td><td>IP打包开发</td></tr>
+<tr><td class="rk">35</td><td class="title-cell">一剑宇宙 <span class="badge cn">IP宇宙</span></td><td>爱奇艺</td><td>布局中</td><td>青鸾峰上宇宙</td></tr>
+<tr><td class="rk">36</td><td class="title-cell">沧元图S3 <span class="badge cn">预约</span></td><td>优酷</td><td>预约900万+</td><td>水墨3D美学</td></tr>
+<tr><td class="rk">37</td><td class="title-cell">绝世武魂 <span class="badge cn">年番</span></td><td>爱奇艺</td><td>稳</td><td>传统玄幻</td></tr>
+<tr><td class="rk">38</td><td class="title-cell">武动乾坤 <span class="badge cn">年番</span></td><td>腾讯视频</td><td>稳</td><td>天蚕土豆系</td></tr>
+<tr><td class="rk">39</td><td class="title-cell">大主宰 <span class="badge cn">年番</span></td><td>爱奇艺</td><td>稳</td><td>天蚕土豆系</td></tr>
+<tr><td class="rk">40</td><td class="title-cell">元尊 <span class="badge cn">新番</span></td><td>腾讯视频</td><td>新上线</td><td>天蚕土豆最新</td></tr>
+<tr><td class="rk">41</td><td class="title-cell">全职高手S3 <span class="badge cn">2D</span></td><td>腾讯视频</td><td>期待</td><td>电竞国漫</td></tr>
+<tr><td class="rk">42</td><td class="title-cell">魔道祖师完结篇 <span class="badge cn">2D</span></td><td>腾讯视频</td><td>经典</td><td>国漫2D标杆</td></tr>
+<tr><td class="rk">43</td><td class="title-cell">天官赐福S2 <span class="badge cn">2D</span></td><td>B站</td><td>期待</td><td>国风2D</td></tr>
+<tr><td class="rk">44</td><td class="title-cell">烈火浇愁 <span class="badge cn">2D</span></td><td>B站</td><td>中</td><td>Priest原作</td></tr>
+<tr><td class="rk">45</td><td class="title-cell">少年歌行 <span class="badge cn">3D</span></td><td>优酷</td><td>高</td><td>江湖武侠</td></tr>
+<tr><td class="rk">46</td><td class="title-cell">眷思量 <span class="badge cn">原创</span></td><td>B站</td><td>中</td><td>原创古风</td></tr>
+<tr><td class="rk">47</td><td class="title-cell">左手上篮 <span class="badge cn">原创</span></td><td>B站</td><td>中</td><td>校园篮球</td></tr>
+<tr><td class="rk">48</td><td class="title-cell">大理寺日志S2 <span class="badge cn">2D</span></td><td>B站</td><td>中</td><td>古风推理</td></tr>
+<tr><td class="rk">49</td><td class="title-cell">三体动画 <span class="badge cn">3D</span></td><td>B站</td><td>争议</td><td>科幻争议作</td></tr>
+<tr><td class="rk">50</td><td class="title-cell">镖人 <span class="badge cn">2D</span></td><td>腾讯视频</td><td>中</td><td>硬派武侠</td></tr>
+</tbody></table>
+</div>
+</div>
+
+<!-- ========== 趋势分析 ========== -->
+<div id="tab-trend" class="tab-content">
+<div class="section">
+<div class="section-title globe">📊 波动分析 & 行业趋势 & 爆款拆解</div>
+
+<div class="trend-grid">
+<div class="trend-item">
+<h4>🔥 本周全球热点波动</h4>
+<p>
+<strong>飙升：</strong>Re:Zero S4 (+∞ 新季封神9.14) · JOJO SBR (+∞ 新番9.09) · 死神诃刑谭 (+∞ 最终季9.04)<br>
+<strong>稳定：</strong>芙莉莲9.25铁王座 · 钢炼FA9.11永恒 · 石之门9.07<br>
+<strong>下滑：</strong>进巨系列微降 · 章鱼噗8.74热度收敛
+</p>
+</div>
+<div class="trend-item">
+<h4>📈 国漫7月→8月波动</h4>
+<p>
+<strong>仙逆：</strong>维持断层第一，但原著党vs改编党冲突加剧<br>
+<strong>凡人修仙传：</strong>电视剧热播导流，8/16单日4871万创纪录<br>
+<strong>沧元图：</strong>优酷独苗，水墨3D出圈<br>
+<strong>诡秘之主：</strong>声势如虹，腾讯王牌<br>
+<strong>龙族S2：</strong>预约400万+但质量争议
+</p>
+</div>
+<div class="trend-item">
+<h4>🤖 AI漫剧爆发式增长</h4>
+<p>
+<strong>产量：</strong>Q1上线12.8万部，AI占95%+<br>
+<strong>用户：</strong>突破6亿，从业者50万+<br>
+<strong>成本：</strong>单集数千-2万 vs 真人10万+<br>
+<strong>风险：</strong>抄袭融梗同质化 · 肖像授权灰色地带 · AI原生角色代言伦理争议<br>
+<strong>趋势：</strong>仙侠末世玄幻赛道真人剧几乎消失
+</p>
+</div>
+<div class="trend-item">
+<h4>🎬 院线化与IP生态</h4>
+<p>
+<strong>腾讯：</strong>剑来/斗罗/仙逆/斩神院线版官宣<br>
+<strong>优酷：</strong>沧元图院线版筹备<br>
+<strong>凡人修仙传：</strong>2040年完结的超级IP<br>
+<strong>平台分化：</strong>腾讯量大管饱年番 · B站精品季番+日漫 · 优酷新国风差异化
+</p>
+</div>
+</div>
+
+<div class="insight-card">
+<h3>🔍 爆款拆解 · 5大案例分析</h3>
+<p>
+<strong>1. 芙莉莲 9.25封神密码：</strong>怀旧+冒险+哲理 三位一体。150万成员验证，从"后旅程"视角重新定义史诗，第二季8.85续写传奇。<br><br>
+<strong>2. Re:Zero S4 9.14在播封神：</strong>486的无限死亡循环引发极致共情，Culling Game篇剧情张力拉满，313K成员暴涨中。<br><br>
+<strong>3. 仙逆24.16亿断层国漫第一：</strong>"杀伐果断+纯爱深情"反套路人设，快节奏叙事（1集10章）大刀阔斧改编，季番→年番速成法。<br><br>
+<strong>4. 斩仙台10.1亿AI漫剧现象级：</strong>AIGC+末世玄幻视觉奇观，低成本高感官刺激，日更模式锁住用户，下沉市场精准打透。<br><br>
+<strong>5. 电锯人蕾泽篇9.06剧场封神：</strong>MAPPA制作+蕾泽悲剧+蕾泽与电次的羁绊，剧场版评分超越TV版，证明"好故事不分长短"。
+</p>
+</div>
+
+<div class="insight-card">
+<h3>📋 2026年下半年展望</h3>
+<p>
+🎯 <span class="highlight">9月</span>：Sekiro: No Defeat 全手绘改编 · Wareware wa Uchuujin剧场版<br>
+🎯 <span class="highlight">10月</span>：Cyberpunk: Edgerunners S2 · 药屋少女S3 · 东京复仇者·三国大战 · 黑五叶草S2<br>
+🎯 <span class="highlight">12月</span>：药屋少女剧场版<br>
+🎯 <span class="highlight">TBA</span>：鬼灭无限城2 · 电锯人S2 · Solo Leveling S3 · 文兰战记S3<br>
+🎯 国漫：凡人修仙传新年番6月回归 · 道诡异仙(火旺) · 纸嫁衣 · 沧元图S3 · 各大IP院线版
+</p>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p>📅 生成时间：2026-08-21 03:35 CST | 🔄 调度规则：daily 03:35</p>
+<p>📚 数据来源：MyAnimeList / Anime Corner / Reddit / GamesRadar / 红果短剧 / 抖音 / B站 / 腾讯视频 / 优酷 / 爱奇艺 / DataEye / 灯塔专业版 / 骨朵 / 鲜果 / 惊蛰研究所</p>
+<p>⚠️ 数据采集时间截至2026-08-21 03:35，部分数据基于公开报道与行业研究整合</p>
+</div>
+</div>
+
+<script>
+function switchTab(tabId){
+  document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el=>el.classList.remove('active'));
+  document.getElementById('tab-'+tabId).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
