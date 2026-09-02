@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🔥 动漫热榜报告 2026.09.02</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0d0d1a;color:#e0e0f0;line-height:1.6;overflow-x:hidden}
+.hero{background:linear-gradient(135deg,#1a0533,#0d1b3e,#0a192f);padding:2rem 1rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(139,92,246,.15) 0%,transparent 50%);animation:rotate 20s linear infinite}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.hero h1{font-size:1.8rem;background:linear-gradient(90deg,#f472b6,#818cf8,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;position:relative;z-index:1}
+.hero .meta{color:#94a3b8;font-size:.85rem;margin-top:.5rem;position:relative;z-index:1}
+.container{max-width:900px;margin:0 auto;padding:0 1rem}
+.nav-tabs{display:flex;overflow-x:auto;gap:.5rem;padding:1rem 0;position:sticky;top:0;background:#0d0d1a;z-index:100;border-bottom:1px solid #1e293b}
+.nav-tabs a{white-space:nowrap;padding:.4rem 1rem;border-radius:2rem;background:#1e293b;color:#94a3b8;text-decoration:none;font-size:.8rem;transition:.3s}
+.nav-tabs a:hover,.nav-tabs a.active{background:#8b5cf6;color:#fff}
+.section{margin:2rem 0}
+.section-title{font-size:1.3rem;padding:.5rem 0;margin-bottom:1rem;border-left:4px solid #8b5cf6;padding-left:.8rem;display:flex;align-items:center;gap:.5rem}
+.section-title .emoji{font-size:1.5rem}
+.card{background:#1a1a2e;border-radius:12px;padding:1.2rem;margin-bottom:1rem;border:1px solid #2a2a4a;transition:transform .2s}
+.card:hover{transform:translateY(-2px)}
+.rank-badge{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:50%;font-weight:700;font-size:.85rem;margin-right:.6rem;flex-shrink:0}
+.rank-1{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#000}
+.rank-2{background:linear-gradient(135deg,#94a3b8,#64748b);color:#fff}
+.rank-3{background:linear-gradient(135deg,#cd7f32,#a0522d);color:#fff}
+.rank-other{background:#2a2a4a;color:#94a3b8}
+.item-header{display:flex;align-items:center;gap:.3rem;flex-wrap:wrap}
+.item-title{font-size:1rem;font-weight:600;color:#e2e8f0}
+.item-sub{font-size:.8rem;color:#94a3b8;margin-top:.3rem}
+.tag{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.7rem;margin:.1rem}
+.tag-mal{background:#2e51a2;color:#fff}
+.tag-ac{background:#e74c3c;color:#fff}
+.tag-reddit{background:#ff4500;color:#fff}
+.tag-hg{background:#e11d48;color:#fff}
+.tag-dy{background:#00f2ea;color:#000}
+.tag-bili{background:#00a1d6;color:#fff}
+.tag-tx{background:#ff6a00;color:#fff}
+.tag-ai{background:linear-gradient(90deg,#8b5cf6,#ec4899);color:#fff}
+.heat-bar{height:6px;border-radius:3px;background:#2a2a4a;margin-top:.5rem;overflow:hidden}
+.heat-fill{height:100%;border-radius:3px;transition:width 1s ease}
+.insight-box{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:12px;padding:1.2rem;margin:1.5rem 0;border:1px solid #4338ca}
+.insight-box h3{color:#a78bfa;font-size:1rem;margin-bottom:.5rem}
+.insight-box p{color:#c4b5fd;font-size:.85rem;line-height:1.8}
+.trend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.8rem;margin:1rem 0}
+.trend-card{background:#1a1a2e;border-radius:8px;padding:.8rem;text-align:center;border:1px solid #2a2a4a}
+.trend-card .num{font-size:1.5rem;font-weight:700}
+.trend-card .label{font-size:.7rem;color:#94a3b8;margin-top:.2rem}
+.up{color:#34d399}.down{color:#f87171}.flat{color:#fbbf24}
+.source-ref{font-size:.7rem;color:#475569;margin-top:.5rem;font-style:italic}
+.footer{text-align:center;padding:2rem;color:#475569;font-size:.75rem}
+.combo-list{counter-reset:rank}
+.combo-item{display:flex;align-items:flex-start;gap:.6rem;padding:.6rem 0;border-bottom:1px solid #1e293b}
+.combo-item:last-child{border-bottom:none}
+.hotword{display:inline-block;padding:.2rem .6rem;border-radius:4px;background:#2a2a4a;color:#f472b6;font-size:.75rem;margin:.2rem}
+@media(max-width:600px){
+.hero h1{font-size:1.3rem}
+.section-title{font-size:1.1rem}
+.card{padding:.9rem}
+.trend-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<h1>🔥 2026全球动漫热度风云榜</h1>
+<div class="meta">📅 生成时间：2026-09-02 14:22 | 数据周期：2026年Q3(7-9月) | 检索截至：2026年9月2日</div>
+<div class="meta">📡 数据源：MyAnimeList · Anime Corner · Reddit · Anime Trending · 红果短剧 · 抖音 · B站 · 腾讯视频 · 云合数据</div>
+</div>
+
+<div class="container">
+<div class="nav-tabs">
+<a href="#global" class="active">🌍 全球热点</a>
+<a href="#latest">🆕 最新更新</a>
+<a href="#ai-drama">🤖 AI漫剧</a>
+<a href="#cn-anime">🐉 中国动漫</a>
+<a href="#trend">📊 行业趋势</a>
+<a href="#explosion">💣 爆款拆解</a>
+</div>
+
+<!-- ========== 全球热点 ========== -->
+<div class="section" id="global">
+<div class="section-title"><span class="emoji">🌍</span> 全球热点 TOP50</div>
+<div class="insight-box">
+<h3>💡 全球格局一句话</h3>
+<p>2026夏番是"续作狂潮"——《幼女战记2》王者归来，《无职转生3》异世界天花板续命，《BLEACH千年血战篇·祸厄》完结谢幕，《攻壳机动队》全新改编炸场。老牌IP的续作霸权 vs Science SARU等新锐工作室的视觉革新，构成了本季度最精彩的战场。</p>
+</div>
+
+<div class="combo-list">
+<div class="combo-item"><span class="rank-badge rank-1">1</span><div><div class="item-header"><span class="item-title">幼女战记 第二季 (Saga of Tanya the Evil II)</span><span class="tag tag-ac">AC#1</span><span class="tag tag-mal">MAL热榜</span></div><div class="item-sub">Studio NUT | 得票6.79% | 军事+魔法+转生，谭雅6年后终于回归战场</div><div class="heat-bar"><div class="heat-fill" style="width:98%;background:linear-gradient(90deg,#8b5cf6,#ec4899)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-2">2</span><div><div class="item-header"><span class="item-title">无职转生Ⅲ (Mushoku Tensei III)</span><span class="tag tag-ac">AC#2</span><span class="tag tag-reddit">Reddit热</span></div><div class="item-sub">Studio Bind | 得票6.37% | 艾莉丝线回归，剑术与成长的史诗继续</div><div class="heat-bar"><div class="heat-fill" style="width:94%;background:linear-gradient(90deg,#3b82f6,#60a5fa)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-3">3</span><div><div class="item-header"><span class="item-title">穹庐下的魔女 (Jaadugar)</span><span class="tag tag-ac">AC#3</span></div><div class="item-sub">Science SARU | 得票6.26% | 蒙古草原上的女巫故事，视觉惊艳</div><div class="heat-bar"><div class="heat-fill" style="width:90%;background:linear-gradient(90deg,#10b981,#34d399)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">4</span><div><div class="item-header"><span class="item-title">碧蓝之海 第三季 (Grand Blue III)</span><span class="tag tag-ac">AC#4</span></div><div class="item-sub">得票5.52% | 全世界最疯的潜水部又回来了</div><div class="heat-bar"><div class="heat-fill" style="width:86%;background:#06b6d4"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">5</span><div><div class="item-header"><span class="item-title">超超超超超喜欢你的100个女朋友 第三季</span></div><div class="item-sub">Bibury | 得票4.99% | 恋爱喜剧天花板续作</div><div class="heat-bar"><div class="heat-fill" style="width:82%;background:#f472b6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">6</span><div><div class="item-header"><span class="item-title">正相反的你和我 第二季</span></div><div class="item-sub">得票4.75% | 校园恋爱清新续作</div><div class="heat-bar"><div class="heat-fill" style="width:78%;background:#a78bfa"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">7</span><div><div class="item-header"><span class="item-title">在超市后门吸烟的二人</span><span class="tag tag-reddit">Reddit#7</span></div><div class="item-sub">旭Production | 得票4.30% | 治愈系日常，本季最佳放松番</div><div class="heat-bar"><div class="heat-fill" style="width:74%;background:#94a3b8"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">8</span><div><div class="item-header"><span class="item-title">二十世纪电气目录 (Sparks of Tomorrow)</span><span class="tag tag-mal">MAL推荐</span></div><div class="item-sub">京都动画 | 得票3.76% | 京阿尼新作，蒸汽朋克+电气革命美学巅峰</div><div class="heat-bar"><div class="heat-fill" style="width:70%;background:#f59e0b"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">9</span><div><div class="item-header"><span class="item-title">与你相恋到生命尽头</span></div><div class="item-sub">得票3.39% | 致死量恋爱，病态甜</div><div class="heat-bar"><div class="heat-fill" style="width:66%;background:#ec4899"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">10</span><div><div class="item-header"><span class="item-title">世界翩翩起舞 (The World Is Dancing)</span><span class="tag tag-reddit">Reddit热</span></div><div class="item-sub">Cypic | 得票3.35% | 14世纪日本舞踏，视觉艺术盛宴</div><div class="heat-bar"><div class="heat-fill" style="width:64%;background:#c084fc"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">11</span><div><div class="item-header"><span class="item-title">BLEACH 千年血战篇·祸厄 (The Calamity)</span><span class="tag tag-mal">MAL#1</span></div><div class="item-sub">Pierrot Films | 完结篇！友哈巴赫vs护廷十三队终局之战</div><div class="heat-bar"><div class="heat-fill" style="width:92%;background:linear-gradient(90deg,#000,#f59e0b)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">12</span><div><div class="item-header"><span class="item-title">攻壳机动队 (THE GHOST IN THE SHELL)</span><span class="tag tag-mal">MAL热</span><span class="tag tag-reddit">Reddit热</span></div><div class="item-sub">Science SARU | 千年IP全新改编，草薙素子受审，赛博朋克回归</div><div class="heat-bar"><div class="heat-fill" style="width:88%;background:linear-gradient(90deg,#06b6d4,#8b5cf6)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">13</span><div><div class="item-header"><span class="item-title">葬送的芙莉莲 第二季</span><span class="tag tag-mal">MAL#2</span><span class="tag tag-reddit">Reddit#1冬</span></div><div class="item-sub">Madhouse | 北侧诸国旅行篇，千年精灵继续冒险</div><div class="heat-bar"><div class="heat-fill" style="width:95%;background:linear-gradient(90deg,#34d399,#06b6d4)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">14</span><div><div class="item-header"><span class="item-title">咒术回战 第四季 (Culling Game Part2)</span><span class="tag tag-ac">AC重磅</span></div><div class="item-sub">MAPPA | 宿傩新视觉公开，死灭回游后半战</div><div class="heat-bar"><div class="heat-fill" style="width:93%;background:linear-gradient(90deg,#ef4444,#7c3aed)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">15</span><div><div class="item-header"><span class="item-title">Re:从零开始的异世界生活 第四季 丧失篇</span><span class="tag tag-reddit">Reddit热</span></div><div class="item-sub">夏番中后期黑马，第14集热度飙升，国内霸榜海外前三</div><div class="heat-bar"><div class="heat-fill" style="width:87%;background:linear-gradient(90deg,#7c3aed,#3b82f6)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">16</span><div><div class="item-header"><span class="item-title">链烟猫 (Chainsmoker Cat)</span></div><div class="item-sub">Bibury | 本季争议之王，讨论度极高但画风争议</div><div class="heat-bar"><div class="heat-fill" style="width:75%;background:#f97316"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">17</span><div><div class="item-header"><span class="item-title">星球大战：幻境 - 第九绝地</span></div><div class="item-sub">Production I.G | 光剑对决制作华丽</div><div class="heat-bar"><div class="heat-fill" style="width:72%;background:#3b82f6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">18</span><div><div class="item-header"><span class="item-title">铳墓 Stargaze</span></div><div class="item-sub">Orange | 经典3D动画续作</div><div class="heat-bar"><div class="heat-fill" style="width:68%;background:#64748b"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">19</span><div><div class="item-header"><span class="item-title">名媛不格斗 (Young Ladies Don't Play Fighting Games)</span></div><div class="item-sub">Diomedéa | 优雅大小姐偷偷打街霸6，笑点密集</div><div class="heat-bar"><div class="heat-fill" style="width:65%;background:#f472b6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">20</span><div><div class="item-header"><span class="item-title">Bang Dream! YUME∞MITA</span><span class="tag tag-mal">MAL特辑</span></div><div class="item-sub">夏季音乐番新锐，虚拟乐队概念刷新</div><div class="heat-bar"><div class="heat-fill" style="width:62%;background:#fb7185"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">21</span><div><div class="item-header"><span class="item-title">Clevatess 第二季</span></div><div class="item-sub">Lay-duce | 暗黑奇幻续作，魔法学校新篇</div><div class="heat-bar"><div class="heat-fill" style="width:60%;background:#8b5cf6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">22</span><div><div class="item-header"><span class="item-title">我推的孩子 第四季(最终季)</span><span class="tag tag-ac">AC重磅</span></div><div class="item-sub">动画工房 | 预告视觉和PV已公开，最终章即将开播</div><div class="heat-bar"><div class="heat-fill" style="width:90%;background:#ec4899"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">23</span><div><div class="item-header"><span class="item-title">药屋少女的呢喃 第三季</span></div><div class="item-sub">10月2日开播 | OP由Yorushika演唱</div><div class="heat-bar"><div class="heat-fill" style="width:85%;background:#f59e0b"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">24</span><div><div class="item-header"><span class="item-title">链锯人 剧场版 蕾洁篇</span><span class="tag tag-mal">MAL高分</span></div><div class="item-sub">MAPPA | 蕾洁篇剧场版上映，MAL评分引爆</div><div class="heat-bar"><div class="heat-fill" style="width:88%;background:#ef4444"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">25</span><div><div class="item-header"><span class="item-title">飙马野郎 JOJO第七部</span><span class="tag tag-mal">MAL期待</span></div><div class="item-sub">Netflix | SBR新集9月上线！</div><div class="heat-bar"><div class="heat-fill" style="width:84%;background:#fbbf24"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">26</span><div><div class="item-header"><span class="item-title">间谍过家家 剧场版</span></div><div class="item-sub">WIT×CloverWorks | 约尔与劳埃德大银幕冒险</div><div class="heat-bar"><div class="heat-fill" style="width:78%;background:#f472b6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">27</span><div><div class="item-header"><span class="item-title">鬼灭之刃 剧场版 无限城篇</span></div><div class="item-sub">ufotable | 2025全球票房现象，余热持续</div><div class="heat-bar"><div class="heat-fill" style="width:82%;background:linear-gradient(90deg,#3b82f6,#06b6d4)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">28</span><div><div class="item-header"><span class="item-title">我独自升级 第二季</span></div><div class="item-sub">A-1 Pictures | 成晋宇阴影军团继续，全球Crunchyroll播放冠军</div><div class="heat-bar"><div class="heat-fill" style="width:80%;background:#8b5cf6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">29</span><div><div class="item-header"><span class="item-title">Daemons of the Shadow Realm</span></div><div class="item-sub">MAPPA | 暗影领域冒险，第21集播出中</div><div class="heat-bar"><div class="heat-fill" style="width:62%;background:#475569"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">30</span><div><div class="item-header"><span class="item-title">Gachiakuta 第二季</span></div><div class="item-sub">Bones Film | 垃圾动作番续作确认制作</div><div class="heat-bar"><div class="heat-fill" style="width:70%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">31</span><div><div class="item-header"><span class="item-title">关于我转生变成史莱姆 第四季</span></div><div class="item-sub">8mix | 魔物联邦新篇章</div><div class="heat-bar"><div class="heat-fill" style="width:68%;background:#06b6d4"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">32</span><div><div class="item-header"><span class="item-title">黑执事 翡翠魔女篇</span></div><div class="item-sub">经典IP新篇章持续播出</div><div class="heat-bar"><div class="heat-fill" style="width:60%;background:#1e293b"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">33</span><div><div class="item-header"><span class="item-title">魔法少女小圆 魔女之夜的回天</span></div><div class="item-sub">剧场版上映中，口碑炸裂</div><div class="heat-bar"><div class="heat-fill" style="width:75%;background:#f472b6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">34</span><div><div class="item-header"><span class="item-title">凉宫春日的消失 × 初音未来</span></div><div class="item-sub">跨IP合作企划公布，全网热议</div><div class="heat-bar"><div class="heat-fill" style="width:72%;background:#fbbf24"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">35</span><div><div class="item-header"><span class="item-title">One Piece God Valley剧场版</span></div><div class="item-sub">2027年公开！神谷事件动画化</div><div class="heat-bar"><div class="heat-fill" style="width:80%;background:#ef4444"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">36</span><div><div class="item-header"><span class="item-title">牛仔贝波 25周年4K电影版</span></div><div class="item-sub">官宣！经典永不过时</div><div class="heat-bar"><div class="heat-fill" style="width:70%;background:#f59e0b"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">37</span><div><div class="item-header"><span class="item-title">青之芦苇 第二季</span></div><div class="item-sub">TMS Entertainment | 10月4日开播，足球热血</div><div class="heat-bar"><div class="heat-fill" style="width:62%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">38</span><div><div class="item-header"><span class="item-title">Kagurabachi 动画化</span></div><div class="item-sub">2027年4月开播，新追加声优公布</div><div class="heat-bar"><div class="heat-fill" style="width:58%;background:#64748b"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">39</span><div><div class="item-header"><span class="item-title">百武装魔王 第二季</span></div><div class="item-sub">官宣制作决定</div><div class="heat-bar"><div class="heat-fill" style="width:55%;background:#8b5cf6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">40</span><div><div class="item-header"><span class="item-title">宝可梦 野生卡牌</span></div><div class="item-sub">新动画电影公开，小智被替换引争议</div><div class="heat-bar"><div class="heat-fill" style="width:65%;background:#fbbf24"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">41</span><div><div class="item-header"><span class="item-title">博人传 新"佩恩"登场</span></div><div class="item-sub">17年后佩恩继承者亮相</div><div class="heat-bar"><div class="heat-fill" style="width:60%;background:#ef4444"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">42</span><div><div class="item-header"><span class="item-title">龙珠超2 新自在极意功使用者</span></div><div class="item-sub">6名新角色排名公开</div><div class="heat-bar"><div class="heat-fill" style="width:68%;background:#f59e0b"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">43</span><div><div class="item-header"><span class="item-title">Fate/EXTRA Record</span></div><div class="item-sub">移籍Aniplex，9月新消息</div><div class="heat-bar"><div class="heat-fill" style="width:55%;background:#a78bfa"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">44</span><div><div class="item-header"><span class="item-title">光逝去的夏天</span></div><div class="item-sub">漫画即将完结，最终章10月20日</div><div class="heat-bar"><div class="heat-fill" style="width:52%;background:#475569"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">45</span><div><div class="item-header"><span class="item-title">黑四叶草 新佐格拉提斯恶魔</span></div><div class="item-sub">新魔神公开，战力升级</div><div class="heat-bar"><div class="heat-fill" style="width:50%;background:#1e293b"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">46</span><div><div class="item-header"><span class="item-title">海盗战队酷犬 第四季</span></div><div class="item-sub">第20集播出中</div><div class="heat-bar"><div class="heat-fill" style="width:48%;background:#06b6d4"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">47</span><div><div class="item-header"><span class="item-title">蔚蓝档案 动画版</span></div><div class="item-sub">手游改编动画持续播出</div><div class="heat-bar"><div class="heat-fill" style="width:46%;background:#3b82f6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">48</span><div><div class="item-header"><span class="item-title">Love Live! Superstar!! 第四季</span></div><div class="item-sub">学园偶像继续闪耀</div><div class="heat-bar"><div class="heat-fill" style="width:44%;background:#f472b6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">49</span><div><div class="item-header"><span class="item-title">温柔贵族的休假推荐</span></div><div class="item-sub">异世界轻松日常番</div><div class="heat-bar"><div class="heat-fill" style="width:40%;background:#94a3b8"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">50</span><div><div class="item-header"><span class="item-title">记忆管理局 (2026)</span></div><div class="item-sub">MAL评分9.0 | 中国动画黑马，独特叙事获国际认可</div><div class="heat-bar"><div class="heat-fill" style="width:58%;background:#10b981"></div></div></div></div>
+</div>
+<div class="source-ref">数据来源：MyAnimeList Top Airing · Anime Corner Weekly Poll #9 · Reddit r/anime · Anime Trending · ANN Weekly Rankings</div>
+</div>
+
+<!-- ========== 最新更新 ========== -->
+<div class="section" id="latest">
+<div class="section-title"><span class="emoji">🆕</span> 最新更新 · 2026夏番热播中</div>
+<div class="insight-box">
+<h3>📡 本周番剧速报（9月第1周）</h3>
+<p>夏番进入后半程，战况白热化：<b>BLEACH千年血战篇</b>第46集友哈巴赫决战将至；<b>攻壳机动队</b>第9集草薙素子出庭受审；<b>Re:Zero第四季</b>第14集国内霸榜海外前三；<b>尖帽子的魔法工房</b>WIT STUDIO制作，连续霸榜Anime Trending。即将到来的10月秋季档：<b>药屋少女第三季</b>(10.2)、<b>青之芦苇第二季</b>(10.4)。</p>
+</div>
+<div class="card">
+<div class="item-header"><span class="item-title">🎬 10月秋季档期待榜</span></div>
+<div style="margin-top:.5rem">
+<span class="hotword">药屋少女3 10.2</span>
+<span class="hotword">青之芦苇2 10.4</span>
+<span class="hotword">冰之国境2 10.1</span>
+<span class="hotword">我推的孩子4 最终季</span>
+<span class="hotword">咒术回战4 Culling Game Part2</span>
+<span class="hotword">链锁士兵3</span>
+<span class="hotword">Gachiakuta 2</span>
+</div>
+</div>
+</div>
+
+<!-- ========== AI漫剧 ========== -->
+<div class="section" id="ai-drama">
+<div class="section-title"><span class="emoji">🤖</span> AI漫剧 TOP50</div>
+<div class="insight-box">
+<h3>💡 AI漫剧行业一句话</h3>
+<p>2026年AI漫剧市场进入<b>爆发期</b>：Q1全网产能突破12万部，但播放量破亿的不足0.1%——头部效应极其集中。海外市场规模预计达6.5亿美金，字节跳动新加坡/洛杉矶设AI工作室，掌玩网络为海外AI仿真人剧开50K-80K月薪。红果平台AI剧占热播榜6席/10席，<b>AI仿真人剧占市场50%以上</b>，抖音流量系数达60。逆袭爽文、悬疑志怪、末世题材占60%。</p>
+</div>
+
+<div class="combo-list">
+<div class="combo-item"><span class="rank-badge rank-1">1</span><div><div class="item-header"><span class="item-title">末日寒潮我有移动堡垒我怕谁</span><span class="tag tag-ai">AI</span><span class="tag tag-hg">红果#1</span></div><div class="item-sub">1月漫剧百强榜TOP1 | 播放增量2.3亿 | AI移动堡垒动态场景渲染</div><div class="heat-bar"><div class="heat-fill" style="width:98%;background:linear-gradient(90deg,#8b5cf6,#ec4899)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-2">2</span><div><div class="item-header"><span class="item-title">发配边关，罪妻开荒养出战神</span><span class="tag tag-ai">AI</span><span class="tag tag-hg">红果热播#1</span></div><div class="item-sub">热度6860万 | AI剧热播霸主</div><div class="heat-bar"><div class="heat-fill" style="width:95%;background:linear-gradient(90deg,#ec4899,#f472b6)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-3">3</span><div><div class="item-header"><span class="item-title">盛夏芬德拉</span><span class="tag tag-hg">红果9月#1</span></div><div class="item-sub">热度超1.2亿 | 自由摄影师×总裁，三幕心理戏爆款</div><div class="heat-bar"><div class="heat-fill" style="width:99%;background:linear-gradient(90deg,#f59e0b,#ec4899)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">4</span><div><div class="item-header"><span class="item-title">斩仙台真人AI版</span><span class="tag tag-ai">AI仿真</span></div><div class="item-sub">原2D动画播放超12.4亿 | AI版上架一周破亿</div><div class="heat-bar"><div class="heat-fill" style="width:92%;background:#8b5cf6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">5</span><div><div class="item-header"><span class="item-title">老公请和我恋爱吧</span><span class="tag tag-hg">红果9月#2</span></div><div class="item-sub">热度9728万 | 穿越+奶娃+追妻火葬场轻喜剧</div><div class="heat-bar"><div class="heat-fill" style="width:88%;background:#f472b6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">6</span><div><div class="item-header"><span class="item-title">让你悟道，没让你起飞</span><span class="tag tag-ai">AI</span></div><div class="item-sub">上线10天播放5亿 | AI法术特效突破实拍限制</div><div class="heat-bar"><div class="heat-fill" style="width:85%;background:#8b5cf6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">7</span><div><div class="item-header"><span class="item-title">风水之王</span><span class="tag tag-ai">AI仿真</span></div><div class="item-sub">总播放3.7亿 | 红果收藏110万 | 收入170万</div><div class="heat-bar"><div class="heat-fill" style="width:80%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">8</span><div><div class="item-header"><span class="item-title">真千金她是学霸</span><span class="tag tag-hg">红果9月#4</span></div><div class="item-sub">播放量1.01亿 | 教育焦虑+阶层跨越，1分钟知识点创新剪辑</div><div class="heat-bar"><div class="heat-fill" style="width:82%;background:#06b6d4"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">9</span><div><div class="item-header"><span class="item-title">儿媳的重生棋局</span><span class="tag tag-ai">AI</span><span class="tag tag-hg">红果3月#1</span></div><div class="item-sub">热度5180万 | 家庭伦理+重生逆袭</div><div class="heat-bar"><div class="heat-fill" style="width:76%;background:#8b5cf6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">10</span><div><div class="item-header"><span class="item-title">哪怕变成蛋我也无敌</span><span class="tag tag-ai">AI仿真</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">腾讯热度10136 | 蛋形态逆袭AI动态捕捉</div><div class="heat-bar"><div class="heat-fill" style="width:74%;background:linear-gradient(90deg,#8b5cf6,#ff6a00)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">11</span><div><div class="item-header"><span class="item-title">十八岁太奶奶驾到4</span><span class="tag tag-hg">红果开年#1</span></div><div class="item-sub">红果开年十大短剧榜首 | 家族荣耀+穿越爽剧</div><div class="heat-bar"><div class="heat-fill" style="width:78%;background:#e11d48"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">12</span><div><div class="item-header"><span class="item-title">孤城照：惊变</span><span class="tag tag-ai">AI仿真</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">腾讯热度8444 | AI还原历史战场</div><div class="heat-bar"><div class="heat-fill" style="width:70%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">13</span><div><div class="item-header"><span class="item-title">国公府弃女被狼群宠成小公主</span><span class="tag tag-hg">红果9月#5</span></div><div class="item-sub">播放1.19亿 | 人狼共情+狼王表情包出圈</div><div class="heat-bar"><div class="heat-fill" style="width:72%;background:#e11d48"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">14</span><div><div class="item-header"><span class="item-title">奶团太后宫心计</span><span class="tag tag-ai">AI</span><span class="tag tag-dy">抖音</span></div><div class="item-sub">抖音播放2.1亿 | AI优化婴儿表情，反差萌</div><div class="heat-bar"><div class="heat-fill" style="width:70%;background:#00f2ea"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">15</span><div><div class="item-header"><span class="item-title">机长先生你的未婚妻嫁人了</span><span class="tag tag-hg">红果9月#3</span></div><div class="item-sub">热度8134万 | 先婚后爱+治愈</div><div class="heat-bar"><div class="heat-fill" style="width:68%;background:#e11d48"></div></div></div></div>
+</div>
+
+<div class="card" style="margin-top:1rem">
+<div class="item-header"><span class="item-title">📊 AI漫剧市场关键数据</span></div>
+<div class="trend-grid">
+<div class="trend-card"><div class="num">12万+</div><div class="label">Q1全网产能(部)</div></div>
+<div class="trend-card"><div class="num">&lt;0.1%</div><div class="label">破亿作品占比</div></div>
+<div class="trend-card"><div class="num">6.5亿$</div><div class="label">海外市场规模</div></div>
+<div class="trend-card"><div class="num">50%+</div><div class="label">AI仿真人剧市占</div></div>
+<div class="trend-card"><div class="num">60</div><div class="label">抖音AI剧流量系数</div></div>
+<div class="trend-card"><div class="num">6/10</div><div class="label">红果AI剧占热播席</div></div>
+</div>
+</div>
+<div class="source-ref">数据来源：红果短剧官方数据 · DataEye研究院 · 百度知道AI短剧榜单 · 腾讯视频数据</div>
+</div>
+
+<!-- ========== 中国动漫 ========== -->
+<div class="section" id="cn-anime">
+<div class="section-title"><span class="emoji">🐉</span> 中国动漫 TOP50</div>
+<div class="insight-box">
+<h3>💡 国漫格局一句话</h3>
+<p>2026国漫进入<b>"年番时代2.0"</b>：26部年番贡献47%总播放量，腾讯视频霸占云合TOP10中8席。<b>《仙逆》</b>以34.6亿正片有效播放断层第一，《剑来2》首日热度25449创纪录。B站日漫引进进一步收缩，重心全面转向国创。优酷发力"新国风"，爱奇艺走"做熟内容"路线。<b>《诡秘之主》IMDb开分9.3</b>创国漫国际新高，《龙族2》日本发行引发反响。</p>
+</div>
+
+<div class="combo-list">
+<div class="combo-item"><span class="rank-badge rank-1">1</span><div><div class="item-header"><span class="item-title">仙逆 (年番)</span><span class="tag tag-tx">腾讯</span><span class="tag tag-bili">云合#1</span></div><div class="item-sub">2025全网播放量第一 | 34.6亿正片有效播放 | 周榜TOP1连续21周 | 追更500万+</div><div class="heat-bar"><div class="heat-fill" style="width:100%;background:linear-gradient(90deg,#ff6a00,#ef4444)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-2">2</span><div><div class="item-header"><span class="item-title">剑来 第二季</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">首日热度25449创2025动漫新纪录 | 豆瓣9.2 | 水墨粒子+剑气水墨风 | 剧场版"十三之争"预告</div><div class="heat-bar"><div class="heat-fill" style="width:95%;background:linear-gradient(90deg,#1e293b,#f59e0b)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-3">3</span><div><div class="item-header"><span class="item-title">凡人修仙传 (外海风云篇)</span><span class="tag tag-bili">B站</span></div><div class="item-sub">口碑神作 | 运镜丝滑打斗写实 | 真人剧+动漫双线联动放大IP</div><div class="heat-bar"><div class="heat-fill" style="width:90%;background:#00a1d6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">4</span><div><div class="item-header"><span class="item-title">完美世界</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">年番+特别篇+剧场版长线开发 | "一梦千古"特别篇出圈 | 石昊"接棒"被多地警方官号转发</div><div class="heat-bar"><div class="heat-fill" style="width:88%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">5</span><div><div class="item-header"><span class="item-title">斗破苍穹 年番</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">净莲妖火篇高潮 | 月播放近4000万 | 国民级玄幻IP</div><div class="heat-bar"><div class="heat-fill" style="width:85%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">6</span><div><div class="item-header"><span class="item-title">诡秘之主</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">IMDb开分9.3创国漫TOP1 | 克苏鲁+西方魔幻 | 与英国旅游局合作</div><div class="heat-bar"><div class="heat-fill" style="width:88%;background:linear-gradient(90deg,#7c3aed,#3b82f6)"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">7</span><div><div class="item-header"><span class="item-title">沧元图 第三季</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">预约量破900万 | 水墨3D美学标杆 | 54集超长年番</div><div class="heat-bar"><div class="heat-fill" style="width:82%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">8</span><div><div class="item-header"><span class="item-title">吞噬星空</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">科幻国漫标杆 | UE5特效 | 金角巨兽登场 | 罗峰进军宇宙</div><div class="heat-bar"><div class="heat-fill" style="width:80%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">9</span><div><div class="item-header"><span class="item-title">一人之下 第六季</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">2D国漫标杆 | 中式异能+市井江湖 | 1月2日开播</div><div class="heat-bar"><div class="heat-fill" style="width:78%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">10</span><div><div class="item-header"><span class="item-title">牧神记</span><span class="tag tag-bili">B站</span></div><div class="item-sub">口碑年番 | 暗黑厚重画风 | B站国创基本盘</div><div class="heat-bar"><div class="heat-fill" style="width:75%;background:#00a1d6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">11</span><div><div class="item-header"><span class="item-title">龙族 第二季</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">2D制作 | 日本发行引发反响 | 青春校园+奇幻冒险</div><div class="heat-bar"><div class="heat-fill" style="width:76%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">12</span><div><div class="item-header"><span class="item-title">中国奇谭2</span><span class="tag tag-bili">B站</span></div><div class="item-sub">1月1日开播 | 12位导演9个故事 | 《如何成为三条龙》《刑天》等</div><div class="heat-bar"><div class="heat-fill" style="width:74%;background:#00a1d6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">13</span><div><div class="item-header"><span class="item-title">谷围南亭</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">中式民俗微恐+无厘头搞笑 | 风格化新赛道</div><div class="heat-bar"><div class="heat-fill" style="width:68%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">14</span><div><div class="item-header"><span class="item-title">山海经密码</span><span class="tag">优酷</span></div><div class="item-sub">优酷新国风重磅 | 跨年档上线</div><div class="heat-bar"><div class="heat-fill" style="width:66%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">15</span><div><div class="item-header"><span class="item-title">成何体统2</span><span class="tag">爱奇艺</span></div><div class="item-sub">预约超80万 | 爱奇艺女频IP最佳 | 延伸真人剧+短剧多业态</div><div class="heat-bar"><div class="heat-fill" style="width:64%;background:#3b82f6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">16</span><div><div class="item-header"><span class="item-title">斗罗大陆 (年番)</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">总播放超600亿 | 畅销榜霸榜5年 | 剧场版规划中</div><div class="heat-bar"><div class="heat-fill" style="width:70%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">17</span><div><div class="item-header"><span class="item-title">神印王座 (年番)</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">西式奇幻+少年热血 | 高人气年番</div><div class="heat-bar"><div class="heat-fill" style="width:65%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">18</span><div><div class="item-header"><span class="item-title">光阴之外</span><span class="tag">优酷</span></div><div class="item-sub">新国风2D | 跨年档上线</div><div class="heat-bar"><div class="heat-fill" style="width:60%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">19</span><div><div class="item-header"><span class="item-title">遮天</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">恢弘场景+辰东宇宙联动 | 制作偶有争议</div><div class="heat-bar"><div class="heat-fill" style="width:58%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">20</span><div><div class="item-header"><span class="item-title">三线轮洄</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">类型迥异的新阶段作品 | 拓宽题材边界</div><div class="heat-bar"><div class="heat-fill" style="width:55%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">21</span><div><div class="item-header"><span class="item-title">逆天邪神</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">4月上线 52集 | 云澈闯天池秘境</div><div class="heat-bar"><div class="heat-fill" style="width:54%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">22</span><div><div class="item-header"><span class="item-title">百炼成神3</span></div><div class="item-sub">优酷稳定更新玄幻年番</div><div class="heat-bar"><div class="heat-fill" style="width:50%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">23</span><div><div class="item-header"><span class="item-title">仙武传</span></div><div class="item-sub">优酷日更覆盖</div><div class="heat-bar"><div class="heat-fill" style="width:48%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">24</span><div><div class="item-header"><span class="item-title">师兄啊师兄</span></div><div class="item-sub">优酷年番稳定更新</div><div class="heat-bar"><div class="heat-fill" style="width:46%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">25</span><div><div class="item-header"><span class="item-title">神墓 (年番)</span></div><div class="item-sub">优酷新年番</div><div class="heat-bar"><div class="heat-fill" style="width:44%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">26</span><div><div class="item-header"><span class="item-title">天相</span></div><div class="item-sub">优酷玄幻新作</div><div class="heat-bar"><div class="heat-fill" style="width:42%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">27</span><div><div class="item-header"><span class="item-title">大主宰 年番2</span><span class="tag">爱奇艺</span></div><div class="item-sub">爱奇艺年番项目</div><div class="heat-bar"><div class="heat-fill" style="width:40%;background:#3b82f6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">28</span><div><div class="item-header"><span class="item-title">大唐乘风录</span><span class="tag">爱奇艺</span></div><div class="item-sub">爱奇艺国风新作</div><div class="heat-bar"><div class="heat-fill" style="width:38%;background:#3b82f6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">29</span><div><div class="item-header"><span class="item-title">傲世丹神</span><span class="tag">爱奇艺</span></div><div class="item-sub">爱奇艺年番</div><div class="heat-bar"><div class="heat-fill" style="width:36%;background:#3b82f6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">30</span><div><div class="item-header"><span class="item-title">荒神录之玲珑山</span></div><div class="item-sub">岩彩美学 | 入围法国昂西动画节主竞赛 | 东方色彩体系</div><div class="heat-bar"><div class="heat-fill" style="width:55%;background:#f59e0b"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">31</span><div><div class="item-header"><span class="item-title">王者荣耀·荣耀之章命运篇</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">游戏IP动画化 | 预约破纪录 | 电影级制作</div><div class="heat-bar"><div class="heat-fill" style="width:60%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">32</span><div><div class="item-header"><span class="item-title">诛仙 第三季</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">暑期日冠27天</div><div class="heat-bar"><div class="heat-fill" style="width:65%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">33</span><div><div class="item-header"><span class="item-title">画江湖之不良人 第七季</span></div><div class="item-sub">原创IP十年历程 | 日冠3天</div><div class="heat-bar"><div class="heat-fill" style="width:55%;background:#ef4444"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">34</span><div><div class="item-header"><span class="item-title">灵笼 第二季</span></div><div class="item-sub">科幻题材 | 单集30-40分钟 | 日冠3天</div><div class="heat-bar"><div class="heat-fill" style="width:58%;background:#64748b"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">35</span><div><div class="item-header"><span class="item-title">鬼吹灯之南海归墟</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">海洋探险+悬疑解密 | 日冠3天</div><div class="heat-bar"><div class="heat-fill" style="width:56%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">36</span><div><div class="item-header"><span class="item-title">紫川 第二季</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">2D制作 | 日冠6天</div><div class="heat-bar"><div class="heat-fill" style="width:54%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">37</span><div><div class="item-header"><span class="item-title">一念永恒 第三季</span></div><div class="item-sub">日冠10天 | 2D制作</div><div class="heat-bar"><div class="heat-fill" style="width:60%;background:#8b5cf6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">38</span><div><div class="item-header"><span class="item-title">斩神之凡尘神域</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">2024上线 长尾效应显著 | 2025暑期仍上榜</div><div class="heat-bar"><div class="heat-fill" style="width:50%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">39</span><div><div class="item-header"><span class="item-title">记忆管理局 (2026)</span><span class="tag tag-mal">MAL 9.0</span></div><div class="item-sub">中国动画国际黑马 | MAL评分9.0</div><div class="heat-bar"><div class="heat-fill" style="width:52%;background:#10b981"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">40</span><div><div class="item-header"><span class="item-title">苍兰诀 第二季</span><span class="tag">爱奇艺</span></div><div class="item-sub">女频IP | 2D奇幻恋爱</div><div class="heat-bar"><div class="heat-fill" style="width:40%;background:#3b82f6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">41</span><div><div class="item-header"><span class="item-title">明日方舟：焰烬曙明</span><span class="tag tag-bili">B站</span></div><div class="item-sub">手游改编科幻动画</div><div class="heat-bar"><div class="heat-fill" style="width:38%;background:#00a1d6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">42</span><div><div class="item-header"><span class="item-title">仙逆剧场版 神临之战</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">IP延伸剧场版</div><div class="heat-bar"><div class="heat-fill" style="width:46%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">43</span><div><div class="item-header"><span class="item-title">斗罗大陆剧场版 剑道尘心</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">经典IP剧场版</div><div class="heat-bar"><div class="heat-fill" style="width:44%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">44</span><div><div class="item-header"><span class="item-title">纸嫁衣 影视化</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">独立恐怖游戏IP | 动漫+音乐+商品化</div><div class="heat-bar"><div class="heat-fill" style="width:40%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">45</span><div><div class="item-header"><span class="item-title">双城之战 浸入式音乐秀</span></div><div class="item-sub">全球首演在中国 | 音乐剧+戏剧+特技+机械装置</div><div class="heat-bar"><div class="heat-fill" style="width:48%;background:#7c3aed"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">46</span><div><div class="item-header"><span class="item-title">DNF动画宇宙</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">番剧+短片+剧场版完整矩阵规划</div><div class="heat-bar"><div class="heat-fill" style="width:36%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">47</span><div><div class="item-header"><span class="item-title">灵境行者</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">2026腾讯年度发布新番</div><div class="heat-bar"><div class="heat-fill" style="width:35%;background:#ff6a00"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">48</span><div><div class="item-header"><span class="item-title">新世界加载中</span></div><div class="item-sub">AI辅助全流程Pipeline动画短片</div><div class="heat-bar"><div class="heat-fill" style="width:32%;background:#8b5cf6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">49</span><div><div class="item-header"><span class="item-title">异国日记</span></div><div class="item-sub">B站小众佳作</div><div class="heat-bar"><div class="heat-fill" style="width:30%;background:#00a1d6"></div></div></div></div>
+
+<div class="combo-item"><span class="rank-badge rank-other">50</span><div><div class="item-header"><span class="item-title">吞天记</span><span class="tag tag-tx">腾讯</span></div><div class="item-sub">新IP上架</div><div class="heat-bar"><div class="heat-fill" style="width:28%;background:#ff6a00"></div></div></div></div>
+</div>
+<div class="source-ref">数据来源：云合数据 · 腾讯视频官方 · B站国创 · 优酷动漫 · 爱奇艺 · 豆瓣 · 灯塔专业版</div>
+</div>
+
+<!-- ========== 行业趋势 ========== -->
+<div class="section" id="trend">
+<div class="section-title"><span class="emoji">📊</span> 行业趋势 & 波动分析</div>
+
+<div class="card">
+<div class="item-header"><span class="item-title">📈 2026 Q3 关键趋势</span></div>
+<div style="margin-top:.8rem">
+<p style="margin-bottom:.6rem"><b style="color:#34d399">↑</b> <b>续作霸权时代</b>：夏番Top10几乎被续作包揽，原创IP突围愈发困难。老牌IP的续作生命力和粉丝粘性远超新IP。</p>
+<p style="margin-bottom:.6rem"><b style="color:#34d399">↑</b> <b>AI漫剧爆发</b>：Q1产能12万部，AI仿真人剧占50%+市场，红果热播榜6/10为AI剧。但头部0.1%吃掉大部分流量。</p>
+<p style="margin-bottom:.6rem"><b style="color:#34d399">↑</b> <b>国漫出海加速</b>：《诡秘之主》IMDb 9.3、《龙族2》日本发行、《荒神录》入围昂西——国漫国际认可度突破。</p>
+<p style="margin-bottom:.6rem"><b style="color:#34d399">↑</b> <b>年番化运营</b>：26部年番贡献47%播放量，腾讯视频云合TOP10占8席。长线运营取代单点爆款。</p>
+<p style="margin-bottom:.6rem"><b style="color:#fbbf24">→</b> <b>2D vs 3D博弈</b>：《剑来》《诡秘之主》《龙族2》等2D作品打破"唯3D论"，但3D仍是国漫头部主流形态。</p>
+<p style="margin-bottom:.6rem"><b style="color:#f87171">↓</b> <b>B站日漫引进萎缩</b>：2026年1月仅引入1部新番，日漫基本盘收缩，重心全面转向国创。</p>
+<p><b style="color:#f87171">↓</b> <b>短剧分成下降</b>：平台分成从60%骤降至40%，倒逼厂商转向海外掘金。</p>
+</div>
+</div>
+
+<div class="card">
+<div class="item-header"><span class="item-title">📉 波动分析 · 排名变动</span></div>
+<div style="margin-top:.8rem">
+<p><span class="up">▲</span> <b>《Re:Zero第四季》</b>：夏番中后期暴涨，国内霸榜海外前三，第14集成转折点</p>
+<p><span class="up">▲</span> <b>《诡秘之主》</b>：从新番到IMDb 9.3国漫第一，国际口碑持续发酵</p>
+<p><span class="up">▲</span> <b>《尖帽子的魔法工房》</b>：Anime Trending连续霸榜，从冷门到黑马</p>
+<p><span class="down">▼</span> <b>《我推的孩子第三季》</b>：口碑下滑，综合评分7.34，未入前十</p>
+<p><span class="down">▼</span> <b>《租借女友第五季》</b>：排名如过山车，Anime Corner第3周暴跌12位</p>
+<p><span class="flat">─</span> <b>《仙逆》</b>：稳居国漫第一，断层优势，周榜TOP1连续21周</p>
+</div>
+</div>
+
+<div class="card">
+<div class="item-header"><span class="item-title">🎮 跨媒体开发趋势</span></div>
+<div style="margin-top:.5rem">
+<span class="hotword">剑来×龙泉文旅</span>
+<span class="hotword">诡秘之主×英国旅游局</span>
+<span class="hotword">双城之战×浸入式音乐秀</span>
+<span class="hotword">王者荣耀×动画化</span>
+<span class="hotword">DNF×动画宇宙</span>
+<span class="hotword">纸嫁衣×动漫+音乐</span>
+<span class="hotword">龙珠超×汉堡王</span>
+<span class="hotword">海贼王×Timberland</span>
+</div>
+</div>
+</div>
+
+<!-- ========== 爆款拆解 ========== -->
+<div class="section" id="explosion">
+<div class="section-title"><span class="emoji">💣</span> 爆款拆解</div>
+
+<div class="card">
+<div class="item-header"><span class="item-title">🎯 爆款公式：《仙逆》为什么断层第一？</span></div>
+<div style="margin-top:.8rem;font-size:.85rem;color:#c4b5fd;line-height:1.9">
+<p>❶ <b>反套路人设</b>：王林"杀伐果断"的狠人男主，区别于传统热血废柴，戳中观众"爽"的核心痛点</p>
+<p>❷ <b>制作稳定</b>：年番化保证每周更新，用户粘性极高，追更人数500万+</p>
+<p>❸ <b>名场面制造</b>：白发红瞳踏黄泉、瞬秒20万妖兵——"二创炸弹"式名场面持续产出</p>
+<p>❹ <b>社交裂变</b>：多地警方官号转发"接棒迎战"片段，突破动漫圈层触达大众</p>
+<p>❺ <b>年番护城河</b>：云合周榜TOP1连续21周，用户观看惯性难以被新番打破</p>
+</div>
+</div>
+
+<div class="card">
+<div class="item-header"><span class="item-title">🎯 爆款公式：《盛夏芬德拉》为什么热度破亿？</span></div>
+<div style="margin-top:.8rem;font-size:.85rem;color:#c4b5fd;line-height:1.9">
+<p>❶ <b>经典梗精细化</b>："总裁×摄影师"老梗拆解为"拘谨→心动→追妻"三幕心理戏</p>
+<p>❷ <b>制作质感</b>：马厩制片厂电影级镜头，平台投放质感预告片放大情绪张力</p>
+<p>❸ <b>精准运营</b>：男主"护妻"高光片段剪辑合集，社交媒体病毒传播立住"理想型"人设</p>
+<p>❹ <b>情感共鸣</b>：细腻真实的心动→退缩→勇敢的心理转变，极度契合女性观众</p>
+</div>
+</div>
+
+<div class="card">
+<div class="item-header"><span class="item-title">🎯 爆款公式：《BLEACH千年血战篇》为什么完结封神？</span></div>
+<div style="margin-top:.8rem;font-size:.85rem;color:#c4b5fd;line-height:1.9">
+<p>❶ <b>情怀MAX</b>：20年IP终局，粉丝从少年等到中年的情感价值不可替代</p>
+<p>❷ <b>制作升维</b>：Pierrot Films倾注资源，卍解连续揭晓，视觉冲击拉满</p>
+<p>❸ <b>叙事节奏</b>：4季分章上映，保持热度持续释放而非一次性消费</p>
+<p>❹ <b>蓝染回归</b>：最强反派的最终加入，社交媒体讨论度瞬间爆表</p>
+</div>
+</div>
+
+<div class="card">
+<div class="item-header"><span class="item-title">🎯 AI漫剧爆款密码</span></div>
+<div style="margin-top:.8rem;font-size:.85rem;color:#c4b5fd;line-height:1.9">
+<p>🔑 <b>题材公式</b>：逆袭爽文+悬疑志怪+末世 = 60%爆款占比</p>
+<p>🔑 <b>技术杠杆</b>：AI生成法术/特效/场景 → 突破实拍成本限制 → 高密度视觉冲击</p>
+<p>🔑 <b>节奏控制</b>：AI快速迭代剧本分镜，精准捕捉"爽点"节奏</p>
+<p>🔑 <b>运营联动</b>：表情包出圈(狼の蔑视)+短视频高光剪辑+1分钟知识点短片</p>
+<p>🔑 <b>风险警示</b>：12万部产能但破亿不足0.1%，平台分成从60→40，完全替代真人尚需时间</p>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p>📡 本报告由AI自动采集整合生成 | 数据采集时间：2026-09-02 14:22 CST</p>
+<p>数据来源：MyAnimeList · Anime Corner · Reddit · Anime Trending · ANN · 红果短剧 · 抖音 · B站 · 腾讯视频 · 优酷 · 爱奇艺 · 云合数据 · 灯塔专业版 · DataEye · 豆瓣</p>
+<p>⚠️ 排名基于各平台公开数据综合整理，仅供参考，不构成任何商业建议</p>
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll('.nav-tabs a').forEach(a=>{
+a.addEventListener('click',e=>{
+e.preventDefault();
+document.querySelectorAll('.nav-tabs a').forEach(x=>x.classList.remove('active'));
+a.classList.add('active');
+document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'})
+})});
+
+// Animate heat bars on scroll
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.w||e.target.style.width;e.target.dataset.w=e.target.style.width}})
+},{threshold:0.1});
+document.querySelectorAll('.heat-fill').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
