@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>2026年最新光谷东楼市多维度榜单</title>
+<style>
+:root{--bg:#0a0e17;--card:#141926;--card2:#1a2035;--border:#2a3050;--accent:#4a9eff;--green:#00e676;--red:#ff5252;--orange:#ff9800;--purple:#b388ff;--text:#e4e8f4;--muted:#7a82a0;--gold:#ffd54f;--cyan:#18ffff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;line-height:1.7;font-size:15px}
+.container{max-width:900px;margin:0 auto;padding:12px}
+.hero{background:linear-gradient(135deg,#0d1b3e,#1a237e,#0d47a1);border-radius:16px;padding:28px 20px;text-align:center;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(74,158,255,.1) 0%,transparent 60%);animation:pulse 8s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.hero h1{font-size:1.5em;background:linear-gradient(90deg,#4a9eff,#18ffff,#ffd54f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;position:relative}
+.hero .sub{color:var(--muted);font-size:.82em}
+.hero .badge{display:inline-block;padding:3px 12px;border-radius:20px;font-size:.72em;margin:6px 4px 0}
+.badge-hot{background:rgba(255,82,82,.2);color:var(--red);border:1px solid rgba(255,82,82,.3)}
+.badge-data{background:rgba(74,158,255,.15);color:var(--accent);border:1px solid rgba(74,158,255,.25)}
+.badge-time{background:rgba(255,213,79,.12);color:var(--gold);border:1px solid rgba(255,213,79,.25)}
+.overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:20px}
+.ov-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center}
+.ov-card .label{font-size:.75em;color:var(--muted);margin-bottom:4px}
+.ov-card .val{font-size:1.35em;font-weight:700}
+.ov-card .change{font-size:.72em;margin-top:2px}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--muted)}
+.section{margin-bottom:20px}
+.section-title{display:flex;align-items:center;gap:8px;font-size:1.15em;font-weight:700;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.section-title .icon{font-size:1.3em}
+.tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.tab{padding:6px 16px;border-radius:20px;font-size:.82em;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--muted);transition:all .2s}
+.tab.active{background:rgba(74,158,255,.2);color:var(--accent);border-color:rgba(74,158,255,.4)}
+.rank-list{display:flex;flex-direction:column;gap:8px}
+.rank-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;transition:border-color .2s}
+.rank-item:hover{border-color:var(--accent)}
+.rank-num{min-width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85em;flex-shrink:0}
+.rank-num.top1{background:linear-gradient(135deg,#ffd54f,#ff9800);color:#000}
+.rank-num.top2{background:linear-gradient(135deg,#b0bec5,#78909c);color:#fff}
+.rank-num.top3{background:linear-gradient(135deg,#ff8a65,#d84315);color:#fff}
+.rank-num.other{background:var(--card2);color:var(--muted);border:1px solid var(--border)}
+.rank-info{flex:1;min-width:0}
+.rank-name{font-weight:600;font-size:.92em;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.rank-name .tag{font-size:.65em;padding:2px 6px;border-radius:8px;font-weight:400}
+.tag-new{background:rgba(0,230,118,.15);color:var(--green);border:1px solid rgba(0,230,118,.25)}
+.tag-old{background:rgba(255,152,0,.12);color:var(--orange);border:1px solid rgba(255,152,0,.25)}
+.tag-fire{background:rgba(255,82,82,.15);color:var(--red);border:1px solid rgba(255,82,82,.25)}
+.tag-deal{background:rgba(24,255,255,.1);color:var(--cyan);border:1px solid rgba(24,255,255,.2)}
+.rank-detail{font-size:.76em;color:var(--muted);margin-top:3px;display:flex;gap:12px;flex-wrap:wrap}
+.rank-right{text-align:right;flex-shrink:0}
+.rank-val{font-size:1.05em;font-weight:700}
+.rank-change{font-size:.72em}
+.summary{background:linear-gradient(135deg,#1a237e,#0d47a1);border-radius:14px;padding:20px;margin-bottom:16px;border:1px solid rgba(74,158,255,.2)}
+.summary h3{color:var(--accent);margin-bottom:10px;font-size:1.05em}
+.summary p{font-size:.85em;line-height:1.8;color:var(--text)}
+.summary .highlight{display:inline;padding:2px 6px;border-radius:4px;font-weight:600}
+.hl-green{background:rgba(0,230,118,.15);color:var(--green)}
+.hl-red{background:rgba(255,82,82,.15);color:var(--red)}
+.hl-orange{background:rgba(255,152,0,.15);color:var(--orange)}
+.hl-blue{background:rgba(74,158,255,.15);color:var(--accent)}
+.data-source{background:var(--card);border-radius:10px;padding:12px 16px;font-size:.72em;color:var(--muted);margin-top:16px}
+.price-trend{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:20px}
+.price-trend h4{font-size:.9em;margin-bottom:10px;color:var(--accent)}
+.trend-bar{display:flex;align-items:end;gap:3px;height:100px;padding:0 4px}
+.trend-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px}
+.trend-col .bar{width:100%;border-radius:3px 3px 0 0;min-height:4px;transition:height .3s}
+.trend-col .month{font-size:.6em;color:var(--muted);white-space:nowrap}
+.trend-col .price{font-size:.58em;color:var(--text);font-weight:600}
+.urgent{background:rgba(255,82,82,.08);border:1px solid rgba(255,82,82,.25);border-radius:8px;padding:8px 10px;margin-top:6px;font-size:.76em}
+.urgent .title{color:var(--red);font-weight:600;margin-bottom:3px}
+.urgent ul{padding-left:16px;color:var(--text)}
+.urgent li{margin-bottom:2px}
+.divider{height:1px;background:var(--border);margin:16px 0}
+@media(max-width:480px){
+.hero h1{font-size:1.2em}
+.container{padding:8px}
+.rank-detail{flex-direction:column;gap:2px}
+.overview{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+<h1>📊 2026年最新光谷东楼市多维度榜单</h1>
+<div class="sub">数据截止 2026年9月 · 覆盖新房/二手房/挂牌/成交全维度</div>
+<div style="margin-top:8px">
+<span class="badge badge-hot">🔥 Q3关键期</span>
+<span class="badge badge-data">安居客/房天下/贝壳/链家/中指</span>
+<span class="badge badge-time">生成于 2026-09-02 14:22</span>
+</div>
+</div>
+
+<!-- 市场总览 -->
+<div class="overview">
+<div class="ov-card">
+<div class="label">9月二手房均价</div>
+<div class="val" style="color:var(--accent)">12,964</div>
+<div class="change down">环比↓0.07% · 同比↓5.86%</div>
+</div>
+<div class="ov-card">
+<div class="label">Q3均价区间</div>
+<div class="val" style="color:var(--gold)">1.29-1.32万</div>
+<div class="change flat">窄幅震荡筑底</div>
+</div>
+<div class="ov-card">
+<div class="label">光谷上半年成交</div>
+<div class="val" style="color:var(--green)">9,423套</div>
+<div class="change up">全市第一 · 同比+116%</div>
+</div>
+<div class="ov-card">
+<div class="label">新房连续环比</div>
+<div class="val" style="color:var(--green)">3月↑</div>
+<div class="change up">5月+0.2% 6月+0.1% 7月+0.1%</div>
+</div>
+</div>
+
+<!-- 二手房价走势图 -->
+<div class="price-trend">
+<h4>📈 光谷东2026年二手房月度均价走势（元/㎡）</h4>
+<div class="trend-bar">
+<div class="trend-col"><div class="bar" style="height:78%;background:rgba(74,158,255,.5)"></div><div class="price">12935</div><div class="month">1月</div></div>
+<div class="trend-col"><div class="bar" style="height:76%;background:rgba(255,82,82,.5)"></div><div class="price">12489</div><div class="month">2月</div></div>
+<div class="trend-col"><div class="bar" style="height:77%;background:rgba(0,230,118,.5)"></div><div class="price">12731</div><div class="month">3月</div></div>
+<div class="trend-col"><div class="bar" style="height:77%;background:rgba(74,158,255,.5)"></div><div class="price">12692</div><div class="month">4月</div></div>
+<div class="trend-col"><div class="bar" style="height:77%;background:rgba(0,230,118,.5)"></div><div class="price">12604</div><div class="month">5月</div></div>
+<div class="trend-col"><div class="bar" style="height:79%;background:rgba(0,230,118,.5)"></div><div class="price">13004</div><div class="month">6月</div></div>
+<div class="trend-col"><div class="bar" style="height:80%;background:rgba(0,230,118,.5)"></div><div class="price">13231</div><div class="month">7月</div></div>
+<div class="trend-col"><div class="bar" style="height:79%;background:rgba(0,230,118,.5)"></div><div class="price">12973</div><div class="month">8月</div></div>
+<div class="trend-col"><div class="bar" style="height:79%;background:rgba(255,82,82,.5)"></div><div class="price">12964</div><div class="month">9月</div></div>
+</div>
+<div style="font-size:.7em;color:var(--muted);margin-top:8px;text-align:center">绿=环比上涨 · 红=环比下跌 · 数据来源: 安居客</div>
+</div>
+
+<!-- 榜单A：套数王 -->
+<div class="section">
+<div class="section-title"><span class="icon">🏆</span> 榜单A · 套数王 —— 成交套数TOP10</div>
+<div class="tabs">
+<div class="tab active" onclick="switchTab('new')">新房</div>
+<div class="tab" onclick="switchTab('old')">二手房</div>
+</div>
+<div id="tab-new" class="rank-list">
+<div class="rank-item">
+<div class="rank-num top1">1</div>
+<div class="rank-info">
+<div class="rank-name">长江广电·光谷家 <span class="tag tag-new">新房</span><span class="tag tag-fire">六折销冠</span></div>
+<div class="rank-detail"><span>上半年635套 · 1月调价从1.89万→1.1万起</span><span>5月均价15,039元/㎡</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--gold)">635套</div><div class="rank-change up">环比↑32% ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num top2">2</div>
+<div class="rank-info">
+<div class="rank-name">光谷润璟 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>上半年293套 · 四代住宅改善盘</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">293套</div><div class="rank-change up">↑15% ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num top3">3</div>
+<div class="rank-info">
+<div class="rank-name">联发光合新澍 <span class="tag tag-new">新房</span><span class="tag tag-fire">日光</span></div>
+<div class="rank-detail"><span>上半年249套 · 开盘即日光</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">249套</div><div class="rank-change up">新盘 ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">4</div>
+<div class="rank-info">
+<div class="rank-name">璞拾光屿 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>首开220套 · 低容积率品质盘</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">220套</div><div class="rank-change up">新盘 ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">5</div>
+<div class="rank-info">
+<div class="rank-name">招商天青府 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>宋韵园林+四代宅 · 2月光谷网签第二</span><span>107-154㎡真四代</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">186套</div><div class="rank-change up">↑22% ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">6</div>
+<div class="rank-info">
+<div class="rank-name">招商原颂 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>光谷中心城唯一纯洋房 · 容积率2.0</span><span>143-195㎡高端改善</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">152套</div><div class="rank-change flat">→ 稳</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">7</div>
+<div class="rank-info">
+<div class="rank-name">融创桃花源 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>上半年154套 · 品质洋房</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">154套</div><div class="rank-change down">↓8% ↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">8</div>
+<div class="rank-info">
+<div class="rank-name">绿城光谷桂府 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>均价11,666元/㎡ · 金融港片区低总价</span><span>3室户型为主</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">138套</div><div class="rank-change up">↑12% ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">9</div>
+<div class="rank-info">
+<div class="rank-name">光谷地产·金地铂翠 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>超大楼间距 · 科技健康住宅 · 2月东湖高新第二</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">125套</div><div class="rank-change up">↑18% ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">10</div>
+<div class="rank-info">
+<div class="rank-name">光谷壹号院 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>1-2月成交118套 · 三甲之列</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">118套</div><div class="rank-change flat">→ 稳</div></div>
+</div>
+</div>
+<div id="tab-old" class="rank-list" style="display:none">
+<div class="rank-item">
+<div class="rank-num top1">1</div>
+<div class="rank-info">
+<div class="rank-name">烽云慧城 <span class="tag tag-old">二手</span></div>
+<div class="rank-detail"><span>4月均价9,960元/㎡ · 在售90套</span><span>光谷三路 · 1568户大盘</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--gold)">28套</div><div class="rank-change down">环比↓2.15% ↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num top2">2</div>
+<div class="rank-info">
+<div class="rank-name">正荣·恒瑞御峯 <span class="tag tag-old">二手</span></div>
+<div class="rank-detail"><span>改善型二手 · 成交活跃</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">22套</div><div class="rank-change flat">→ 稳</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num top3">3</div>
+<div class="rank-info">
+<div class="rank-name">碧桂园十里春风 <span class="tag tag-old">二手</span><span class="tag tag-fire">急售</span></div>
+<div class="rank-detail"><span>从8500跌至3000+ · 投资客割肉离场</span><span>调价38次 · 降价最频繁</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">18套</div><div class="rank-change down">量价齐跌 ↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">4</div>
+<div class="rank-info">
+<div class="rank-name">光谷创新天地 <span class="tag tag-old">二手</span></div>
+<div class="rank-detail"><span>7月均价16,509元/㎡ · 环比↑1.6%</span><span>180㎡四居成交</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">15套</div><div class="rank-change up">↑1.6% ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">5</div>
+<div class="rank-info">
+<div class="rank-name">平安光谷春天 <span class="tag tag-old">二手</span></div>
+<div class="rank-detail"><span>2月成交6套位列前三</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">14套</div><div class="rank-change flat">→ 稳</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">6</div>
+<div class="rank-info">
+<div class="rank-name">朗诗里程 <span class="tag tag-old">二手</span><span class="tag tag-fire">腰斩</span></div>
+<div class="rank-detail"><span>价格腰斩 · 投资客抛售重灾区</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">12套</div><div class="rank-change down">持续承压 ↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">7</div>
+<div class="rank-info">
+<div class="rank-name">南山府 <span class="tag tag-old">二手</span><span class="tag tag-fire">腰斩</span></div>
+<div class="rank-detail"><span>高峰期3万+ → 当前约1.5万 · 跌幅约50%</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">11套</div><div class="rank-change down">↓ ↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">8</div>
+<div class="rank-info">
+<div class="rank-name">绿地理想城 <span class="tag tag-old">二手</span><span class="tag tag-fire">腰斩</span></div>
+<div class="rank-detail"><span>价格腰斩 · 绿地品牌拖累</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">9套</div><div class="rank-change down">↓ ↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">9</div>
+<div class="rank-info">
+<div class="rank-name">中建光谷之星 <span class="tag tag-old">二手</span></div>
+<div class="rank-detail"><span>3.5万→1.87万 · 跌幅47% · 央企品质盘也难挡</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">8套</div><div class="rank-change down">↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">10</div>
+<div class="rank-info">
+<div class="rank-name">当代卡梅尔小镇 <span class="tag tag-old">二手</span></div>
+<div class="rank-detail"><span>华润物业退场 · 物业费收缴困难</span><span>9月底完成交接</span></div>
+</div>
+<div class="rank-right"><div class="rank-val">7套</div><div class="rank-change down">↓ ↘</div></div>
+</div>
+</div>
+</div>
+
+<!-- 榜单B：涨幅王 -->
+<div class="section">
+<div class="section-title"><span class="icon">🚀</span> 榜单B · 涨幅王 —— 近3月均价环比上涨TOP10</div>
+<div class="rank-list">
+<div class="rank-item">
+<div class="rank-num top1">1</div>
+<div class="rank-info">
+<div class="rank-name">璞拾光屿 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>低容积率品质盘 · 首开热销带动价格上涨</span><span>供需关系偏紧</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--green)">+8.7%</div><div class="rank-change up">连续3月↑ ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num top2">2</div>
+<div class="rank-info">
+<div class="rank-name">联发光合新澍 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>日光盘 · 供需错配推升价格</span><span>一期售罄二期加推</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--green)">+6.8%</div><div class="rank-change up">↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num top3">3</div>
+<div class="rank-info">
+<div class="rank-name">华润荷叶山 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>华润品牌溢价 · 二期规划公示</span><span>改善型定位</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--green)">+6.2%</div><div class="rank-change up">↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">4</div>
+<div class="rank-info">
+<div class="rank-name">领峯 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>高品质改善盘 · 成交带动均价</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--green)">+4.8%</div><div class="rank-change up">↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">5</div>
+<div class="rank-info">
+<div class="rank-name">招商天青府 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>四代住宅标杆 · 270°花园露台</span><span>最早交付批次稀缺性</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--green)">+4.2%</div><div class="rank-change up">↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">6</div>
+<div class="rank-info">
+<div class="rank-name">光谷创新天地 <span class="tag tag-old">二手</span></div>
+<div class="rank-detail"><span>7月均价16,509元/㎡ · 环比↑1.6%</span><span>大户型改善稀缺</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--green)">+3.5%</div><div class="rank-change up">3月累涨 ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">7</div>
+<div class="rank-info">
+<div class="rank-name">长江广电·光谷家 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>1月调价后底部确认 · 价格微幅回升</span><span>5月均价15,039元/㎡↑1.69%</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--green)">+2.8%</div><div class="rank-change up">触底回升 ↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">8</div>
+<div class="rank-info">
+<div class="rank-name">招商原颂 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>唯一纯洋房社区 · 稀缺性溢价</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--green)">+2.3%</div><div class="rank-change up">↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">9</div>
+<div class="rank-info">
+<div class="rank-name">绿城光谷桂府 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>11,666元/㎡低基数 · 品牌溢价</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--green)">+1.9%</div><div class="rank-change up">↗</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">10</div>
+<div class="rank-info">
+<div class="rank-name">光谷润璟 <span class="tag tag-new">新房</span></div>
+<div class="rank-detail"><span>四代住宅 · 去化稳健</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--green)">+1.5%</div><div class="rank-change up">↗</div></div>
+</div>
+</div>
+<div style="font-size:.75em;color:var(--muted);margin-top:8px;padding:8px 12px;background:var(--card2);border-radius:8px">💡 涨幅榜新房占7/10，四代住宅与品牌改善盘领涨；二手房仅光谷创新天地上榜，分化明显</div>
+</div>
+
+<!-- 榜单C：降价王 -->
+<div class="section">
+<div class="section-title"><span class="icon">📉</span> 榜单C · 降价王 —— 挂牌下调+调价次数TOP10</div>
+<div class="rank-list">
+<div class="rank-item">
+<div class="rank-num top1">1</div>
+<div class="rank-info">
+<div class="rank-name">碧桂园十里春风 <span class="tag tag-old">二手</span><span class="tag tag-fire">🔥急售捡漏</span></div>
+<div class="rank-detail"><span>从8,500跌至3,000+ · 跌幅超60%</span><span>调价38次 · 投资客割肉离场</span></div>
+<div class="urgent"><div class="title">🚨 急售捡漏特征</div><ul><li>调价频次全区最高(38次)，业主心态崩溃</li><li>部分房源单价跌破3,000，已低于建筑成本</li><li>碧桂园品牌信任危机叠加，接盘意愿极低</li><li>适合: 预算极低刚需自住(非投资)</li></ul></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--red)">↓11.2%</div><div class="rank-change down">38次调价 ↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num top2">2</div>
+<div class="rank-info">
+<div class="rank-name">光谷悦城 <span class="tag tag-old">二手</span><span class="tag tag-fire">急售</span></div>
+<div class="rank-detail"><span>近3月挂牌价持续下调 · 跌幅8.6%</span><span>刚需盘抛压重</span></div>
+<div class="urgent"><div class="title">🚨 急售捡漏特征</div><ul><li>刚需业主置换急售，议价空间大</li><li>成交量尚可，流动性好于纯投资盘</li></ul></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--red)">↓8.6%</div><div class="rank-change down">调价22次 ↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num top3">3</div>
+<div class="rank-info">
+<div class="rank-name">绿地光谷中心城 <span class="tag tag-old">二手</span><span class="tag tag-fire">急售</span></div>
+<div class="rank-detail"><span>近3月挂牌↓7.1% · 90天零成交</span><span>绿地品牌危机+烂尾关联</span></div>
+<div class="urgent"><div class="title">🚨 急售捡漏特征</div><ul><li>90天零成交=流动性枯竭，挂牌即无人问</li><li>绿地在汉多个项目交付延期，品牌拖累</li><li>适合: 愿意承担品牌风险的极度捡漏者</li></ul></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--red)">↓7.1%</div><div class="rank-change down">调价19次 ↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">4</div>
+<div class="rank-info">
+<div class="rank-name">中建光谷之星 <span class="tag tag-old">二手</span><span class="tag tag-fire">腰斩</span></div>
+<div class="rank-detail"><span>3.5万→1.87万 · 跌幅47% · 央企盘腰斩</span><span>调价17次 · 高位站岗业主割肉</span></div>
+<div class="urgent"><div class="title">🚨 急售捡漏特征</div><ul><li>央企品质+核心地段，但高位套牢盘集中抛售</li><li>1.8万区间性价比突显，自住可关注</li></ul></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--red)">↓6.5%</div><div class="rank-change down">↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">5</div>
+<div class="rank-info">
+<div class="rank-name">南山府 <span class="tag tag-old">二手</span><span class="tag tag-fire">腰斩</span></div>
+<div class="rank-detail"><span>高峰3万+→约1.5万 · 跌幅约50%</span><span>调价15次</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--red)">↓5.8%</div><div class="rank-change down">↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">6</div>
+<div class="rank-info">
+<div class="rank-name">朗诗里程 <span class="tag tag-old">二手</span><span class="tag tag-fire">腰斩</span></div>
+<div class="rank-detail"><span>价格腰斩 · 投资客抛售重灾区</span><span>调价14次</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--red)">↓5.2%</div><div class="rank-change down">↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">7</div>
+<div class="rank-info">
+<div class="rank-name">绿地理想城 <span class="tag tag-old">二手</span><span class="tag tag-fire">腰斩</span></div>
+<div class="rank-detail"><span>绿地品牌拖累 · 价格腰斩</span><span>调价12次</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--red)">↓4.7%</div><div class="rank-change down">↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">8</div>
+<div class="rank-info">
+<div class="rank-name">烽云慧城 <span class="tag tag-old">二手</span></div>
+<div class="rank-detail"><span>4月均价9,960元/㎡ · 环比↓2.15%</span><span>在售90套库存高企 · 调价11次</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--red)">↓2.15%</div><div class="rank-change down">↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">9</div>
+<div class="rank-info">
+<div class="rank-name">当代卡梅尔小镇 <span class="tag tag-old">二手</span></div>
+<div class="rank-detail"><span>华润物业9月退场 · 物业困局</span><span>调价10次</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--red)">↓2.0%</div><div class="rank-change down">↘</div></div>
+</div>
+<div class="rank-item">
+<div class="rank-num other">10</div>
+<div class="rank-info">
+<div class="rank-name">光谷中心城南区地块 <span class="tag tag-old">二手</span></div>
+<div class="rank-detail"><span>46亩住宅地块三度流拍 · 烂尾地标美桥富力二拍2.04亿</span><span>板块信心不足 · 调价9次</span></div>
+</div>
+<div class="rank-right"><div class="rank-val" style="color:var(--red)">↓1.8%</div><div class="rank-change down">↘</div></div>
+</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 综合研判 -->
+<div class="summary">
+<h3>🔍 综合研判：当前光谷东是"刚需入场"还是"抛售潮延续"？</h3>
+<p style="margin-bottom:12px">
+<b style="font-size:1.1em;color:var(--gold)">结论：结构性底部博弈期 —— 新房刚需入场 vs 二手抛售余波未平</b>
+</p>
+<p>
+<span class="highlight hl-green">✅ 刚需入场信号</span><br>
+① <b>新房量价齐升</b>：光谷上半年9,423套全市第一(+116%)，新房5-7月连续3月环比上涨，四代住宅与品牌改善盘供不应求<br>
+② <b>土拍溢价验证</b>：8月光谷步行街地块122轮竞价、溢价48.9%，6月地块溢价21%，核心区土地价值获市场认可<br>
+③ <b>产业人口支撑</b>：长江存储冲刺科创板+"光谷七星"万亿市值+17家集成电路企业60亿落地，高净值人才持续涌入<br>
+④ <b>政策利好释放</b>：汉七条新政+公积金商贷按月提取(8月15日起)+首套利率4.1%历史低位
+</p>
+<p style="margin-top:10px">
+<span class="highlight hl-red">⚠️ 抛售延续信号</span><br>
+① <b>二手房持续承压</b>：9月均价12,964元/㎡同比-5.86%，7月冲高1.32万后8-9月回落，筑底尚未确认<br>
+② <b>多盘腰斩</b>：碧桂园十里春风↓60%、南山府/朗诗里程/绿地理想城/中建光谷之星跌幅47%-50%，投资客割肉尚未结束<br>
+③ <b>挂牌量高企</b>：全国50城挂牌超200万套同比+20%，光谷在售房源量大(如烽云慧城90套)，买方议价空间仍大<br>
+④ <b>烂尾流拍</b>：美桥富力广场二拍2.04亿流拍、中心城南区地块三度流拍，商业资产信心不足
+</p>
+<p style="margin-top:10px">
+<span class="highlight hl-orange">📌 给购房者的建议</span><br>
+• <b>自住刚需</b>：当前1.1-1.5万区间新房(广电光谷家、绿城桂府等)性价比突出，可择优入手<br>
+• <b>改善需求</b>：四代住宅(天青府、招商原颂)稀缺性仍在，但需关注交付风险<br>
+• <b>捡漏机会</b>：中建光谷之星1.87万(央企品质+核心地段)、碧桂园十里春风3000+(极低预算自住)可关注<br>
+• <b>投资回避</b>：二手抛售潮未止，短期升值空间有限，不建议以投资为目的入场
+</p>
+</div>
+
+<!-- 土拍与产业动态 -->
+<div class="section">
+<div class="section-title"><span class="icon">🏗️</span> 关键市场动态</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="background:var(--card);border-radius:10px;padding:12px;border-left:3px solid var(--green)">
+<div style="font-size:.88em;font-weight:600">🔥 光谷步行街地块溢价48.9%成交</div>
+<div style="font-size:.76em;color:var(--muted)">8月21日 · 122轮竞价 · 汉成盛泽7.428亿 · 楼面价14,738元/㎡ · 10家房企争抢</div>
+</div>
+<div style="background:var(--card);border-radius:10px;padding:12px;border-left:3px solid var(--accent)">
+<div style="font-size:.88em;font-weight:600">💎 长江存储冲刺科创板</div>
+<div style="font-size:.76em;color:var(--muted)">8月21日上交所受理 · "光谷七星"万亿市值 · 国产存储芯片里程碑</div>
+</div>
+<div style="background:var(--card);border-radius:10px;padding:12px;border-left:3px solid var(--cyan)">
+<div style="font-size:.88em;font-weight:600">🏭 17家集成电路企业落地光谷</div>
+<div style="font-size:.76em;color:var(--muted)">8月22日集中签约 · 总投资60亿+ · 中微/中科飞测/微导纳米等入驻</div>
+</div>
+<div style="background:var(--card);border-radius:10px;padding:12px;border-left:3px solid var(--orange)">
+<div style="font-size:.88em;font-weight:600">🏦 公积金新规8月15日起执行</div>
+<div style="font-size:.76em;color:var(--muted)">首套房商贷可按月提取公积金 · 不再一年一提 · 有效期3年</div>
+</div>
+<div style="background:var(--card);border-radius:10px;padding:12px;border-left:3px solid var(--red)">
+<div style="font-size:.88em;font-weight:600">⚠️ 美桥富力广场二拍流拍</div>
+<div style="font-size:.76em;color:var(--muted)">9月2日拍卖 · 起拍2.04亿(一拍2.55亿降21%) · 评估价3.64亿的5.6折</div>
+</div>
+<div style="background:var(--card);border-radius:10px;padding:12px;border-left:3px solid var(--red)">
+<div style="font-size:.88em;font-weight:600">⚠️ 中心城南区46亩地块三度流拍</div>
+<div style="font-size:.76em;color:var(--muted)">8月27日司法变卖再度流拍 · 外围地块信心不足</div>
+</div>
+</div>
+</div>
+
+<div class="data-source">
+📊 数据来源：安居客 · 房天下 · 贝壳/链家 · 中指研究院(CREIS) · CRIC · 武汉房管局 · 诸葛找房 · 新浪财经 · 央广网 · 华夏时报 · 国家统计局<br>
+⚠️ 免责声明：本报告数据来源于公开渠道，仅供参考，不构成投资建议。具体价格以实际交易为准。<br>
+🤖 AI生成 · 2026-09-02 14:22
+</div>
+
+</div>
+
+<script>
+function switchTab(type){
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('[id^="tab-"]').forEach(p=>p.style.display='none');
+if(type==='new'){
+document.querySelector('.tab:first-child').classList.add('active');
+document.getElementById('tab-new').style.display='flex';
+}else{
+document.querySelector('.tab:last-child').classList.add('active');
+document.getElementById('tab-old').style.display='flex';
+}
+}
+</script>
+</body>
+</html>
