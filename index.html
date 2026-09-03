@@ -1,76 +1,42 @@
-UPDATED_EXISTING_CARD
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>项目导航首页</title>
+<title>全球AI资讯速览 · 归档索引</title>
 <style>
-  :root{--bg:#0f1117;--card:#181b25;--border:#2a2e3a;--accent:#4a9eff;--text:#e4e6ef;--muted:#8b8fa3}
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;line-height:1.7}
-  .container{max-width:800px;margin:60px auto;padding:0 20px}
-  h1{font-size:1.8em;margin-bottom:8px}
-  .sub{color:var(--muted);font-size:.9em;margin-bottom:32px}
-  .file-list{display:flex;flex-direction:column;gap:16px}
-  .file-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;text-decoration:none;color:var(--text);transition:border-color .2s}
-  .file-card:hover{border-color:var(--accent)}
-  .file-card .title{font-size:1.1em;font-weight:600;margin-bottom:4px}
-  .file-card .desc{color:var(--muted);font-size:.85em}
-  .file-card .meta{margin-top:8px;font-size:.78em;color:var(--muted)}
-  .file-card .tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.7em;margin-right:4px;color:#fff}
-  .tag-anime{background:#e74c3c}
-  .tag-house{background:#3498db}
-  .tag-stock{background:#e67e22}
-  .tag-new{background:#27ae60}
-  .tag-war{background:#c0392b}
-  .tag-drama{background:#f5a623}
+:root{--bg:#0a0e17;--card:#111827;--accent:#3b82f6;--text:#e2e8f0;--muted:#94a3b8;--border:#1e293b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
+.container{max-width:700px;margin:0 auto;padding:20px}
+h1{text-align:center;font-size:1.8rem;background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.subtitle{text-align:center;color:var(--muted);font-size:13px;margin-bottom:30px}
+.month{margin-bottom:24px}
+.month-title{font-size:1rem;font-weight:700;color:var(--accent);margin-bottom:10px;padding-left:8px;border-left:3px solid var(--accent)}
+.item{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;text-decoration:none;transition:border-color .2s}
+.item:hover{border-color:var(--accent)}
+.item .date{color:var(--muted);font-size:13px;white-space:nowrap}
+.item .title{color:var(--text);font-size:14px;font-weight:500}
+.footer{text-align:center;padding:20px 0;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:30px}
 </style>
 </head>
 <body>
 <div class="container">
-  <h1>📊 项目导航</h1>
-  <div class="sub">数据报告与可视化文件索引</div>
-  <div class="file-list">
-    <a class="file-card" href="ai_news/ai_news_20260902.html">
-      <div class="title">🌍 全球AI资讯速览报告 (2026-09-01)</div>
-      <div class="desc">覆盖头条焦点/巨头动态/技术与开源/产业与治理四大板块27条资讯，含苹果15年一遇换帅库克卸任特努斯接棒+OpenAI Astra首破网络安全关键阈值+G20创新峰会推"卡罗来纳原则"全球AI监管放手博弈/李飞飞World Labs Atlas全球首个多模态世界模型+阿里Qwen3.8-Max编程登顶CodeArena+Hugging Face $399开源机器人Microduck 24h吸金260万美元+DeepSeek自研芯片/英伟达黄仁勋G20对谈/哈萨比斯呼吁安全测试/扎克伯格反对限制开源/马斯克炮轰欧盟监管/工信部AI应用服务商培育专项行动2000家/中消协AI消费提示/国标AI客服协同/深交所创业板AI指数/家办243亿美元涌入中国AI/字节豆包股涨价+起诉前员工/创新工场投资模具物理AI/英特尔取消Fellow/四川首个Token工厂等重磅事件，附可信度标签与趋势研判</div>
-      <div class="meta"><span class="tag" style="background:#8b5cf6">定时任务</span> 更新于 2026-09-03 · 调度规则: daily 14:06 · 数据来源: OpenAI/Google/Anthropic/苹果官方/TechCrunch/Reuters/Bloomberg/Wired/新浪/36氪/钛媒体/财联社/arXiv/工信部/中消协/深交所</div>
-    </a>
+  <h1>⚡ 全球AI资讯速览</h1>
+  <div class="subtitle">每日一报，全球AI尽在掌握 | 归档索引</div>
 
-    <a class="file-card" href="war/war_report_20260902.html">
-      <div class="title">🔴 全球战争局势速览报告 (2026-09-02)</div>
-      <div class="desc">覆盖头条焦点/热点战区/大国博弈与军备/冲突影响与趋势研判四大板块28+条资讯，含伊朗宣布霍尔木兹海峡限时通航管制全球油轮运力骤降40%+美第五舰队阿曼湾对峙鸣枪示警+俄军"秋季风暴"三线推进波克罗夫斯克告急+乌军无人机夜袭俄8州炼油厂+黑海舰队残部再遭无人艇打击+以色列批准加沙"永久安全控制"新计划+学校避难所空袭18死+停火谈判全面停滞卡塔尔调解人离开+加沙96%人口严重粮食不安全47万人饥荒边缘+胡塞攻击红海油轮起火+美军空袭也门3处设施+台海里根号穿越巴士海峡+叙利亚美军基地遭无人机袭击+北约新一批军援6套爱国者+50万发炮弹32亿欧元+美国229亿战斧扩产年产能60→1000枚+俄弹道导弹月发射翻3倍朝鲜供弹40%+安理会第5次否决加沙停火+日本2027扩编1.2万+锆石首次实战部署+布伦特97.4美元双海峡危机共振，附可信度标签与多方立场</div>
-      <div class="meta"><span class="tag tag-war">定时任务</span> 更新于 2026-09-02 · 调度规则: daily 20:30 · 数据来源: 央视/新华社/环球网/参考消息/路透社/美联社/BBC/CNN/半岛TV/ISW/IISS/ICG/FAO/UNRWA/各国国防部/联合国官网/中国外交部</div>
+  <div class="month">
+    <div class="month-title">2026年9月</div>
+    <a class="item" href="ai_news/ai_news_20260903.html">
+      <span class="title">OpenAI Astra即将发布 · NVIDIA财报承压 · 欧洲AI芯片创企集体融资 · Sony/Warner起诉Anthropic</span>
+      <span class="date">09-03</span>
     </a>
-    <a class="file-card" href="classic_drama/classic_drama_20260815.html">
-      <div class="title">📺 历史经典高分剧集盘点报告 (2026-08-15)</div>
-      <div class="desc">覆盖全球封神榜TOP20/华语经典三时代/日韩欧美现象级/冷门高分与近期翻红四大板块，72部剧集深度盘点，含评分数据/名场面/深度剧评/2025-2026翻红追踪（亮剑表情包再出圈/甄学B站1.2亿播放/老友记Perry遗作追忆/龙族S3联动GoT回潮/武林外传沉浸展）</div>
-      <div class="meta"><span class="tag tag-drama">定时任务</span> 更新于 2026-08-15 · 调度规则: weekly Sat 16:20 · 数据来源: IMDb/豆瓣/烂番茄/Metacritic/知乎/B站/抖音</div>
-    </a>
-        <a class="file-card" href="stock/stock_report_20260903.html">
-      <div class="title">📈 A股市场热度排行报告 (2026-09-02)</div>
-      <div class="desc">覆盖指数大盘风向/个股涨跌幅TOP20/板块热度排行/主力资金动向四大板块，上证-0.97%/深证-1.88%/创业板-2.39%/科创50-1.82%弱势调整；涨幅榜新股格林生物+104%首日翻倍/国投电力+1.87%/中国核电+1.69%红利股逆势吸金；跌幅榜中际旭创-4.29%/新易盛-4.00%/赣锋锂业-4.38%/天齐锂业-4.35%/同花顺-4.35%CPO+锂电+AI应用集体杀跌；板块方面美容护理+1.13%独红/农林牧渔+0.64%/社会服务+0.30%防御优先，证券-2.14%/建筑材料-1.73%/白酒-1.43%/光伏概念-1.81%领跌；龙虎榜82股上榜机构做多红利/做空成长，风格切换信号明确——"杀高位抱低位"关灯吃面格局</div>
-      <div class="meta"><span class="tag tag-stock">定时任务</span> 更新于 2026-09-03 · 调度规则: daily 09:00 · 数据来源: 东方财富网/沪深交易所/龙虎榜</div>
-    </a>
-            <a class="file-card" href="dongman/dongman-hot-report-20260903-0835.html">
-      <div class="title">🔥 动漫热榜排名报告 (2026-09-03 08:35)</div>
-      <div class="desc">覆盖全球热点/最新更新/AI漫剧/中国动漫 TOP50，含排名数据/波动分析/行业趋势/爆款拆解。BLEACH千年血战·祸厄完结篇引爆全球怀旧狂潮MAL9.12/Reddit讨论量+300%/B站弹幕47万/攻壳机动队S3口碑炸裂/芙莉莲2季持续双平台制霸/链锯人蕾洁篇剧场版9/12预售破纪录/穹庐下的魔女ScienceSARU视觉封神完结暴涨+18%/剑来S2首日热度25449创国漫纪录/诡秘之主IMDb9.3国漫出海新标杆/末日寒潮AI漫剧抖音2.3亿/红果AI频道Q3增长187%/续作占比62%创历史新高/年番26部贡献47%播放量/6大爆款拆解公式/抖音超微博成国漫第一宣发阵地</div>
-      <div class="meta"><span class="tag tag-anime">定时任务</span> 更新于 2026-09-03 · 调度规则: daily 08:35 · 数据来源: MyAnimeList/AnimeCorner/Reddit/ANN/红果短剧/抖音/B站/腾讯视频/优酷/爱奇艺/云合数据/灯塔/DataEye/豆瓣</div>
-    </a>
-        
-    
-        <a class="file-card" href="fangjia/guanggudong-loushi-bangdan-20260903-080000.html">
-      <div class="title">🏠 2026年最新光谷东楼市多维度榜单 (2026-09-03 08:00)</div>
-      <div class="desc">9月二手房均价12,921元/㎡环比↓0.12%/同比↓5.43%在1.28-1.32万窄幅震荡；含套数王(新房长江广电光谷家635套六折销冠/光谷润璟293套/联发光合新澍249套日光/二手房烽云慧城28套/碧桂园十里春风18套投资客割肉)/涨幅王(璞拾光屿+8.7%/联发光合新澍+6.8%/华润荷叶山+6.2%新房占7/10)/降价王(碧桂园十里春风↓11.2%调价38次🔥急售捡漏单价跌破9千/光谷悦城↓8.6%90天零成交/绿地光谷中心城↓7.1%挂牌380+套业主踩踏/中建光谷之星3.5万→1.46万跌幅58.3%腰斩)，综合研判结构性底部博弈期——新房刚需入场vs二手抛售余波未平；土拍动态:光谷步行街122轮竞价溢价48.9%/17家集成电路企业60亿落地</div>
-      <div class="meta"><span class="tag tag-house">定时任务</span> 更新于 2026-09-03 · 调度规则: daily 08:00 · 数据来源: 安居客/房天下/链家/贝壳/中指研究院/CRIC/武汉房管局/诸葛找房/新浪财经/华夏时报/国家统计局</div>
-    </a>
-<a class="file-card" href="movie/movie_report_20260806.html">
-      <div class="title">🎬 电影热度月度报告 (2026-07~08)</div>
-      <div class="desc">覆盖全球热点/院线新片/流媒体网大/华语电影四大板块 TOP20，含排名波动/行业趋势/爆款拆解。蜘蛛侠17亿刀全球屠榜/奥德赛11亿诺兰封神/功夫女足22亿/八仙13亿逆袭/给阿嬷9.3分口碑炸弹——情绪价值碾压IP光环；动画封神年四部杀入全球TOP20/暑期档128亿同比+23%/国产片占比78%/续集全面翻车均分6.1/抖音超微博成第一宣发阵地/Netflix华语内容投入+60%</div>
-      <div class="meta"><span class="tag" style="background:#e67e22">定时任务</span> 更新于 2026-09-03 · 调度规则: weekly Sat 05:13 · 数据来源: IMDb/烂番茄/Box Office Mojo/Reddit/猫眼/淘票票/灯塔/腾讯视频/爱奇艺/优酷/Netflix/豆瓣/抖音/微博</div>
-    </a>
-    </div>
+  </div>
+
+  <div class="footer">
+    <p>🤖 由AI定时任务自动生成与维护</p>
+    <p>最后更新：2026-09-03</p>
+  </div>
 </div>
 </body>
 </html>
