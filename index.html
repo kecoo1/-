@@ -3,34 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>全球AI资讯速览 · 归档索引</title>
+<title>全球AI资讯 & 战争局势速览 · 归档索引</title>
 <style>
-:root{--bg:#0a0e17;--card:#111827;--accent:#3b82f6;--text:#e2e8f0;--muted:#94a3b8;--border:#1e293b}
+:root{--bg:#0a0e17;--card:#111827;--accent:#3b82f6;--accent2:#ef4444;--text:#e2e8f0;--muted:#94a3b8;--border:#1e293b}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
 .container{max-width:700px;margin:0 auto;padding:20px}
 h1{text-align:center;font-size:1.8rem;background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
 .subtitle{text-align:center;color:var(--muted);font-size:13px;margin-bottom:30px}
-.month{margin-bottom:24px}
-.month-title{font-size:1rem;font-weight:700;color:var(--accent);margin-bottom:10px;padding-left:8px;border-left:3px solid var(--accent)}
+.section{margin-bottom:28px}
+.section-title{font-size:1.1rem;font-weight:700;margin-bottom:12px;padding:6px 10px;border-radius:6px;display:inline-block}
+.section-title.ai{color:var(--accent);background:#3b82f622;border:1px solid #3b82f644}
+.section-title.war{color:var(--accent2);background:#ef444422;border:1px solid #ef444444}
+.month{margin-bottom:18px}
+.month-title{font-size:.95rem;font-weight:700;color:var(--accent);margin-bottom:10px;padding-left:8px;border-left:3px solid var(--accent)}
+.month-title.war-title{color:var(--accent2);border-left-color:var(--accent2)}
 .item{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;text-decoration:none;transition:border-color .2s}
 .item:hover{border-color:var(--accent)}
+.item.war-item:hover{border-color:var(--accent2)}
 .item .date{color:var(--muted);font-size:13px;white-space:nowrap}
 .item .title{color:var(--text);font-size:14px;font-weight:500}
+.item .tag{font-size:11px;padding:1px 6px;border-radius:4px;margin-left:6px;font-weight:600}
+.tag-ai{background:#3b82f622;color:var(--accent)}
+.tag-war{background:#ef444422;color:var(--accent2)}
 .footer{text-align:center;padding:20px 0;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:30px}
 </style>
 </head>
 <body>
 <div class="container">
-  <h1>⚡ 全球AI资讯速览</h1>
-  <div class="subtitle">每日一报，全球AI尽在掌握 | 归档索引</div>
+  <h1>⚡ 全球资讯速览</h1>
+  <div class="subtitle">每日一报，全球尽在掌握 | 归档索引</div>
 
-  <div class="month">
-    <div class="month-title">2026年9月</div>
-    <a class="item" href="ai_news/ai_news_20260903.html">
-      <span class="title">OpenAI Astra即将发布 · NVIDIA财报承压 · 欧洲AI芯片创企集体融资 · Sony/Warner起诉Anthropic</span>
-      <span class="date">09-03</span>
-    </a>
+  <div class="section">
+    <div class="section-title war">⚔ 战争局势速览</div>
+    <div class="month">
+      <div class="month-title war-title">2026年9月</div>
+      <a class="item war-item" href="war/war_report_20260903.html">
+        <span class="title">🔥 伊朗打击科威特/阿联酋美军基地 · 俄军连续六日空袭乌克兰 · 霍尔木兹封锁六个月 <span class="tag tag-war">战争</span></span>
+        <span class="date">09-03</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title ai">🤖 AI资讯速览</div>
+    <div class="month">
+      <div class="month-title">2026年9月</div>
+      <a class="item" href="ai_news/ai_news_20260903.html">
+        <span class="title">OpenAI Astra即将发布 · NVIDIA财报承压 · 欧洲AI芯片创企集体融资 · Sony/Warner起诉Anthropic <span class="tag tag-ai">AI</span></span>
+        <span class="date">09-03</span>
+      </a>
+    </div>
   </div>
 
   <div class="footer">
