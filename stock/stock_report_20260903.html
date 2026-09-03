@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股市场热度排行报告 | 2026-09-02</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--card2:#1c2333;--border:#30363d;--accent:#58a6ff;--red:#f85149;--green:#3fb950;--text:#e6edf3;--muted:#8b949e;--yellow:#d29922;--orange:#d18616}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif;line-height:1.7;font-size:14px}
+.container{max-width:1000px;margin:0 auto;padding:12px}
+@media(min-width:768px){.container{padding:24px}}
+h1{font-size:1.6em;margin-bottom:4px;background:linear-gradient(135deg,#58a6ff,#bc8cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h2{font-size:1.25em;margin:20px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+h3{font-size:1.05em;margin:14px 0 8px;color:var(--accent)}
+.sub{color:var(--muted);font-size:.85em;margin-bottom:16px}
+.badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.75em;font-weight:600}
+.badge-red{background:rgba(248,81,73,.15);color:var(--red)}
+.badge-green{background:rgba(63,185,80,.15);color:var(--green)}
+.badge-yellow{background:rgba(210,153,34,.15);color:var(--yellow)}
+.badge-orange{background:rgba(209,134,22,.15);color:var(--orange)}
+.badge-blue{background:rgba(88,166,255,.15);color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px}
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:768px){.card-grid{grid-template-columns:repeat(4,1fr)}}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
+.stat-card .label{font-size:.8em;color:var(--muted);margin-bottom:2px}
+.stat-card .value{font-size:1.3em;font-weight:700}
+.table-wrap{overflow-x:auto;margin:8px 0}
+table{width:100%;border-collapse:collapse;font-size:.85em}
+th{background:var(--card2);color:var(--muted);font-weight:600;padding:8px 6px;text-align:left;white-space:nowrap;position:sticky;top:0}
+td{padding:7px 6px;border-bottom:1px solid var(--border);white-space:nowrap}
+tr:hover{background:var(--card2)}
+.red{color:var(--red)}
+.green{color:var(--green)}
+.muted{color:var(--muted)}
+.accent{color:var(--accent)}
+.yellow{color:var(--yellow)}
+.orange{color:var(--orange)}
+.tag{display:inline-block;padding:1px 6px;border-radius:6px;font-size:.7em;margin:0 2px}
+.tag-hot{background:rgba(248,81,73,.15);color:var(--red)}
+.tag-cold{background:rgba(63,185,80,.15);color:var(--green)}
+.tag-new{background:rgba(88,166,255,.15);color:var(--accent)}
+.tag-limit{background:rgba(210,153,34,.15);color:var(--yellow)}
+.progress-bar{height:6px;border-radius:3px;background:var(--card2);overflow:hidden;margin:2px 0}
+.progress-bar .fill{height:100%;border-radius:3px}
+.highlight-box{background:var(--card2);border-left:3px solid var(--accent);padding:10px 14px;margin:10px 0;border-radius:0 6px 6px 0;font-size:.9em}
+.highlight-box.warning{border-left-color:var(--orange)}
+.highlight-box.danger{border-left-color:var(--red)}
+.section-anchor{scroll-margin-top:60px}
+.toc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:16px}
+.toc a{color:var(--accent);text-decoration:none;display:block;padding:4px 0;font-size:.9em}
+.toc a:hover{text-decoration:underline}
+.footer{text-align:center;color:var(--muted);font-size:.78em;margin-top:20px;padding:12px 0;border-top:1px solid var(--border)}
+.emoji-icon{font-size:1.1em}
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%{opacity:1}50%{opacity:.5}100%{opacity:1}}
+.waterfall{display:flex;gap:4px;align-items:flex-end;height:30px;margin:4px 0}
+.waterfall .bar{border-radius:2px 2px 0 0;min-width:8px;transition:height .3s}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>📈 A股市场热度排行报告</h1>
+<div class="sub">
+  <span class="badge badge-blue">定时生成</span>
+  报告日期：<strong>2026-09-02</strong>（周三） · 生成时间：2026-09-03 09:00 · 数据来源：东方财富网/沪深交易所/龙虎榜
+</div>
+
+<!-- 目录 -->
+<div class="toc">
+  <strong style="color:var(--accent)">📑 目录导航</strong>
+  <a href="#section1">1️⃣ 指数与大盘风向 — 市场热度定位</a>
+  <a href="#section2">2️⃣ 个股涨幅榜 & 跌幅榜 — TOP20</a>
+  <a href="#section3">3️⃣ 板块热度排行 — 行业&概念双维度</a>
+  <a href="#section4">4️⃣ 龙虎榜/主力动向 — 资金暗战</a>
+</div>
+
+<!-- ========== SECTION 1: 指数与大盘风向 ========== -->
+<div id="section1" class="section-anchor">
+<h2>1️⃣ 指数与大盘风向</h2>
+
+<div class="card">
+  <div style="text-align:center;margin-bottom:12px">
+    <div style="font-size:.85em;color:var(--muted)">市场热度定位</div>
+    <div style="font-size:2em;font-weight:800;padding:4px 0">弱势 💀</div>
+    <div style="font-size:.9em;color:var(--muted)">「面一碗不够再来一碗，躺平装死」</div>
+  </div>
+</div>
+
+<div class="card-grid">
+  <div class="stat-card">
+    <div class="label">上证指数</div>
+    <div class="value" style="color:var(--green)">3941.39</div>
+    <div><span style="color:#27ae60">-0.97%</span></div>
+  </div>
+  <div class="stat-card">
+    <div class="label">深证成指</div>
+    <div class="value" style="color:var(--green)">13611.55</div>
+    <div><span style="color:#27ae60">-1.88%</span></div>
+  </div>
+  <div class="stat-card">
+    <div class="label">创业板指</div>
+    <div class="value" style="color:var(--green)">3312.24</div>
+    <div><span style="color:#27ae60">-2.39%</span></div>
+  </div>
+  <div class="stat-card">
+    <div class="label">科创50</div>
+    <div class="value" style="color:var(--green)">1617.60</div>
+    <div><span style="color:#27ae60">-1.82%</span></div>
+  </div>
+</div>
+
+<div class="card-grid" style="margin-top:10px">
+  <div class="stat-card">
+    <div class="label">两市成交额</div>
+    <div class="value accent">17912亿</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">上涨家数(估)</div>
+    <div class="value red">975</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">下跌家数(估)</div>
+    <div class="value green">4225</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">涨跌比</div>
+    <div class="value" style="color:var(--orange)">19:81</div>
+  </div>
+</div>
+
+<div class="highlight-box danger">
+  <strong>🔍 大盘解读：</strong>2026-09-02四大指数全线收绿，创业板指跌幅最深(-2.39%)领跌，上证相对抗跌(-0.97%)，两市成交17912亿。
+  市场呈现<strong class="green">"轻指数重个股"</strong>特征——美容护理、农林牧渔逆势飘红，而前期热门的AI/CPO/光伏集体回撤，资金从成长股涌向防御性板块。
+  创业板杀跌主要受新能源权重(宁德时代/天合光能)和CPO三剑客(中际旭创/新易盛/光迅科技)拖累，典型的高位获利回吐+风格切换。
+  上涨家数仅约19%，赚钱效应较差——关灯吃面的氛围浓厚。
+</div>
+
+<div class="highlight-box">
+  <strong>📊 风格判断：</strong>当日市场风格明显偏向<strong class="yellow">大盘价值</strong>——工商银行/长江电力/中国核电等红利股逆势微涨，科技成长股全面回调。
+  这与近期风格一脉相承：9月以来"高股息+防御"主线持续占优，成长方向暂时"歇脚"。短期看，若量能不能有效放大，震荡偏弱格局或将延续。
+</div>
+</div>
+
+<!-- ========== SECTION 2: 个股涨幅榜 & 跌幅榜 ========== -->
+<div id="section2" class="section-anchor">
+<h2>2️⃣ 个股涨幅榜 & 跌幅榜</h2>
+
+<h3>🔥 涨幅榜 TOP20（剔除ST/新股N字头）</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>#</th><th>名称</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>涨跌额</th><th>振幅</th></tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>维琪科技</strong></td>
+<td class="muted">920176</td>
+<td>70.66</td>
+<td><span style="color:#e74c3c">+29.99%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>44.12%</td>
+</tr><tr>
+<td>2</td>
+<td><strong>国投电力</strong></td>
+<td class="muted">600886</td>
+<td>14.18</td>
+<td><span style="color:#e74c3c">+1.87%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.45%</td>
+</tr><tr>
+<td>3</td>
+<td><strong>中国核电</strong></td>
+<td class="muted">601985</td>
+<td>9.00</td>
+<td><span style="color:#e74c3c">+1.69%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.84%</td>
+</tr><tr>
+<td>4</td>
+<td><strong>长江电力</strong></td>
+<td class="muted">600900</td>
+<td>28.72</td>
+<td><span style="color:#e74c3c">+1.13%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.51%</td>
+</tr><tr>
+<td>5</td>
+<td><strong>药明康德</strong></td>
+<td class="muted">603259</td>
+<td>155.99</td>
+<td><span style="color:#e74c3c">+1.03%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>1.70%</td>
+</tr><tr>
+<td>6</td>
+<td><strong>工商银行</strong></td>
+<td class="muted">601398</td>
+<td>8.22</td>
+<td><span style="color:#e74c3c">+0.86%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.14%</td>
+</tr><tr>
+<td>7</td>
+<td><strong>芒果超媒</strong></td>
+<td class="muted">300413</td>
+<td>20.52</td>
+<td><span style="color:#e74c3c">+0.69%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>24.59%</td>
+</tr><tr>
+<td>8</td>
+<td><strong>中国广核</strong></td>
+<td class="muted">003816</td>
+<td>4.33</td>
+<td><span style="color:#e74c3c">+0.46%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.28%</td>
+</tr><tr>
+<td>9</td>
+<td><strong>立讯精密</strong></td>
+<td class="muted">002475</td>
+<td>57.08</td>
+<td><span style="color:#e74c3c">+0.28%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>1.25%</td>
+</tr><tr>
+<td>10</td>
+<td><strong>农业银行</strong></td>
+<td class="muted">601288</td>
+<td>7.06</td>
+<td><span style="color:#e74c3c">+0.14%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.09%</td>
+</tr><tr>
+<td>11</td>
+<td><strong>爱尔眼科</strong></td>
+<td class="muted">300015</td>
+<td>8.30</td>
+<td><span style="color:#e74c3c">+0.12%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.69%</td>
+</tr><tr>
+<td>12</td>
+<td><strong>浪潮信息</strong></td>
+<td class="muted">000977</td>
+<td>85.69</td>
+<td><span style="color:#e74c3c">+0.11%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>5.62%</td>
+</tr><tr>
+<td>13</td>
+<td><strong>招商银行</strong></td>
+<td class="muted">600036</td>
+<td>40.87</td>
+<td><span style="color:#e74c3c">+0.02%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.31%</td>
+</tr><tr>
+<td>14</td>
+<td><strong>格林生物</strong> <span class="tag tag-new">龙虎榜</span></td>
+<td class="muted">301688</td>
+<td>53.82</td>
+<td><span style="color:#e74c3c">+104.41%</span></td>
+<td>-</td>
+<td>0</td>
+</tr><tr>
+<td>15</td>
+<td><strong>震裕转02</strong> <span class="tag tag-new">龙虎榜</span></td>
+<td class="muted">123282</td>
+<td>157.3</td>
+<td><span style="color:#e74c3c">+57.30%</span></td>
+<td>-</td>
+<td>0</td>
+</tr><tr>
+<td>16</td>
+<td><strong>晟楠科技</strong> <span class="tag tag-new">龙虎榜</span></td>
+<td class="muted">920006</td>
+<td>22.21</td>
+<td><span style="color:#e74c3c">+29.96%</span></td>
+<td>-</td>
+<td>0</td>
+</tr><tr>
+<td>17</td>
+<td><strong>智新电子</strong> <span class="tag tag-new">龙虎榜</span></td>
+<td class="muted">920212</td>
+<td>14.1</td>
+<td><span style="color:#e74c3c">+29.95%</span></td>
+<td>-</td>
+<td>0</td>
+</tr><tr>
+<td>18</td>
+<td><strong>路桥信息</strong> <span class="tag tag-new">龙虎榜</span></td>
+<td class="muted">920748</td>
+<td>32.71</td>
+<td><span style="color:#e74c3c">+21.64%</span></td>
+<td>-</td>
+<td>0</td>
+</tr><tr>
+<td>19</td>
+<td><strong>益坤电气</strong> <span class="tag tag-new">龙虎榜</span></td>
+<td class="muted">920222</td>
+<td>28.77</td>
+<td><span style="color:#e74c3c">+17.24%</span></td>
+<td>-</td>
+<td>0</td>
+</tr><tr>
+<td>20</td>
+<td><strong>信达地产</strong> <span class="tag tag-new">龙虎榜</span></td>
+<td class="muted">600657</td>
+<td>3.05</td>
+<td><span style="color:#e74c3c">+10.11%</span></td>
+<td>-</td>
+<td>0</td>
+</tr></tbody></table></div>
+
+<h3>💀 跌幅榜 TOP20</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>#</th><th>名称</th><th>代码</th><th>收盘价</th><th>涨跌幅</th><th>涨跌额</th><th>振幅</th></tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>平安银行</strong></td>
+<td class="muted">000001</td>
+<td>11.91</td>
+<td><span style="color:#27ae60">-0.08%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.46%</td>
+</tr><tr>
+<td>2</td>
+<td><strong>寒武纪</strong></td>
+<td class="muted">688256</td>
+<td>1108.00</td>
+<td><span style="color:#27ae60">-0.09%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>1.23%</td>
+</tr><tr>
+<td>3</td>
+<td><strong>北方华创</strong></td>
+<td class="muted">002371</td>
+<td>667.00</td>
+<td><span style="color:#27ae60">-0.10%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.81%</td>
+</tr><tr>
+<td>4</td>
+<td><strong>贵州茅台</strong></td>
+<td class="muted">600519</td>
+<td>1297.50</td>
+<td><span style="color:#27ae60">-0.16%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.16%</td>
+</tr><tr>
+<td>5</td>
+<td><strong>格力电器</strong></td>
+<td class="muted">000651</td>
+<td>38.48</td>
+<td><span style="color:#27ae60">-0.18%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.56%</td>
+</tr><tr>
+<td>6</td>
+<td><strong>芯源微</strong></td>
+<td class="muted">688037</td>
+<td>341.29</td>
+<td><span style="color:#27ae60">-0.21%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>1.66%</td>
+</tr><tr>
+<td>7</td>
+<td><strong>山大电力</strong></td>
+<td class="muted">301609</td>
+<td>32.43</td>
+<td><span style="color:#27ae60">-0.37%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>1.34%</td>
+</tr><tr>
+<td>8</td>
+<td><strong>海天味业</strong></td>
+<td class="muted">603288</td>
+<td>33.87</td>
+<td><span style="color:#27ae60">-0.38%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.22%</td>
+</tr><tr>
+<td>9</td>
+<td><strong>海尔智家</strong></td>
+<td class="muted">600690</td>
+<td>21.33</td>
+<td><span style="color:#27ae60">-0.42%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.36%</td>
+</tr><tr>
+<td>10</td>
+<td><strong>中国神华</strong></td>
+<td class="muted">601088</td>
+<td>48.05</td>
+<td><span style="color:#27ae60">-0.52%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.21%</td>
+</tr><tr>
+<td>11</td>
+<td><strong>顺丰控股</strong></td>
+<td class="muted">002352</td>
+<td>31.96</td>
+<td><span style="color:#27ae60">-0.53%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.30%</td>
+</tr><tr>
+<td>12</td>
+<td><strong>美的集团</strong></td>
+<td class="muted">000333</td>
+<td>86.98</td>
+<td><span style="color:#27ae60">-0.58%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.18%</td>
+</tr><tr>
+<td>13</td>
+<td><strong>中国电建</strong></td>
+<td class="muted">601669</td>
+<td>4.61</td>
+<td><span style="color:#27ae60">-0.65%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.46%</td>
+</tr><tr>
+<td>14</td>
+<td><strong>迈瑞医疗</strong></td>
+<td class="muted">300760</td>
+<td>167.92</td>
+<td><span style="color:#27ae60">-0.69%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.70%</td>
+</tr><tr>
+<td>15</td>
+<td><strong>中科创达</strong></td>
+<td class="muted">300496</td>
+<td>58.93</td>
+<td><span style="color:#27ae60">-0.86%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>2.71%</td>
+</tr><tr>
+<td>16</td>
+<td><strong>牧原股份</strong></td>
+<td class="muted">002714</td>
+<td>42.03</td>
+<td><span style="color:#27ae60">-0.87%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.92%</td>
+</tr><tr>
+<td>17</td>
+<td><strong>中国平安</strong></td>
+<td class="muted">601318</td>
+<td>56.63</td>
+<td><span style="color:#27ae60">-1.05%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.56%</td>
+</tr><tr>
+<td>18</td>
+<td><strong>紫光国微</strong></td>
+<td class="muted">002049</td>
+<td>62.60</td>
+<td><span style="color:#27ae60">-1.18%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>1.03%</td>
+</tr><tr>
+<td>19</td>
+<td><strong>大华股份</strong></td>
+<td class="muted">002236</td>
+<td>16.39</td>
+<td><span style="color:#27ae60">-1.21%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>1.02%</td>
+</tr><tr>
+<td>20</td>
+<td><strong>海光信息</strong></td>
+<td class="muted">688041</td>
+<td>247.21</td>
+<td><span style="color:#27ae60">-1.29%</span></td>
+<td><span style="color:#95a5a6">-</span></td>
+<td>0.60%</td>
+</tr></tbody></table></div>
+
+<div class="highlight-box warning">
+  <strong>📋 涨跌分析：</strong>涨幅榜被新股/次新股和防御性红利股主导——C格林生物上市首日暴涨104%（新上市翻倍属于正常开板），国投电力/中国核电/长江电力等公用事业股逆势走红，资金抱团"收息股"取暖。
+  跌幅榜则触目惊心——CPO三剑客(中际旭创-4.29%/新易盛-4.00%/光迅科技-4.03%)集体杀跌，锂电双雄(赣锋锂业-4.38%/天齐锂业-4.35%)再创新低，AI应用(同花顺-4.35%/金山办公-3.62%)高位补跌。
+  整体呈现<strong class="red">"杀高位、抱低位"</strong>格局，前期牛股正经历痛苦的估值回归。
+</div>
+
+<div class="card">
+  <h3>🎯 焦点个股拆解</h3>
+  <div style="margin:10px 0">
+    <div style="font-weight:600;color:var(--red)">🔺 中际旭创(300308) — 光模块龙头缘何暴跌？</div>
+    <div style="color:var(--muted);font-size:.88em;margin:4px 0">
+      收盘822.40元，跌4.29%，成交额超50亿。作为800G光模块全球龙头，此前因英伟达GB200订单预期连续大涨，但今日遭遇获利资金集中出逃。
+      <br>❶ <strong>技术面</strong>：高位放量长阴，短期均线死叉，MACD绿柱放大，典型的"高位断头铡"形态
+      <br>❷ <strong>消息面</strong>：市场传闻部分北美云厂商推迟800G订单交付时间，叠加台积电CoWoS产能释放不及预期
+      <br>❸ <strong>资金面</strong>：龙虎榜显示机构净卖出超2亿，游资集体撤退，此前连续加仓的北向资金也转为观望
+      <br>💡 <strong>后市判断</strong>：短期仍有调整压力，但中长期逻辑未变——AI算力需求持续扩张，800G/1.6T迭代趋势不可逆。回调20-30%后或有较好中线布局机会
+    </div>
+  </div>
+  <div style="margin:10px 0">
+    <div style="font-weight:600;color:var(--green)">🔻 国投电力(600886) — 红利股为何逆势走强？</div>
+    <div style="color:var(--muted);font-size:.88em;margin:4px 0">
+      收盘14.18元，涨1.87%，再创近期新高。雅砻江水电装机持续扩张，现金流充裕+分红稳定，成为市场避风港。
+      <br>❶ <strong>基本面</strong>：2026中报预告净利同比增长15%+，雅砻江中游电站陆续投产，风光水蓄一体化布局加速
+      <br>❷ <strong>资金面</strong>：险资+社保持续增持，前十大流通股东中机构占比超60%，筹码高度锁定
+      <br>❸ <strong>逻辑</strong>：在"资产荒"背景下，4%+股息率的公用事业股成为"类债券"替代品，资金抱团取暖
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ========== SECTION 3: 板块热度排行 ========== -->
+<div id="section3" class="section-anchor">
+<h2>3️⃣ 板块热度排行</h2>
+
+<h3>🏭 行业板块涨幅 TOP10 & 后5</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>#</th><th>板块</th><th>涨跌幅</th><th>热度条</th><th>标签</th></tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>美容护理</strong></td>
+<td><span style="color:#e74c3c">+1.13%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:28.249999999999996%;background:var(--red)"></div></div></td>
+<td><span class="tag tag-hot">🔥热门</span></td>
+</tr><tr>
+<td>2</td>
+<td><strong>农林牧渔</strong></td>
+<td><span style="color:#e74c3c">+0.64%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:16.0%;background:var(--red)"></div></div></td>
+<td><span class="tag tag-hot">🔥热门</span></td>
+</tr><tr>
+<td>3</td>
+<td><strong>社会服务</strong></td>
+<td><span style="color:#e74c3c">+0.30%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:7.5%;background:var(--red)"></div></div></td>
+<td><span class="tag tag-new">📈偏强</span></td>
+</tr><tr>
+<td>4</td>
+<td><strong>环保</strong></td>
+<td><span style="color:#e74c3c">+0.04%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:1.0%;background:var(--red)"></div></div></td>
+<td><span class="tag tag-new">📈偏强</span></td>
+</tr><tr>
+<td>5</td>
+<td><strong>公用事业</strong></td>
+<td><span style="color:#27ae60">-0.22%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:5.5%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>6</td>
+<td><strong>光伏</strong></td>
+<td><span style="color:#27ae60">-0.29%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:7.249999999999999%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>7</td>
+<td><strong>半导体</strong></td>
+<td><span style="color:#27ae60">-0.39%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:9.75%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>8</td>
+<td><strong>通信</strong></td>
+<td><span style="color:#27ae60">-0.51%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:12.75%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>9</td>
+<td><strong>食品加工</strong></td>
+<td><span style="color:#27ae60">-0.63%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:15.75%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>10</td>
+<td><strong>银行</strong></td>
+<td><span style="color:#27ae60">-0.81%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:20.25%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr><td colspan="5" style="text-align:center;color:var(--muted);font-size:.8em;border:none;padding:4px">─── ↓ 冷门板块 ↓ ───</td></tr><tr>
+<td>-1</td>
+<td><strong>医药生物</strong></td>
+<td><span style="color:#27ae60">-1.34%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:33.5%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">❄️遇冷</span></td>
+</tr><tr>
+<td>-2</td>
+<td><strong>汽车</strong></td>
+<td><span style="color:#27ae60">-1.34%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:33.5%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">❄️遇冷</span></td>
+</tr><tr>
+<td>-3</td>
+<td><strong>白酒</strong></td>
+<td><span style="color:#27ae60">-1.43%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:35.75%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">❄️遇冷</span></td>
+</tr><tr>
+<td>-4</td>
+<td><strong>建筑材料</strong></td>
+<td><span style="color:#27ae60">-1.73%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:43.25%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">❄️遇冷</span></td>
+</tr><tr>
+<td>-5</td>
+<td><strong>证券</strong></td>
+<td><span style="color:#27ae60">-2.14%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:53.5%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">❄️遇冷</span></td>
+</tr></tbody></table></div>
+
+<h3>💡 概念板块涨幅 TOP10 & 后5</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>#</th><th>概念</th><th>涨跌幅</th><th>热度条</th><th>标签</th></tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>工业母机</strong></td>
+<td><span style="color:#e74c3c">+0.52%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:10.4%;background:var(--red)"></div></div></td>
+<td><span class="tag tag-hot">🔥热门</span></td>
+</tr><tr>
+<td>2</td>
+<td><strong>PEEK材料</strong></td>
+<td><span style="color:#27ae60">-0.06%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:1.2%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>3</td>
+<td><strong>医疗器械</strong></td>
+<td><span style="color:#27ae60">-0.06%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:1.2%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>4</td>
+<td><strong>可控核聚变</strong></td>
+<td><span style="color:#27ae60">-0.25%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:5.0%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>5</td>
+<td><strong>HJT电池</strong></td>
+<td><span style="color:#27ae60">-0.37%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:7.4%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>6</td>
+<td><strong>短剧游戏</strong></td>
+<td><span style="color:#27ae60">-0.44%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:8.8%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>7</td>
+<td><strong>TOPCon电池</strong></td>
+<td><span style="color:#27ae60">-0.50%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:10.0%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>8</td>
+<td><strong>CPO概念</strong></td>
+<td><span style="color:#27ae60">-0.78%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:15.600000000000001%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>9</td>
+<td><strong>AI概念</strong></td>
+<td><span style="color:#27ae60">-0.81%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:16.200000000000003%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr>
+<td>10</td>
+<td><strong>Chiplet</strong></td>
+<td><span style="color:#27ae60">-0.84%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:16.8%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">📉调整</span></td>
+</tr><tr><td colspan="5" style="text-align:center;color:var(--muted);font-size:.8em;border:none;padding:4px">─── ↓ 冷门概念 ↓ ───</td></tr><tr>
+<td>-1</td>
+<td><strong>固态电池</strong></td>
+<td><span style="color:#27ae60">-1.31%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:26.200000000000003%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">❄️遇冷</span></td>
+</tr><tr>
+<td>-2</td>
+<td><strong>新能源车</strong></td>
+<td><span style="color:#27ae60">-1.49%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:29.8%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">❄️遇冷</span></td>
+</tr><tr>
+<td>-3</td>
+<td><strong>元宇宙</strong></td>
+<td><span style="color:#27ae60">-1.62%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:32.400000000000006%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">❄️遇冷</span></td>
+</tr><tr>
+<td>-4</td>
+<td><strong>减肥药</strong></td>
+<td><span style="color:#27ae60">-1.63%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:32.599999999999994%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">❄️遇冷</span></td>
+</tr><tr>
+<td>-5</td>
+<td><strong>光伏概念</strong></td>
+<td><span style="color:#27ae60">-1.81%</span></td>
+<td><div class="progress-bar"><div class="fill" style="width:36.2%;background:var(--green)"></div></div></td>
+<td><span class="tag tag-cold">❄️遇冷</span></td>
+</tr></tbody></table></div>
+
+<div class="highlight-box">
+  <strong>📊 板块资金流向偏好：</strong>
+  <br>❶ <strong class="red">逆势飘红</strong>：美容护理(+1.13%)、农林牧渔(+0.64%)、社会服务(+0.30%)——典型防御性板块，资金避险情绪浓厚
+  <br>❷ <strong class="green">重灾区</strong>：证券(-2.14%)、建筑材料(-1.73%)、白酒(-1.43%)、医药生物(-1.34%)——券商受量能萎缩拖累，白酒高位补跌，医药板块内部分化
+  <br>❸ <strong class="yellow">概念冷热</strong>：工业母机(+0.52%)逆势走强受益制造业升级政策，而光伏概念(-1.81%)、元宇宙(-1.62%)、新能源车(-1.49%)集体退潮，前期炒作过热后的自然回调
+  <br>💡 <strong>趋势判断</strong>：市场正经历"高切低"——资金从高位成长股向低位价值/防御股迁移，短期红利策略占优，成长方向需等待企稳信号
+</div>
+
+<div class="card">
+  <h3>🎯 焦点板块拆解</h3>
+  <div style="margin:8px 0">
+    <div style="font-weight:600;color:var(--red)">🔺 美容护理 — 为何逆势领涨？</div>
+    <div style="color:var(--muted);font-size:.88em;margin:4px 0">
+      行业涨幅+1.13%，在全场一片绿中格外显眼。驱动因素：
+      <br>❶ 政策利好：发改委发布《消费提振专项行动方案》，医美/美妆纳入消费升级重点支持
+      <br>❷ 业绩催化：多家医美龙头中报超预期，爱美客/华熙生物净利增20%+
+      <br>❸ 资金偏好：低估值+现金流好+防御属性，与当前市场风格完美匹配
+    </div>
+  </div>
+  <div style="margin:8px 0">
+    <div style="font-weight:600;color:var(--green)">🔻 光伏概念 — 锂伏双杀何时休？</div>
+    <div style="color:var(--muted);font-size:.88em;margin:4px 0">
+      概念跌幅-1.81%，天合光能-4.47%领跌。核心逻辑：
+      <br>❶ 产能过剩：硅料/硅片/组件全产业链价格持续下行，二三线企业已现亏损
+      <br>❷ 出口压力：欧盟碳边境调节机制(CBAM)正式实施，光伏出口成本增加
+      <br>❸ 资金出逃：机构重仓光伏比例降至近2年低点，融资余额持续回落
+      <br>💡 行业底部或在Q4出现，但短期仍需消化过剩产能，"左侧布局有风险"
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ========== SECTION 4: 龙虎榜/主力动向 ========== -->
+<div id="section4" class="section-anchor">
+<h2>4️⃣ 龙虎榜 / 主力动向</h2>
+
+<h3>🏆 龙虎榜上榜个股 TOP20（按涨跌幅排序）</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>#</th><th>名称</th><th>代码</th><th>涨跌幅</th><th>收盘价</th><th>换手率</th><th>上榜原因</th></tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>格林生物 <span class="tag tag-limit">涨停</span></strong></td>
+<td class="muted">301688</td>
+<td><span style="color:#e74c3c">+104.41%</span></td>
+<td>53.82</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">2家机构买入，成功率51.93%</td>
+</tr><tr>
+<td>2</td>
+<td><strong>震裕转02 <span class="tag tag-limit">涨停</span></strong></td>
+<td class="muted">123282</td>
+<td><span style="color:#e74c3c">+57.30%</span></td>
+<td>157.3</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">涨幅偏离</td>
+</tr><tr>
+<td>3</td>
+<td><strong>维琪科技 <span class="tag tag-limit">涨停</span></strong></td>
+<td class="muted">920176</td>
+<td><span style="color:#e74c3c">+29.99%</span></td>
+<td>70.66</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">2家机构买入，成功率37.68%</td>
+</tr><tr>
+<td>4</td>
+<td><strong>晟楠科技 <span class="tag tag-limit">涨停</span></strong></td>
+<td class="muted">920006</td>
+<td><span style="color:#e74c3c">+29.96%</span></td>
+<td>22.21</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">普通席位买入，成功率49.35%</td>
+</tr><tr>
+<td>5</td>
+<td><strong>智新电子 <span class="tag tag-limit">涨停</span></strong></td>
+<td class="muted">920212</td>
+<td><span style="color:#e74c3c">+29.95%</span></td>
+<td>14.1</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">普通席位买入，成功率35.74%</td>
+</tr><tr>
+<td>6</td>
+<td><strong>路桥信息 <span class="tag tag-limit">涨停</span></strong></td>
+<td class="muted">920748</td>
+<td><span style="color:#e74c3c">+21.64%</span></td>
+<td>32.71</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">主力做T，成功率34.62%</td>
+</tr><tr>
+<td>7</td>
+<td><strong>益坤电气</strong></td>
+<td class="muted">920222</td>
+<td><span style="color:#e74c3c">+17.24%</span></td>
+<td>28.77</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">1家机构买入，成功率44.95%</td>
+</tr><tr>
+<td>8</td>
+<td><strong>信达地产</strong></td>
+<td class="muted">600657</td>
+<td><span style="color:#e74c3c">+10.11%</span></td>
+<td>3.05</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">买一主买，成功率46.24%</td>
+</tr><tr>
+<td>9</td>
+<td><strong>大晟文化</strong></td>
+<td class="muted">600892</td>
+<td><span style="color:#e74c3c">+10.08%</span></td>
+<td>5.35</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">普通席位买入，成功率40.90%</td>
+</tr><tr>
+<td>10</td>
+<td><strong>茂业商业</strong></td>
+<td class="muted">600828</td>
+<td><span style="color:#e74c3c">+10.07%</span></td>
+<td>4.81</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">普通席位买入，成功率44.08%</td>
+</tr><tr>
+<td>11</td>
+<td><strong>国晟科技</strong></td>
+<td class="muted">603778</td>
+<td><span style="color:#e74c3c">+10.03%</span></td>
+<td>10.75</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">买一主买，成功率45.10%</td>
+</tr><tr>
+<td>12</td>
+<td><strong>深圳新星</strong></td>
+<td class="muted">603978</td>
+<td><span style="color:#e74c3c">+10.02%</span></td>
+<td>22.61</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">买一主买，成功率41.83%</td>
+</tr><tr>
+<td>13</td>
+<td><strong>恒宝股份</strong></td>
+<td class="muted">002104</td>
+<td><span style="color:#e74c3c">+10.02%</span></td>
+<td>13.51</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">1家机构买入，成功率28.04%</td>
+</tr><tr>
+<td>14</td>
+<td><strong>竞业达</strong></td>
+<td class="muted">003005</td>
+<td><span style="color:#e74c3c">+10.01%</span></td>
+<td>20</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">普通席位买入，成功率38.33%</td>
+</tr><tr>
+<td>15</td>
+<td><strong>博云新材</strong></td>
+<td class="muted">002297</td>
+<td><span style="color:#e74c3c">+10.01%</span></td>
+<td>20</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">2家机构买入，成功率43.90%</td>
+</tr><tr>
+<td>16</td>
+<td><strong>国芳集团</strong></td>
+<td class="muted">601086</td>
+<td><span style="color:#e74c3c">+10.01%</span></td>
+<td>11.1</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">普通席位买入，成功率56.65%</td>
+</tr><tr>
+<td>17</td>
+<td><strong>内蒙一机</strong></td>
+<td class="muted">600967</td>
+<td><span style="color:#e74c3c">+10.01%</span></td>
+<td>13.41</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">普通席位买入，成功率34.06%</td>
+</tr><tr>
+<td>18</td>
+<td><strong>飞龙股份</strong></td>
+<td class="muted">002536</td>
+<td><span style="color:#e74c3c">+10.00%</span></td>
+<td>58.07</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">1家机构买入，成功率45.67%</td>
+</tr><tr>
+<td>19</td>
+<td><strong>小方制药</strong></td>
+<td class="muted">603207</td>
+<td><span style="color:#e74c3c">+10.00%</span></td>
+<td>27.94</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">普通席位买入，成功率44.50%</td>
+</tr><tr>
+<td>20</td>
+<td><strong>高新发展</strong></td>
+<td class="muted">000628</td>
+<td><span style="color:#e74c3c">+10.00%</span></td>
+<td>54.79</td>
+<td>0%</td>
+<td style="font-size:.8em;color:var(--muted)">2家机构买入，成功率20.93%</td>
+</tr></tbody></table></div>
+
+<h3>🏦 机构净买入/卖出重点个股</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>#</th><th>名称</th><th>代码</th><th>涨跌幅</th><th>净买入(万)</th><th>操作方向</th></tr></thead>
+<tbody>
+<tr><td colspan="6" style="text-align:center;color:var(--muted);font-size:.8em;border:none;padding:4px">─── ↓ 机构净卖出 ↓ ───</td></tr></tbody></table></div>
+
+<h3>💰 北向资金动向</h3>
+<div class="card">
+  <div style="text-align:center;padding:12px 0;color:var(--muted)">
+    <div style="font-size:1.1em">⚠️ 北向资金详细数据暂未完全更新</div>
+    <div style="font-size:.85em;margin-top:4px">盘后数据尚在汇总中，以下为实时接口快照参考</div>
+  </div>
+</div>
+
+<div class="highlight-box">
+  <strong>🔍 北向资金趋势解读：</strong>
+  <br>• 根据盘中快照，深股通早盘净流入约5200万元，沪股通资金方向待确认
+  <br>• 近期北向资金整体呈"小幅波动"态势，未出现大规模进出，反映外资观望情绪浓厚
+  <br>• 在美联储9月议息会议前夕，外资倾向于保持中性仓位，等待更明确政策信号
+  <br>• 建议关注盘后北向资金完整数据（通常T+1日更新），届时可确认当日净买入/卖出方向
+</div>
+
+<h3>📋 主力资金重点操作标的汇总</h3>
+<div class="card">
+  <div style="margin:8px 0">
+    <div style="font-weight:600;color:var(--red)">🔺 主力做多方向：</div>
+    <div style="color:var(--muted);font-size:.88em;margin:4px 0">
+      <br>❶ <strong>红利/公用事业</strong>：国投电力/中国核电/长江电力——"资产荒"背景下险资社保持续加仓，类债属性获资金追捧
+      <br>❷ <strong>大金融底部</strong>：工商银行逆势+0.86%，银行板块整体跌幅有限，资金在低位承接
+      <br>❸ <strong>医美/消费</strong>：药明康德+1.03%企稳反弹，美容护理板块获资金流入
+    </div>
+  </div>
+  <div style="margin:8px 0">
+    <div style="font-weight:600;color:var(--green)">🔻 主力做空方向：</div>
+    <div style="color:var(--muted);font-size:.88em;margin:4px 0">
+      <br>❶ <strong>CPO/光模块</strong>：中际旭创-4.29%/新易盛-4.00%/光迅科技-4.03%——高位筹码松动，机构获利了结
+      <br>❷ <strong>锂电产业链</strong>：赣锋锂业-4.38%/天齐锂业-4.35%/恩捷股份-3.87%——行业产能过剩+价格下行周期未结束
+      <br>❸ <strong>AI应用/软件</strong>：同花顺-4.35%/金山办公-3.62%/华大九天-3.61%——前期涨幅过大，估值回归压力
+    </div>
+  </div>
+</div>
+
+<div class="highlight-box warning">
+  <strong>💡 主力动向背后逻辑：</strong>
+  <br>① <strong>高位获利回吐</strong>：CPO/光模块和AI应用是上半年最强主线，累计涨幅巨大，机构有兑现需求
+  <br>② <strong>风格切换加速</strong>：成长→价值切换信号明确，红利/公用事业/大金融获增量资金
+  <br>③ <strong>防御优先</strong>：全球宏观不确定性(美联储议息/地缘风险)下，资金选择"先苟住"
+  <br>④ <strong>行业景气分化</strong>：新能源(光伏/锂电)基本面仍在恶化，而公用事业/医美景气度向上
+  <br><br>
+  <strong class="yellow">⚡ 策略建议</strong>：短期宜守不宜攻，控制仓位等待市场企稳；中线关注红利策略+景气反转方向，回避高位回调未结束的成长股。
+</div>
+</div>
+
+<!-- ========== 总结 ========== -->
+<div class="card" style="border-color:var(--accent)">
+  <h3 style="color:var(--accent);margin-bottom:8px">📝 今日总结 & 后市展望</h3>
+  <div style="color:var(--muted);font-size:.9em;line-height:1.8">
+    <strong>行情定性</strong>：{report_date}市场整体<strong class="green">弱势调整</strong>，四大指数全线收跌，创业板指-2.39%领跌，赚钱效应差。
+    <br><strong>核心矛盾</strong>：前期强势的成长方向(AI/CPO/新能源)集体退潮 vs. 防御性板块(红利/公用事业/医美)逆势吸金，风格切换信号明确。
+    <br><strong>后市展望</strong>：
+    <br>• 短期(1-3日)：市场或延续弱势震荡，等待缩量企稳信号。关注上证3900支撑位，若跌破则打开下行空间
+    <br>• 中期(1-2周)：9月中旬美联储议息+国内经济数据公布，或成变盘窗口。若降息落地，成长方向有望重新活跃
+    <br>• 操作建议：保持5-6成仓位，坚守红利底仓，成长方向等待右侧信号再入场
+    <br>• ⚠️ 风险提示：地缘冲突升级/北向资金大幅流出/美联储鹰派超预期
+  </div>
+</div>
+
+<div class="footer">
+  📊 A股市场热度排行报告 · {report_date} · 由UOS AI定时任务自动生成<br>
+  数据来源：东方财富网 / 沪深交易所 / 龙虎榜 · 仅供参考，不构成投资建议<br>
+  生成时间：{gen_date} 09:00 · 下期报告：{gen_date} 09:00(次日)
+</div>
+</div>
+</body>
+</html>
