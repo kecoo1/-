@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股每日热度排行 · 2026-09-04</title>
+<style>
+:root{--up:#e03131;--down:#2f9e44;--bg:#0b0f1a;--card:#131a2a;--card2:#0f1626;--line:#1f2a44;--txt:#e6edf7;--muted:#8fa3bf;--gold:#f5b942;--blue:#4d9fff;--purple:#a78bfa}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65;padding-bottom:40px}
+.wrap{max-width:860px;margin:0 auto;padding:14px}
+.hero{background:linear-gradient(135deg,#151d33 0%,#1b1430 55%,#2a1a1a 100%);border:1px solid var(--line);border-radius:16px;padding:22px 18px;margin-bottom:16px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(245,185,66,.12),transparent 70%)}
+.hero h1{font-size:1.5rem;letter-spacing:1px;margin-bottom:6px}
+.hero .sub{color:var(--muted);font-size:13px;margin-bottom:10px}
+.hero .tagline{font-size:13px;color:#ffd9a0;background:rgba(245,185,66,.08);border:1px solid rgba(245,185,66,.25);border-radius:8px;padding:8px 10px}
+.h2{font-size:1.08rem;font-weight:700;margin:22px 0 12px;padding:8px 12px;border-radius:10px;display:flex;align-items:center;gap:8px;background:linear-gradient(90deg,rgba(77,159,255,.14),transparent);border:1px solid rgba(77,159,255,.28)}
+.h2 .no{background:var(--blue);color:#fff;font-size:.8rem;width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
+.card2{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{background:#182档345;color:var(--muted);font-weight:600;text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:6px;border-bottom:1px solid rgba(31,42,68,.6);white-space:nowrap}
+tr:hover td{background:rgba(77,159,255,.05)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.up{color:var(--up);font-weight:600}
+.down{color:var(--down);font-weight:600}
+.flat{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+.idx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.idx{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.idx .nm{font-size:12px;color:var(--muted)}
+.idx .val{font-size:1.15rem;font-weight:700;margin:2px 0}
+.idx .chg{font-size:12px}
+.pill{display:inline-block;font-size:11px;padding:1px 8px;border-radius:20px;margin-left:6px;vertical-align:1px}
+.pill.up{background:rgba(224,49,49,.12);color:#ff6b6b}
+.pill.down{background:rgba(47,158,68,.12);color:#69db7c}
+.bar{height:8px;border-radius:4px;background:#1b2540;overflow:hidden;margin-top:4px}
+.bar>i{display:block;height:100%;border-radius:4px}
+.tag{display:inline-block;font-size:10.5px;padding:1px 6px;border-radius:4px;margin-left:5px;border:1px solid}
+.tag.z{color:#ffd43b;border-color:rgba(255,212,59,.4);background:rgba(255,212,59,.08)}
+.tag.g{color:#63e6be;border-color:rgba(99,230,190,.35);background:rgba(99,230,190,.08)}
+.tag.b{color:#74c0fc;border-color:rgba(116,192,252,.35);background:rgba(116,192,252,.08)}
+.note{font-size:11.5px;color:var(--muted);line-height:1.7}
+.quote{font-size:12.5px;color:#c9b8a0;border-left:3px solid var(--gold);padding:6px 10px;margin:8px 0;background:rgba(245,185,66,.05);border-radius:0 8px 8px 0}
+.focus{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.focus .fc{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px}
+.focus .fc h4{font-size:13.5px;margin-bottom:4px}
+.focus .fc p{font-size:12px;color:var(--muted)}
+.rank1{color:#ffd43b}
+.rank2{color:#e9ecef}
+.rank3{color:#e8895c}
+.footer{text-align:center;color:var(--muted);font-size:11px;margin-top:24px;padding-top:14px;border-top:1px solid var(--line)}
+.src{font-size:11px;color:var(--muted);line-height:1.8;margin-top:10px}
+@media(max-width:480px){.wrap{padding:8px}.hero h1{font-size:1.2rem}th,td{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <h1>📈 A股每日热度排行</h1>
+  <div class="sub">2026年9月4日（周五）· 盘后完整版 · 数据截至当日收盘</div>
+  <div class="tagline">🎙️ 今日剧本：三大指数冲高回落，AI硬件集体关灯吃面，猪肉白酒开启自助餐模式——有人天台排队，有人满仓回血，冰火两重天的一天。</div>
+</div>
+<!-- ============ 板块一：指数与大盘风向 ============ -->
+<div class="h2"><span class="no">1</span> 指数与大盘风向 · 弱势震荡中的“跷跷板”</div>
+
+<div class="card">
+  <div class="idx-grid">
+    <div class="idx"><div class="nm">上证指数</div><div class="val">3930.12</div><div class="chg down">-0.30% <span class="pill down">跌</span></div><div class="nm" style="margin-top:4px">成交 9383亿</div></div>
+    <div class="idx"><div class="nm">深证成指</div><div class="val">13516.97</div><div class="chg down">-0.79% <span class="pill down">跌</span></div><div class="nm" style="margin-top:4px">成交 10924亿</div></div>
+    <div class="idx"><div class="nm">创业板指</div><div class="val">3286.55</div><div class="chg down">-0.78% <span class="pill down">跌</span></div><div class="nm" style="margin-top:4px">成交 5036亿</div></div>
+    <div class="idx"><div class="nm">科创50</div><div class="val">1577.36</div><div class="chg down">-2.10% <span class="pill down">领跌</span></div><div class="nm" style="margin-top:4px">成交 742亿</div></div>
+  </div>
+  <div class="card2" style="margin-top:12px">
+    <div style="font-size:12.5px;color:var(--muted)">📊 全市场温度计</div>
+    <table style="margin-top:6px">
+      <tr><td>沪深两市合计成交</td><td class="num">≈ 2.03万亿（较上日基本持平，量能仍在高位）</td></tr>
+      <tr><td>涨 / 跌 / 平 家数</td><td class="num"><span class="up">2323家上涨</span> / <span class="down">2857家下跌</span> / 168家平盘</td></tr>
+      <tr><td>涨停 / 跌停</td><td class="num"><span class="up">39家涨停</span> / <span class="down">9家跌停</span>（含20cm/30cm品种）</td></tr>
+      <tr><td>北向资金</td><td>实时盘中数据已不披露（2024年8月起调整机制）；当日龙虎榜沪深股通席位参与活跃，跨境支付、免税方向获北向席位青睐（见板块四）</td></tr>
+      <tr><td>主力资金</td><td>整体呈净流出，AI硬件（算力/芯片）为流出重灾区；净流入集中在船舶、养殖、传媒短剧、跨境支付等方向</td></tr>
+    </table>
+  </div>
+  <div class="quote">🍜 段子时间：上证只跌0.30%叫“微调”，创业板-0.78%叫“分歧”，科创50 -2.10%叫“技术性入冬”。今日风格一句话总结——<b>高位科技还债，低位消费过年</b>。收盘一数，跌停板上躺着浪潮信息、传智教育这些前期明星，涨停板上全是猪和酒，这波“高低切换”比换季还快。</div>
+  <div class="note">📌 波动分析：三大指数午后集体走弱呈“冲高回落”形态，科创50领跌主要受半导体、先进封装、电子化学品拖累（相关个股大面积跌停/大跌）；上证相对抗跌，受益于银行、白酒、养殖等权重与防御方向支撑。市场风格由成长切向价值/低位，赚钱效应收缩至约44%（上涨占比）。</div>
+</div>
+<!-- ============ 板块二：个股涨幅榜 & 跌幅榜 ============ -->
+<div class="h2"><span class="no">2</span> 个股涨幅榜 & 跌幅榜 · 猪飞天 & 芯落地</div>
+
+<div class="card">
+  <div style="font-size:14px;font-weight:700;margin-bottom:8px">🚀 涨幅榜 Top 20 <span style="font-size:11px;color:var(--muted);font-weight:400">（剔除ST/新股，数据源：东方财富）</span></div>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>#</th><th>代码</th><th>名称</th><th>涨幅</th><th>收盘</th><th>换手率</th><th>所属行业/题材</th><th>上榜亮点</th></tr>
+    <tr><td>1</td><td>688170</td><td>德龙激光</td><td class="up">+17.50%</td><td class="num">61.90</td><td class="num">16.9%</td><td>激光设备</td><td><span class="tag g">先进封装激光加工</span></td></tr>
+    <tr><td>2</td><td>300300</td><td>海峡创新</td><td class="up">+16.01%</td><td class="num">9.13</td><td class="num">23.4%</td><td>数字经济</td><td><span class="tag b">3家机构买入</span></td></tr>
+    <tr><td>3</td><td>300468</td><td>四方精创</td><td class="up">+14.58%</td><td class="num">27.50</td><td class="num">27.6%</td><td>跨境支付/数字货币</td><td><span class="tag z">热门题材</span></td></tr>
+    <tr><td>4</td><td>300864</td><td>南大环境</td><td class="up">+12.95%</td><td class="num">28.95</td><td class="num">7.0%</td><td>环保</td><td>—</td></tr>
+    <tr><td>5</td><td>688660</td><td>电气风电</td><td class="up">+12.57%</td><td class="num">8.42</td><td class="num">3.4%</td><td>风电</td><td>—</td></tr>
+    <tr><td>6</td><td>688435</td><td>英方软件</td><td class="up">+12.01%</td><td class="num">32.93</td><td class="num">13.7%</td><td>软件</td><td>—</td></tr>
+    <tr><td>7</td><td>301171</td><td>易点天下</td><td class="up">+11.12%</td><td class="num">38.28</td><td class="num">31.8%</td><td>AI营销/Kimi概念</td><td><span class="tag b">3家机构买入</span><span class="tag z">龙虎榜2.87亿</span></td></tr>
+    <tr><td>8</td><td>688061</td><td>灿瑞科技</td><td class="up">+11.02%</td><td class="num">51.40</td><td class="num">4.8%</td><td>芯片</td><td>芯片逆势独苗</td></tr>
+    <tr><td>9</td><td>300225</td><td>金力泰</td><td class="up">+10.50%</td><td class="num">7.79</td><td class="num">12.7%</td><td>涂料</td><td>—</td></tr>
+    <tr><td>10</td><td>000560</td><td>我爱我家</td><td class="up">+10.14%</td><td class="num">3.15</td><td class="num">33.3%</td><td>房产经纪</td><td><span class="tag z">地产活跃</span><span class="tag g">龙虎榜1.94亿</span></td></tr>
+    <tr><td>11</td><td>600108</td><td>亚盛集团</td><td class="up">+10.10%</td><td class="num">4.36</td><td class="num">11.7%</td><td>种植业</td><td><span class="tag z">2连板</span></td></tr>
+    <tr><td>12</td><td>000428</td><td>华天酒店</td><td class="up">+10.09%</td><td class="num">4.69</td><td class="num">6.1%</td><td>酒店餐饮</td><td>—</td></tr>
+    <tr><td>13</td><td>600059</td><td>古越龙山</td><td class="up">+10.06%</td><td class="num">9.19</td><td class="num">7.9%</td><td>黄酒</td><td><span class="tag z">酒类大涨</span></td></tr>
+    <tr><td>14</td><td>000735</td><td>罗牛山</td><td class="up">+10.05%</td><td class="num">6.13</td><td class="num">6.9%</td><td>养殖业</td><td><span class="tag z">猪肉概念</span></td></tr>
+    <tr><td>15</td><td>002403</td><td>爱仕达</td><td class="up">+10.05%</td><td class="num">11.28</td><td class="num">4.1%</td><td>小家电</td><td><span class="tag z">2连板</span></td></tr>
+    <tr><td>16</td><td>002564</td><td>天沃科技</td><td class="up">+10.04%</td><td class="num">4.93</td><td class="num">1.9%</td><td>专用设备</td><td>—</td></tr>
+    <tr><td>17</td><td>603123</td><td>翠微股份</td><td class="up">+10.04%</td><td class="num">11.18</td><td class="num">4.9%</td><td>免税/金融信息</td><td><span class="tag g">退税商店</span></td></tr>
+    <tr><td>18</td><td>600975</td><td>新五丰</td><td class="up">+10.04%</td><td class="num">5.59</td><td class="num">4.6%</td><td>养殖业</td><td><span class="tag z">猪肉概念</span></td></tr>
+    <tr><td>19</td><td>000892</td><td>欢瑞世纪</td><td class="up">+10.04%</td><td class="num">5.59</td><td class="num">43.9%</td><td>影视/短剧</td><td><span class="tag z">5天4板</span></td></tr>
+    <tr><td>20</td><td>001366</td><td>播恩集团</td><td class="up">+10.04%</td><td class="num">14.36</td><td class="num">9.4%</td><td>饲料</td><td><span class="tag z">养殖链</span></td></tr>
+  </table>
+  </div>
+  <div class="note" style="margin-top:8px">🔍 观察：涨幅榜几乎被“吃”字辈霸榜——<b>猪肉（罗牛山/新五丰/新希望/天邦食品/正虹科技）、饲料（播恩集团/邦基科技）、白酒黄酒（古越龙山/会稽山）、免税零售（翠微股份/我爱我家/百大集团）</b>轮番上桌；跨境支付（四方精创/楚天龙/恒宝股份）和传媒短剧（欢瑞世纪/天娱数科/蓝色光标）是仅存的科技火种。敦煌种业6天3板、龙版传媒5连板，种业+出版传媒双题材延续性最好。</div>
+</div>
+
+<div class="card">
+  <div style="font-size:14px;font-weight:700;margin-bottom:8px">📉 跌幅榜 Top 20 <span style="font-size:11px;color:var(--muted);font-weight:400">（数据源：东方财富）</span></div>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>#</th><th>代码</th><th>名称</th><th>跌幅</th><th>收盘</th><th>换手率</th><th>所属行业/题材</th><th>上榜亮点</th></tr>
+    <tr><td>1</td><td>301326</td><td>捷邦科技</td><td class="down">-11.49%</td><td class="num">104.00</td><td class="num">4.7%</td><td>消费电子</td><td>高位杀跌</td></tr>
+    <tr><td>2</td><td>688809</td><td>强一股份</td><td class="down">-10.23%</td><td class="num">405.03</td><td class="num">10.4%</td><td>次新/高价股</td><td>高价次新补跌</td></tr>
+    <tr><td>3</td><td>300990</td><td>同飞股份</td><td class="down">-10.08%</td><td class="num">96.40</td><td class="num">18.5%</td><td>液冷/算力硬件</td><td><span class="tag g">算力链杀跌</span></td></tr>
+    <tr><td>4</td><td>000017</td><td>深中华A</td><td class="down">-10.02%</td><td class="num">9.52</td><td class="num">24.1%</td><td>饰品</td><td><span class="tag g">2连跌停</span></td></tr>
+    <tr><td>5</td><td>600121</td><td>郑州煤电</td><td class="down">-10.02%</td><td class="num">5.12</td><td class="num">10.7%</td><td>煤炭</td><td><span class="tag g">跌停</span></td></tr>
+    <tr><td>6</td><td>003032</td><td>传智教育</td><td class="down">-10.00%</td><td class="num">9.72</td><td class="num">32.6%</td><td>教育</td><td><span class="tag g">2连跌停</span></td></tr>
+    <tr><td>7</td><td>603256</td><td>宏和科技</td><td class="down">-10.00%</td><td class="num">120.69</td><td class="num">2.9%</td><td>玻纤</td><td><span class="tag g">跌停</span></td></tr>
+    <tr><td>8</td><td>605068</td><td>明新旭腾</td><td class="down">-10.00%</td><td class="num">21.15</td><td class="num">6.6%</td><td>汽车零部件</td><td><span class="tag g">跌停</span></td></tr>
+    <tr><td>9</td><td>000977</td><td>浪潮信息</td><td class="down">-9.99%</td><td class="num">77.72</td><td class="num">11.6%</td><td>算力/服务器</td><td><span class="tag g">跌停</span><span class="tag z">AI硬件风向标</span></td></tr>
+    <tr><td>10</td><td>002909</td><td>集泰股份</td><td class="down">-9.99%</td><td class="num">7.21</td><td class="num">37.8%</td><td>化学制品</td><td><span class="tag g">跌停</span></td></tr>
+    <tr><td>11</td><td>003005</td><td>竞业达</td><td class="down">-9.99%</td><td class="num">18.48</td><td class="num">35.2%</td><td>IT服务</td><td><span class="tag g">跌停</span></td></tr>
+    <tr><td>12</td><td>300672</td><td>国科微</td><td class="down">-9.97%</td><td class="num">169.98</td><td class="num">7.7%</td><td>芯片</td><td><span class="tag g">半导体杀跌</span></td></tr>
+    <tr><td>13</td><td>603353</td><td>和顺石油</td><td class="down">-9.95%</td><td class="num">33.93</td><td class="num">7.5%</td><td>石油</td><td>—</td></tr>
+    <tr><td>14</td><td>600892</td><td>大晟文化</td><td class="down">-9.91%</td><td class="num">4.91</td><td class="num">29.8%</td><td>游戏</td><td><span class="tag g">跌停</span></td></tr>
+    <tr><td>15</td><td>600610</td><td>中毅达</td><td class="down">-9.91%</td><td class="num">8.55</td><td class="num">13.5%</td><td>化工</td><td>—</td></tr>
+    <tr><td>16</td><td>603339</td><td>四方科技</td><td class="down">-9.85%</td><td class="num">12.54</td><td class="num">8.7%</td><td>专用设备</td><td>—</td></tr>
+    <tr><td>17</td><td>002886</td><td>沃特股份</td><td class="down">-9.55%</td><td class="num">25.11</td><td class="num">29.3%</td><td>化工新材料</td><td>—</td></tr>
+    <tr><td>18</td><td>605288</td><td>凯迪股份</td><td class="down">-9.30%</td><td class="num">65.61</td><td class="num">3.5%</td><td>电机</td><td>—</td></tr>
+    <tr><td>19</td><td>603626</td><td>科森科技</td><td class="down">-9.12%</td><td class="num">17.93</td><td class="num">10.3%</td><td>消费电子</td><td>—</td></tr>
+    <tr><td>20</td><td>603045</td><td>福达合金</td><td class="down">-9.04%</td><td class="num">49.98</td><td class="num">11.9%</td><td>电工合金</td><td>—</td></tr>
+  </table>
+  </div>
+  <div class="note" style="margin-top:8px">🔍 观察：跌停9家，其中<b>算力硬件（浪潮信息跌停、同飞股份-10%、国科微-10%、华虹宏力-8.9%）</b>成为“重灾区”，前期AI硬件行情有多疯，今天还债就有多狠；教育（传智教育2连跌停）、游戏（大晟文化）、煤炭（郑州煤电）零星补跌。<b>较昨日同期：涨停家数回升至39家但高度有限（最高5板龙版传媒），跌停家数增至9家，炸板率不低，说明短线资金在“高低切换”中重新洗牌</b>——追高AI硬件的人吃了面，埋伏猪肉白酒的人吃了肉。</div>
+</div>
+<!-- ============ 板块三：板块热度排行 ============ -->
+<div class="h2"><span class="no">3</span> 板块热度排行 · 资金去“吃酒”了</div>
+
+<div class="card">
+  <div style="font-size:14px;font-weight:700;margin-bottom:8px">🔥 热门概念板块 Top 10 <span style="font-size:11px;color:var(--muted);font-weight:400">（按当日涨幅排序 · 东方财富板块数据）</span></div>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>#</th><th>板块</th><th>涨幅</th><th>主力净流入</th><th>领涨股</th><th>热度点评</th></tr>
+    <tr><td>1</td><td>猪肉概念</td><td class="up">+5.42%</td><td class="up">+16.0亿</td><td>播恩集团/新希望</td><td>36涨3跌，猪价+政策双buff</td></tr>
+    <tr><td>2</td><td>鸡肉概念</td><td class="up">+4.89%</td><td class="up">+3.9亿</td><td>新希望/春雪食品</td><td>白羽鸡景气外溢</td></tr>
+    <tr><td>3</td><td>水产概念</td><td class="up">+3.10%</td><td class="up">+1.6亿</td><td>中水渔业涨停</td><td>养殖链补涨</td></tr>
+    <tr><td>4</td><td>酿酒概念</td><td class="up">+2.84%</td><td class="up">+13.3亿</td><td>会稽山涨停</td><td>白酒黄酒齐舞</td></tr>
+    <tr><td>5</td><td>预制菜概念</td><td class="up">+2.77%</td><td class="up">+6.0亿</td><td>中水渔业</td><td>消费复苏预期</td></tr>
+    <tr><td>6</td><td>退税商店</td><td class="up">+2.71%</td><td class="up">+4.9亿</td><td>翠微股份涨停</td><td>免税预期升温</td></tr>
+    <tr><td>7</td><td>跨境支付</td><td class="up">+2.45%</td><td class="up">+28.7亿</td><td>楚天龙/四方精创</td><td>61涨3跌，金砖支付预期</td></tr>
+    <tr><td>8</td><td>乳业</td><td class="up">+2.44%</td><td class="up">+2.1亿</td><td>骑士乳业</td><td>消费链扩散</td></tr>
+    <tr><td>9</td><td>白酒</td><td class="up">+2.39%</td><td class="up">+13.0亿</td><td>会稽山/兰州黄河</td><td>低位+估值修复</td></tr>
+    <tr><td>10</td><td>短剧互动游戏</td><td class="up">+2.30%</td><td class="up">+43.7亿</td><td>欢瑞世纪/兆驰股份</td><td>净流入全场第一</td></tr>
+  </table>
+  </div>
+  <div style="margin-top:10px;font-size:12px;color:var(--muted)">补充观察：Kimi概念 +2.27%（净流入12.6亿）、谷子经济 +2.26%（净流入24.3亿）、船舶制造 +2.19%（净流入22.7亿，中国船舶领涨）、快手概念 +2.14% —— AI应用/传媒方向资金并不缺席，只是换了赛道（从硬件切到应用+IP）。</div>
+</div>
+
+<div class="card">
+  <div style="font-size:14px;font-weight:700;margin-bottom:8px">🧊 冷门板块 Top 5 <span style="font-size:11px;color:var(--muted);font-weight:400">（AI硬件集体失速）</span></div>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>#</th><th>板块/方向</th><th>表现</th><th>代表个股</th><th>原因简析</th></tr>
+    <tr><td>1</td><td>半导体/芯片</td><td class="down">大跌（拖累科创50 -2.10%）</td><td>国科微-9.97%、华虹宏力-8.88%</td><td>前期涨幅过大，获利盘踩踏</td></tr>
+    <tr><td>2</td><td>算力硬件/服务器</td><td class="down">跌停潮</td><td>浪潮信息跌停、同飞股份-10.08%</td><td>AI硬件高位分歧，资金兑现</td></tr>
+    <tr><td>3</td><td>先进封装/电子化学品</td><td class="down">集体调整</td><td>中船特气、中巨芯等大跌</td><td>半导体产业链同步回落</td></tr>
+    <tr><td>4</td><td>存储芯片/CPO/PCB</td><td class="down">高位回落</td><td>多股跌超5%</td><td>昨日逆势强势后补跌</td></tr>
+    <tr><td>5</td><td>游戏/煤炭/玻纤</td><td class="down">零星跌停</td><td>大晟文化跌停、郑州煤电跌停、宏和科技跌停</td><td>题材退潮+周期补跌</td></tr>
+  </table>
+  </div>
+  <div class="quote">💰 资金流向偏好：<b>从“算力信仰”切换到“烟火气”</b>——短剧互动游戏净流入43.7亿、跨境支付28.7亿、谷子经济24.3亿、船舶22.7亿、猪肉16.0亿，全都在告诉AI硬件：你的时代，中场休息。行业趋势上，当日明显<b>偏低位、偏消费、偏防御</b>，成长风格遭血洗；持续性热点看三条线：<b>①养殖链（猪鸡+饲料+种业）②跨境支付/数字货币 ③传媒短剧+谷子经济IP</b>。</div>
+</div>
