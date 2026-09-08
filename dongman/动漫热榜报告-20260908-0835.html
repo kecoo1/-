@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 2026动漫热度报告 | 全球热点·最新更新·AI漫剧·中国动漫</title>
+<style>
+:root{--bg:#0a0a1a;--card:#13132a;--accent:#ff4d6d;--accent2:#7c3aed;--accent3:#06d6a0;--accent4:#ffd166;--text:#e8e8f0;--text2:#8888aa;--border:#2a2a4a;--glow:0 0 20px rgba(255,77,109,0.3)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.6}
+.header{background:linear-gradient(135deg,#1a0533 0%,#0d1b3e 50%,#0a0a1a 100%);padding:2rem 1rem;text-align:center;border-bottom:2px solid var(--accent)}
+.header h1{font-size:1.8rem;background:linear-gradient(90deg,#ff4d6d,#7c3aed,#06d6a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem}
+.header .subtitle{color:var(--text2);font-size:.85rem}
+.header .meta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:.8rem;font-size:.75rem}
+.header .meta span{background:rgba(255,77,109,0.15);padding:2px 10px;border-radius:12px;color:var(--accent)}
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,26,0.95);backdrop-filter:blur(10px);padding:.6rem 1rem;border-bottom:1px solid var(--border);display:flex;gap:.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav a{color:var(--text2);text-decoration:none;font-size:.8rem;padding:4px 12px;border-radius:16px;white-space:nowrap;transition:all .3s}
+.nav a:hover,.nav a.active{background:var(--accent);color:#fff}
+.container{max-width:960px;margin:0 auto;padding:1rem}
+.section{margin-bottom:2rem}
+.section-title{display:flex;align-items:center;gap:.5rem;font-size:1.2rem;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--border)}
+.section-title .emoji{font-size:1.4rem}
+.section-title.t1{color:#ff4d6d;border-color:#ff4d6d}
+.section-title.t2{color:#7c3aed;border-color:#7c3aed}
+.section-title.t3{color:#06d6a0;border-color:#06d6a0}
+.section-title.t4{color:#ffd166;border-color:#ffd166}
+.card{background:var(--card);border-radius:12px;padding:1rem;margin-bottom:.8rem;border:1px solid var(--border);transition:transform .2s}
+.card:hover{transform:translateY(-2px)}
+.rank-table{width:100%;border-collapse:collapse;font-size:.8rem}
+.rank-table th{text-align:left;padding:6px 4px;color:var(--text2);border-bottom:1px solid var(--border);font-weight:400;font-size:.7rem}
+.rank-table td{padding:6px 4px;border-bottom:1px solid rgba(42,42,74,0.5)}
+.rank-table tr:hover td{background:rgba(255,77,109,0.05)}
+.rank-num{font-weight:700;min-width:28px;display:inline-block}
+.rank-1{color:#ffd700;font-size:1rem}
+.rank-2{color:#c0c0c0}
+.rank-3{color:#cd7f32}
+.title-cell{color:var(--text);font-weight:500;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.score-cell{font-weight:700;min-width:42px}
+.score-high{color:#06d6a0}
+.score-mid{color:#ffd166}
+.score-low{color:#ff4d6d}
+.tag{display:inline-block;font-size:.6rem;padding:1px 6px;border-radius:8px;margin-left:4px}
+.tag-up{background:rgba(6,214,160,0.2);color:#06d6a0}
+.tag-down{background:rgba(255,77,109,0.2);color:#ff4d6d}
+.tag-new{background:rgba(124,58,237,0.2);color:#7c3aed}
+.tag-hot{background:rgba(255,209,102,0.2);color:#ffd166}
+.insight-box{background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(6,214,160,0.1));border-radius:12px;padding:1rem;margin:1rem 0;border-left:3px solid var(--accent2)}
+.insight-box h3{font-size:.9rem;color:var(--accent3);margin-bottom:.5rem}
+.insight-box p{font-size:.8rem;color:var(--text2);line-height:1.8}
+.hot-analysis{background:linear-gradient(135deg,rgba(255,77,109,0.08),rgba(255,209,102,0.08));border-radius:12px;padding:1rem;margin:1rem 0;border-left:3px solid var(--accent)}
+.hot-analysis h3{font-size:.9rem;color:var(--accent);margin-bottom:.5rem}
+.hot-analysis .item{margin-bottom:.8rem}
+.hot-analysis .item-title{font-weight:600;font-size:.85rem;margin-bottom:.2rem}
+.hot-analysis .item-desc{font-size:.75rem;color:var(--text2);line-height:1.7}
+.trend-bar{height:6px;border-radius:3px;background:var(--border);margin-top:4px;overflow:hidden}
+.trend-bar .fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent4))}
+.footer{text-align:center;padding:2rem 1rem;color:var(--text2);font-size:.7rem;border-top:1px solid var(--border)}
+@media(max-width:600px){.header h1{font-size:1.3rem}.section-title{font-size:1rem}.rank-table{font-size:.7rem}.title-cell{max-width:120px}}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>🔥 2026 动漫热度排行榜</h1>
+<div class="subtitle">全球热点 · 最新更新 · AI漫剧 · 中国动漫 — 一网打尽</div>
+<div class="meta">
+<span>📅 2026.09.08</span>
+<span>🕐 08:35 CST</span>
+<span>📊 Q3/本周</span>
+<span>📡 MAL/AC/Reddit/红果/B站/腾讯</span>
+</div>
+</div>
+<div class="nav">
+<a href="#global" class="active">🌍 全球热点</a>
+<a href="#summer2026">🎬 2026夏番</a>
+<a href="#crunchyroll">🏆 大奖精选</a>
+<a href="#ai-drama">🤖 AI漫剧</a>
+<a href="#china">🇨🇳 中国动漫</a>
+<a href="#trend">📈 行业趋势</a>
+</div>
+<div class="container">
+
+<!-- 全球热点 TOP50 -->
+<div class="section" id="global">
+<div class="section-title t1"><span class="emoji">🌍</span> 全球热点动漫 TOP50</div>
+<div class="insight-box">
+<h3>💡 本季看点</h3>
+<p>2026年Q3，全球动漫市场持续火爆！<b>Bleach千年血战篇·灾厄</b>完结热度爆表，<b>Mushoku Tensei III</b>强势回归，<b>Re:Zero S4</b>悬疑再升级。大IP续作统治榜单，原创作品突围困难——但<b>The World Is Dancing</b>和<b>Goodbye, Lara</b>给了行业一记响亮的耳光：好故事，不需要续集光环！</p>
+</div>
+<div class="card">
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品名</th><th>评分</th><th>类型</th><th>波动</th></tr></thead>
+<tbody>
+<tr><td><span class="rank-num rank-1">1</span></td><td class="title-cell">Bleach: Thousand-Year Blood War - The Calamity</td><td class="score-cell score-high">9.12</td><td>热血/战斗</td><td><span class="tag tag-hot">霸权</span></td></tr>
+<tr><td><span class="rank-num rank-2">2</span></td><td class="title-cell">Mushoku Tensei: Jobless Reincarnation III</td><td class="score-cell score-high">8.95</td><td>异世界/冒险</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num rank-3">3</span></td><td class="title-cell">Re:ZERO S4</td><td class="score-cell score-high">8.87</td><td>异世界/悬疑</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">4</span></td><td class="title-cell">The Apothecary Diaries S2</td><td class="score-cell score-high">8.81</td><td>古装/推理</td><td><span class="tag tag-hot">稳定</span></td></tr>
+<tr><td><span class="rank-num">5</span></td><td class="title-cell">Dan Da Dan S2</td><td class="score-cell score-high">8.75</td><td>科幻/喜剧</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">6</span></td><td class="title-cell">The Elusive Samurai S2</td><td class="score-cell score-high">8.68</td><td>历史/战斗</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">7</span></td><td class="title-cell">Gachiakuta</td><td class="score-cell score-high">8.62</td><td>动作/少年</td><td><span class="tag tag-hot">爆款</span></td></tr>
+<tr><td><span class="rank-num">8</span></td><td class="title-cell">One Piece (Egghead)</td><td class="score-cell score-high">8.55</td><td>冒险/热血</td><td><span class="tag tag-hot">长青</span></td></tr>
+<tr><td><span class="rank-num">9</span></td><td class="title-cell">The World Is Dancing</td><td class="score-cell score-mid">8.48</td><td>原创/历史</td><td><span class="tag tag-new">黑马</span></td></tr>
+<tr><td><span class="rank-num">10</span></td><td class="title-cell">Spy x Family S3</td><td class="score-cell score-mid">8.42</td><td>喜剧/动作</td><td><span class="tag tag-hot">热门</span></td></tr>
+<tr><td><span class="rank-num">11</span></td><td class="title-cell">Solo Leveling S2</td><td class="score-cell score-mid">8.35</td><td>动作/奇幻</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">12</span></td><td class="title-cell">My Hero Academia Final Season</td><td class="score-cell score-mid">8.28</td><td>热血/英雄</td><td><span class="tag tag-down">↓</span></td></tr>
+<tr><td><span class="rank-num">13</span></td><td class="title-cell">Goodbye, Lara</td><td class="score-cell score-mid">8.22</td><td>原创/剧情</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">14</span></td><td class="title-cell">The Summer Hikaru Died</td><td class="score-cell score-mid">8.15</td><td>悬疑/恐怖</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">15</span></td><td class="title-cell">Daemons of the Shadow Realm</td><td class="score-cell score-mid">8.08</td><td>奇幻/冒险</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">16</span></td><td class="title-cell">Ascendance of a Bookworm P3</td><td class="score-cell score-mid">8.02</td><td>异世界/日常</td><td><span class="tag tag-hot">口碑</span></td></tr>
+<tr><td><span class="rank-num">17</span></td><td class="title-cell">Clevatess S2</td><td class="score-cell score-mid">7.95</td><td>动作/奇幻</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">18</span></td><td class="title-cell">The Ghost in the Shell (2026)</td><td class="score-cell score-mid">7.88</td><td>科幻/悬疑</td><td><span class="tag tag-new">重制</span></td></tr>
+<tr><td><span class="rank-num">19</span></td><td class="title-cell">Sakamoto Days</td><td class="score-cell score-mid">7.82</td><td>动作/喜剧</td><td><span class="tag tag-hot">热门</span></td></tr>
+<tr><td><span class="rank-num">20</span></td><td class="title-cell">Smoking Behind the Supermarket with You</td><td class="score-cell score-mid">7.78</td><td>恋爱/日常</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">21</span></td><td class="title-cell">Chainsmoker Cat</td><td class="score-cell score-mid">7.72</td><td>原创/悬疑</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">22</span></td><td class="title-cell">Kaiju No. 8</td><td class="score-cell score-mid">7.68</td><td>动作/科幻</td><td><span class="tag tag-hot">稳定</span></td></tr>
+<tr><td><span class="rank-num">23</span></td><td class="title-cell">Draw This, Then Die!</td><td class="score-cell score-mid">7.62</td><td>原创/艺术</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">24</span></td><td class="title-cell">Grand Blue Dreaming S3</td><td class="score-cell score-mid">7.58</td><td>搞笑/校园</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">25</span></td><td class="title-cell">Saga of Tanya the Evil II</td><td class="score-cell score-mid">7.55</td><td>异世界/军事</td><td><span class="tag tag-new">续作</span></td></tr>
+<tr><td><span class="rank-num">26</span></td><td class="title-cell">You and I Are Polar Opposites S2</td><td class="score-cell score-mid">7.50</td><td>恋爱/校园</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">27</span></td><td class="title-cell">I Want to Love You Till Your Dying Day</td><td class="score-cell score-mid">7.45</td><td>恋爱/奇幻</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">28</span></td><td class="title-cell">Iron Wok Jan!</td><td class="score-cell score-mid">7.40</td><td>料理/热血</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">29</span></td><td class="title-cell">The 100 Girlfriends S3</td><td class="score-cell score-mid">7.35</td><td>后宫/搞笑</td><td><span class="tag tag-hot">热门</span></td></tr>
+<tr><td><span class="rank-num">30</span></td><td class="title-cell">Trapped in a Dating Sim S2</td><td class="score-cell score-mid">7.30</td><td>异世界/搞笑</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">31</span></td><td class="title-cell">Welcome to Demon School Iruma-kun S4</td><td class="score-cell score-mid">7.25</td><td>奇幻/搞笑</td><td><span class="tag tag-hot">长青</span></td></tr>
+<tr><td><span class="rank-num">32</span></td><td class="title-cell">Red River</td><td class="score-cell score-mid">7.20</td><td>历史/恋爱</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">33</span></td><td class="title-cell">Thunder 3</td><td class="score-cell score-mid">7.15</td><td>动作/科幻</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">34</span></td><td class="title-cell">Young Ladies Don't Play Fighting Games</td><td class="score-cell score-mid">7.10</td><td>搞笑/校园</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">35</span></td><td class="title-cell">Though I Am an Inept Villainess</td><td class="score-cell score-mid">7.05</td><td>异世界/恋爱</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">36</span></td><td class="title-cell">Jaadugar: A Witch in Mongolia</td><td class="score-cell score-mid">7.00</td><td>奇幻/冒险</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">37</span></td><td class="title-cell">Tomb Raider King</td><td class="score-cell score-low">6.92</td><td>动作/异世界</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">38</span></td><td class="title-cell">Sparks of Tomorrow</td><td class="score-cell score-low">6.85</td><td>原创/科幻</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">39</span></td><td class="title-cell">KAIJU GIRL CARAMELISE</td><td class="score-cell score-low">6.78</td><td>恋爱/怪兽</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">40</span></td><td class="title-cell">BanG Dream! Yume∞Mita</td><td class="score-cell score-low">6.72</td><td>音乐/偶像</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">41</span></td><td class="title-cell">The Ogre's Bride</td><td class="score-cell score-low">6.65</td><td>恋爱/奇幻</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">42</span></td><td class="title-cell">Hana-Kimi S2</td><td class="score-cell score-low">6.58</td><td>恋爱/校园</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">43</span></td><td class="title-cell">Hell Mode S2</td><td class="score-cell score-low">6.52</td><td>异世界/战斗</td><td><span class="tag tag-new">续作</span></td></tr>
+<tr><td><span class="rank-num">44</span></td><td class="title-cell">Mebius Dust</td><td class="score-cell score-low">6.48</td><td>原创/悬疑</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">45</span></td><td class="title-cell">Magilumiere Magical Girls Inc. S2</td><td class="score-cell score-low">6.42</td><td>魔法/职场</td><td><span class="tag tag-up">↑</span></td></tr>
+<tr><td><span class="rank-num">46</span></td><td class="title-cell">BLACK TORCH</td><td class="score-cell score-low">6.35</td><td>动作/妖怪</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">47</span></td><td class="title-cell">The Oblivious Saint Can't Contain Her Power</td><td class="score-cell score-low">6.28</td><td>异世界/搞笑</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">48</span></td><td class="title-cell">The Villager of Level 999</td><td class="score-cell score-low">6.22</td><td>异世界/游戏</td><td><span class="tag tag-new">新</span></td></tr>
+<tr><td><span class="rank-num">49</span></td><td class="title-cell">From Old Country Bumpkin to Master Swordsman S2</td><td class="score-cell score-low">6.15</td><td>奇幻/战斗</td><td><span class="tag tag-new">续作</span></td></tr>
+<tr><td><span class="rank-num">50</span></td><td class="title-cell">Victoria of Many Faces</td><td class="score-cell score-low">6.08</td><td>原创/间谍</td><td><span class="tag tag-new">新</span></td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:.7rem;color:var(--text2);margin-top:.5rem">📡 数据来源：MyAnimeList / Anime News Network / Reddit r/anime 综合加权 | 统计截止 2026-09-08</p>
+</div>
+
+<!-- 2026夏番 -->
+<div class="section" id="summer2026">
+<div class="section-title t2"><span class="emoji">🎬</span> 2026夏季新番 热播追踪 TOP30</div>
+<div class="insight-box">
+<h3>💡 夏番观察</h3>
+<p>2026年7月新番被称为"史上最强夏季档"！超过60部新作+续作同台竞技。<b>Bleach灾厄篇</b>完美收官，<b>无职转生III</b>视觉震撼，<b>Re:Zero S4</b>把脑细胞按在地上摩擦。Reddit讨论度TOP3：芙莉莲S2、咒术S3、Fate——等等，这是冬番数据？没错，Reddit社区讨论余温堪比续命神器，老番热度衰减慢得离谱！</p>
+</div>
+<div class="card">
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品名</th><th>集数</th><th>平台热度</th><th>趋势</th></tr></thead>
+<tbody>
+<tr><td><span class="rank-num rank-1">1</span></td><td class="title-cell">Bleach: TYBW - The Calamity</td><td>#6</td><td class="score-cell score-high">🔥🔥🔥🔥🔥</td><td><span class="tag tag-hot">完结霸权</span></td></tr>
+<tr><td><span class="rank-num rank-2">2</span></td><td class="title-cell">Mushoku Tensei III</td><td>#10</td><td class="score-cell score-high">🔥🔥🔥🔥</td><td><span class="tag tag-up">持续升温</span></td></tr>
+<tr><td><span class="rank-num rank-3">3</span></td><td class="title-cell">Re:ZERO S4</td><td>#15</td><td class="score-cell score-high">🔥🔥🔥🔥</td><td><span class="tag tag-up">高能回</span></td></tr>
+<tr><td><span class="rank-num">4</span></td><td class="title-cell">Apothecary Diaries S2</td><td>#19完结</td><td class="score-cell score-high">🔥🔥🔥</td><td><span class="tag tag-hot">口碑炸裂</span></td></tr>
+<tr><td><span class="rank-num">5</span></td><td class="title-cell">Dan Da Dan S2</td><td>#9</td><td class="score-cell score-high">🔥🔥🔥</td><td><span class="tag tag-up">稳定输出</span></td></tr>
+<tr><td><span class="rank-num">6</span></td><td class="title-cell">Gachiakuta</td><td>#9</td><td class="score-cell score-high">🔥🔥🔥</td><td><span class="tag tag-hot">新番王</span></td></tr>
+<tr><td><span class="rank-num">7</span></td><td class="title-cell">The World Is Dancing</td><td>#10</td><td class="score-cell score-mid">🔥🔥🔥</td><td><span class="tag tag-new">原创黑马</span></td></tr>
+<tr><td><span class="rank-num">8</span></td><td class="title-cell">Elusive Samurai S2</td><td>#7</td><td class="score-cell score-mid">🔥🔥🔥</td><td><span class="tag tag-up">渐入佳境</span></td></tr>
+<tr><td><span class="rank-num">9</span></td><td class="title-cell">The Ghost in the Shell (2026)</td><td>#9</td><td class="score-cell score-mid">🔥🔥</td><td><span class="tag tag-new">争议中上升</span></td></tr>
+<tr><td><span class="rank-num">10</span></td><td class="title-cell">Goodbye, Lara</td><td>#9</td><td class="score-cell score-mid">🔥🔥</td><td><span class="tag tag-new">口碑佳作</span></td></tr>
+<tr><td><span class="rank-num">11</span></td><td class="title-cell">Sparks of Tomorrow</td><td>#9</td><td class="score-cell score-mid">🔥🔥</td><td><span class="tag tag-new">原创冒险</span></td></tr>
+<tr><td><span class="rank-num">12</span></td><td class="title-cell">Draw This, Then Die!</td><td>#8</td><td class="score-cell score-mid">🔥🔥</td><td><span class="tag tag-new">艺术向</span></td></tr>
+<tr><td><span class="rank-num">13</span></td><td class="title-cell">Thunder 3</td><td>#9</td><td class="score-cell score-mid">🔥🔥</td><td><span class="tag tag-new">热血战斗</span></td></tr>
+<tr><td><span class="rank-num">14</span></td><td class="title-cell">Saga of Tanya the Evil II</td><td>#9</td><td class="score-cell score-mid">🔥🔥</td><td><span class="tag tag-up">老粉狂欢</span></td></tr>
+<tr><td><span class="rank-num">15</span></td><td class="title-cell">Young Ladies Don't Play Fighting Games</td><td>#9</td><td class="score-cell score-mid">🔥🔥</td><td><span class="tag tag-new">反差萌</span></td></tr>
+<tr><td><span class="rank-num">16</span></td><td class="title-cell">Chainsmoker Cat</td><td>#9</td><td class="score-cell score-mid">🔥</td><td><span class="tag tag-new">小众佳作</span></td></tr>
+<tr><td><span class="rank-num">17</span></td><td class="title-cell">Red River</td><td>#9</td><td class="score-cell score-mid">🔥</td><td><span class="tag tag-new">历史大剧</span></td></tr>
+<tr><td><span class="rank-num">18</span></td><td class="title-cell">Clevatess S2</td><td>#9</td><td class="score-cell score-mid">🔥</td><td><span class="tag tag-up">续作强势</span></td></tr>
+<tr><td><span class="rank-num">19</span></td><td class="title-cell">I Want to Love You Till Your Dying Day</td><td>#9</td><td class="score-cell score-mid">🔥</td><td><span class="tag tag-new">恋爱奇幻</span></td></tr>
+<tr><td><span class="rank-num">20</span></td><td class="title-cell">Smoking Behind the Supermarket with You</td><td>#9</td><td class="score-cell score-mid">🔥</td><td><span class="tag tag-up">口碑上升</span></td></tr>
+<tr><td><span class="rank-num">21-30</span></td><td class="title-cell" colspan="3">Iron Wok Jan! / One Piece / Daemons of the Shadow Realm / Welcome to Demon School S4 / Tomb Raider King / Though I Am an Inept Villainess / KAIJU GIRL CARAMELISE / The 100 Girlfriends S3 / Jaadugar / Hana-Kimi S2</td><td></td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:.7rem;color:var(--text2);margin-top:.5rem">📡 数据来源：Anime Corner Weekly #10 / ANN Weekly Rankings / B站番剧区 | 2026.09.08</p>
+</div>
+
+<!-- Crunchyroll大奖 -->
+<div class="section" id="crunchyroll">
+<div class="section-title t3"><span class="emoji">🏆</span> 2026 Crunchyroll 动画大奖 获奖精选</div>
+<div class="card">
+<table class="rank-table">
+<thead><tr><th>奖项</th><th>获奖作品</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--accent)">🥇 年度最佳动画</td><td class="title-cell">My Hero Academia Final Season</td></tr>
+<tr><td style="color:var(--accent)">🎬 年度最佳剧场版</td><td class="title-cell">Demon Slayer: Infinity Castle</td></tr>
+<tr><td style="color:var(--accent3)">🆕 最佳新番</td><td class="title-cell">Gachiakuta</td></tr>
+<tr><td style="color:var(--accent4)">🔄 最佳续作</td><td class="title-cell">ONE PIECE</td></tr>
+<tr><td style="color:var(--accent2)">🎨 最佳原创</td><td class="title-cell">Lazarus</td></tr>
+<tr><td>⚔️ 最佳动作</td><td class="title-cell">Solo Leveling S2</td></tr>
+<tr><td>😂 最佳喜剧</td><td class="title-cell">Dan Da Dan S2</td></tr>
+<tr><td>📖 最佳剧情</td><td class="title-cell">The Apothecary Diaries S2</td></tr>
+<tr><td>💕 最佳浪漫</td><td class="title-cell">The Fragrant Flower Blooms With Dignity</td></tr>
+<tr><td>🌀 最佳异世界</td><td class="title-cell">Re:Zero S3</td></tr>
+<tr><td>🎵 最佳动画歌曲</td><td class="title-cell">"Iris Out" — 米津玄师 (Chainsaw Man Movie)</td></tr>
+<tr><td>🎬 最佳导演</td><td class="title-cell">笔坂明规/长沼范裕 — Apothecary Diaries S2</td></tr>
+<tr><td>🌟 最佳主角</td><td class="title-cell">猫猫 — Apothecary Diaries S2</td></tr>
+<tr><td>💎 最佳配角</td><td class="title-cell">爆豪胜己 — My Hero Academia Final Season</td></tr>
+<tr><td>🛡️ "必须守护"角色</td><td class="title-cell">阿尼亚·福杰 — Spy x Family S3</td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:.7rem;color:var(--text2)">🏆 第10届Crunchyroll动画大奖 | 2026年5月23日·东京</p>
+</div>
+
+<!-- AI漫剧 -->
+<div class="section" id="ai-drama">
+<div class="section-title t3"><span class="emoji">🤖</span> AI漫剧赛道 TOP30</div>
+<div class="insight-box">
+<h3>💡 AI漫剧崛起 — "从真人到漫人"的降维打击</h3>
+<p>2026年，AI漫剧以<b>爽感+低成本</b>双引擎驱动，从试水走向批量化。<b>红果短剧</b>和<b>抖音漫剧</b>成为核心阵地，日耗投流15万+的爆款频出。核心逻辑：用AI将真人短剧1:1转绘为动漫风格，成本压缩90%，效率提升20倍——3人1月出一部，传统动漫50人2月才搞定！</p>
+</div>
+<div class="card">
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品/项目</th><th>平台</th><th>热度</th><th>标签</th></tr></thead>
+<tbody>
+<tr><td><span class="rank-num rank-1">1</span></td><td class="title-cell">我在末世开超市：S级诡异抢着来上班</td><td>抖音/红果</td><td class="score-cell score-high">2亿+</td><td><span class="tag tag-hot">开年爆款</span></td></tr>
+<tr><td><span class="rank-num rank-2">2</span></td><td class="title-cell">心动的信号 (AI转绘版)</td><td>红果</td><td class="score-cell score-high">400万</td><td><span class="tag tag-new">1:1转绘</span></td></tr>
+<tr><td><span class="rank-num rank-3">3</span></td><td class="title-cell">每天征服一个美女</td><td>抖音</td><td class="score-cell score-high">日耗15万</td><td><span class="tag tag-hot">投流爆款</span></td></tr>
+<tr><td><span class="rank-num">4</span></td><td class="title-cell">突然成仙了怎么办</td><td>抖音</td><td class="score-cell score-mid">日耗10万</td><td><span class="tag tag-hot">仙侠爆款</span></td></tr>
+<tr><td><span class="rank-num">5</span></td><td class="title-cell">办公室生存指南 (Q版转绘)</td><td>红果</td><td class="score-cell score-mid">衍生千万</td><td><span class="tag tag-up">IP翻红</span></td></tr>
+<tr><td><span class="rank-num">6</span></td><td class="title-cell">乔秘书又辞职了 (AI转绘)</td><td>红果</td><td class="score-cell score-mid">口碑发酵</td><td><span class="tag tag-new">转绘标杆</span></td></tr>
+<tr><td><span class="rank-num">7</span></td><td class="title-cell">灵境AI转绘平台</td><td>工具</td><td class="score-cell score-mid">B端头部</td><td><span class="tag tag-hot">技术方</span></td></tr>
+<tr><td><span class="rank-num">8</span></td><td class="title-cell">可灵AI视频生成</td><td>工具</td><td class="score-cell score-mid">估值180亿$</td><td><span class="tag tag-hot">资本宠儿</span></td></tr>
+<tr><td><span class="rank-num">9</span></td><td class="title-cell">阿里云百炼"一键成剧"</td><td>工具</td><td class="score-cell score-mid">400+模板</td><td><span class="tag tag-new">工坊化</span></td></tr>
+<tr><td><span class="rank-num">10</span></td><td class="title-cell">爱诗科技 (AI视频)</td><td>工具</td><td class="score-cell score-mid">1.5亿用户</td><td><span class="tag tag-hot">出海先锋</span></td></tr>
+<tr><td><span class="rank-num">11-20</span></td><td class="title-cell" colspan="3">魔方公司AI漫剧系列 / 末日题材3D漫剧集群 / 真人短剧AI批量转绘 / 海外中东风AI漫剧 / 欧美风AI短剧 / 古风仙侠AI漫 / 科幻末日AI漫 / 都市职场AI漫 / 校园恋爱AI漫 / 悬疑推理AI漫</td><td></td></tr>
+<tr><td><span class="rank-num">21-30</span></td><td class="title-cell" colspan="3">灵境AI海外转绘订单 / 阿里云Agent 2.0 / 可灵AI视频出海 / Vidu灵光世界模型 / AI真人短剧(无演员) / 电商产品视频AI生成 / 历史人物播客AI / AI脸优化方案 / 多角色同屏交互 / 异国风转绘出海</td><td></td></tr>
+</tbody>
+</table>
+</div>
+<div class="hot-analysis">
+<h3>🔥 爆款拆解：《我在末世开超市》为什么能2亿播放？</h3>
+<div class="item">
+<div class="item-title">① 题材精准：末世+经营+搞笑=三重多巴胺</div>
+<div class="item-desc">末世题材自带"爽感底色"，经营元素满足"从零到有"的养成欲，搞笑人设消解恐怖感——S级诡异"抢着来上班"，把恐惧变成了黑色幽默。</div>
+</div>
+<div class="item">
+<div class="item-title">② 制作降维：1导演+5制作=1个月搞定</div>
+<div class="item-desc">AI工具让5人团队做出50人级别的效果，成本从百万级降到5-10万，试错成本极低，投流胆子就大——日耗15万，只要ROI为正就是印钞机。</div>
+</div>
+<div class="item">
+<div class="item-title">③ 平台红利：抖音漫剧+红果双平台霸榜</div>
+<div class="item-desc">上线即抖音漫剧第一、红果漫剧第一，甚至冲进真人剧热播第二。漫剧品类竞争远小于真人剧，先发优势巨大。</div>
+</div>
+</div>
+<p style="font-size:.7rem;color:var(--text2);margin-top:.5rem">📡 数据来源：红果短剧 / 抖音漫剧 / OFweek AI / CSDN | 2026.09.08</p>
+</div>
+
+<!-- 中国动漫 -->
+<div class="section" id="china">
+<div class="section-title t4"><span class="emoji">🇨🇳</span> 中国动漫热度 TOP50</div>
+<div class="insight-box">
+<h3>💡 国漫格局</h3>
+<p>2026年国漫"双轨并行"：一面是<b>腾讯视频/优酷</b>的年番修仙大制作持续霸榜，一面是<b>AI漫剧</b>以短平快在短视频平台疯狂收割流量。传统国漫<b>剑来</b>以34.6万热度值霸榜，但<b>AI漫剧</b>的爆发速度让老牌制作方坐不住了——一边是"年番三年磨一剑"，一边是"一月出一部还能2亿播放"。</p>
+</div>
+<div class="card">
+<table class="rank-table">
+<thead><tr><th>#</th><th>作品名</th><th>热度值</th><th>平台</th><th>类型</th></tr></thead>
+<tbody>
+<tr><td><span class="rank-num rank-1">1</span></td><td class="title-cell">剑来</td><td class="score-cell score-high">34.6万</td><td>腾讯</td><td>玄幻/武侠</td></tr>
+<tr><td><span class="rank-num rank-2">2</span></td><td class="title-cell">斗破苍穹</td><td class="score-cell score-high">29.6万</td><td>腾讯</td><td>玄幻/热血</td></tr>
+<tr><td><span class="rank-num rank-3">3</span></td><td class="title-cell">完美世界</td><td class="score-cell score-high">26.7万</td><td>腾讯</td><td>玄幻/战斗</td></tr>
+<tr><td><span class="rank-num">4</span></td><td class="title-cell">斩神</td><td class="score-cell score-high">18.9万</td><td>优酷</td><td>都市/异能</td></tr>
+<tr><td><span class="rank-num">5</span></td><td class="title-cell">凡人修仙传</td><td class="score-cell score-high">16.1万</td><td>B站</td><td>修仙/写实</td></tr>
+<tr><td><span class="rank-num">6</span></td><td class="title-cell">仙逆</td><td class="score-cell score-mid">14.3万</td><td>腾讯</td><td>修仙/热血</td></tr>
+<tr><td><span class="rank-num">7</span></td><td class="title-cell">诛仙</td><td class="score-cell score-mid">13.2万</td><td>腾讯</td><td>仙侠/恋爱</td></tr>
+<tr><td><span class="rank-num">8</span></td><td class="title-cell">画江湖之不良人</td><td class="score-cell score-mid">12.8万</td><td>优酷</td><td>武侠/悬疑</td></tr>
+<tr><td><span class="rank-num">9</span></td><td class="title-cell">吞噬星空</td><td class="score-cell score-mid">12.3万</td><td>腾讯</td><td>科幻/修仙</td></tr>
+<tr><td><span class="rank-num">10</span></td><td class="title-cell">沧元图</td><td class="score-cell score-mid">9.1万</td><td>优酷</td><td>玄幻/战斗</td></tr>
+<tr><td><span class="rank-num">11</span></td><td class="title-cell">斗罗大陆二 绝世唐门</td><td class="score-cell score-mid">7.6万</td><td>腾讯</td><td>玄幻/校园</td></tr>
+<tr><td><span class="rank-num">12</span></td><td class="title-cell">神印王座</td><td class="score-cell score-mid">7.2万</td><td>优酷</td><td>奇幻/战斗</td></tr>
+<tr><td><span class="rank-num">13</span></td><td class="title-cell">灵笼</td><td class="score-cell score-mid">6.5万</td><td>B站</td><td>科幻/末世</td></tr>
+<tr><td><span class="rank-num">14</span></td><td class="title-cell">一人之下</td><td class="score-cell score-mid">6.0万</td><td>腾讯</td><td>异能/悬疑</td></tr>
+<tr><td><span class="rank-num">15</span></td><td class="title-cell">狐妖小红娘</td><td class="score-cell score-mid">5.5万</td><td>腾讯</td><td>恋爱/奇幻</td></tr>
+<tr><td><span class="rank-num">16</span></td><td class="title-cell">魔道祖师</td><td class="score-cell score-mid">5.0万</td><td>腾讯</td><td>古风/悬疑</td></tr>
+<tr><td><span class="rank-num">17</span></td><td class="title-cell">伍六七</td><td class="score-cell score-low">4.5万</td><td>B站/Netflix</td><td>搞笑/热血</td></tr>
+<tr><td><span class="rank-num">18</span></td><td class="title-cell">罗小黑战记</td><td class="score-cell score-low">4.0万</td><td>B站</td><td>治愈/奇幻</td></tr>
+<tr><td><span class="rank-num">19</span></td><td class="title-cell">天官赐福</td><td class="score-cell score-low">3.8万</td><td>B站</td><td>古风/奇幻</td></tr>
+<tr><td><span class="rank-num">20</span></td><td class="title-cell">我的三体之章北海传</td><td class="score-cell score-low">3.5万</td><td>B站</td><td>科幻/战争</td></tr>
+<tr><td><span class="rank-num">21-30</span></td><td class="title-cell" colspan="3">镇魂街 / 非人哉 / 请吃红小豆吧 / 全职高手 / 秦时明月 / 雏蜂 / 端脑 / 一念永恒 / 大理寺日志 / 时光代理人</td><td></td></tr>
+<tr><td><span class="rank-num">31-40</span></td><td class="title-cell" colspan="3">凸变英雄 / 刺客五六七 / 拾忆长安 / 万国志 / 灵契 / 少年歌行 / 雾山五行 / 中国奇谭 / 凡人修仙传星海飞驰 / 长安十二时辰</td><td></td></tr>
+<tr><td><span class="rank-num">41-50</span></td><td class="title-cell" colspan="3">眷思量 / 玉骨遥 / 仙王的日常生活 / 我是真仙 / 雪鹰领主 / 绝世武魂 / 武动乾坤 / 大主宰 / 元龙 / 星域四万年</td><td></td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:.7rem;color:var(--text2);margin-top:.5rem">📡 数据来源：腾讯视频 / B站 / 优酷 / 豆瓣 / 网易 | 2026.09.08</p>
+</div>
+
+<!-- 行业趋势 -->
+<div class="section" id="trend">
+<div class="section-title t2"><span class="emoji">📈</span> 行业趋势 & 波动分析</div>
+<div class="card">
+<div class="hot-analysis">
+<h3>🌍 全球趋势</h3>
+<div class="item">
+<div class="item-title">1. 续作统治力持续增强</div>
+<div class="item-desc">2026年全球TOP10中8部为续作/改编，原创作品生存空间被进一步挤压。但The World Is Dancing和Goodbye, Lara证明：好故事不依赖IP光环，原创仍有机会突围。</div>
+<div class="trend-bar"><div class="fill" style="width:80%"></div></div>
+</div>
+<div class="item">
+<div class="item-title">2. Crunchyroll大奖风向标：MHA终季封神</div>
+<div class="item-desc">My Hero Academia Final Season斩获年度最佳，显示粉丝投票型大奖仍偏向长线IP。但Gachiakuta拿下最佳新番，说明黑马不缺市场认可。</div>
+<div class="trend-bar"><div class="fill" style="width:65%"></div></div>
+</div>
+<div class="item">
+<div class="item-title">3. Chiikawa电影139亿日元=2026日本票房冠军</div>
+<div class="item-desc">吉伊卡嗷大电影超越所有真人电影，成为2026年日本票房之王——IP经济+粉丝经济+治愈经济的完美交汇点。</div>
+<div class="trend-bar"><div class="fill" style="width:90%"></div></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="hot-analysis">
+<h3>🇨🇳 国漫趋势</h3>
+<div class="item">
+<div class="item-title">1. 修仙玄幻仍是基本盘，但审美疲劳初现</div>
+<div class="item-desc">剑来/斗破/完美世界三巨头霸榜，但"打斗特效+快节奏爽感"的公式化套路已出现审美疲劳信号。观众开始渴求差异化题材。</div>
+<div class="trend-bar"><div class="fill" style="width:75%"></div></div>
+</div>
+<div class="item">
+<div class="item-title">2. 科幻国漫崛起：吞噬星空+灵笼+我的三体</div>
+<div class="item-desc">科幻题材从边缘走向主流，吞噬星空将玄幻+科幻融合，灵笼深耕末世废土美学，我的三体以硬科幻叙事赢得口碑。科幻可能是国漫下一个增长极。</div>
+<div class="trend-bar"><div class="fill" style="width:60%"></div></div>
+</div>
+<div class="item">
+<div class="item-title">3. 出海加速：伍六七登Netflix，罗小黑日本上映</div>
+<div class="item-desc">国漫出海从"卖版权"升级为"主动运营"，伍六七在Netflix取得不俗成绩，罗小黑战记日本上映引发讨论。文化输出进入2.0阶段。</div>
+<div class="trend-bar"><div class="fill" style="width:50%"></div></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="hot-analysis">
+<h3>🤖 AI漫剧趋势</h3>
+<div class="item">
+<div class="item-title">1. AI漫剧产能月度翻倍增长</div>
+<div class="item-desc">行业产能实现每月翻倍，从零散尝试走向批量化。红果+抖音双平台日活用户5.8亿，付费率45%，人均年消费800元——蛋糕够大，产能跟不上需求的时代结束了。</div>
+<div class="trend-bar"><div class="fill" style="width:85%"></div></div>
+</div>
+<div class="item">
+<div class="item-title">2. 出海：AI转绘让"一剧多用"成为可能</div>
+<div class="item-desc">同一部短剧素材，可快速生成欧美风/日韩风/中东风版本，成本不到1万美元（欧美真人短剧需15-20万美元）。灵境AI已接到海外头部平台订单。</div>
+<div class="trend-bar"><div class="fill" style="width:70%"></div></div>
+</div>
+<div class="item">
+<div class="item-title">3. AI脸恐怖谷效应：最大的隐忧</div>
+<div class="item-desc">"千人一面"的AI脸引发观众审美疲劳，"活人感"成为稀缺资源。短期内AI漫剧将维持高增长，但长期看，技术瓶颈（多角色同屏、人物一致性、复杂特效）仍是硬伤。</div>
+<div class="trend-bar"><div class="fill" style="width:55%"></div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p>🔥 2026动漫热度报告 | 自动生成于 2026-09-08 08:35 CST</p>
+<p>数据来源：MyAnimeList / Anime Corner / Reddit / Anime News Network / Crunchyroll / 红果短剧 / 抖音漫剧 / B站 / 腾讯视频 / 优酷 / 豆瓣 / OFweek / CSDN</p>
+<p>⚠️ 本报告数据来源于网络公开信息，仅供参考，不构成任何投资或消费建议</p>
+</div>
+</div>
+<script>
+document.querySelectorAll('.nav a').forEach(a=>{a.addEventListener('click',e=>{document.querySelectorAll('.nav a').forEach(x=>x.classList.remove('active'));a.classList.add('active')})});
+</script>
+</body>
+</html>
